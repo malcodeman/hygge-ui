@@ -8,7 +8,7 @@ type Props = {
   className?: string | undefined;
 } & React.ComponentPropsWithoutRef<"div">;
 
-export const Avatar = (props: Props) => {
+export function Avatar(props: Props) {
   const { initials, src, alt, className, ...rest } = props;
 
   return (
@@ -23,4 +23,4 @@ export const Avatar = (props: Props) => {
       <ArkAvatar.Image src={src} alt={alt} />
     </ArkAvatar.Root>
   );
-};
+}
