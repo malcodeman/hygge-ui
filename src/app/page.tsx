@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>ui</div>;
+  return <div className="text-2xl">ui</div>;
 }
