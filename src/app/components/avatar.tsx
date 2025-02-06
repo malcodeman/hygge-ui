@@ -6,7 +6,7 @@ type Props = {
   src?: string | undefined;
   alt?: string | undefined;
   className?: string | undefined;
-};
+} & React.ComponentPropsWithoutRef<"div">;
 
 export const Avatar = (props: Props) => {
   const { initials, src, alt, className, ...rest } = props;
@@ -15,8 +15,8 @@ export const Avatar = (props: Props) => {
     <ArkAvatar.Root
       {...rest}
       className={cn(
-        "flex size-8 items-center justify-center overflow-hidden rounded-full border border-[#E9E8E6] bg-[#f9f9f8] text-sm font-semibold text-[#21201C]",
         className,
+        "flex size-8 items-center justify-center overflow-hidden rounded-full border border-[#E9E8E6] bg-[#f9f9f8] text-sm font-semibold text-[#21201C]",
       )}
     >
       {initials ? <ArkAvatar.Fallback>{initials}</ArkAvatar.Fallback> : null}
