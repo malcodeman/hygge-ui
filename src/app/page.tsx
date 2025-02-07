@@ -27,6 +27,7 @@ import {
   FieldRoot,
 } from "./components/field";
 import { Clipboard } from "./components/clipboard";
+import { Textarea } from "./components/textarea";
 
 export default function Home() {
   return (
@@ -168,6 +169,11 @@ export default function Home() {
       <Card className="overflow-hidden">
         <Heading level={2}>Clipboard</Heading>
         <Clipboard value="https://ark-ui.com" />
+      </Card>
+      <Card>
+        <Heading level={2}>Textarea</Heading>
+        <Textarea placeholder="Textarea" />
+        <Textarea placeholder="Disabled" disabled />
       </Card>
     </div>
   );
