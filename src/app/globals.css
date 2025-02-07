@@ -8,6 +8,7 @@
   --arrow-background: #21201c;
 }
 
-[data-scope="popover"] {
+[data-scope="popover"],
+[data-scope="menu"] {
   --arrow-background: #fff;
 }

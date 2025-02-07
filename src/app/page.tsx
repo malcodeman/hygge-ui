@@ -12,6 +12,13 @@ import {
   PopoverTitle,
   PopoverTrigger,
 } from "./components/popover";
+import {
+  MenuContent,
+  MenuItem,
+  MenuRoot,
+  MenuSeparator,
+  MenuTrigger,
+} from "./components/menu";
 
 export default function Home() {
   return (
@@ -88,6 +95,46 @@ export default function Home() {
               <PopoverCloseTrigger />
             </PopoverContent>
           </PopoverRoot>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Menu</Heading>
+        <div className="flex flex-col gap-2">
+          <MenuRoot positioning={{ placement: "bottom" }}>
+            <MenuTrigger asChild>
+              <Button variant="outline">Click me</Button>
+            </MenuTrigger>
+            <MenuContent>
+              <MenuItem value="new-txt">New Text File</MenuItem>
+              <MenuItem value="new-file">New File...</MenuItem>
+              <MenuItem value="new-win">New Window</MenuItem>
+              <MenuItem value="open-file">Open File...</MenuItem>
+              <MenuItem value="export">Export</MenuItem>
+            </MenuContent>
+          </MenuRoot>
+          <MenuRoot positioning={{ placement: "bottom" }}>
+            <MenuTrigger asChild>
+              <Button variant="outline">Click me with arrow</Button>
+            </MenuTrigger>
+            <MenuContent showArrow>
+              <MenuItem value="new-txt">New Text File</MenuItem>
+              <MenuItem value="new-file">New File...</MenuItem>
+              <MenuItem value="new-win">New Window</MenuItem>
+              <MenuItem value="open-file">Open File...</MenuItem>
+              <MenuItem value="export">Export</MenuItem>
+            </MenuContent>
+          </MenuRoot>
+          <MenuRoot positioning={{ placement: "bottom" }}>
+            <MenuTrigger asChild>
+              <Button variant="outline">Click me with seperator</Button>
+            </MenuTrigger>
+            <MenuContent>
+              <MenuItem value="new-txt">React</MenuItem>
+              <MenuItem value="new-txt">Solid</MenuItem>
+              <MenuSeparator />
+              <MenuItem value="new-txt">Vue</MenuItem>
+            </MenuContent>
+          </MenuRoot>
         </div>
       </Card>
     </div>
