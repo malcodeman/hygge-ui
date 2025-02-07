@@ -26,6 +26,7 @@ import {
   FieldLabel,
   FieldRoot,
 } from "./components/field";
+import { Clipboard } from "./components/clipboard";
 
 export default function Home() {
   return (
@@ -163,6 +164,10 @@ export default function Home() {
             <Input placeholder="Input" />
           </Field>
         </div>
+      </Card>
+      <Card className="overflow-hidden">
+        <Heading level={2}>Clipboard</Heading>
+        <Clipboard value="https://ark-ui.com" />
       </Card>
     </div>
   );
