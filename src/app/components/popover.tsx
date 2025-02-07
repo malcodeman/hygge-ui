@@ -1,6 +1,7 @@
 import { Popover as ArkPopover } from "@ark-ui/react";
 import { LuX } from "react-icons/lu";
 import { cn } from "@/app/lib/cn";
+import { Button } from "./button";
 
 export function PopoverRoot(props: ArkPopover.RootProps) {
   return <ArkPopover.Root {...props} />;
@@ -41,7 +42,7 @@ export function PopoverTitle(props: ArkPopover.TitleProps) {
   return (
     <ArkPopover.Title
       {...rest}
-      className={cn("text-sm font-semibold text-[#21201C]", className)}
+      className={cn("text-xs font-semibold text-[#21201C]", className)}
     />
   );
 }
@@ -52,7 +53,7 @@ export function PopoverDescription(props: ArkPopover.DescriptionProps) {
   return (
     <ArkPopover.Description
       {...rest}
-      className={cn("text-sm font-semibold text-[#63635E]", className)}
+      className={cn("text-xs font-semibold text-[#63635E]", className)}
     />
   );
 }
@@ -63,9 +64,12 @@ export function PopoverCloseTrigger(props: ArkPopover.CloseTriggerProps) {
   return (
     <ArkPopover.CloseTrigger
       {...rest}
+      asChild
       className={cn("absolute top-1 right-1 cursor-pointer", className)}
     >
-      <LuX size={16} />
+      <Button variant="ghost">
+        <LuX size={16} />
+      </Button>
     </ArkPopover.CloseTrigger>
   );
 }

@@ -61,16 +61,34 @@ export default function Home() {
       </Card>
       <Card>
         <Heading level={2}>Popover</Heading>
-        <PopoverRoot>
-          <PopoverTrigger asChild>
-            <Button variant="outline">Click me</Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <PopoverTitle>Title</PopoverTitle>
-            <PopoverDescription>Description</PopoverDescription>
-            <PopoverCloseTrigger />
-          </PopoverContent>
-        </PopoverRoot>
+        <div className="flex flex-col gap-2">
+          <PopoverRoot>
+            <PopoverTrigger asChild>
+              <Button variant="outline">Click me</Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverTitle>Favorite Framework</PopoverTitle>
+              <PopoverDescription>
+                Tell us what is your favorite framework and why you love to use
+                it.
+              </PopoverDescription>
+              <PopoverCloseTrigger />
+            </PopoverContent>
+          </PopoverRoot>
+          <PopoverRoot>
+            <PopoverTrigger asChild>
+              <Button variant="outline">Click me with arrow</Button>
+            </PopoverTrigger>
+            <PopoverContent showArrow>
+              <PopoverTitle>Favorite Framework</PopoverTitle>
+              <PopoverDescription>
+                Tell us what is your favorite framework and why you love to use
+                it.
+              </PopoverDescription>
+              <PopoverCloseTrigger />
+            </PopoverContent>
+          </PopoverRoot>
+        </div>
       </Card>
     </div>
   );
