@@ -4,6 +4,14 @@ import { Button } from "./components/button";
 import { Card } from "./components/card";
 import { Heading } from "./components/heading";
 import { Tooltip } from "./components/tooltip";
+import {
+  PopoverCloseTrigger,
+  PopoverContent,
+  PopoverDescription,
+  PopoverRoot,
+  PopoverTitle,
+  PopoverTrigger,
+} from "./components/popover";
 
 export default function Home() {
   return (
@@ -50,6 +58,19 @@ export default function Home() {
             <Button variant="outline">Hover me with arrow</Button>
           </Tooltip>
         </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Popover</Heading>
+        <PopoverRoot>
+          <PopoverTrigger asChild>
+            <Button variant="outline">Click me</Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverTitle>Title</PopoverTitle>
+            <PopoverDescription>Description</PopoverDescription>
+            <PopoverCloseTrigger />
+          </PopoverContent>
+        </PopoverRoot>
       </Card>
     </div>
   );

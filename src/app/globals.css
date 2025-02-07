@@ -2,5 +2,12 @@
 
 :root {
   --arrow-size: 8px;
+}
+
+[data-scope="tooltip"] {
   --arrow-background: #21201c;
+}
+
+[data-scope="popover"] {
+  --arrow-background: #fff;
 }

@@ -1,4 +1,4 @@
-import { Tooltip as ArkTooltip } from "@ark-ui/react/tooltip";
+import { Tooltip as ArkTooltip } from "@ark-ui/react";
 import { cn } from "@/app/lib/cn";
 
 type Props = {
@@ -16,7 +16,7 @@ export function Tooltip(props: Props) {
         <ArkTooltip.Positioner>
           <ArkTooltip.Content
             className={cn(
-              "max-w-xs rounded-lg bg-[#21201C] p-2 text-xs font-semibold text-white shadow",
+              "max-w-xs rounded-lg bg-[#21201C] p-2 text-xs font-semibold text-white shadow-2xs",
             )}
           >
             {showArrow ? (
