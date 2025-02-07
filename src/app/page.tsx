@@ -28,6 +28,12 @@ import {
 } from "./components/field";
 import { Clipboard } from "./components/clipboard";
 import { Textarea } from "./components/textarea";
+import {
+  TabsContent,
+  TabsList,
+  TabsRoot,
+  TabsTrigger,
+} from "./components/tabs";
 
 export default function Home() {
   return (
@@ -174,6 +180,21 @@ export default function Home() {
         <Heading level={2}>Textarea</Heading>
         <Textarea placeholder="Textarea" />
         <Textarea placeholder="Disabled" disabled />
+      </Card>
+      <Card>
+        <Heading level={2}>Tabs</Heading>
+        <TabsRoot>
+          <TabsList>
+            <TabsTrigger value="react">React</TabsTrigger>
+            <TabsTrigger value="vue" disabled>
+              Vue
+            </TabsTrigger>
+            <TabsTrigger value="solid">Solid</TabsTrigger>
+          </TabsList>
+          <TabsContent value="react">React Content</TabsContent>
+          <TabsContent value="vue">Vue Content</TabsContent>
+          <TabsContent value="solid">Solid Content</TabsContent>
+        </TabsRoot>
       </Card>
     </div>
   );
