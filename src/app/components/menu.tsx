@@ -9,9 +9,11 @@ export function MenuTrigger(props: ArkMenu.TriggerProps) {
   return <ArkMenu.Trigger {...props} />;
 }
 
-export function MenuContent(
-  props: { showArrow?: boolean } & ArkMenu.ContentProps,
-) {
+type MenuContentProps = {
+  showArrow?: boolean;
+} & ArkMenu.ContentProps;
+
+export function MenuContent(props: MenuContentProps) {
   const { showArrow, className, children, ...rest } = props;
 
   return (

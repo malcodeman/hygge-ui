@@ -19,6 +19,13 @@ import {
   MenuSeparator,
   MenuTrigger,
 } from "./components/menu";
+import { Input } from "./components/input";
+import {
+  Field,
+  FieldHelperText,
+  FieldLabel,
+  FieldRoot,
+} from "./components/field";
 
 export default function Home() {
   return (
@@ -135,6 +142,26 @@ export default function Home() {
               <MenuItem value="new-txt">Vue</MenuItem>
             </MenuContent>
           </MenuRoot>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Input</Heading>
+        <div className="flex flex-col gap-2">
+          <Input placeholder="Input" />
+          <Input placeholder="Disabled" disabled />
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Field</Heading>
+        <div className="flex flex-col gap-2">
+          <FieldRoot>
+            <FieldLabel>Label</FieldLabel>
+            <Input placeholder="Input" />
+            <FieldHelperText>Helper text</FieldHelperText>
+          </FieldRoot>
+          <Field label="Label" errorText="Error text" invalid>
+            <Input placeholder="Input" />
+          </Field>
         </div>
       </Card>
     </div>
