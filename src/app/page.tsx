@@ -23,61 +23,19 @@ export default function Home() {
       <Card>
         <Heading level={2}>Button</Heading>
         <div className="flex flex-col gap-2">
-          <Button colorPalette="gray" variant="solid">
-            Gray solid
-          </Button>
-          <Button colorPalette="gray" variant="outline">
-            Gray outline
-          </Button>
+          <Button>Gray solid</Button>
+          <Button variant="outline">Gray outline</Button>
+          <Button variant="ghost">Gray ghost</Button>
           <Button colorPalette="orange">Orange</Button>
           <Button colorPalette="teal">Teal</Button>
           <Button colorPalette="green">Green</Button>
           <Button colorPalette="red">Red</Button>
-          <Button loading loadingText="Gray solid loading...">
-            Gray solid loading
-          </Button>
-          <Button
-            variant="outline"
-            loading
-            loadingText="Gray outline loading..."
-          >
-            Gray outline loading
-          </Button>
-          <Button colorPalette="orange" loading loadingText="Orange loading...">
-            Orange loading
-          </Button>
-          <Button colorPalette="teal" loading loadingText="Teal loading...">
-            Teal loading
-          </Button>
-          <Button colorPalette="green" loading loadingText="Green loading...">
-            Green loading
-          </Button>
-          <Button colorPalette="red" loading loadingText="Red loading...">
-            Red loading
+          <Button loading loadingText="Loading...">
+            Loading
           </Button>
           <Button>
             <LuMail size={16} />
-            With icon solid
-          </Button>
-          <Button variant="outline">
-            <LuMail size={16} />
-            With icon outline
-          </Button>
-          <Button colorPalette="orange">
-            <LuMail size={16} />
-            With icon orange
-          </Button>
-          <Button colorPalette="teal">
-            <LuMail size={16} />
-            With icon teal
-          </Button>
-          <Button colorPalette="green">
-            <LuMail size={16} />
-            With icon green
-          </Button>
-          <Button colorPalette="red">
-            <LuMail size={16} />
-            With icon red
+            With icon
           </Button>
         </div>
       </Card>

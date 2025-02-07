@@ -1,7 +1,7 @@
 import { LuLoaderCircle } from "react-icons/lu";
 import { cn } from "@/app/lib/cn";
 
-type ButtonVariant = "solid" | "outline";
+type ButtonVariant = "solid" | "outline" | "ghost";
 type ButtonColorPalette = "gray" | "orange" | "teal" | "green" | "red";
 type Props = {
   loading?: boolean;
@@ -34,6 +34,7 @@ export function Button(props: Props) {
   const disabled = loading || rest.disabled;
   const isSolid = variant === "solid";
   const isOutline = variant === "outline";
+  const isGhost = variant === "ghost";
 
   return (
     <button
@@ -90,6 +91,12 @@ export function Button(props: Props) {
         },
         {
           "hover:bg-[#EFEEEC] hover:text-[#21201C]": isOutline && !disabled,
+        },
+        {
+          "border-transparent text-[#63635E]": isGhost,
+        },
+        {
+          "hover:bg-[#EFEEEC] hover:text-[#21201C]": isGhost && !disabled,
         },
       )}
     >
