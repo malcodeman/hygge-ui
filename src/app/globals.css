@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+  --arrow-size: 8px;
+  --arrow-background: #21201c;
+}

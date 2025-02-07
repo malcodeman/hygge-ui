@@ -3,6 +3,7 @@ import { Avatar } from "./components/avatar";
 import { Button } from "./components/button";
 import { Card } from "./components/card";
 import { Heading } from "./components/heading";
+import { Tooltip } from "./components/tooltip";
 
 export default function Home() {
   return (
@@ -37,6 +38,17 @@ export default function Home() {
             <LuMail size={16} />
             With icon
           </Button>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Tooltip</Heading>
+        <div className="flex flex-col gap-2">
+          <Tooltip content="Tooltip content">
+            <Button variant="outline">Hover me</Button>
+          </Tooltip>
+          <Tooltip content="Tooltip content" showArrow>
+            <Button variant="outline">Hover me with arrow</Button>
+          </Tooltip>
         </div>
       </Card>
     </div>
