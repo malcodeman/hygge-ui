@@ -34,6 +34,7 @@ import {
   TabsRoot,
   TabsTrigger,
 } from "./components/tabs";
+import { Switch } from "./components/switch";
 
 export default function Home() {
   return (
@@ -195,6 +196,17 @@ export default function Home() {
           <TabsContent value="vue">Vue Content</TabsContent>
           <TabsContent value="solid">Solid Content</TabsContent>
         </TabsRoot>
+      </Card>
+      <Card>
+        <Heading level={2}>Switch</Heading>
+        <div className="flex flex-col gap-2">
+          <Switch label="Gray" />
+          <Switch colorPalette="orange" label="Orange" />
+          <Switch colorPalette="teal" label="Teal" />
+          <Switch colorPalette="green" label="Green" />
+          <Switch colorPalette="red" label="Red" />
+          <Switch label="Disabled" disabled />
+        </div>
       </Card>
     </div>
   );
