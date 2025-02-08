@@ -37,6 +37,7 @@ import {
 import { Switch } from "./components/switch";
 import { Alert } from "./components/alert";
 import { Tag } from "./components/tag";
+import { Separator } from "./components/separator";
 
 export default function Home() {
   return (
@@ -252,6 +253,21 @@ export default function Home() {
             <LuMail size={12} />
             With icon
           </Tag>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Separator</Heading>
+        <div className="flex flex-col gap-2">
+          <Separator />
+          <Separator colorPalette="orange" />
+          <Separator colorPalette="teal" />
+          <Separator colorPalette="green" />
+          <Separator colorPalette="red" />
+          <Separator variant="dashed" />
+          <Separator variant="dotted" />
+          <div className="h-5">
+            <Separator orientation="vertical" />
+          </div>
         </div>
       </Card>
     </div>
