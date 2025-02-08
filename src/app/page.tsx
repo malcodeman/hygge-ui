@@ -1,3 +1,4 @@
+"use client";
 import { LuMail } from "react-icons/lu";
 import { Avatar } from "./components/avatar";
 import { Button } from "./components/button";
@@ -52,8 +53,29 @@ import {
   DialogTrigger,
 } from "./components/dialog";
 import { Checkbox } from "./components/checkbox";
+import { toaster } from "./components/toast";
 
 export default function Home() {
+  function handleAddToast() {
+    toaster.create({
+      title: "Title",
+      description: "Description",
+    });
+  }
+
+  function handleActionAddToast() {
+    toaster.create({
+      title: "Title",
+      description: "Description",
+      action: {
+        label: "Subscribe",
+        onClick: () => {
+          console.log("Subscribe");
+        },
+      },
+    });
+  }
+
   return (
     <div className="grid grid-cols-4 gap-4 p-4">
       <Card>
@@ -327,6 +349,17 @@ export default function Home() {
           <Checkbox colorPalette="green" label="Green" />
           <Checkbox colorPalette="red" label="Red" />
           <Checkbox label="Disabled" disabled />
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Toast</Heading>
+        <div className="flex flex-col gap-2">
+          <Button variant="outline" onClick={handleAddToast}>
+            Add toast
+          </Button>
+          <Button variant="outline" onClick={handleActionAddToast}>
+            Add toast with action
+          </Button>
         </div>
       </Card>
     </div>
