@@ -35,6 +35,7 @@ import {
   TabsTrigger,
 } from "./components/tabs";
 import { Switch } from "./components/switch";
+import { Alert } from "./components/alert";
 
 export default function Home() {
   return (
@@ -206,6 +207,36 @@ export default function Home() {
           <Switch colorPalette="green" label="Green" />
           <Switch colorPalette="red" label="Red" />
           <Switch label="Disabled" disabled />
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Alert</Heading>
+        <div className="flex flex-col gap-2">
+          <Alert
+            showIndicator
+            title="Chakra is going live on August 30th. Get ready!"
+          />
+          <Alert
+            status="warning"
+            showIndicator
+            title="Seems your account is about expire, upgrade now"
+          />
+          <Alert
+            status="success"
+            showIndicator
+            title="Data uploaded to the server. Fire on!"
+          />
+          <Alert
+            status="error"
+            showIndicator
+            title="There was an error processing your request"
+          />
+          <Alert
+            status="error"
+            showIndicator
+            title="Invalid Fields"
+            description="Your form has some errors. Please fix them and try again."
+          />
         </div>
       </Card>
     </div>
