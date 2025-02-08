@@ -38,6 +38,17 @@ import { Switch } from "./components/switch";
 import { Alert } from "./components/alert";
 import { Tag } from "./components/tag";
 import { Separator } from "./components/separator";
+import {
+  DialogBody,
+  DialogCloseTrigger,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogRoot,
+  DialogTitle,
+  DialogTrigger,
+} from "./components/dialog";
 
 export default function Home() {
   return (
@@ -269,6 +280,31 @@ export default function Home() {
             <Separator orientation="vertical" />
           </div>
         </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Dialog</Heading>
+        <DialogRoot>
+          <DialogTrigger asChild>
+            <Button variant="outline">Open dialog</Button>
+          </DialogTrigger>
+          <DialogContent showCloseTrigger>
+            <DialogHeader>
+              <DialogTitle>Dialog Title</DialogTitle>
+            </DialogHeader>
+            <DialogBody>
+              <DialogDescription>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </DialogDescription>
+            </DialogBody>
+            <DialogFooter>
+              <DialogCloseTrigger asChild>
+                <Button variant="outline">Cancel</Button>
+              </DialogCloseTrigger>
+              <Button colorPalette="orange">Save</Button>
+            </DialogFooter>
+          </DialogContent>
+        </DialogRoot>
       </Card>
     </div>
   );
