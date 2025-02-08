@@ -36,6 +36,7 @@ import {
 } from "./components/tabs";
 import { Switch } from "./components/switch";
 import { Alert } from "./components/alert";
+import { Tag } from "./components/tag";
 
 export default function Home() {
   return (
@@ -237,6 +238,20 @@ export default function Home() {
             title="Invalid Fields"
             description="Your form has some errors. Please fix them and try again."
           />
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Tag</Heading>
+        <div className="flex flex-col gap-2">
+          <Tag>Gray</Tag>
+          <Tag colorPalette="orange">Orange</Tag>
+          <Tag colorPalette="teal">Teal</Tag>
+          <Tag colorPalette="green">Green</Tag>
+          <Tag colorPalette="red">Red</Tag>
+          <Tag>
+            <LuMail size={12} />
+            With icon
+          </Tag>
         </div>
       </Card>
     </div>
