@@ -54,6 +54,7 @@ import {
 } from "./components/dialog";
 import { Checkbox } from "./components/checkbox";
 import { toaster } from "./components/toast";
+import { Highlight } from "./components/highlight";
 
 export default function Home() {
   function handleAddToast() {
@@ -360,6 +361,42 @@ export default function Home() {
           <Button variant="outline" onClick={handleActionAddToast}>
             Add toast with action
           </Button>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Highlight</Heading>
+        <div className="flex flex-col gap-2">
+          <p>
+            <Highlight query="ipsum" text="Lorem ipsum dolor sit amet" />
+          </p>
+          <p>
+            <Highlight
+              colorPalette="orange"
+              query="ipsum"
+              text="Lorem ipsum dolor sit amet"
+            />
+          </p>
+          <p>
+            <Highlight
+              colorPalette="teal"
+              query="ipsum"
+              text="Lorem ipsum dolor sit amet"
+            />
+          </p>
+          <p>
+            <Highlight
+              colorPalette="green"
+              query="ipsum"
+              text="Lorem ipsum dolor sit amet"
+            />
+          </p>
+          <p>
+            <Highlight
+              colorPalette="red"
+              query="ipsum"
+              text="Lorem ipsum dolor sit amet"
+            />
+          </p>
         </div>
       </Card>
     </div>
