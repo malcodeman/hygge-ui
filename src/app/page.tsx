@@ -6,11 +6,8 @@ import { Card } from "./components/card";
 import { Heading } from "./components/heading";
 import { Tooltip } from "./components/tooltip";
 import {
-  PopoverBody,
   PopoverContent,
   PopoverDescription,
-  PopoverFooter,
-  PopoverHeader,
   PopoverRoot,
   PopoverTitle,
   PopoverTrigger,
@@ -130,15 +127,11 @@ export default function Home() {
               <Button variant="outline">Click me</Button>
             </PopoverTrigger>
             <PopoverContent showCloseTrigger>
-              <PopoverHeader>
-                <PopoverTitle>Favorite Framework</PopoverTitle>
-              </PopoverHeader>
-              <PopoverBody>
-                <PopoverDescription>
-                  Tell us what is your favorite framework and why you love to
-                  use it.
-                </PopoverDescription>
-              </PopoverBody>
+              <PopoverTitle>Favorite Framework</PopoverTitle>
+              <PopoverDescription>
+                Tell us what is your favorite framework and why you love to use
+                it.
+              </PopoverDescription>
             </PopoverContent>
           </PopoverRoot>
           <PopoverRoot>
@@ -146,18 +139,11 @@ export default function Home() {
               <Button variant="outline">Click me with arrow</Button>
             </PopoverTrigger>
             <PopoverContent showArrow>
-              <PopoverHeader>
-                <PopoverTitle>Favorite Framework</PopoverTitle>
-              </PopoverHeader>
-              <PopoverBody>
-                <PopoverDescription>
-                  Tell us what is your favorite framework and why you love to
-                  use it.
-                </PopoverDescription>
-              </PopoverBody>
-              <PopoverFooter>
-                <Button colorPalette="orange">Save</Button>
-              </PopoverFooter>
+              <PopoverTitle>Favorite Framework</PopoverTitle>
+              <PopoverDescription>
+                Tell us what is your favorite framework and why you love to use
+                it.
+              </PopoverDescription>
             </PopoverContent>
           </PopoverRoot>
         </div>

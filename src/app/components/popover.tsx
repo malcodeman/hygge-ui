@@ -30,7 +30,7 @@ export function PopoverContent(props: PopoverContentProps) {
       <ArkPopover.Content
         {...rest}
         className={cn(
-          "relative z-50 max-w-xs rounded-lg bg-white shadow-[0_0_0_1px_#E9E8E6]",
+          "relative z-50 max-w-xs rounded-lg bg-white p-2 shadow-[0_0_0_1px_#E9E8E6]",
           className,
         )}
       >
@@ -61,7 +61,7 @@ export function PopoverTitle(props: ArkPopover.TitleProps) {
   return (
     <ArkPopover.Title
       {...rest}
-      className={cn("text-xs font-semibold text-[#21201C]", className)}
+      className={cn("text-sm font-semibold text-[#21201C]", className)}
     />
   );
 }
@@ -72,33 +72,7 @@ export function PopoverDescription(props: ArkPopover.DescriptionProps) {
   return (
     <ArkPopover.Description
       {...rest}
-      className={cn("text-xs font-semibold text-[#63635E]", className)}
-    />
-  );
-}
-
-export function PopoverHeader(props: React.ComponentPropsWithoutRef<"header">) {
-  const { className, ...rest } = props;
-
-  return <header {...rest} className={cn(className, "p-4 pb-2")} />;
-}
-
-export function PopoverBody(props: React.ComponentPropsWithoutRef<"div">) {
-  const { className, ...rest } = props;
-
-  return <div {...rest} className={cn(className, "p-4 pt-2")} />;
-}
-
-export function PopoverFooter(props: React.ComponentPropsWithoutRef<"footer">) {
-  const { className, ...rest } = props;
-
-  return (
-    <footer
-      {...rest}
-      className={cn(
-        className,
-        "flex justify-between rounded-b-lg border-t border-t-[#E9E8E6] bg-[#f9f9f8] p-2",
-      )}
+      className={cn("text-sm font-semibold text-[#63635E]", className)}
     />
   );
 }
