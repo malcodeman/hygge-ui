@@ -21,7 +21,7 @@ export function MenuContent(props: MenuContentProps) {
       <ArkMenu.Content
         {...rest}
         className={cn(
-          "max-w-xs rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs",
+          "z-50 max-w-xs rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs",
           className,
         )}
       >

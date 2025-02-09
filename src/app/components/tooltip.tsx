@@ -16,7 +16,7 @@ export function Tooltip(props: Props) {
         <ArkTooltip.Positioner>
           <ArkTooltip.Content
             className={cn(
-              "max-w-xs rounded-lg bg-[#21201C] p-2 text-xs font-semibold text-white shadow-2xs",
+              "z-50 max-w-xs rounded-lg bg-[#21201C] p-2 text-xs font-semibold text-white shadow-2xs",
             )}
           >
             {showArrow ? (
