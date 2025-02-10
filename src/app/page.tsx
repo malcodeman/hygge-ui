@@ -257,10 +257,10 @@ export default function Home() {
               <Button variant="outline">Click me with seperator</Button>
             </MenuTrigger>
             <MenuContent>
-              <MenuItem value="new-txt">React</MenuItem>
-              <MenuItem value="new-txt">Solid</MenuItem>
+              <MenuItem value="react">React</MenuItem>
+              <MenuItem value="solid">Solid</MenuItem>
               <MenuSeparator />
-              <MenuItem value="new-txt">Vue</MenuItem>
+              <MenuItem value="vue">Vue</MenuItem>
             </MenuContent>
           </MenuRoot>
         </div>
