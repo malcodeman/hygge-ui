@@ -20,7 +20,11 @@ export function Avatar(props: Props) {
       )}
     >
       {initials ? <ArkAvatar.Fallback>{initials}</ArkAvatar.Fallback> : null}
-      <ArkAvatar.Image src={src} alt={alt} />
+      <ArkAvatar.Image
+        src={src}
+        alt={alt}
+        className={cn("h-full w-full object-cover")}
+      />
     </ArkAvatar.Root>
   );
 }

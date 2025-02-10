@@ -25,12 +25,8 @@ export function SelectLabel(props: ArkSelect.LabelProps) {
   );
 }
 
-type Props = {
-  placeholder?: string | undefined;
-} & ArkSelect.TriggerProps;
-
-export function SelectTrigger(props: Props) {
-  const { placeholder, className, ...rest } = props;
+export function SelectTrigger(props: ArkSelect.TriggerProps) {
+  const { className, children, ...rest } = props;
 
   return (
     <ArkSelect.Control>
@@ -41,13 +37,17 @@ export function SelectTrigger(props: Props) {
           className,
         )}
       >
-        <ArkSelect.ValueText placeholder={placeholder} />
+        {children}
         <ArkSelect.Indicator>
           <LuChevronDown size={16} />
         </ArkSelect.Indicator>
       </ArkSelect.Trigger>
     </ArkSelect.Control>
   );
+}
+
+export function SelectValueText(props: ArkSelect.ValueTextProps) {
+  return <ArkSelect.ValueText {...props} />;
 }
 
 export function SelectContent(props: ArkSelect.ContentProps) {
@@ -58,7 +58,7 @@ export function SelectContent(props: ArkSelect.ContentProps) {
       <ArkSelect.Content
         {...rest}
         className={cn(
-          "max-h-96 rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs",
+          "z-50 max-h-96 rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs",
           className,
         )}
       />

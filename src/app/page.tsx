@@ -58,6 +58,7 @@ import {
   SelectLabel,
   SelectRoot,
   SelectTrigger,
+  SelectValueText,
 } from "./components/select";
 import { createListCollection } from "@ark-ui/react";
 
@@ -68,6 +69,28 @@ export default function Home() {
       { label: "Vue.js", value: "vue" },
       { label: "Angular", value: "angular" },
       { label: "Solid", value: "solid" },
+    ],
+  });
+  const members = createListCollection({
+    items: [
+      {
+        label: "Jessica Jones",
+        value: "jessica_jones",
+        avatar:
+          "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100",
+      },
+      {
+        label: "Kenneth Johnson",
+        value: "kenneth_johnson",
+        avatar:
+          "https://images.unsplash.com/photo-1523477800337-966dbabe060b?w=100",
+      },
+      {
+        label: "Kate Wilson",
+        value: "kate_wilson",
+        avatar:
+          "https://images.unsplash.com/photo-1609712409631-dbbb050746d1?w=100",
+      },
     ],
   });
 
@@ -407,7 +430,9 @@ export default function Home() {
         <div className="flex flex-col gap-2">
           <SelectRoot collection={frameworks}>
             <SelectLabel>Favorite Framework</SelectLabel>
-            <SelectTrigger placeholder="Select something" />
+            <SelectTrigger>
+              <SelectValueText placeholder="Select something" />
+            </SelectTrigger>
             <SelectContent>
               {frameworks.items.map((item) => (
                 <SelectItem key={item.value} item={item.value}>
@@ -418,7 +443,9 @@ export default function Home() {
           </SelectRoot>
           <SelectRoot collection={frameworks} disabled>
             <SelectLabel>Favorite Framework</SelectLabel>
-            <SelectTrigger placeholder="Select something" />
+            <SelectTrigger>
+              <SelectValueText placeholder="Select something" />
+            </SelectTrigger>
             <SelectContent>
               {frameworks.items.map((item) => (
                 <SelectItem key={item.value} item={item.value}>
@@ -429,11 +456,30 @@ export default function Home() {
           </SelectRoot>
           <Field label="Favorite Framework" errorText="Error text" invalid>
             <SelectRoot collection={frameworks}>
-              <SelectTrigger placeholder="Select something" />
+              <SelectTrigger>
+                <SelectValueText placeholder="Select something" />
+              </SelectTrigger>
               <SelectContent>
                 {frameworks.items.map((item) => (
                   <SelectItem key={item.value} item={item.value}>
                     {item.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectRoot>
+          </Field>
+          <Field label="Members">
+            <SelectRoot collection={members}>
+              <SelectTrigger>
+                <SelectValueText placeholder="Select movie" />
+              </SelectTrigger>
+              <SelectContent>
+                {members.items.map((item) => (
+                  <SelectItem key={item.value} item={item.value}>
+                    <div className="flex items-center gap-1">
+                      <Avatar src={item.avatar} />
+                      {item.label}
+                    </div>
                   </SelectItem>
                 ))}
               </SelectContent>
