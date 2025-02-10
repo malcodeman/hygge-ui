@@ -1,6 +1,6 @@
 import { Select as ArkSelect, CollectionItem } from "@ark-ui/react";
 import { LuCheck, LuChevronDown } from "react-icons/lu";
-import { cn } from "../lib/cn";
+import { cn } from "@/app/lib/cn";
 
 export function SelectRoot(props: ArkSelect.RootProps<CollectionItem>) {
   const { className, positioning, ...rest } = props;
@@ -73,7 +73,7 @@ export function SelectItem(props: ArkSelect.ItemProps) {
     <ArkSelect.Item
       {...rest}
       className={cn(
-        "flex cursor-pointer items-center justify-between rounded-sm p-2 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C]",
+        "flex cursor-pointer items-center justify-between rounded-sm p-2 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
         className,
       )}
     >
