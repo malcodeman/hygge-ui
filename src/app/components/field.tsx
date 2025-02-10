@@ -55,7 +55,7 @@ export function Field(props: FieldProps) {
     <FieldRoot {...rest}>
       {label ? (
         <FieldLabel className={cn("flex items-center gap-1")}>
-          Label
+          {label}
           {required ? <span className={cn("text-[#fd5454]")}>*</span> : null}
         </FieldLabel>
       ) : null}

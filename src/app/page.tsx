@@ -52,8 +52,25 @@ import {
 import { Checkbox } from "./components/checkbox";
 import { toaster } from "./components/toast";
 import { Highlight } from "./components/highlight";
+import {
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectRoot,
+  SelectTrigger,
+} from "./components/select";
+import { createListCollection } from "@ark-ui/react";
 
 export default function Home() {
+  const frameworks = createListCollection({
+    items: [
+      { label: "React.js", value: "react" },
+      { label: "Vue.js", value: "vue" },
+      { label: "Angular", value: "angular" },
+      { label: "Solid", value: "solid" },
+    ],
+  });
+
   function handleAddToast() {
     toaster.create({
       title: "Title",
@@ -383,6 +400,45 @@ export default function Home() {
               text="Lorem ipsum dolor sit amet"
             />
           </p>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Select</Heading>
+        <div className="flex flex-col gap-2">
+          <SelectRoot collection={frameworks}>
+            <SelectLabel>Favorite Framework</SelectLabel>
+            <SelectTrigger placeholder="Select something" />
+            <SelectContent>
+              {frameworks.items.map((item) => (
+                <SelectItem key={item.value} item={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </SelectRoot>
+          <SelectRoot collection={frameworks} disabled>
+            <SelectLabel>Favorite Framework</SelectLabel>
+            <SelectTrigger placeholder="Select something" />
+            <SelectContent>
+              {frameworks.items.map((item) => (
+                <SelectItem key={item.value} item={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </SelectRoot>
+          <Field label="Favorite Framework" errorText="Error text" invalid>
+            <SelectRoot collection={frameworks}>
+              <SelectTrigger placeholder="Select something" />
+              <SelectContent>
+                {frameworks.items.map((item) => (
+                  <SelectItem key={item.value} item={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectRoot>
+          </Field>
         </div>
       </Card>
     </div>
