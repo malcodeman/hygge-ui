@@ -5,7 +5,7 @@ import {
   createToaster,
 } from "@ark-ui/react";
 import { LuX } from "react-icons/lu";
-import { cn } from "../lib/cn";
+import { cn } from "@/app/lib/cn";
 import { Button } from "./button";
 
 export const toaster = createToaster({

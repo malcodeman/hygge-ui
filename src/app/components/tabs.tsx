@@ -1,5 +1,5 @@
 import { Tabs as ArkTabs } from "@ark-ui/react";
-import { cn } from "../lib/cn";
+import { cn } from "@/app/lib/cn";
 
 export function TabsRoot(props: ArkTabs.RootProps) {
   return <ArkTabs.Root {...props} />;
