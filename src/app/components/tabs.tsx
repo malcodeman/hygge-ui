@@ -31,7 +31,7 @@ export function TabsTrigger(props: ArkTabs.TriggerProps) {
     <ArkTabs.Trigger
       {...rest}
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-1 p-2 pt-0 text-sm font-semibold text-[#63635E] transition-colors disabled:cursor-not-allowed disabled:opacity-50 data-[selected]:text-[#21201C]",
+        "inline-flex cursor-pointer items-center justify-center gap-1 p-2 pt-0 text-sm font-semibold text-[#63635E] transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[selected]:text-[#21201C]",
         className,
       )}
     />

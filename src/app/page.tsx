@@ -69,6 +69,7 @@ import {
   ComboboxContent,
 } from "./components/combobox";
 import { useMemo, useState } from "react";
+import Link from "next/link";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -296,18 +297,33 @@ export default function Home() {
       </Card>
       <Card>
         <Heading level={2}>Tabs</Heading>
-        <TabsRoot>
-          <TabsList>
-            <TabsTrigger value="react">React</TabsTrigger>
-            <TabsTrigger value="vue" disabled>
-              Vue
-            </TabsTrigger>
-            <TabsTrigger value="solid">Solid</TabsTrigger>
-          </TabsList>
-          <TabsContent value="react">React Content</TabsContent>
-          <TabsContent value="vue">Vue Content</TabsContent>
-          <TabsContent value="solid">Solid Content</TabsContent>
-        </TabsRoot>
+        <div className="flex flex-col gap-2">
+          <TabsRoot>
+            <TabsList>
+              <TabsTrigger value="react">React</TabsTrigger>
+              <TabsTrigger value="vue" disabled>
+                Vue
+              </TabsTrigger>
+              <TabsTrigger value="solid">Solid</TabsTrigger>
+            </TabsList>
+            <TabsContent value="react">React Content</TabsContent>
+            <TabsContent value="vue">Vue Content</TabsContent>
+            <TabsContent value="solid">Solid Content</TabsContent>
+          </TabsRoot>
+          <TabsRoot>
+            <TabsList>
+              <TabsTrigger value="/react" asChild>
+                <Link href="/react">React</Link>
+              </TabsTrigger>
+              <TabsTrigger value="/vue" asChild disabled>
+                <Link href="/vue">Vue</Link>
+              </TabsTrigger>
+              <TabsTrigger value="/solid" asChild>
+                <Link href="/solid">Solid</Link>
+              </TabsTrigger>
+            </TabsList>
+          </TabsRoot>
+        </div>
       </Card>
       <Card>
         <Heading level={2}>Switch</Heading>
