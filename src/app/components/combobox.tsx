@@ -67,7 +67,7 @@ export function ComboboxItem(props: ArkCombobox.ItemProps) {
     <ArkCombobox.Item
       {...rest}
       className={cn(
-        "flex cursor-pointer items-center justify-between rounded-sm p-2 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
+        "flex cursor-pointer items-center justify-between gap-1 rounded-sm p-2 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
         className,
       )}
     >

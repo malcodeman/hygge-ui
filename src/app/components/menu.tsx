@@ -43,7 +43,7 @@ export function MenuItem(props: ArkMenu.ItemProps) {
     <ArkMenu.Item
       {...rest}
       className={cn(
-        "flex cursor-pointer items-center rounded-sm p-2 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
+        "flex cursor-pointer items-center gap-1 rounded-sm p-2 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
         className,
       )}
     />
