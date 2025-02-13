@@ -1,4 +1,4 @@
-import { Dialog as ArkDialog } from "@ark-ui/react";
+import { Dialog as ArkDialog, Portal } from "@ark-ui/react";
 import { LuX } from "react-icons/lu";
 import { cn } from "@/app/lib/cn";
 import { Button } from "./button";
@@ -19,7 +19,7 @@ export function DialogContent(props: DialogContentProps) {
   const { showCloseTrigger = false, className, children, ...rest } = props;
 
   return (
-    <>
+    <Portal>
       <ArkDialog.Backdrop
         className={cn(
           "fixed top-0 left-0 z-50 h-dvh w-screen bg-white/80 blur-xs",
@@ -50,7 +50,7 @@ export function DialogContent(props: DialogContentProps) {
           ) : null}
         </ArkDialog.Content>
       </ArkDialog.Positioner>
-    </>
+    </Portal>
   );
 }
 

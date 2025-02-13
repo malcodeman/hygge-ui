@@ -261,7 +261,9 @@ export default function Home() {
               <MenuItem value="react">React</MenuItem>
               <MenuItem value="solid">Solid</MenuItem>
               <MenuSeparator />
-              <MenuItem value="vue">Vue</MenuItem>
+              <MenuItem value="vue" disabled>
+                Vue
+              </MenuItem>
             </MenuContent>
           </MenuRoot>
         </div>
