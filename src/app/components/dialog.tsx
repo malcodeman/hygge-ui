@@ -34,7 +34,7 @@ export function DialogContent(props: DialogContentProps) {
           {...rest}
           className={cn(
             className,
-            "relative max-w-lg min-w-sm rounded-lg bg-white shadow-[0_0_0_1px_#E9E8E6]",
+            "relative w-full max-w-lg rounded-lg bg-white shadow-[0_0_0_1px_#E9E8E6]",
           )}
         >
           {children}
