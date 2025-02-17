@@ -70,6 +70,7 @@ import {
 } from "./components/combobox";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { QrCode, QrCodeDownloadTrigger } from "./components/qr-code";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -607,6 +608,21 @@ export default function Home() {
               </ComboboxContent>
             </ComboboxRoot>
           </Field>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>QR Code</Heading>
+        <div className="flex flex-col gap-2">
+          <QrCode value="https://ark-ui.com" />
+          <QrCode value="https://ark-ui.com">
+            <QrCodeDownloadTrigger
+              asChild
+              fileName="qr-code.png"
+              mimeType="image/png"
+            >
+              <Button>Download</Button>
+            </QrCodeDownloadTrigger>
+          </QrCode>
         </div>
       </Card>
     </div>
