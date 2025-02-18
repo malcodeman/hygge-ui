@@ -71,6 +71,7 @@ import {
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { QrCode, QrCodeDownloadTrigger } from "./components/qr-code";
+import { CheckboxCard } from "./components/checkbox-card";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -623,6 +624,17 @@ export default function Home() {
               <Button>Download</Button>
             </QrCodeDownloadTrigger>
           </QrCode>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Checkbox Card</Heading>
+        <div className="flex flex-col gap-2">
+          <CheckboxCard label="Next.js" description="Best for apps" />
+          <CheckboxCard colorPalette="orange" label="Orange" />
+          <CheckboxCard colorPalette="teal" label="Teal" />
+          <CheckboxCard colorPalette="green" label="Green" />
+          <CheckboxCard colorPalette="red" label="Red" />
+          <CheckboxCard label="Disabled" disabled />
         </div>
       </Card>
     </div>

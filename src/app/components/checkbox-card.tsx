@@ -5,19 +5,40 @@ import { cn } from "@/app/lib/cn";
 type Props = {
   colorPalette?: "gray" | "orange" | "teal" | "green" | "red";
   label?: React.ReactNode;
+  description?: React.ReactNode;
 } & ArkCheckbox.RootProps;
 
-export function Checkbox(props: Props) {
-  const { colorPalette = "gray", label, ...rest } = props;
+export function CheckboxCard(props: Props) {
+  const { colorPalette = "gray", label, description, ...rest } = props;
+  const hasContent = label || description;
 
   return (
     <ArkCheckbox.Root
       {...rest}
-      className={cn("inline-flex items-center gap-1")}
+      className={cn(
+        "flex cursor-pointer justify-between gap-2 rounded-sm border border-[#E9E8E6] p-2 transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+        {
+          "data-[state=checked]:border-[#21201C]": colorPalette === "gray",
+          "data-[state=checked]:border-[#eb5e41]": colorPalette === "orange",
+          "data-[state=checked]:border-[#0d9488]": colorPalette === "teal",
+          "data-[state=checked]:border-[#38a169]": colorPalette === "green",
+          "data-[state=checked]:border-[#fd5454]": colorPalette === "red",
+        },
+      )}
     >
+      {hasContent ? (
+        <div className="flex flex-col">
+          <ArkCheckbox.Label className="text-sm font-semibold text-[#21201C]">
+            {label}
+          </ArkCheckbox.Label>
+          {description ? (
+            <p className="text-sm text-[#63635E]">{description}</p>
+          ) : null}
+        </div>
+      ) : null}
       <ArkCheckbox.Control
         className={cn(
-          "inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-xs border border-[#E9E8E6] transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          "inline-flex h-5 w-5 items-center justify-center rounded-xs border border-[#E9E8E6] transition-colors",
           {
             "data-[state=checked]:border-[#21201C] data-[state=checked]:bg-[#21201C]":
               colorPalette === "gray",
@@ -36,13 +57,6 @@ export function Checkbox(props: Props) {
           <LuCheck size={16} />
         </ArkCheckbox.Indicator>
       </ArkCheckbox.Control>
-      {label ? (
-        <ArkCheckbox.Label
-          className={cn("text-sm font-semibold text-[#21201C]")}
-        >
-          {label}
-        </ArkCheckbox.Label>
-      ) : null}
       <ArkCheckbox.HiddenInput />
     </ArkCheckbox.Root>
   );
