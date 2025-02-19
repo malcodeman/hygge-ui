@@ -17,7 +17,7 @@ export function Checkbox(props: Props) {
     >
       <ArkCheckbox.Control
         className={cn(
-          "inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-xs border border-[#E9E8E6] transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          "inline-flex h-5 w-5 flex-shrink-0 cursor-pointer items-center justify-center rounded-xs border border-[#E9E8E6] transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
           {
             "data-[state=checked]:border-[#21201C] data-[state=checked]:bg-[#21201C]":
               colorPalette === "gray",
