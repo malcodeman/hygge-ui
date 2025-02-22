@@ -72,6 +72,15 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { QrCode, QrCodeDownloadTrigger } from "./components/qr-code";
 import { CheckboxCard } from "./components/checkbox-card";
+import {
+  StepsCompletedContent,
+  StepsContent,
+  StepsItem,
+  StepsList,
+  StepsNextTrigger,
+  StepsPrevTrigger,
+  StepsRoot,
+} from "./components/steps";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -635,6 +644,32 @@ export default function Home() {
           <CheckboxCard colorPalette="green" label="Green" />
           <CheckboxCard colorPalette="red" label="Red" />
           <CheckboxCard label="Disabled" disabled />
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Steps</Heading>
+        <div className="flex flex-col gap-2">
+          <StepsRoot count={3}>
+            <StepsList>
+              <StepsItem index={0} title="First" />
+              <StepsItem index={1} title="Second" />
+              <StepsItem index={2} title="Third" />
+            </StepsList>
+            <StepsContent index={0}>First - Contact Info</StepsContent>
+            <StepsContent index={1}>Second - Date & Time</StepsContent>
+            <StepsContent index={2}>Third - Select Rooms</StepsContent>
+            <StepsCompletedContent>
+              Steps Complete - Thank you for filling out the form!
+            </StepsCompletedContent>
+            <div className="flex gap-2">
+              <StepsPrevTrigger asChild>
+                <Button variant="outline">Back</Button>
+              </StepsPrevTrigger>
+              <StepsNextTrigger asChild>
+                <Button variant="outline">Next</Button>
+              </StepsNextTrigger>
+            </div>
+          </StepsRoot>
         </div>
       </Card>
     </div>
