@@ -51,20 +51,11 @@ export function StepsItem(props: ArkSteps.ItemProps) {
 }
 
 export function StepsContent(props: ArkSteps.ContentProps) {
-  const { className, ...rest } = props;
-
-  return <ArkSteps.Content {...rest} className={cn("flex gap-2", className)} />;
+  return <ArkSteps.Content {...props} />;
 }
 
 export function StepsCompletedContent(props: ArkSteps.CompletedContentProps) {
-  const { className, ...rest } = props;
-
-  return (
-    <ArkSteps.CompletedContent
-      {...rest}
-      className={cn("flex gap-2", className)}
-    />
-  );
+  return <ArkSteps.CompletedContent {...props} />;
 }
 
 export function StepsPrevTrigger(props: ArkSteps.PrevTriggerProps) {
