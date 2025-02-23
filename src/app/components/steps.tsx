@@ -18,7 +18,10 @@ export function StepsList(props: ArkSteps.ListProps) {
   return (
     <ArkSteps.List
       {...rest}
-      className={cn("flex w-full flex-grow-1 gap-2", className)}
+      className={cn(
+        "flex w-full flex-grow-1 gap-2 [&>[data-part=item]:last-of-type]:flex-initial [&>[data-part=item]:last-of-type>[data-part=separator]]:hidden",
+        className,
+      )}
     />
   );
 }
@@ -35,12 +38,12 @@ export function StepsItem(props: ArkSteps.ItemProps) {
       <ArkSteps.Trigger className={cn("flex items-center gap-2")}>
         <ArkSteps.Indicator
           className={cn(
-            "flex size-8 items-center justify-center rounded-full border border-[#E9E8E6] bg-[#f9f9f8] transition-colors data-[current]:border-[#21201C] data-[current]:bg-[#21201C] data-[current]:text-white",
+            "flex size-8 items-center justify-center rounded-full border border-[#E9E8E6] text-sm font-semibold text-[#63635E] transition-colors data-[current]:border-[#21201C] data-[current]:bg-[#21201C] data-[current]:text-white",
           )}
         >
           {index + 1}
         </ArkSteps.Indicator>
-        <span className={cn("text-[#63635E]")}>{title}</span>
+        <span className={cn("text-sm text-[#63635E]")}>{title}</span>
       </ArkSteps.Trigger>
       <ArkSteps.Separator className={cn("h-[1px] flex-grow-1 bg-[#E9E8E6]")} />
     </ArkSteps.Item>
