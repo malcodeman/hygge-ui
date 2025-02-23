@@ -11,7 +11,7 @@ export function Highlight(props: Props) {
   return (
     <ArkHighlight
       {...rest}
-      className={cn("rounded-sm p-1 text-sm", className, {
+      className={cn("rounded-sm p-1", className, {
         "bg-[#EFEEEC] text-[#21201C]": colorPalette === "gray",
         "bg-[#ffedd5] text-[#92310a]": colorPalette === "orange",
         "bg-[#ccfbf1] text-[#0c5d56]": colorPalette === "teal",

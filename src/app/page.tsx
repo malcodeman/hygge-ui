@@ -461,6 +461,9 @@ export default function Home() {
           <p>
             <Highlight query="ipsum" text="Lorem ipsum dolor sit amet" />
           </p>
+          <Heading>
+            <Highlight query="ipsum" text="Lorem ipsum dolor sit amet" />
+          </Heading>
           <p>
             <Highlight
               colorPalette="orange"
