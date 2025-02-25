@@ -91,6 +91,12 @@ import {
   ProgressTrack,
   ProgressValueText,
 } from "./components/progress";
+import {
+  PaginationItems,
+  PaginationNextTrigger,
+  PaginationPrevTrigger,
+  PaginationRoot,
+} from "./components/pagination";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -726,6 +732,16 @@ export default function Home() {
             </ProgressCircle>
             <ProgressValueText />
           </ProgressRoot>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Pagination</Heading>
+        <div className="flex flex-col gap-2">
+          <PaginationRoot count={20} pageSize={2} defaultPage={1}>
+            <PaginationPrevTrigger />
+            <PaginationItems />
+            <PaginationNextTrigger />
+          </PaginationRoot>
         </div>
       </Card>
     </div>
