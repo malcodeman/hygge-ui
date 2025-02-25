@@ -16,7 +16,7 @@ export function Avatar(props: Props) {
       {...rest}
       className={cn(
         className,
-        "flex size-8 items-center justify-center overflow-hidden rounded-full border border-[#E9E8E6] bg-[#f9f9f8] text-sm font-semibold text-[#21201C]",
+        "flex size-6 items-center justify-center overflow-hidden rounded-full border border-[#E9E8E6] bg-[#f9f9f8] text-sm font-semibold text-[#21201C]",
       )}
     >
       {initials ? <ArkAvatar.Fallback>{initials}</ArkAvatar.Fallback> : null}

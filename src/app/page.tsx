@@ -15,6 +15,7 @@ import {
 import {
   MenuContent,
   MenuItem,
+  MenuItemGroup,
   MenuRoot,
   MenuSeparator,
   MenuTrigger,
@@ -291,6 +292,23 @@ export default function Home() {
               <MenuItem value="vue" disabled>
                 Vue
               </MenuItem>
+            </MenuContent>
+          </MenuRoot>
+          <MenuRoot positioning={{ placement: "bottom" }}>
+            <MenuTrigger asChild>
+              <Button variant="outline">Edit</Button>
+            </MenuTrigger>
+            <MenuContent>
+              <MenuItemGroup title="Styles">
+                <MenuItem value="bold">Bold</MenuItem>
+                <MenuItem value="underline">Underline</MenuItem>
+              </MenuItemGroup>
+              <MenuSeparator />
+              <MenuItemGroup title="Align">
+                <MenuItem value="left">Left</MenuItem>
+                <MenuItem value="middle">Middle</MenuItem>
+                <MenuItem value="right">Right</MenuItem>
+              </MenuItemGroup>
             </MenuContent>
           </MenuRoot>
         </div>
