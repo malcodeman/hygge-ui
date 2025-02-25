@@ -61,3 +61,29 @@ export function ProgressRange(props: ArkProgress.RangeProps) {
     />
   );
 }
+
+export function ProgressCircle(props: ArkProgress.CircleProps) {
+  return <ArkProgress.Circle {...props} />;
+}
+
+export function ProgressCircleTrack(props: ArkProgress.CircleTrackProps) {
+  const { className, ...rest } = props;
+
+  return (
+    <ArkProgress.CircleTrack
+      className={cn("stroke-[#E9E8E6]", className)}
+      {...rest}
+    />
+  );
+}
+
+export function ProgressCircleRange(props: ArkProgress.CircleRangeProps) {
+  const { className, ...rest } = props;
+
+  return (
+    <ArkProgress.CircleRange
+      className={cn("stroke-[#eb5e41] transition-all", className)}
+      {...rest}
+    />
+  );
+}

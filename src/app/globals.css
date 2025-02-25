@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
-:root {
+[data-part="arrow"] {
   --arrow-size: 8px;
 }
 
-[data-scope="tooltip"] {
+[data-scope="tooltip"][data-part="arrow"] {
   --arrow-background: #21201c;
 }
 
-[data-scope="popover"],
-[data-scope="menu"] {
+[data-scope="popover"][data-part="arrow"],
+[data-scope="menu"][data-part="arrow"] {
   --arrow-background: #fff;
+}
+
+[data-scope="progress"][data-part="circle"] {
+  --size: 40px;
+  --thickness: 4px;
 }

@@ -82,6 +82,9 @@ import {
   StepsRoot,
 } from "./components/steps";
 import {
+  ProgressCircle,
+  ProgressCircleRange,
+  ProgressCircleTrack,
   ProgressLabel,
   ProgressRange,
   ProgressRoot,
@@ -697,6 +700,30 @@ export default function Home() {
             <ProgressTrack>
               <ProgressRange />
             </ProgressTrack>
+            <ProgressValueText />
+          </ProgressRoot>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Progress Circle</Heading>
+        <div className="flex flex-col gap-2">
+          <ProgressRoot defaultValue={64}>
+            <ProgressLabel>Label</ProgressLabel>
+            <ProgressCircle>
+              <ProgressCircleTrack />
+              <ProgressCircleRange />
+            </ProgressCircle>
+            <ProgressValueText />
+          </ProgressRoot>
+          <ProgressRoot
+            defaultValue={64}
+            className="flex flex-col items-center"
+          >
+            <ProgressLabel>Label</ProgressLabel>
+            <ProgressCircle>
+              <ProgressCircleTrack />
+              <ProgressCircleRange />
+            </ProgressCircle>
             <ProgressValueText />
           </ProgressRoot>
         </div>
