@@ -52,11 +52,29 @@ export function ComboboxContent(props: ArkCombobox.ContentProps) {
       <ArkCombobox.Content
         {...rest}
         className={cn(
-          "z-50 max-h-96 overflow-y-auto rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs",
+          "z-50 max-h-96 overflow-y-auto rounded-lg border border-[#E9E8E6] bg-white p-1.5 shadow-2xs",
           className,
         )}
       />
     </ArkCombobox.Positioner>
+  );
+}
+
+export function ComboboxItemGroup(props: ArkCombobox.ItemGroupProps) {
+  const { className, title, children, ...rest } = props;
+
+  return (
+    <ArkCombobox.ItemGroup
+      {...rest}
+      className={cn("flex flex-col gap-1", className)}
+    >
+      {title ? (
+        <ArkCombobox.ItemGroupLabel className="px-2 py-1.5 text-sm font-semibold text-[#21201C]">
+          {title}
+        </ArkCombobox.ItemGroupLabel>
+      ) : null}
+      {children}
+    </ArkCombobox.ItemGroup>
   );
 }
 
@@ -67,7 +85,7 @@ export function ComboboxItem(props: ArkCombobox.ItemProps) {
     <ArkCombobox.Item
       {...rest}
       className={cn(
-        "flex cursor-pointer items-center justify-between gap-1 rounded-sm p-2 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
+        "flex cursor-pointer items-center justify-between gap-1 rounded-sm px-2 py-1.5 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
         className,
       )}
     >

@@ -68,6 +68,7 @@ import {
   ComboboxLabel,
   ComboboxRoot,
   ComboboxContent,
+  ComboboxItemGroup,
 } from "./components/combobox";
 import { useMemo, useState } from "react";
 import Link from "next/link";
@@ -629,11 +630,13 @@ export default function Home() {
             >
               <ComboboxInput placeholder="Select something" />
               <ComboboxContent>
-                {memoizedFrameworks.items.map((item) => (
-                  <ComboboxItem key={item.value} item={item.value}>
-                    {item.label}
-                  </ComboboxItem>
-                ))}
+                <ComboboxItemGroup title="Frameworks">
+                  {memoizedFrameworks.items.map((item) => (
+                    <ComboboxItem key={item.value} item={item.value}>
+                      {item.label}
+                    </ComboboxItem>
+                  ))}
+                </ComboboxItemGroup>
               </ComboboxContent>
             </ComboboxRoot>
           </Field>
