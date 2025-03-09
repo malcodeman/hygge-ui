@@ -15,15 +15,15 @@ export function Avatar(props: Props) {
     <ArkAvatar.Root
       {...rest}
       className={cn(
-        className,
         "flex size-6 items-center justify-center overflow-hidden rounded-full border border-[#E9E8E6] bg-[#f9f9f8] text-sm font-semibold text-[#21201C]",
+        className,
       )}
     >
       {initials ? <ArkAvatar.Fallback>{initials}</ArkAvatar.Fallback> : null}
       <ArkAvatar.Image
         src={src}
         alt={alt}
-        className={cn("h-full w-full object-cover")}
+        className="h-full w-full object-cover"
       />
     </ArkAvatar.Root>
   );

@@ -1,6 +1,5 @@
 import { Clipboard as ArkClipboard } from "@ark-ui/react";
 import { LuCheck, LuClipboardCopy } from "react-icons/lu";
-import { cn } from "@/app/lib/cn";
 import { Input } from "./input";
 import { Button } from "./button";
 
@@ -14,13 +13,11 @@ export function Clipboard(props: Props) {
   return (
     <ArkClipboard.Root {...rest}>
       {label ? (
-        <ArkClipboard.Label
-          className={cn("text-sm font-semibold text-[#21201C]")}
-        >
+        <ArkClipboard.Label className="text-sm font-semibold text-[#21201C]">
           {label}
         </ArkClipboard.Label>
       ) : null}
-      <ArkClipboard.Control className={cn("flex gap-2")}>
+      <ArkClipboard.Control className="flex gap-2">
         <ArkClipboard.Input asChild>
           <Input />
         </ArkClipboard.Input>

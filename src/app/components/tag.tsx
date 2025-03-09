@@ -11,7 +11,6 @@ export function Tag(props: Props) {
     <div
       {...rest}
       className={cn(
-        className,
         "inline-flex h-5 items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold",
         {
           "bg-[#EFEEEC] text-[#21201C]": colorPalette === "gray",
@@ -20,6 +19,7 @@ export function Tag(props: Props) {
           "bg-[#dcfce7] text-[#116932]": colorPalette === "green",
           "bg-[#fee2e2] text-[#991919]": colorPalette === "red",
         },
+        className,
       )}
     />
   );

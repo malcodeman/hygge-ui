@@ -33,15 +33,15 @@ export function DialogContent(props: DialogContentProps) {
         <ArkDialog.Content
           {...rest}
           className={cn(
-            className,
             "relative w-full max-w-lg rounded-lg bg-white shadow-[0_0_0_1px_#E9E8E6]",
+            className,
           )}
         >
           {children}
           {showCloseTrigger ? (
             <ArkDialog.CloseTrigger
               asChild
-              className={cn(className, "absolute top-1 right-1 cursor-pointer")}
+              className="absolute top-1 right-1 cursor-pointer"
             >
               <Button variant="ghost">
                 <LuX size={16} />
@@ -60,7 +60,7 @@ export function DialogTitle(props: ArkDialog.TitleProps) {
   return (
     <ArkDialog.Title
       {...rest}
-      className={cn(className, "text-2xl font-semibold text-[#21201C]")}
+      className={cn("text-2xl font-semibold text-[#21201C]", className)}
     />
   );
 }
@@ -71,7 +71,7 @@ export function DialogDescription(props: ArkDialog.DescriptionProps) {
   return (
     <ArkDialog.Description
       {...rest}
-      className={cn(className, "text-sm font-semibold text-[#63635E]")}
+      className={cn("text-sm font-semibold text-[#63635E]", className)}
     />
   );
 }
@@ -79,13 +79,13 @@ export function DialogDescription(props: ArkDialog.DescriptionProps) {
 export function DialogHeader(props: React.ComponentPropsWithoutRef<"header">) {
   const { className, ...rest } = props;
 
-  return <header {...rest} className={cn(className, "p-4 pb-2")} />;
+  return <header {...rest} className={cn("p-4 pb-2", className)} />;
 }
 
 export function DialogBody(props: React.ComponentPropsWithoutRef<"div">) {
   const { className, ...rest } = props;
 
-  return <div {...rest} className={cn(className, "p-4 pt-2")} />;
+  return <div {...rest} className={cn("p-4 pt-2", className)} />;
 }
 
 export function DialogFooter(props: React.ComponentPropsWithoutRef<"footer">) {
@@ -95,8 +95,8 @@ export function DialogFooter(props: React.ComponentPropsWithoutRef<"footer">) {
     <footer
       {...rest}
       className={cn(
-        className,
         "flex justify-between rounded-b-lg border-t border-t-[#E9E8E6] bg-[#f9f9f8] p-2",
+        className,
       )}
     />
   );

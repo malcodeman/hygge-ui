@@ -9,7 +9,13 @@ type Props = {
 } & ArkCheckbox.RootProps;
 
 export function CheckboxCard(props: Props) {
-  const { colorPalette = "gray", label, description, ...rest } = props;
+  const {
+    colorPalette = "gray",
+    label,
+    description,
+    className,
+    ...rest
+  } = props;
   const hasContent = label || description;
 
   return (
@@ -24,6 +30,7 @@ export function CheckboxCard(props: Props) {
           "data-[state=checked]:border-[#38a169]": colorPalette === "green",
           "data-[state=checked]:border-[#fd5454]": colorPalette === "red",
         },
+        className,
       )}
     >
       {hasContent ? (

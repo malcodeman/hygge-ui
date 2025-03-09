@@ -29,7 +29,7 @@ export function ComboboxLabel(props: ArkCombobox.LabelProps) {
 
 export function ComboboxInput(props: ArkCombobox.InputProps) {
   return (
-    <ArkCombobox.Control className={cn("relative")}>
+    <ArkCombobox.Control className="relative">
       <ArkCombobox.Input {...props} asChild>
         <Input />
       </ArkCombobox.Input>

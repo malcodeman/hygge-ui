@@ -11,13 +11,17 @@ export function Highlight(props: Props) {
   return (
     <ArkHighlight
       {...rest}
-      className={cn("rounded-sm p-1", className, {
-        "bg-[#EFEEEC] text-[#21201C]": colorPalette === "gray",
-        "bg-[#ffedd5] text-[#92310a]": colorPalette === "orange",
-        "bg-[#ccfbf1] text-[#0c5d56]": colorPalette === "teal",
-        "bg-[#dcfce7] text-[#116932]": colorPalette === "green",
-        "bg-[#fee2e2] text-[#991919]": colorPalette === "red",
-      })}
+      className={cn(
+        "rounded-sm p-1",
+        {
+          "bg-[#EFEEEC] text-[#21201C]": colorPalette === "gray",
+          "bg-[#ffedd5] text-[#92310a]": colorPalette === "orange",
+          "bg-[#ccfbf1] text-[#0c5d56]": colorPalette === "teal",
+          "bg-[#dcfce7] text-[#116932]": colorPalette === "green",
+          "bg-[#fee2e2] text-[#991919]": colorPalette === "red",
+        },
+        className,
+      )}
     />
   );
 }

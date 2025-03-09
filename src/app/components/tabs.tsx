@@ -17,9 +17,7 @@ export function TabsList(props: ArkTabs.ListProps) {
       )}
     >
       {children}
-      <ArkTabs.Indicator
-        className={cn("bottom-0 h-0.5 w-[var(--width)] bg-[#21201c]")}
-      />
+      <ArkTabs.Indicator className="bottom-0 h-0.5 w-[var(--width)] bg-[#21201c]" />
     </ArkTabs.List>
   );
 }

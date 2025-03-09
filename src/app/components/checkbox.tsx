@@ -8,12 +8,12 @@ type Props = {
 } & ArkCheckbox.RootProps;
 
 export function Checkbox(props: Props) {
-  const { colorPalette = "gray", label, ...rest } = props;
+  const { colorPalette = "gray", label, className, ...rest } = props;
 
   return (
     <ArkCheckbox.Root
       {...rest}
-      className={cn("inline-flex items-center gap-1")}
+      className={cn("inline-flex items-center gap-1", className)}
     >
       <ArkCheckbox.Control
         className={cn(
@@ -37,9 +37,7 @@ export function Checkbox(props: Props) {
         </ArkCheckbox.Indicator>
       </ArkCheckbox.Control>
       {label ? (
-        <ArkCheckbox.Label
-          className={cn("text-sm font-semibold text-[#21201C]")}
-        >
+        <ArkCheckbox.Label className="text-sm font-semibold text-[#21201C]">
           {label}
         </ArkCheckbox.Label>
       ) : null}
