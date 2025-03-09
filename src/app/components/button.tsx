@@ -41,7 +41,6 @@ export function Button(props: Props) {
       {...rest}
       disabled={disabled}
       className={cn(
-        className,
         "inline-flex cursor-pointer items-center justify-center gap-1 rounded-sm border p-2 text-sm font-semibold transition-colors",
         {
           "cursor-default opacity-50": disabled,
@@ -98,6 +97,7 @@ export function Button(props: Props) {
         {
           "hover:bg-[#EFEEEC] hover:text-[#21201C]": isGhost && !disabled,
         },
+        className,
       )}
     >
       {loading ? (

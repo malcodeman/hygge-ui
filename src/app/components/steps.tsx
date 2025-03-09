@@ -35,17 +35,13 @@ export function StepsItem(props: ArkSteps.ItemProps) {
       index={index}
       className={cn("flex flex-grow-1 items-center gap-2", className)}
     >
-      <ArkSteps.Trigger className={cn("flex items-center gap-2")}>
-        <ArkSteps.Indicator
-          className={cn(
-            "flex size-8 items-center justify-center rounded-full border border-[#E9E8E6] text-sm font-semibold text-[#63635E] transition-colors data-[current]:border-[#21201C] data-[current]:bg-[#21201C] data-[current]:text-white",
-          )}
-        >
+      <ArkSteps.Trigger className="flex items-center gap-2">
+        <ArkSteps.Indicator className="flex size-8 items-center justify-center rounded-full border border-[#E9E8E6] text-sm font-semibold text-[#63635E] transition-colors data-[current]:border-[#21201C] data-[current]:bg-[#21201C] data-[current]:text-white">
           {index + 1}
         </ArkSteps.Indicator>
-        <span className={cn("text-sm text-[#63635E]")}>{title}</span>
+        <span className="text-sm text-[#63635E]">{title}</span>
       </ArkSteps.Trigger>
-      <ArkSteps.Separator className={cn("h-[1px] flex-grow-1 bg-[#E9E8E6]")} />
+      <ArkSteps.Separator className="h-[1px] flex-grow-1 bg-[#E9E8E6]" />
     </ArkSteps.Item>
   );
 }

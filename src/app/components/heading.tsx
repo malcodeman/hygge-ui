@@ -11,14 +11,18 @@ export function Heading(props: Props) {
   return (
     <Element
       {...rest}
-      className={cn(className, "font-semibold text-[#21201C]", {
-        "text-4xl": level === 1,
-        "text-2xl": level === 2,
-        "text-xl": level === 3,
-        "text-lg": level === 4,
-        "text-base": level === 5,
-        "text-sm": level === 6,
-      })}
+      className={cn(
+        "font-semibold text-[#21201C]",
+        {
+          "text-4xl": level === 1,
+          "text-2xl": level === 2,
+          "text-xl": level === 3,
+          "text-lg": level === 4,
+          "text-base": level === 5,
+          "text-sm": level === 6,
+        },
+        className,
+      )}
     />
   );
 }

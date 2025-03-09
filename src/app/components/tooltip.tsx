@@ -1,5 +1,4 @@
 import { Tooltip as ArkTooltip } from "@ark-ui/react";
-import { cn } from "@/app/lib/cn";
 
 type Props = {
   content?: React.ReactNode;
@@ -14,11 +13,7 @@ export function Tooltip(props: Props) {
       <ArkTooltip.Trigger asChild>{children}</ArkTooltip.Trigger>
       {content ? (
         <ArkTooltip.Positioner>
-          <ArkTooltip.Content
-            className={cn(
-              "z-50 max-w-xs rounded-lg bg-[#21201C] p-2 text-xs font-semibold text-white shadow-2xs",
-            )}
-          >
+          <ArkTooltip.Content className="z-50 max-w-xs rounded-lg bg-[#21201C] p-2 text-xs font-semibold text-white shadow-2xs">
             {showArrow ? (
               <ArkTooltip.Arrow>
                 <ArkTooltip.ArrowTip />

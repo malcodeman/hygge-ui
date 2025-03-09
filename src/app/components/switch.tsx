@@ -26,14 +26,10 @@ export function Switch(props: Props) {
           },
         )}
       >
-        <ArkSwitch.Thumb
-          className={cn(
-            "size-4 rounded-full bg-white shadow-2xs transition-transform data-[state=checked]:translate-x-5",
-          )}
-        />
+        <ArkSwitch.Thumb className="size-4 rounded-full bg-white shadow-2xs transition-transform data-[state=checked]:translate-x-5" />
       </ArkSwitch.Control>
       {label ? (
-        <ArkSwitch.Label className={cn("text-sm font-semibold text-[#21201C]")}>
+        <ArkSwitch.Label className="text-sm font-semibold text-[#21201C]">
           {label}
         </ArkSwitch.Label>
       ) : null}
