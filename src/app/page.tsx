@@ -99,6 +99,7 @@ import {
   PaginationPrevTrigger,
   PaginationRoot,
 } from "./components/pagination";
+import { Rating } from "./components/rating";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -763,6 +764,16 @@ export default function Home() {
             <PaginationItems />
             <PaginationNextTrigger />
           </PaginationRoot>
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Rating</Heading>
+        <div className="flex flex-col gap-2">
+          <Rating label="Gray" />
+          <Rating label="Orange" colorPallete="orange" />
+          <Rating label="Teal" colorPallete="teal" />
+          <Rating label="Green" colorPallete="green" />
+          <Rating label="Red" colorPallete="red" />
         </div>
       </Card>
     </div>
