@@ -100,6 +100,7 @@ import {
   PaginationRoot,
 } from "./components/pagination";
 import { Rating } from "./components/rating";
+import { PinInput } from "./components/pin-input";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -774,6 +775,17 @@ export default function Home() {
           <Rating label="Teal" colorPallete="teal" />
           <Rating label="Green" colorPallete="green" />
           <Rating label="Red" colorPallete="red" />
+        </div>
+      </Card>
+      <Card>
+        <Heading level={2}>Pin Input</Heading>
+        <div className="flex flex-col gap-2">
+          <PinInput
+            label="Please paste your 6-digit code:"
+            count={6}
+            placeholder=""
+            otp
+          />
         </div>
       </Card>
     </div>
