@@ -7,96 +7,41 @@ type Props = {
   loading?: boolean;
   loadingText?: string;
 } & (
-  | {
-      colorPalette?: Extract<
-        ButtonColorPalette,
-        "orange" | "teal" | "green" | "red"
-      >;
-      variant?: Extract<ButtonVariant, "solid">;
-    }
-  | {
-      colorPalette?: Extract<ButtonColorPalette, "gray">;
-      variant?: ButtonVariant;
-    }
+  | { colorPalette?: Exclude<ButtonColorPalette, "gray">; variant?: "solid" }
+  | { colorPalette?: "gray"; variant?: ButtonVariant }
 ) &
   React.ComponentPropsWithoutRef<"button">;
 
-export function Button(props: Props) {
-  const {
-    loading,
-    loadingText,
-    colorPalette = "gray",
-    variant = "solid",
-    className,
-    children,
-    ...rest
-  } = props;
-  const disabled = loading || rest.disabled;
-  const isSolid = variant === "solid";
-  const isOutline = variant === "outline";
-  const isGhost = variant === "ghost";
-
+export function Button({
+  loading,
+  loadingText,
+  colorPalette = "gray",
+  variant = "solid",
+  className,
+  children,
+  disabled,
+  ...rest
+}: Props) {
   return (
     <button
       {...rest}
-      disabled={disabled}
+      disabled={disabled || loading}
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-1 rounded-sm border p-2 text-sm font-semibold transition-colors",
-        {
-          "cursor-default opacity-50": disabled,
-        },
-        {
-          "border-transparent bg-[#21201C] text-white":
-            colorPalette === "gray" && isSolid,
-        },
-        {
-          "border-transparent bg-[#eb5e41] text-white":
-            colorPalette === "orange" && isSolid,
-        },
-        {
-          "border-transparent bg-[#0d9488] text-white":
-            colorPalette === "teal" && isSolid,
-        },
-        {
-          "border-transparent bg-[#38a169] text-white":
-            colorPalette === "green" && isSolid,
-        },
-        {
-          "border-transparent bg-[#fd5454] text-white":
-            colorPalette === "red" && isSolid,
-        },
-        {
-          "hover:bg-[#21201C]/88":
-            colorPalette === "gray" && isSolid && !disabled,
-        },
-        {
-          "hover:bg-[#eb5e41]/88":
-            colorPalette === "orange" && isSolid && !disabled,
-        },
-        {
-          "hover:bg-[#0d9488]/88":
-            colorPalette === "teal" && isSolid && !disabled,
-        },
-        {
-          "hover:bg-[#38a169]/88":
-            colorPalette === "green" && isSolid && !disabled,
-        },
-        {
-          "hover:bg-[#fd5454]/88":
-            colorPalette === "red" && isSolid && !disabled,
-        },
-        {
-          "border-[#E9E8E6] text-[#63635E]": isOutline,
-        },
-        {
-          "hover:bg-[#EFEEEC] hover:text-[#21201C]": isOutline && !disabled,
-        },
-        {
-          "border-transparent text-[#63635E]": isGhost,
-        },
-        {
-          "hover:bg-[#EFEEEC] hover:text-[#21201C]": isGhost && !disabled,
-        },
+        "inline-flex cursor-pointer items-center justify-center gap-1 rounded-sm border p-2 text-sm font-semibold transition-colors disabled:cursor-default disabled:opacity-50",
+        variant === "solid" &&
+          {
+            gray: "border-transparent bg-[#21201C] text-white not-disabled:hover:bg-[#21201C]/88 dark:bg-[#eeeeec] dark:text-[#191918] not-disabled:dark:hover:bg-[#eeeeec]/88",
+            orange:
+              "border-transparent bg-[#eb5e41] text-white not-disabled:hover:bg-[#eb5e41]/88",
+            teal: "border-transparent bg-[#0d9488] text-white not-disabled:hover:bg-[#0d9488]/88",
+            green:
+              "border-transparent bg-[#38a169] text-white not-disabled:hover:bg-[#38a169]/88",
+            red: "border-transparent bg-[#fd5454] text-white not-disabled:hover:bg-[#fd5454]/88",
+          }[colorPalette],
+        variant === "outline" &&
+          "border-[#cfceca] text-[#21201C] not-disabled:hover:bg-[#f9f9f8] dark:border-[#494844] dark:text-[#eeeeec] not-disabled:hover:dark:bg-[#212120]",
+        variant === "ghost" &&
+          "border-transparent text-[#21201C] not-disabled:hover:bg-[#efeeec] dark:text-[#eeeeec] not-disabled:hover:dark:bg-[#232322]",
         className,
       )}
     >
