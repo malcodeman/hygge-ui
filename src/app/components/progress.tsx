@@ -18,7 +18,7 @@ export function ProgressLabel(props: ArkProgress.LabelProps) {
   return (
     <ArkProgress.Label
       className={cn(
-        "inline-flex items-center gap-1 text-sm font-semibold text-[#21201C]",
+        "inline-flex items-center gap-1 text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]",
         className,
       )}
       {...rest}
@@ -31,7 +31,10 @@ export function ProgressValueText(props: ArkProgress.ValueTextProps) {
 
   return (
     <ArkProgress.ValueText
-      className={cn("text-sm font-semibold text-[#21201C]", className)}
+      className={cn(
+        "text-sm font-semibold text-[#63635E] dark:text-[#b5b3ad]",
+        className,
+      )}
       {...rest}
     />
   );
@@ -43,7 +46,7 @@ export function ProgressTrack(props: ArkProgress.TrackProps) {
   return (
     <ArkProgress.Track
       className={cn(
-        "h-2 w-full overflow-hidden rounded-sm bg-[#E9E8E6]",
+        "h-2 w-full overflow-hidden rounded-sm bg-[#E9E8E6] dark:bg-[#31312e]",
         className,
       )}
       {...rest}
@@ -71,7 +74,7 @@ export function ProgressCircleTrack(props: ArkProgress.CircleTrackProps) {
 
   return (
     <ArkProgress.CircleTrack
-      className={cn("stroke-[#E9E8E6]", className)}
+      className={cn("stroke-[#E9E8E6] dark:stroke-[#31312e]", className)}
       {...rest}
     />
   );

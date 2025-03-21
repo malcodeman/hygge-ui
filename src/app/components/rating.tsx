@@ -19,7 +19,7 @@ export function Rating(props: Props) {
       {...rest}
     >
       {label ? (
-        <ArkRatingGroup.Label className="text-sm font-semibold text-[#21201C]">
+        <ArkRatingGroup.Label className="text-sm font-semibold text-[#21201c] dark:text-[#eeeeec]">
           {label}
         </ArkRatingGroup.Label>
       ) : null}

@@ -7,7 +7,7 @@ export function Card(props: React.ComponentPropsWithoutRef<"div">) {
     <div
       {...rest}
       className={cn(
-        "rounded-lg border border-[#e9e8e6] bg-[#ffffff] p-4 dark:border-[#2a2a28] dark:bg-[#191918]",
+        "rounded-lg border border-[#e9e8e6] bg-white p-4 dark:border-[#2a2a28] dark:bg-[#191918]",
         className,
       )}
     >

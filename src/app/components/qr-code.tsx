@@ -6,7 +6,7 @@ export function QrCode(props: ArkQrCode.RootProps) {
 
   return (
     <ArkQrCode.Root className={cn("flex flex-col gap-2", className)} {...rest}>
-      <ArkQrCode.Frame>
+      <ArkQrCode.Frame className="bg-white">
         <ArkQrCode.Pattern />
       </ArkQrCode.Frame>
       {children}

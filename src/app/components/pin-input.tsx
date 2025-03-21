@@ -16,7 +16,7 @@ export function PinInput(props: Props) {
       {...rest}
     >
       {label ? (
-        <ArkPinInput.Label className="text-sm font-semibold text-[#21201C]">
+        <ArkPinInput.Label className="text-sm font-semibold text-[#21201c] dark:text-[#eeeeec]">
           {label}
         </ArkPinInput.Label>
       ) : null}

@@ -15,7 +15,10 @@ export function FieldLabel(props: ArkField.LabelProps) {
   return (
     <ArkField.Label
       {...rest}
-      className={cn("text-sm font-semibold text-[#21201C]", className)}
+      className={cn(
+        "text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]",
+        className,
+      )}
     />
   );
 }
@@ -26,7 +29,7 @@ export function FieldHelperText(props: ArkField.HelperTextProps) {
   return (
     <ArkField.HelperText
       {...rest}
-      className={cn("text-sm text-[#63635E]", className)}
+      className={cn("text-sm text-[#63635E] dark:text-[#b5b3ad]", className)}
     />
   );
 }

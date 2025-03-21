@@ -16,7 +16,7 @@ export function Switch(props: Props) {
     >
       <ArkSwitch.Control
         className={cn(
-          "inline-flex w-10 cursor-pointer items-center rounded-full bg-[#E9E8E6] p-0.5 transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          "inline-flex w-10 cursor-pointer items-center rounded-full bg-[#E9E8E6] p-0.5 transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 dark:bg-[#31312E]",
           {
             "data-[state=checked]:bg-[#21201C]": colorPalette === "gray",
             "data-[state=checked]:bg-[#eb5e41]": colorPalette === "orange",
@@ -26,10 +26,10 @@ export function Switch(props: Props) {
           },
         )}
       >
-        <ArkSwitch.Thumb className="size-4 rounded-full bg-white shadow-2xs transition-transform data-[state=checked]:translate-x-5" />
+        <ArkSwitch.Thumb className="size-4 rounded-full bg-white shadow-2xs transition-transform data-[state=checked]:translate-x-5 dark:bg-[#191918]" />
       </ArkSwitch.Control>
       {label ? (
-        <ArkSwitch.Label className="text-sm font-semibold text-[#21201C]">
+        <ArkSwitch.Label className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
           {label}
         </ArkSwitch.Label>
       ) : null}
