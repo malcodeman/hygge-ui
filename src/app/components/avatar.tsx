@@ -15,7 +15,8 @@ export function Avatar(props: Props) {
     <ArkAvatar.Root
       {...rest}
       className={cn(
-        "flex size-6 items-center justify-center overflow-hidden rounded-full border border-[#E9E8E6] bg-[#f9f9f8] text-sm font-semibold text-[#21201C]",
+        "flex size-6 items-center justify-center overflow-hidden rounded-full border text-sm font-semibold",
+        "border-[#E9E8E6] bg-[#f9f9f8] text-[#63635e] dark:border-[#2a2a28] dark:bg-[#222221] dark:text-[#b5b3ad]",
         className,
       )}
     >
