@@ -20,15 +20,15 @@ export function Toaster() {
       {(toast) => (
         <ArkToast.Root
           key={toast.id}
-          className="z-[var(--z-index)] max-w-lg min-w-2xs translate-x-[var(--x)] translate-y-[var(--y)] scale-[var(--scale)] rounded-lg border border-[#E9E8E6] bg-white p-2 opacity-[var(--opacity)] shadow-2xs transition-transform"
+          className="z-[var(--z-index)] max-w-lg min-w-2xs translate-x-[var(--x)] translate-y-[var(--y)] scale-[var(--scale)] rounded-lg border border-[#E9E8E6] bg-white p-2 opacity-[var(--opacity)] shadow-2xs transition-transform dark:border-[#2a2a28] dark:bg-[#191918]"
         >
           {toast.title ? (
-            <ArkToast.Title className="text-sm font-semibold text-[#21201C]">
+            <ArkToast.Title className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
               {toast.title}
             </ArkToast.Title>
           ) : null}
           {toast.description ? (
-            <ArkToast.Description className="text-sm font-semibold text-[#63635E]">
+            <ArkToast.Description className="text-sm font-medium text-[#63635E] dark:text-[#b5b3ad]">
               {toast.description}
             </ArkToast.Description>
           ) : null}

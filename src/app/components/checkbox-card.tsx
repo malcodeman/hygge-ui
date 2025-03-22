@@ -22,7 +22,7 @@ export function CheckboxCard(props: Props) {
     <ArkCheckbox.Root
       {...rest}
       className={cn(
-        "flex cursor-pointer justify-between gap-2 rounded-sm border border-[#E9E8E6] p-2 transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+        "flex cursor-pointer justify-between gap-2 rounded-sm border border-[#E9E8E6] p-2 transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 dark:border-[#2a2a28]",
         {
           "data-[state=checked]:border-[#21201C]": colorPalette === "gray",
           "data-[state=checked]:border-[#eb5e41]": colorPalette === "orange",
@@ -35,11 +35,13 @@ export function CheckboxCard(props: Props) {
     >
       {hasContent ? (
         <div className="flex flex-col">
-          <ArkCheckbox.Label className="text-sm font-semibold text-[#21201C]">
+          <ArkCheckbox.Label className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
             {label}
           </ArkCheckbox.Label>
           {description ? (
-            <p className="text-sm text-[#63635E]">{description}</p>
+            <p className="text-sm text-[#63635E] dark:text-[#b5b3ad]">
+              {description}
+            </p>
           ) : null}
         </div>
       ) : null}
