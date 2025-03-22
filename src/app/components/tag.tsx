@@ -13,7 +13,7 @@ export function Tag(props: Props) {
       className={cn(
         "inline-flex h-5 items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold",
         {
-          "bg-[#f4f4f5] text-[#27272a] dark:bg-[#18181b] dark:text-[#e4e4e7]":
+          "bg-[#efeeec] text-[#21201C] dark:bg-[#232322] dark:text-[#eeeeec]":
             colorPalette === "gray",
           "bg-[#ffedd5] text-[#92310a] dark:bg-[#3b1106] dark:text-[#fdba74]":
             colorPalette === "orange",
