@@ -101,7 +101,7 @@ export function DialogFooter(props: React.ComponentPropsWithoutRef<"footer">) {
     <footer
       {...rest}
       className={cn(
-        "flex justify-between rounded-b-lg border-t border-t-[#E9E8E6] bg-[#f9f9f8] p-2 dark:border-t-[#2a2a28] dark:bg-[#222221]",
+        "flex justify-between rounded-b-lg border-t border-t-[#E9E8E6] bg-[#f9f9f8] p-4 dark:border-t-[#2a2a28] dark:bg-[#222221]",
         className,
       )}
     />
