@@ -327,7 +327,8 @@ export default function Home() {
         <Card>
           <Heading level={2}>Input</Heading>
           <div className="flex flex-col gap-2">
-            <Input placeholder="Input" />
+            <Input placeholder="Subtle" />
+            <Input placeholder="Outline" variant="outline" />
             <Input placeholder="Disabled" disabled />
           </div>
         </Card>

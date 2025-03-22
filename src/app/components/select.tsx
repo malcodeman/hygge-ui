@@ -1,16 +1,29 @@
 import { Select as ArkSelect, CollectionItem } from "@ark-ui/react";
 import { LuCheck, LuChevronDown } from "react-icons/lu";
 import { cn } from "@/app/lib/cn";
+import { createContext, useContext } from "react";
 
-export function SelectRoot(props: ArkSelect.RootProps<CollectionItem>) {
-  const { className, positioning, ...rest } = props;
+type Variant = "subtle" | "outline";
+
+const SelectContext = createContext<{ variant: Variant }>({
+  variant: "subtle",
+});
+
+type SelectRootProps = {
+  variant?: Variant;
+} & ArkSelect.RootProps<CollectionItem>;
+
+export function SelectRoot(props: SelectRootProps) {
+  const { className, positioning, variant = "subtle", ...rest } = props;
 
   return (
-    <ArkSelect.Root
-      {...rest}
-      positioning={{ sameWidth: true, ...positioning }}
-      className={cn("flex flex-col gap-1", className)}
-    />
+    <SelectContext.Provider value={{ variant }}>
+      <ArkSelect.Root
+        {...rest}
+        positioning={{ sameWidth: true, ...positioning }}
+        className={cn("flex flex-col gap-1", className)}
+      />
+    </SelectContext.Provider>
   );
 }
 
@@ -30,6 +43,7 @@ export function SelectLabel(props: ArkSelect.LabelProps) {
 
 export function SelectTrigger(props: ArkSelect.TriggerProps) {
   const { className, children, ...rest } = props;
+  const { variant } = useContext(SelectContext);
 
   return (
     <ArkSelect.Control>
@@ -37,7 +51,12 @@ export function SelectTrigger(props: ArkSelect.TriggerProps) {
         {...rest}
         className={cn(
           "inline-flex w-full cursor-pointer items-center justify-between rounded-sm border p-2 text-sm font-semibold focus:outline-2 focus:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
-          "border-[#cfceca] text-[#21201C] focus:outline-[#21201C] data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454] data-[placeholder-shown]:text-[#21201C]/50 dark:border-[#494844] dark:text-[#eeeeec] dark:focus:outline-[#eeeeec] dark:data-[placeholder-shown]:text-[#eeeeec]/50",
+          "text-[#21201C] focus:outline-[#21201C] data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454] dark:text-[#eeeeec] dark:focus:outline-[#eeeeec]",
+          {
+            "border-transparent bg-[#f1f0ef] dark:bg-[#2a2a28]":
+              variant === "subtle",
+            "border-[#cfceca] dark:border-[#494844]": variant === "outline",
+          },
           className,
         )}
       >
