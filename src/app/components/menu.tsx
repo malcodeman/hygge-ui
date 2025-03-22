@@ -62,7 +62,7 @@ export function MenuItem(props: ArkMenu.ItemProps) {
       {...rest}
       className={cn(
         "flex cursor-pointer items-center gap-1 rounded-sm px-2 py-1.5 text-sm font-medium transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[disabled]:hover:bg-transparent",
-        "text-[#63635E] hover:bg-[#f1f0ef] data-[highlighted]:bg-[#f1f0ef] dark:text-[#b5b3ad] dark:hover:bg-[#2a2a28] dark:data-[highlighted]:bg-[#2a2a28]",
+        "text-[#63635E] hover:bg-[#f1f0ef] hover:text-[#21201C] data-[highlighted]:bg-[#f1f0ef] data-[highlighted]:text-[#21201C] dark:text-[#b5b3ad] dark:hover:bg-[#2a2a28] dark:hover:text-[#eeeeec] dark:data-[highlighted]:bg-[#2a2a28] dark:data-[highlighted]:text-[#eeeeec]",
         className,
       )}
     />
