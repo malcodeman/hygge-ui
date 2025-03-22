@@ -14,7 +14,7 @@ type SelectRootProps = {
 } & ArkSelect.RootProps<CollectionItem>;
 
 export function SelectRoot(props: SelectRootProps) {
-  const { className, positioning, variant = "subtle", ...rest } = props;
+  const { variant = "subtle", className, positioning, ...rest } = props;
 
   return (
     <SelectContext.Provider value={{ variant }}>
