@@ -1,7 +1,7 @@
 import { Pagination as ArkPagination } from "@ark-ui/react";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { cn } from "@/app/lib/cn";
 import { Button } from "./button";
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
 export function PaginationRoot(props: ArkPagination.RootProps) {
   const { className, ...rest } = props;
