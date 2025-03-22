@@ -30,13 +30,13 @@ export function PopoverContent(props: PopoverContentProps) {
       <ArkPopover.Content
         {...rest}
         className={cn(
-          "relative z-50 max-w-xs rounded-lg bg-white p-2 shadow-[0_0_0_1px_#E9E8E6]",
+          "relative z-50 max-w-xs rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs dark:border-[#2a2a28] dark:bg-[#191918]",
           className,
         )}
       >
         {showArrow ? (
           <ArkPopover.Arrow>
-            <ArkPopover.ArrowTip className="border-t border-l border-[#E9E8E6]" />
+            <ArkPopover.ArrowTip className="border-t border-l border-[#E9E8E6] dark:border-[#2a2a28]" />
           </ArkPopover.Arrow>
         ) : null}
         {children}
@@ -61,7 +61,10 @@ export function PopoverTitle(props: ArkPopover.TitleProps) {
   return (
     <ArkPopover.Title
       {...rest}
-      className={cn("text-sm font-semibold text-[#21201C]", className)}
+      className={cn(
+        "text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]",
+        className,
+      )}
     />
   );
 }
@@ -72,7 +75,10 @@ export function PopoverDescription(props: ArkPopover.DescriptionProps) {
   return (
     <ArkPopover.Description
       {...rest}
-      className={cn("text-sm font-semibold text-[#63635E]", className)}
+      className={cn(
+        "text-sm font-medium text-[#63635E] dark:text-[#b5b3ad]",
+        className,
+      )}
     />
   );
 }

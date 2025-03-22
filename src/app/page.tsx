@@ -187,7 +187,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="flex justify-end gap-2 p-4">
+      <div className="sticky top-0 z-10 flex justify-end gap-2 p-4">
         <Button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           Toggle theme
         </Button>

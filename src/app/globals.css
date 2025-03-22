@@ -15,6 +15,13 @@
   --arrow-background: #fff;
 }
 
+[data-theme="dark"] {
+  [data-scope="popover"][data-part="arrow"],
+  [data-scope="menu"][data-part="arrow"] {
+    --arrow-background: #191918;
+  }
+}
+
 [data-scope="progress"][data-part="circle"] {
   --size: 40px;
   --thickness: 4px;

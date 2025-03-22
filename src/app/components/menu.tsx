@@ -21,13 +21,13 @@ export function MenuContent(props: MenuContentProps) {
       <ArkMenu.Content
         {...rest}
         className={cn(
-          "z-50 max-w-xs rounded-lg border border-[#E9E8E6] bg-white p-1.5 shadow-2xs",
+          "z-50 max-w-xs rounded-lg border border-[#E9E8E6] bg-white p-1.5 shadow-2xs dark:border-[#2a2a28] dark:bg-[#191918]",
           className,
         )}
       >
         {showArrow ? (
           <ArkMenu.Arrow>
-            <ArkMenu.ArrowTip className="border-t border-l border-[#E9E8E6]" />
+            <ArkMenu.ArrowTip className="border-t border-l border-[#E9E8E6] dark:border-[#2a2a28]" />
           </ArkMenu.Arrow>
         ) : null}
         {children}
@@ -45,7 +45,7 @@ export function MenuItemGroup(props: ArkMenu.ItemGroupProps) {
       className={cn("flex flex-col gap-1", className)}
     >
       {title ? (
-        <ArkMenu.ItemGroupLabel className="px-2 py-1.5 text-sm font-semibold text-[#21201C]">
+        <ArkMenu.ItemGroupLabel className="px-2 py-1.5 text-sm font-semibold">
           {title}
         </ArkMenu.ItemGroupLabel>
       ) : null}
@@ -61,7 +61,8 @@ export function MenuItem(props: ArkMenu.ItemProps) {
     <ArkMenu.Item
       {...rest}
       className={cn(
-        "flex cursor-pointer items-center gap-1 rounded-sm px-2 py-1.5 text-sm font-semibold text-[#63635E] transition-colors hover:bg-[#EFEEEC] hover:text-[#21201C] data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[disabled]:hover:bg-transparent data-[disabled]:hover:text-[#63635E] data-[highlighted]:bg-[#EFEEEC] data-[highlighted]:text-[#21201C]",
+        "flex cursor-pointer items-center gap-1 rounded-sm px-2 py-1.5 text-sm font-medium transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[disabled]:hover:bg-transparent",
+        "text-[#63635E] hover:bg-[#f1f0ef] data-[highlighted]:bg-[#f1f0ef] dark:text-[#b5b3ad] dark:hover:bg-[#2a2a28] dark:data-[highlighted]:bg-[#2a2a28]",
         className,
       )}
     />
@@ -74,7 +75,10 @@ export function MenuSeparator(props: ArkMenu.SeparatorProps) {
   return (
     <ArkMenu.Separator
       {...rest}
-      className={cn("-mx-1.5 my-1 border-[#E9E8E6]", className)}
+      className={cn(
+        "-mx-1.5 my-1 border-[#E9E8E6] dark:border-[#2a2a28]",
+        className,
+      )}
     />
   );
 }
