@@ -47,9 +47,9 @@ export function CheckboxCard(props: Props) {
       ) : null}
       <ArkCheckbox.Control
         className={cn(
-          "inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-xs border border-[#E9E8E6] transition-colors",
+          "inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-xs border border-[#E9E8E6] transition-colors dark:border-[#2a2a28]",
           {
-            "data-[state=checked]:border-[#21201C] data-[state=checked]:bg-[#21201C]":
+            "data-[state=checked]:border-[#21201C] data-[state=checked]:bg-[#21201C] dark:data-[state=checked]:border-[#eeeeec] dark:data-[state=checked]:bg-[#eeeeec]":
               colorPalette === "gray",
             "data-[state=checked]:border-[#eb5e41] data-[state=checked]:bg-[#eb5e41]":
               colorPalette === "orange",
@@ -62,7 +62,12 @@ export function CheckboxCard(props: Props) {
           },
         )}
       >
-        <ArkCheckbox.Indicator className="text-white">
+        <ArkCheckbox.Indicator
+          className={cn(
+            "text-white",
+            colorPalette === "gray" && "dark:text-[#191918]",
+          )}
+        >
           <LuCheck size={16} />
         </ArkCheckbox.Indicator>
       </ArkCheckbox.Control>

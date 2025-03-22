@@ -37,21 +37,21 @@ export function Rating(props: Props) {
                     <LuStar
                       size={16}
                       className={cn(
-                        "fill-[#e9e8e6] stroke-[#e9e8e6]",
+                        "fill-[#e9e8e6] stroke-[#e9e8e6] dark:fill-[#2a2a28] dark:stroke-[#2a2a28]",
                         colorPallete === "gray" && highlighted
-                          ? "fill-[#21201C] stroke-[#21201C]"
+                          ? "fill-[#21201C] stroke-[#21201C] dark:fill-[#eeeeec] dark:stroke-[#eeeeec]"
                           : undefined,
                         colorPallete === "orange" && highlighted
-                          ? "fill-[#eb5e41] stroke-[#eb5e41]"
+                          ? "fill-[#eb5e41] stroke-[#eb5e41] dark:fill-[#eb5e41] dark:stroke-[#eb5e41]"
                           : undefined,
                         colorPallete === "teal" && highlighted
-                          ? "fill-[#0d9488] stroke-[#0d9488]"
+                          ? "fill-[#0d9488] stroke-[#0d9488] dark:fill-[#0d9488] dark:stroke-[#0d9488]"
                           : undefined,
                         colorPallete === "green" && highlighted
-                          ? "fill-[#38a169] stroke-[#38a169]"
+                          ? "fill-[#38a169] stroke-[#38a169] dark:fill-[#38a169] dark:stroke-[#38a169]"
                           : undefined,
                         colorPallete === "red" && highlighted
-                          ? "fill-[#fd5454] stroke-[#fd5454]"
+                          ? "fill-[#fd5454] stroke-[#fd5454] dark:fill-[#fd5454] dark:stroke-[#fd5454]"
                           : undefined,
                       )}
                     />
