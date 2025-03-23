@@ -2,11 +2,18 @@ import { Progress as ArkProgress } from "@ark-ui/react";
 import { cn } from "@/app/lib/cn";
 
 export function ProgressRoot(props: ArkProgress.RootProps) {
-  const { className, ...rest } = props;
+  const { value, className, ...rest } = props;
 
   return (
     <ArkProgress.Root
-      className={cn("flex w-full flex-col gap-1", className)}
+      value={value}
+      className={cn(
+        "flex w-full flex-col gap-1",
+        {
+          "animate-pulse": value === null,
+        },
+        className,
+      )}
       {...rest}
     />
   );
