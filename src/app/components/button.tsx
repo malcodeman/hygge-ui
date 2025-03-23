@@ -39,9 +39,9 @@ export function Button({
             red: "border-transparent bg-[#fd5454] text-white not-disabled:hover:bg-[#fd5454]/88",
           }[colorPalette],
         variant === "outline" &&
-          "border-[#cfceca] text-[#21201C] not-disabled:hover:bg-[#f9f9f8] dark:border-[#494844] dark:text-[#eeeeec] not-disabled:hover:dark:bg-[#212120]",
+          "border-[#cfceca] text-[#21201C] not-disabled:hover:bg-[#25250007] dark:border-[#494844] dark:text-[#eeeeec] not-disabled:hover:dark:bg-[#f4f4f309]",
         variant === "ghost" &&
-          "border-transparent text-[#21201C] not-disabled:hover:bg-[#efeeec] dark:text-[#eeeeec] not-disabled:hover:dark:bg-[#232322]",
+          "border-transparent text-[#21201C] not-disabled:hover:bg-[#20100010] dark:text-[#eeeeec] not-disabled:hover:dark:bg-[#f6f6f513]",
         className,
       )}
     >
