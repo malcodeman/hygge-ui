@@ -35,7 +35,7 @@ export function StepsItem(props: ArkSteps.ItemProps) {
       index={index}
       className={cn("flex flex-grow-1 items-center gap-2", className)}
     >
-      <ArkSteps.Trigger className="flex items-center gap-2">
+      <ArkSteps.Trigger className="flex items-center gap-2 focus:outline-2 focus:-outline-offset-1">
         <ArkSteps.Indicator className="flex size-8 items-center justify-center rounded-full border border-[#E9E8E6] text-sm font-semibold text-[#63635E] transition-colors data-[current]:border-[#21201C] data-[current]:bg-[#21201C] data-[current]:text-white dark:border-[#2a2a28] dark:text-[#b5b3ad] dark:data-[current]:bg-[#eeeeec] dark:data-[current]:text-[#191918]">
           {index + 1}
         </ArkSteps.Indicator>
@@ -47,7 +47,14 @@ export function StepsItem(props: ArkSteps.ItemProps) {
 }
 
 export function StepsContent(props: ArkSteps.ContentProps) {
-  return <ArkSteps.Content {...props} />;
+  const { className, ...rest } = props;
+
+  return (
+    <ArkSteps.Content
+      {...rest}
+      className={cn("focus:outline-2 focus:-outline-offset-1", className)}
+    />
+  );
 }
 
 export function StepsCompletedContent(props: ArkSteps.CompletedContentProps) {

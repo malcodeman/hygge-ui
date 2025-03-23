@@ -27,7 +27,7 @@ export function Button({
       {...rest}
       disabled={disabled || loading}
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-1 rounded-sm border p-2 text-sm font-semibold transition-colors disabled:cursor-default disabled:opacity-50",
+        "inline-flex cursor-pointer items-center justify-center gap-1 rounded-sm border p-2 text-sm font-semibold transition-colors focus:outline-2 focus:-outline-offset-1 disabled:cursor-default disabled:opacity-50",
         variant === "solid" &&
           {
             gray: "border-transparent bg-[#21201C] text-white not-disabled:hover:bg-[#21201C]/88 dark:bg-[#eeeeec] dark:text-[#191918] not-disabled:dark:hover:bg-[#eeeeec]/88",

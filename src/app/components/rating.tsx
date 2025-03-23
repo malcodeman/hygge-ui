@@ -30,7 +30,7 @@ export function Rating(props: Props) {
               <ArkRatingGroup.Item
                 key={item}
                 index={item}
-                className="cursor-pointer"
+                className="cursor-pointer focus:outline-2 focus:-outline-offset-1"
               >
                 <ArkRatingGroup.ItemContext>
                   {({ highlighted }) => (
