@@ -32,3 +32,33 @@
   --size: 40px;
   --thickness: 4px;
 }
+
+@keyframes slideDown {
+  from {
+    opacity: 0.01;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: var(--height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    height: var(--height);
+  }
+  to {
+    opacity: 0.01;
+    height: 0;
+  }
+}
+
+[data-scope="accordion"][data-part="item-content"][data-state="open"] {
+  animation: slideDown 250ms ease-in-out;
+}
+
+[data-scope="accordion"][data-part="item-content"][data-state="closed"] {
+  animation: slideUp 200ms ease-in-out;
+}

@@ -102,6 +102,12 @@ import {
 import { Rating } from "./components/rating";
 import { PinInput } from "./components/pin-input";
 import { useTheme } from "next-themes";
+import {
+  AccordionItem,
+  AccordionItemContent,
+  AccordionItemTrigger,
+  AccordionRoot,
+} from "./components/accordion";
 
 const initialItems = [
   { label: "React.js", value: "react" },
@@ -795,6 +801,21 @@ export default function Home() {
               placeholder=""
               otp
             />
+          </div>
+        </Card>
+        <Card>
+          <Heading level={2}>Accordion</Heading>
+          <div className="flex flex-col gap-2">
+            <AccordionRoot defaultValue={["React"]}>
+              {["React", "Solid", "Vue"].map((item) => (
+                <AccordionItem key={item} value={item}>
+                  <AccordionItemTrigger>What is {item}?</AccordionItemTrigger>
+                  <AccordionItemContent>
+                    {item} is a JavaScript library for building user interfaces.
+                  </AccordionItemContent>
+                </AccordionItem>
+              ))}
+            </AccordionRoot>
           </div>
         </Card>
       </div>
