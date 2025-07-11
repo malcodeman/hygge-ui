@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ark-ui/react": "^4.9.1",
+    "@ark-ui/react": "^5.16.1",
     "@tailwindcss/postcss": "^4.0.6",
     "clsx": "^2.1.1",
     "next": "15.1.6",
