@@ -61,7 +61,7 @@ import {
   SelectTrigger,
   SelectValueText,
 } from "./components/select";
-import { Combobox, createListCollection } from "@ark-ui/react";
+import { Combobox, useFilter, useListCollection } from "@ark-ui/react";
 import {
   ComboboxInput,
   ComboboxItem,
@@ -109,7 +109,7 @@ import {
   AccordionRoot,
 } from "./components/accordion";
 
-const initialItems = [
+const initialFrameworks = [
   { label: "React.js", value: "react" },
   { label: "Vue.js", value: "vue" },
   { label: "Angular", value: "angular" },
@@ -137,38 +137,23 @@ const initialMembers = [
 ];
 
 export default function Home() {
-  const frameworksCollection = createListCollection({
-    items: initialItems,
+  const { contains } = useFilter({ sensitivity: "base" });
+  const frameworksCollection = useListCollection({
+    initialItems: initialFrameworks,
+    filter: contains,
   });
-  const membersCollection = createListCollection({
-    items: initialMembers,
+  const membersCollection = useListCollection({
+    initialItems: initialMembers,
+    filter: contains,
   });
-  const [items, setItems] = useState(initialItems);
-  const [members, setMembers] = useState(initialMembers);
-  const memoizedFrameworks = useMemo(
-    () => createListCollection({ items }),
-    [items],
-  );
-  const memeoizedMembers = useMemo(
-    () => createListCollection({ items: members }),
-    [members],
-  );
   const { theme, setTheme } = useTheme();
 
   function handleInputChange(details: Combobox.InputValueChangeDetails) {
-    setItems(
-      initialItems.filter((item) =>
-        item.label.toLowerCase().includes(details.inputValue.toLowerCase()),
-      ),
-    );
+    frameworksCollection.filter(details.inputValue);
   }
 
   function handleInputChange2(details: Combobox.InputValueChangeDetails) {
-    setMembers(
-      initialMembers.filter((item) =>
-        item.label.toLowerCase().includes(details.inputValue.toLowerCase()),
-      ),
-    );
+    membersCollection.filter(details.inputValue);
   }
 
   function handleAddToast() {
@@ -549,26 +534,26 @@ export default function Home() {
         <Card>
           <Heading level={2}>Select</Heading>
           <div className="flex flex-col gap-2">
-            <SelectRoot collection={frameworksCollection}>
+            <SelectRoot collection={frameworksCollection.collection}>
               <SelectLabel>Favorite Framework</SelectLabel>
               <SelectTrigger>
                 <SelectValueText placeholder="Select something" />
               </SelectTrigger>
               <SelectContent>
-                {frameworksCollection.items.map((item) => (
+                {frameworksCollection.collection.items.map((item) => (
                   <SelectItem key={item.value} item={item.value}>
                     {item.label}
                   </SelectItem>
                 ))}
               </SelectContent>
             </SelectRoot>
-            <SelectRoot collection={frameworksCollection} disabled>
+            <SelectRoot collection={frameworksCollection.collection} disabled>
               <SelectLabel>Favorite Framework</SelectLabel>
               <SelectTrigger>
                 <SelectValueText placeholder="Select something" />
               </SelectTrigger>
               <SelectContent>
-                {frameworksCollection.items.map((item) => (
+                {frameworksCollection.collection.items.map((item) => (
                   <SelectItem key={item.value} item={item.value}>
                     {item.label}
                   </SelectItem>
@@ -576,12 +561,12 @@ export default function Home() {
               </SelectContent>
             </SelectRoot>
             <Field label="Favorite Framework" errorText="Error text" invalid>
-              <SelectRoot collection={frameworksCollection}>
+              <SelectRoot collection={frameworksCollection.collection}>
                 <SelectTrigger>
                   <SelectValueText placeholder="Select something" />
                 </SelectTrigger>
                 <SelectContent>
-                  {frameworksCollection.items.map((item) => (
+                  {frameworksCollection.collection.items.map((item) => (
                     <SelectItem key={item.value} item={item.value}>
                       {item.label}
                     </SelectItem>
@@ -590,12 +575,12 @@ export default function Home() {
               </SelectRoot>
             </Field>
             <Field label="Members">
-              <SelectRoot collection={membersCollection}>
+              <SelectRoot collection={membersCollection.collection}>
                 <SelectTrigger>
                   <SelectValueText placeholder="Select movie" />
                 </SelectTrigger>
                 <SelectContent>
-                  {membersCollection.items.map((item) => (
+                  {membersCollection.collection.items.map((item) => (
                     <SelectItem key={item.value} item={item.value}>
                       <div className="flex items-center gap-1">
                         <Avatar src={item.avatar} />
@@ -612,13 +597,13 @@ export default function Home() {
           <Heading level={2}>Combobox</Heading>
           <div className="flex flex-col gap-2">
             <ComboboxRoot
-              collection={memoizedFrameworks}
+              collection={frameworksCollection.collection}
               onInputValueChange={handleInputChange}
             >
               <ComboboxLabel>Favorite Framework</ComboboxLabel>
               <ComboboxInput placeholder="Select something" />
               <ComboboxContent>
-                {memoizedFrameworks.items.map((item) => (
+                {frameworksCollection.collection.items.map((item) => (
                   <ComboboxItem key={item.value} item={item.value}>
                     {item.label}
                   </ComboboxItem>
@@ -626,14 +611,14 @@ export default function Home() {
               </ComboboxContent>
             </ComboboxRoot>
             <ComboboxRoot
-              collection={memoizedFrameworks}
+              collection={frameworksCollection.collection}
               onInputValueChange={handleInputChange}
               disabled
             >
               <ComboboxLabel>Favorite Framework</ComboboxLabel>
               <ComboboxInput placeholder="Select something" />
               <ComboboxContent>
-                {memoizedFrameworks.items.map((item) => (
+                {frameworksCollection.collection.items.map((item) => (
                   <ComboboxItem key={item.value} item={item.value}>
                     {item.label}
                   </ComboboxItem>
@@ -642,13 +627,13 @@ export default function Home() {
             </ComboboxRoot>
             <Field label="Favorite Framework" errorText="Error text" invalid>
               <ComboboxRoot
-                collection={memoizedFrameworks}
+                collection={frameworksCollection.collection}
                 onInputValueChange={handleInputChange}
               >
                 <ComboboxInput placeholder="Select something" />
                 <ComboboxContent>
                   <ComboboxItemGroup title="Frameworks">
-                    {memoizedFrameworks.items.map((item) => (
+                    {frameworksCollection.collection.items.map((item) => (
                       <ComboboxItem key={item.value} item={item.value}>
                         {item.label}
                       </ComboboxItem>
@@ -659,12 +644,12 @@ export default function Home() {
             </Field>
             <Field label="Members">
               <ComboboxRoot
-                collection={memeoizedMembers}
+                collection={membersCollection.collection}
                 onInputValueChange={handleInputChange2}
               >
                 <ComboboxInput placeholder="Select movie" />
                 <ComboboxContent>
-                  {memeoizedMembers.items.map((item) => (
+                  {membersCollection.collection.items.map((item) => (
                     <ComboboxItem key={item.value} item={item.value}>
                       <div className="flex items-center gap-1">
                         <Avatar src={item.avatar} />
