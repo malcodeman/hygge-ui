@@ -108,6 +108,7 @@ import {
   AccordionItemTrigger,
   AccordionRoot,
 } from "./components/accordion";
+import { PasswordInput } from "./components/password-input";
 
 const initialFrameworks = [
   { label: "React.js", value: "react" },
@@ -321,6 +322,13 @@ export default function Home() {
             <Input placeholder="Subtle" />
             <Input placeholder="Outline" variant="outline" />
             <Input placeholder="Disabled" disabled />
+          </div>
+        </Card>
+        <Card>
+          <Heading level={2}>Password Input</Heading>
+          <div className="flex flex-col gap-2">
+            <PasswordInput />
+            <PasswordInput disabled />
           </div>
         </Card>
         <Card>
