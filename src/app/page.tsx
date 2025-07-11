@@ -157,10 +157,11 @@ export default function Home() {
     membersCollection.filter(details.inputValue);
   }
 
-  function handleAddToast() {
+  function handleAddToast(type: "success" | "error" | "loading" | "info") {
     toaster.create({
       title: "Title",
       description: "Description",
+      type,
     });
   }
 
@@ -492,8 +493,17 @@ export default function Home() {
         <Card>
           <Heading level={2}>Toast</Heading>
           <div className="flex flex-col gap-2">
-            <Button variant="outline" onClick={handleAddToast}>
-              Add toast
+            <Button variant="outline" onClick={() => handleAddToast("success")}>
+              Add toast success
+            </Button>
+            <Button variant="outline" onClick={() => handleAddToast("error")}>
+              Add toast error
+            </Button>
+            <Button variant="outline" onClick={() => handleAddToast("loading")}>
+              Add toast loading
+            </Button>
+            <Button variant="outline" onClick={() => handleAddToast("info")}>
+              Add toast info
             </Button>
             <Button variant="outline" onClick={handleActionAddToast}>
               Add toast with action
