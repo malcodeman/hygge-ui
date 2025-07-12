@@ -57,8 +57,8 @@ export function Toaster() {
           key={toast.id}
           className="z-[var(--z-index)] max-w-lg min-w-2xs translate-x-[var(--x)] translate-y-[var(--y)] scale-[var(--scale)] rounded-lg border border-[#E9E8E6] bg-white p-2 opacity-[var(--opacity)] shadow-2xs transition-transform dark:border-[#2a2a28] dark:bg-[#191918]"
         >
-          <div className="flex gap-2">
-            {renderIcon(toast.type)}
+          <div className="flex items-start gap-2">
+            <div>{renderIcon(toast.type)}</div>
             <div>
               {toast.title ? (
                 <ArkToast.Title className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
@@ -76,15 +76,12 @@ export function Toaster() {
                 </ArkToast.ActionTrigger>
               ) : null}
             </div>
+            <ArkToast.CloseTrigger asChild className="ml-auto cursor-pointer">
+              <Button variant="ghost">
+                <LuX size={16} />
+              </Button>
+            </ArkToast.CloseTrigger>
           </div>
-          <ArkToast.CloseTrigger
-            asChild
-            className="absolute top-1 right-1 cursor-pointer"
-          >
-            <Button variant="ghost">
-              <LuX size={16} />
-            </Button>
-          </ArkToast.CloseTrigger>
         </ArkToast.Root>
       )}
     </ArkToaster>

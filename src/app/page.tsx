@@ -165,7 +165,7 @@ export default function Home() {
     });
   }
 
-  function handleActionAddToast() {
+  function handleAddToastWithAction() {
     toaster.create({
       title: "Title",
       description: "Description",
@@ -175,6 +175,13 @@ export default function Home() {
           console.log("Subscribe");
         },
       },
+    });
+  }
+
+  function handleAddToastLong() {
+    toaster.create({
+      title:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     });
   }
 
@@ -496,6 +503,7 @@ export default function Home() {
             <Button variant="outline" onClick={() => handleAddToast("success")}>
               Add toast success
             </Button>
+
             <Button variant="outline" onClick={() => handleAddToast("error")}>
               Add toast error
             </Button>
@@ -505,8 +513,11 @@ export default function Home() {
             <Button variant="outline" onClick={() => handleAddToast("info")}>
               Add toast info
             </Button>
-            <Button variant="outline" onClick={handleActionAddToast}>
+            <Button variant="outline" onClick={handleAddToastWithAction}>
               Add toast with action
+            </Button>
+            <Button variant="outline" onClick={handleAddToastLong}>
+              Add toast long
             </Button>
           </div>
         </Card>
