@@ -70,7 +70,6 @@ import {
   ComboboxContent,
   ComboboxItemGroup,
 } from "./components/combobox";
-import { useMemo, useState } from "react";
 import Link from "next/link";
 import { QrCode, QrCodeDownloadTrigger } from "./components/qr-code";
 import { CheckboxCard } from "./components/checkbox-card";
@@ -109,6 +108,12 @@ import {
   AccordionRoot,
 } from "./components/accordion";
 import { PasswordInput } from "./components/password-input";
+import {
+  RadioGroup,
+  RadioGroupItem,
+  RadioGroupLabel,
+} from "./components/radio";
+import { RadioCard, RadioCardGroup } from "./components/radio-card";
 
 const initialFrameworks = [
   { label: "React.js", value: "react" },
@@ -498,12 +503,64 @@ export default function Home() {
           </div>
         </Card>
         <Card>
+          <Heading level={2}>Radio Group</Heading>
+          <div className="flex flex-col gap-2">
+            <RadioGroup>
+              <RadioGroupLabel>Gray</RadioGroupLabel>
+              <div className="flex items-center gap-2">
+                <RadioGroupItem value="react">React</RadioGroupItem>
+                <RadioGroupItem value="vue">Vue</RadioGroupItem>
+                <RadioGroupItem value="solid">Solid</RadioGroupItem>
+              </div>
+            </RadioGroup>
+            <RadioGroup colorPalette="orange">
+              <RadioGroupLabel>Orange</RadioGroupLabel>
+              <div className="flex items-center gap-2">
+                <RadioGroupItem value="react">React</RadioGroupItem>
+                <RadioGroupItem value="vue">Vue</RadioGroupItem>
+                <RadioGroupItem value="solid">Solid</RadioGroupItem>
+              </div>
+            </RadioGroup>
+            <RadioGroup colorPalette="teal">
+              <RadioGroupLabel>Teal</RadioGroupLabel>
+              <div className="flex items-center gap-2">
+                <RadioGroupItem value="react">React</RadioGroupItem>
+                <RadioGroupItem value="vue">Vue</RadioGroupItem>
+                <RadioGroupItem value="solid">Solid</RadioGroupItem>
+              </div>
+            </RadioGroup>
+            <RadioGroup colorPalette="green">
+              <RadioGroupLabel>Teal</RadioGroupLabel>
+              <div className="flex items-center gap-2">
+                <RadioGroupItem value="react">React</RadioGroupItem>
+                <RadioGroupItem value="vue">Vue</RadioGroupItem>
+                <RadioGroupItem value="solid">Solid</RadioGroupItem>
+              </div>
+            </RadioGroup>
+            <RadioGroup colorPalette="red">
+              <RadioGroupLabel>Green</RadioGroupLabel>
+              <div className="flex items-center gap-2">
+                <RadioGroupItem value="react">React</RadioGroupItem>
+                <RadioGroupItem value="vue">Vue</RadioGroupItem>
+                <RadioGroupItem value="solid">Solid</RadioGroupItem>
+              </div>
+            </RadioGroup>
+            <RadioGroup disabled>
+              <RadioGroupLabel>Teal</RadioGroupLabel>
+              <div className="flex items-center gap-2">
+                <RadioGroupItem value="react">React</RadioGroupItem>
+                <RadioGroupItem value="vue">Vue</RadioGroupItem>
+                <RadioGroupItem value="solid">Solid</RadioGroupItem>
+              </div>
+            </RadioGroup>
+          </div>
+        </Card>
+        <Card>
           <Heading level={2}>Toast</Heading>
           <div className="flex flex-col gap-2">
             <Button variant="outline" onClick={() => handleAddToast("success")}>
               Add toast success
             </Button>
-
             <Button variant="outline" onClick={() => handleAddToast("error")}>
               Add toast error
             </Button>
@@ -715,6 +772,28 @@ export default function Home() {
             <CheckboxCard colorPalette="green" label="Green" />
             <CheckboxCard colorPalette="red" label="Red" />
             <CheckboxCard label="Disabled" disabled />
+          </div>
+        </Card>
+        <Card>
+          <Heading level={2}>Radio Card</Heading>
+          <div className="flex flex-col gap-2">
+            <RadioCardGroup>
+              <RadioCard
+                value="nextjs"
+                label="Next.js"
+                description="Best for apps"
+              />
+              <RadioCard
+                value="vue"
+                label="Vue.js"
+                description="Best for web"
+              />
+              <RadioCard
+                value="astro"
+                label="Astro"
+                description="Best for static sites"
+              />
+            </RadioCardGroup>
           </div>
         </Card>
         <Card>
