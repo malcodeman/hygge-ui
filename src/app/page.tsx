@@ -113,6 +113,7 @@ import {
   RadioGroupItem,
   RadioGroupLabel,
 } from "./components/radio";
+import { RadioCard, RadioCardGroup } from "./components/radio-card";
 
 const initialFrameworks = [
   { label: "React.js", value: "react" },
@@ -771,6 +772,28 @@ export default function Home() {
             <CheckboxCard colorPalette="green" label="Green" />
             <CheckboxCard colorPalette="red" label="Red" />
             <CheckboxCard label="Disabled" disabled />
+          </div>
+        </Card>
+        <Card>
+          <Heading level={2}>Radio Card</Heading>
+          <div className="flex flex-col gap-2">
+            <RadioCardGroup>
+              <RadioCard
+                value="nextjs"
+                label="Next.js"
+                description="Best for apps"
+              />
+              <RadioCard
+                value="vue"
+                label="Vue.js"
+                description="Best for web"
+              />
+              <RadioCard
+                value="astro"
+                label="Astro"
+                description="Best for static sites"
+              />
+            </RadioCardGroup>
           </div>
         </Card>
         <Card>
