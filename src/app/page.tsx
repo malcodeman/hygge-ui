@@ -3,7 +3,7 @@ import { Card } from "./components/card";
 import { Heading } from "./components/heading";
 import { Text } from "./components/text";
 
-export function HomePage() {
+function HomePage() {
   return (
     <div>
       <Heading>Introduction to Hygge-UI</Heading>
