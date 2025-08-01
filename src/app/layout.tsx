@@ -5,6 +5,7 @@ import { Toaster } from "@/components/toast";
 import { TextLink } from "@/components/text-link";
 import { Heading } from "@/components/heading";
 import { NAVIGATION_GROUPS } from "./navigation-groups";
+import { Header } from "./components/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,11 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="overscroll-y-none" lang="en" suppressHydrationWarning>
       <body className={`bg-[#fdfdfc] dark:bg-[#111110] ${inter.className}`}>
         <ThemeProvider>
+          <Header />
           <div className="mx-auto max-w-6xl px-8">
-            <aside className="fixed top-0 bottom-0 hidden w-2xs overflow-auto py-8 lg:block">
+            <aside className="fixed top-[65px] bottom-0 hidden w-2xs overflow-y-auto py-8 lg:block">
               <ul>
                 {NAVIGATION_GROUPS.map((link) => (
                   <div key={link.group} className="mb-6">
