@@ -1,17 +1,17 @@
 "use client";
 import { LuMail } from "react-icons/lu";
-import { Avatar } from "../components/avatar";
-import { Button } from "../components/button";
-import { Card } from "../components/card";
-import { Heading } from "../components/heading";
-import { Tooltip } from "../components/tooltip";
+import { Avatar } from "@/components/avatar";
+import { Button } from "@/components/button";
+import { Card } from "@/components/card";
+import { Heading } from "@/components/heading";
+import { Tooltip } from "@/components/tooltip";
 import {
   PopoverContent,
   PopoverDescription,
   PopoverRoot,
   PopoverTitle,
   PopoverTrigger,
-} from "../components/popover";
+} from "@/components/popover";
 import {
   MenuContent,
   MenuItem,
@@ -19,26 +19,26 @@ import {
   MenuRoot,
   MenuSeparator,
   MenuTrigger,
-} from "../components/menu";
-import { Input } from "../components/input";
+} from "@/components/menu";
+import { Input } from "@/components/input";
 import {
   Field,
   FieldHelperText,
   FieldLabel,
   FieldRoot,
-} from "../components/field";
-import { Clipboard } from "../components/clipboard";
-import { Textarea } from "../components/textarea";
+} from "@/components/field";
+import { Clipboard } from "@/components/clipboard";
+import { Textarea } from "@/components/textarea";
 import {
   TabsContent,
   TabsList,
   TabsRoot,
   TabsTrigger,
-} from "../components/tabs";
-import { Switch } from "../components/switch";
-import { Alert } from "../components/alert";
-import { Tag } from "../components/tag";
-import { Separator } from "../components/separator";
+} from "@/components/tabs";
+import { Switch } from "@/components/switch";
+import { Alert } from "@/components/alert";
+import { Tag } from "@/components/tag";
+import { Separator } from "@/components/separator";
 import {
   DialogBody,
   DialogCloseTrigger,
@@ -49,10 +49,10 @@ import {
   DialogRoot,
   DialogTitle,
   DialogTrigger,
-} from "../components/dialog";
-import { Checkbox } from "../components/checkbox";
-import { toaster } from "../components/toast";
-import { Highlight } from "../components/highlight";
+} from "@/components/dialog";
+import { Checkbox } from "@/components/checkbox";
+import { toaster } from "@/components/toast";
+import { Highlight } from "@/components/highlight";
 import {
   SelectContent,
   SelectItem,
@@ -60,7 +60,7 @@ import {
   SelectRoot,
   SelectTrigger,
   SelectValueText,
-} from "../components/select";
+} from "@/components/select";
 import { Combobox, useFilter, useListCollection } from "@ark-ui/react";
 import {
   ComboboxInput,
@@ -69,10 +69,10 @@ import {
   ComboboxRoot,
   ComboboxContent,
   ComboboxItemGroup,
-} from "../components/combobox";
+} from "@/components/combobox";
 import Link from "next/link";
-import { QrCode, QrCodeDownloadTrigger } from "../components/qr-code";
-import { CheckboxCard } from "../components/checkbox-card";
+import { QrCode, QrCodeDownloadTrigger } from "@/components/qr-code";
+import { CheckboxCard } from "@/components/checkbox-card";
 import {
   StepsCompletedContent,
   StepsContent,
@@ -81,7 +81,7 @@ import {
   StepsNextTrigger,
   StepsPrevTrigger,
   StepsRoot,
-} from "../components/steps";
+} from "@/components/steps";
 import {
   ProgressCircle,
   ProgressCircleRange,
@@ -91,29 +91,29 @@ import {
   ProgressRoot,
   ProgressTrack,
   ProgressValueText,
-} from "../components/progress";
+} from "@/components/progress";
 import {
   PaginationItems,
   PaginationNextTrigger,
   PaginationPrevTrigger,
   PaginationRoot,
-} from "../components/pagination";
-import { Rating } from "../components/rating";
-import { PinInput } from "../components/pin-input";
+} from "@/components/pagination";
+import { Rating } from "@/components/rating";
+import { PinInput } from "@/components/pin-input";
 import { useTheme } from "next-themes";
 import {
   AccordionItem,
   AccordionItemContent,
   AccordionItemTrigger,
   AccordionRoot,
-} from "../components/accordion";
-import { PasswordInput } from "../components/password-input";
+} from "@/components/accordion";
+import { PasswordInput } from "@/components/password-input";
 import {
   RadioGroup,
   RadioGroupItem,
   RadioGroupLabel,
-} from "../components/radio";
-import { RadioCard, RadioCardGroup } from "../components/radio-card";
+} from "@/components/radio";
+import { RadioCard, RadioCardGroup } from "@/components/radio-card";
 
 const initialFrameworks = [
   { label: "React.js", value: "react" },

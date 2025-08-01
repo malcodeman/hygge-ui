@@ -5,12 +5,12 @@ export const NAVIGATION_GROUPS = [
     group: "First Steps",
     pages: [
       {
-        href: "/",
+        href: "/docs/first-steps/introduction",
         label: "Introduction",
         icon: <LuCoffee size={16} />,
       },
       {
-        href: "/installation",
+        href: "/docs/first-steps/installation",
         label: "Installation",
         icon: <LuCommand size={16} />,
       },
@@ -20,7 +20,7 @@ export const NAVIGATION_GROUPS = [
     group: "Guides",
     pages: [
       {
-        href: "/guides/animation",
+        href: "/docs/guides/animation",
         label: "Animation",
       },
     ],
@@ -29,11 +29,11 @@ export const NAVIGATION_GROUPS = [
     group: "Components",
     pages: [
       {
-        href: "/components/accordion",
+        href: "/docs/components/accordion",
         label: "Accordion",
       },
       {
-        href: "/components/avatar",
+        href: "/docs/components/avatar",
         label: "Avatar",
       },
     ],

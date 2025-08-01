@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
-import { Toaster } from "./components/toast";
-import { TextLink } from "./components/text-link";
+import { Toaster } from "@/components/toast";
+import { TextLink } from "@/components/text-link";
+import { Heading } from "@/components/heading";
 import { NAVIGATION_GROUPS } from "./navigation-groups";
-import { Heading } from "./components/heading";
 import "./globals.css";
 
 export const metadata: Metadata = {
