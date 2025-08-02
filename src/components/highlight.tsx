@@ -1,3 +1,4 @@
+"use client";
 import { Highlight as ArkHighlight, HighlightProps } from "@ark-ui/react";
 import { cn } from "./cn";
 

@@ -36,6 +36,10 @@ export const NAVIGATION_GROUPS = [
         href: "/docs/components/avatar",
         label: "Avatar",
       },
+      {
+        href: "/docs/components/text",
+        label: "Text",
+      },
     ],
   },
 ];

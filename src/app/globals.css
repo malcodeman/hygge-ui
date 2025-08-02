@@ -62,3 +62,8 @@
 [data-scope="accordion"][data-part="item-content"][data-state="closed"] {
   animation: slideUp 200ms ease-in-out;
 }
+
+@theme {
+  --color-fg: light-dark(#21201c, #eeeeec);
+  --color-fg-muted: light-dark(#63635e, #b5b3ad);
+}

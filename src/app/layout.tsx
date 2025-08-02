@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/toast";
-import { TextLink } from "@/components/text-link";
+import { NavLink } from "@/components/nav-link";
 import { Heading } from "@/components/heading";
 import { NAVIGATION_GROUPS } from "./navigation-groups";
 import { Header } from "./components/header";
@@ -37,13 +37,13 @@ export default function RootLayout({
                     </Heading>
                     {link.pages.map((content) => (
                       <li key={content.href}>
-                        <TextLink
+                        <NavLink
                           href={content.href}
                           className="flex items-center gap-2"
                         >
                           {"icon" in content ? content.icon : null}
                           {content.label}
-                        </TextLink>
+                        </NavLink>
                       </li>
                     ))}
                   </div>
