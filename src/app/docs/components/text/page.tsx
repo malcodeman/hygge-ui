@@ -10,8 +10,7 @@ function TextPage() {
     <>
       <Heading>Text</Heading>
       <Text className="mb-6">
-        For all the lorem ipsum in your Figma designs that you're definitely
-        going to replace with real copy before launch.
+        Used to render text and paragraphs within an interface.
       </Text>
       <Card className="mb-6">
         <Text>
