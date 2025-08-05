@@ -5,6 +5,53 @@ import { Highlight } from "@/components/highlight";
 import { Strong, Text, TextLink } from "@/components/text";
 import { CODE_BLOCKS } from "app/constants";
 
+const CODE_EXAMPLES = [
+  {
+    code: `import { Strong, Text, TextLink } from '@/components/text'
+
+function Example() {
+  return (
+    <Text>
+      This feature is only available to users on the <Strong>Business Plan</Strong>. To upgrade, visit your{' '}
+      <TextLink href="#">billing settings</TextLink>.
+    </Text>
+  )
+}
+`,
+  },
+  {
+    code: `import { Text } from '@/components/text'
+
+function Example() {
+  return <Text>Deleting your account is permanent, and your data will not be able to be recovered.</Text>
+}
+`,
+  },
+  {
+    code: `import { Text, TextLink } from '@/components/text'
+
+function Example() {
+  return (
+    <Text>
+      Deleting your account is permanent, and your data will not be able to be recovered. If you still want to use this
+      account in the future, learn about <TextLink href="#">pausing your subscription</TextLink> instead.
+    </Text>
+  )
+}`,
+  },
+  {
+    code: `import { Strong, Text } from '@/components/text'
+
+function Example() {
+  return (
+    <Text>
+      Deleting your account is permanent, and <Strong>your account data cannot be recovered</Strong>.
+    </Text>
+  )
+}`,
+  },
+];
+
 function TextPage() {
   return (
     <>
@@ -23,17 +70,8 @@ function TextPage() {
         className="mb-6"
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
-        code={`import { Strong, Text, TextLink } from '@/components/text'
-
-function Example() {
-  return (
-    <Text>
-      This feature is only available to users on the <Strong>Business Plan</Strong>. To upgrade, visit your{' '}
-      <TextLink href="#">billing settings</TextLink>.
-    </Text>
-  )
-}
-`}
+        code={CODE_EXAMPLES[0].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
       <Heading level={2} className="mb-2">
         Examples
@@ -54,12 +92,8 @@ function Example() {
         className="mb-6"
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
-        code={`import { Text } from '@/components/text'
-
-function Example() {
-  return <Text>Deleting your account is permanent, and your data will not be able to be recovered.</Text>
-}
-`}
+        code={CODE_EXAMPLES[1].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
       <Text className="mb-6">
         Paragraphs using <Highlight query="Text" text="Text" /> are responsive
@@ -82,16 +116,8 @@ function Example() {
         className="mb-6"
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
-        code={`import { Text, TextLink } from '@/components/text'
-
-function Example() {
-  return (
-    <Text>
-      Deleting your account is permanent, and your data will not be able to be recovered. If you still want to use this
-      account in the future, learn about <TextLink href="#">pausing your subscription</TextLink> instead.
-    </Text>
-  )
-}`}
+        code={CODE_EXAMPLES[2].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
       <Heading level={3}>With strong</Heading>
       <Text className="mb-6">
@@ -108,15 +134,8 @@ function Example() {
       <CodeBlock
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
-        code={`import { Strong, Text } from '@/components/text'
-
-function Example() {
-  return (
-    <Text>
-      Deleting your account is permanent, and <Strong>your account data cannot be recovered</Strong>.
-    </Text>
-  )
-}`}
+        code={CODE_EXAMPLES[3].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
     </>
   );
