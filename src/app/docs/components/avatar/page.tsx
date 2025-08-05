@@ -53,6 +53,29 @@ function Example() {
 }
 `,
   },
+  {
+    code: `import { Avatar } from '@/components/avatar'
+
+function Example() {
+  return (
+    <div className="flex items-center -space-x-2">
+      <Avatar
+        src="https://i.pravatar.cc/300?img=1"
+        className="ring-2 ring-white dark:ring-[#191918]"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/300?img=2"
+        className="ring-2 ring-white dark:ring-[#191918]"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/300?img=3"
+        className="ring-2 ring-white dark:ring-[#191918]"
+      />
+    </div>
+  )
+}
+`,
+  },
 ];
 
 function AvatarPage() {
@@ -119,6 +142,32 @@ function AvatarPage() {
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
         code={CODE_EXAMPLES[3].code}
+      />
+      <Heading level={3}>Group avatars</Heading>
+      <Text className="mb-6">
+        Use utility classes to overlap a list of avatars and style them as a
+        group:
+      </Text>
+      <Card className="mb-6">
+        <div className="flex items-center -space-x-2">
+          <Avatar
+            src="https://i.pravatar.cc/300?img=1"
+            className="ring-2 ring-white dark:ring-[#191918]"
+          />
+          <Avatar
+            src="https://i.pravatar.cc/300?img=2"
+            className="ring-2 ring-white dark:ring-[#191918]"
+          />
+          <Avatar
+            src="https://i.pravatar.cc/300?img=3"
+            className="ring-2 ring-white dark:ring-[#191918]"
+          />
+        </div>
+      </Card>
+      <CodeBlock
+        theme={CODE_BLOCKS.THEME}
+        language={CODE_BLOCKS.LANGUAGE}
+        code={CODE_EXAMPLES[4].code}
       />
     </>
   );
