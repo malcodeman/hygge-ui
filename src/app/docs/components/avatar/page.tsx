@@ -3,6 +3,7 @@ import { Card } from "@/components/card";
 import { CodeBlock } from "@/components/code-block";
 import { Heading } from "@/components/heading";
 import { Text } from "@/components/text";
+import { PageHeader } from "app/components/page-header";
 import { CODE_BLOCKS } from "app/constants";
 
 const CODE_EXAMPLES = [
@@ -81,10 +82,12 @@ function Example() {
 function AvatarPage() {
   return (
     <>
-      <Heading>Avatar</Heading>
-      <Text className="mb-6">
-        Used to represent user profile picture or initials.
-      </Text>
+      <PageHeader
+        className="mb-6"
+        title="Avatar"
+        description="Used to represent user profile picture or initials."
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/avatar.tsx"
+      />
       <Card className="mb-6">
         <Avatar initials="FB" src="https://i.pravatar.cc/300" alt="avatar" />
       </Card>

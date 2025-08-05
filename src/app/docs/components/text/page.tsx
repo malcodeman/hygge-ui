@@ -3,6 +3,7 @@ import { CodeBlock } from "@/components/code-block";
 import { Heading } from "@/components/heading";
 import { Highlight } from "@/components/highlight";
 import { Strong, Text, TextLink } from "@/components/text";
+import { PageHeader } from "app/components/page-header";
 import { CODE_BLOCKS } from "app/constants";
 
 const CODE_EXAMPLES = [
@@ -55,10 +56,12 @@ function Example() {
 function TextPage() {
   return (
     <>
-      <Heading>Text</Heading>
-      <Text className="mb-6">
-        Used to render text and paragraphs within an interface.
-      </Text>
+      <PageHeader
+        title="Text"
+        description="Used to render text and paragraphs within an interface."
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/text.tsx"
+        className="mb-6"
+      />
       <Card className="mb-6">
         <Text>
           This feature is only available to users on the{" "}

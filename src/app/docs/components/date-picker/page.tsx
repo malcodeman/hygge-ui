@@ -1,8 +1,7 @@
 import { Card } from "@/components/card";
 import { CodeBlock } from "@/components/code-block";
 import { DatePicker } from "@/components/date-picker";
-import { Heading } from "@/components/heading";
-import { Text } from "@/components/text";
+import { PageHeader } from "app/components/page-header";
 import { CODE_BLOCKS } from "app/constants";
 
 const CODE_EXAMPLES = [
@@ -21,10 +20,12 @@ function Example() {
 function DatePickerPage() {
   return (
     <>
-      <Heading>Date Picker</Heading>
-      <Text className="mb-6">
-        A component that allows users to select a date from a calendar.
-      </Text>
+      <PageHeader
+        title="Date Picker"
+        description="A component that allows users to select a date from a calendar."
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/date-picker.tsx"
+        className="mb-6"
+      />
       <Card className="mb-6">
         <DatePicker />
       </Card>
