@@ -33,6 +33,7 @@ function DatePickerPage() {
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
         code={CODE_EXAMPLES[0].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
     </>
   );

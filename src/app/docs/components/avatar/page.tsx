@@ -93,6 +93,7 @@ function AvatarPage() {
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
         code={CODE_EXAMPLES[0].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
       <Heading level={2} className="mb-2">
         Examples
@@ -116,6 +117,7 @@ function AvatarPage() {
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
         code={CODE_EXAMPLES[1].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
       <Heading level={3}>Initials</Heading>
       <Text className="mb-6">
@@ -129,6 +131,7 @@ function AvatarPage() {
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
         code={CODE_EXAMPLES[2].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
       <Heading level={3}>Square avatars</Heading>
       <Text className="mb-6">
@@ -142,6 +145,7 @@ function AvatarPage() {
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
         code={CODE_EXAMPLES[3].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
       <Heading level={3}>Group avatars</Heading>
       <Text className="mb-6">
@@ -168,6 +172,7 @@ function AvatarPage() {
         theme={CODE_BLOCKS.THEME}
         language={CODE_BLOCKS.LANGUAGE}
         code={CODE_EXAMPLES[4].code}
+        copyButton={CODE_BLOCKS.COPY_BUTTON}
       />
     </>
   );
