@@ -52,8 +52,8 @@ export function Alert(props: Props) {
     >
       {showIndicator ? <span>{renderIndicator()}</span> : null}
       <div className="flex flex-col">
-        {title ? <div className="text-sm font-medium">{title}</div> : null}
-        {description ? <div className="text-sm">{description}</div> : null}
+        {title ? <div className="text-sm/6 font-medium">{title}</div> : null}
+        {description ? <div className="text-sm/6">{description}</div> : null}
       </div>
     </div>
   );

@@ -33,6 +33,10 @@ export const NAVIGATION_GROUPS = [
         label: "Accordion",
       },
       {
+        href: "/docs/components/alert",
+        label: "Alert",
+      },
+      {
         href: "/docs/components/avatar",
         label: "Avatar",
       },
