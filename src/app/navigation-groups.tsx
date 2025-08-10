@@ -41,6 +41,10 @@ export const NAVIGATION_GROUPS = [
         label: "Avatar",
       },
       {
+        href: "/docs/components/button",
+        label: "Button",
+      },
+      {
         href: "/docs/components/text",
         label: "Text",
       },
