@@ -56,11 +56,11 @@
 }
 
 [data-scope="accordion"][data-part="item-content"][data-state="open"] {
-  animation: slideDown 250ms ease-in-out;
+  animation: slideDown 250ms cubic-bezier(0, 0, 0.38, 0.9);
 }
 
 [data-scope="accordion"][data-part="item-content"][data-state="closed"] {
-  animation: slideUp 200ms ease-in-out;
+  animation: slideUp 200ms cubic-bezier(0, 0, 0.38, 0.9);
 }
 
 @theme {

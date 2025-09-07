@@ -15,7 +15,7 @@ const CODE_EXAMPLES = [
 
 function Example() {
   return (
-    <AccordionRoot defaultValue={["React"]}>
+    <AccordionRoot defaultValue={["React"]} collapsible>
       {["React", "Solid", "Vue"].map((item) => (
         <AccordionItem key={item} value={item}>
           <AccordionItemTrigger>What is {item}?</AccordionItemTrigger>
@@ -41,7 +41,7 @@ function AccordionPage() {
         className="mb-6"
       />
       <Card className="mb-6">
-        <AccordionRoot defaultValue={["React"]}>
+        <AccordionRoot defaultValue={["React"]} collapsible>
           {["React", "Solid", "Vue"].map((item) => (
             <AccordionItem key={item} value={item}>
               <AccordionItemTrigger>What is {item}?</AccordionItemTrigger>
