@@ -45,6 +45,10 @@ export const NAVIGATION_GROUPS = [
         label: "Button",
       },
       {
+        href: "/docs/components/card",
+        label: "Card",
+      },
+      {
         href: "/docs/components/text",
         label: "Text",
       },
