@@ -49,6 +49,10 @@ export const NAVIGATION_GROUPS = [
         label: "Card",
       },
       {
+        href: "/docs/components/checkbox",
+        label: "Checkbox",
+      },
+      {
         href: "/docs/components/checkbox-card",
         label: "Checkbox Card",
       },
