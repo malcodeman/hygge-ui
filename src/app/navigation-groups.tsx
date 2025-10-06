@@ -61,6 +61,10 @@ export const NAVIGATION_GROUPS = [
         label: "Clipboard",
       },
       {
+        href: "/docs/components/code-block",
+        label: "Code Block",
+      },
+      {
         href: "/docs/components/text",
         label: "Text",
       },
