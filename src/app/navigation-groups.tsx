@@ -72,6 +72,10 @@ export const NAVIGATION_GROUPS = [
         href: "/docs/components/date-picker",
         label: "Date Picker",
       },
+      {
+        href: "/docs/components/heading",
+        label: "Heading",
+      },
     ],
   },
 ];
