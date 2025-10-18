@@ -76,6 +76,10 @@ export const NAVIGATION_GROUPS = [
         href: "/docs/components/heading",
         label: "Heading",
       },
+      {
+        href: "/docs/components/highlight",
+        label: "Highlight",
+      },
     ],
   },
 ];
