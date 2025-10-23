@@ -1,5 +1,4 @@
 import { Button } from "@/components/button";
-import { Input } from "@/components/input";
 import { NAVIGATION_GROUPS } from "app/navigation-groups";
 import Link from "next/link";
 import { LuCoffee, LuGithub } from "react-icons/lu";
@@ -16,7 +15,6 @@ export function Header() {
           <LuCoffee size={16} />
           Hygge-UI
         </Link>
-        <Input placeholder="Search..." className="hidden w-sm md:inline" />
         <div className="flex items-center gap-2">
           <Link href="https://github.com/malcodeman/hygge-ui" target="_blank">
             <Button variant="ghost">
