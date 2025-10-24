@@ -1,6 +1,5 @@
 import { Card } from "@/components/card";
 import { CodeBlock } from "@/components/code-block";
-import { Heading } from "@/components/heading";
 import { Highlight } from "@/components/highlight";
 import { PageHeader } from "app/components/page-header";
 import { CODE_BLOCKS } from "app/constants";
