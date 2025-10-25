@@ -80,6 +80,10 @@ export const NAVIGATION_GROUPS = [
         href: "/docs/components/highlight",
         label: "Highlight",
       },
+      {
+        href: "/docs/components/input",
+        label: "Input",
+      },
     ],
   },
 ];
