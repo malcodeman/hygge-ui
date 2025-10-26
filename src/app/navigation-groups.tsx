@@ -84,6 +84,10 @@ export const NAVIGATION_GROUPS = [
         href: "/docs/components/input",
         label: "Input",
       },
+      {
+        href: "/docs/components/password-input",
+        label: "Password Input",
+      },
     ],
   },
 ];
