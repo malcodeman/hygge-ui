@@ -1,12 +1,13 @@
 import { LuInfo, LuCircleAlert, LuCircleCheck } from "react-icons/lu";
 import { cn } from "./cn";
 
-type Props = {
+type BaseProps = {
   status?: "info" | "warning" | "success" | "error";
-  title?: React.ReactNode;
-  description?: React.ReactNode;
   showIndicator?: boolean;
 } & React.ComponentPropsWithoutRef<"div">;
+type Props =
+  | (BaseProps & { title: React.ReactNode; description?: React.ReactNode })
+  | (BaseProps & { title?: React.ReactNode; description: React.ReactNode });
 
 export function Alert(props: Props) {
   const {
