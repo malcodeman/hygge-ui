@@ -37,6 +37,14 @@
   --color-fg-default: light-dark(#21201c, #eeeeec);
   --color-fg-muted: light-dark(#63635e, #b5b3ad);
   --color-border-subtle: light-dark(#e9e8e6, #2a2a28);
+  --color-blue-subtle: light-dark(#dbeafe, #14204a);
+  --color-blue-fg: light-dark(#173da6, #a3cfff);
+  --color-orange-subtle: light-dark(#ffedd5, #3b1106);
+  --color-orange-fg: light-dark(#92310a, #fdba74);
+  --color-green-subtle: light-dark(#dcfce7, #042713);
+  --color-green-fg: light-dark(#116932, #86efac);
+  --color-red-subtle: light-dark(#fee2e2, #300c0c);
+  --color-red-fg: light-dark(#991919, #fca5a5);
 }
 
 .shiki {

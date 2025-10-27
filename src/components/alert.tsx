@@ -39,14 +39,10 @@ export function Alert(props: Props) {
       className={cn(
         "grid grid-cols-[auto_1fr] items-center gap-x-2 rounded-lg p-2 text-sm/6",
         {
-          "bg-[#dbeafe] text-[#173da6] dark:bg-[#14204a] dark:text-[#a3cfff]":
-            status === "info",
-          "bg-[#ffedd5] text-[#92310a] dark:bg-[#3b1106] dark:text-[#fdba74]":
-            status === "warning",
-          "bg-[#dcfce7] text-[#116932] dark:bg-[#042713] dark:text-[#86efac]":
-            status === "success",
-          "bg-[#fee2e2] text-[#991919] dark:bg-[#300c0c] dark:text-[#fca5a5]":
-            status === "error",
+          "bg-blue-subtle text-blue-fg": status === "info",
+          "bg-orange-subtle text-orange-fg": status === "warning",
+          "bg-green-subtle text-green-fg": status === "success",
+          "bg-red-subtle text-red-fg": status === "error",
         },
         className,
       )}
