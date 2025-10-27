@@ -36,7 +36,7 @@ export function Alert(props: Props) {
     <div
       {...rest}
       className={cn(
-        "flex gap-2 rounded-lg p-2",
+        "grid grid-cols-[auto_1fr] items-center gap-x-2 rounded-lg p-2 text-sm/6",
         {
           "bg-[#dbeafe] text-[#173da6] dark:bg-[#14204a] dark:text-[#a3cfff]":
             status === "info",
@@ -50,11 +50,9 @@ export function Alert(props: Props) {
         className,
       )}
     >
-      {showIndicator ? <span>{renderIndicator()}</span> : null}
-      <div className="flex flex-col">
-        {title ? <div className="text-sm/6 font-medium">{title}</div> : null}
-        {description ? <div className="text-sm/6">{description}</div> : null}
-      </div>
+      {showIndicator ? renderIndicator() : null}
+      {title ? <div className="col-start-2">{title}</div> : null}
+      {description ? <div className="col-start-2">{description}</div> : null}
     </div>
   );
 }

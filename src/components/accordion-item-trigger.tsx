@@ -15,8 +15,8 @@ export function AccordionItemTrigger(props: ArkAccordion.ItemTriggerProps) {
       {...rest}
       className={cn(
         "text-fg-default flex w-full items-center justify-between gap-3 py-4 text-left text-base font-semibold",
-        className,
         disabled ? "cursor-not-allowed" : "cursor-pointer",
+        className,
       )}
     >
       {children}
