@@ -1,181 +1,175 @@
 import { Avatar } from "@/components/avatar";
-import { Card } from "@/components/card";
-import { CodeBlock } from "@/components/code-block";
 import { Heading } from "@/components/heading";
+import { Highlight } from "@/components/highlight";
 import { Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
-import { CODE_BLOCKS } from "app/constants";
-
-const CODE_EXAMPLES = [
-  {
-    code: `import { Avatar } from '@/components/avatar'
-
-function Example() {
-  return (
-    <Avatar initials="FB" src="https://i.pravatar.cc/300" alt="avatar" />
-  )
-}
-`,
-  },
-  {
-    code: `import { Avatar } from '@/components/avatar'
-
-function Example() {
-  return (
-    <div className="flex items-center gap-2">
-      <Avatar size="xs" src="https://i.pravatar.cc/300" />
-      <Avatar size="sm" src="https://i.pravatar.cc/300" />
-      <Avatar size="md" src="https://i.pravatar.cc/300" />
-      <Avatar size="lg" src="https://i.pravatar.cc/300" />
-      <Avatar size="xl" src="https://i.pravatar.cc/300" />
-      <Avatar size="2xl" src="https://i.pravatar.cc/300" />
-    </div>
-  )
-}
-`,
-  },
-  {
-    code: `import { Avatar } from '@/components/avatar'
-
-function Example() {
-  return (
-    <Avatar initials="ak" />
-  )
-}
-`,
-  },
-  {
-    code: `import { Avatar } from '@/components/avatar'
-
-function Example() {
-  return (
-    <Avatar initials="ak" square />
-  )
-}
-`,
-  },
-  {
-    code: `import { Avatar } from '@/components/avatar'
-
-function Example() {
-  return (
-    <div className="flex items-center -space-x-2">
-      <Avatar
-        src="https://i.pravatar.cc/300?img=1"
-        className="ring-2 ring-white dark:ring-[#191918]"
-      />
-      <Avatar
-        src="https://i.pravatar.cc/300?img=2"
-        className="ring-2 ring-white dark:ring-[#191918]"
-      />
-      <Avatar
-        src="https://i.pravatar.cc/300?img=3"
-        className="ring-2 ring-white dark:ring-[#191918]"
-      />
-    </div>
-  )
-}
-`,
-  },
-];
+import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 function AvatarPage() {
   return (
     <>
       <PageHeader
-        className="mb-6"
         title="Avatar"
         description="Used to represent user profile picture or initials."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/avatar.tsx"
+        className="mb-2"
+        verified
       />
-      <Card className="mb-6">
-        <Avatar initials="FB" src="https://i.pravatar.cc/300" alt="avatar" />
-      </Card>
-      <CodeBlock
-        className="mb-6"
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[0].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={
+          <Avatar
+            initials="FB"
+            src="https://i.pravatar.cc/300?img=1"
+            alt="avatar"
+          />
+        }
+        code={`<Avatar
+  initials="FB"
+  src="https://i.pravatar.cc/300?img=1"
+  alt="avatar"
+/>`}
       />
-      <Heading level={2} className="mb-2">
+      <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3}>Sizes</Heading>
-      <Text className="mb-6">
-        Use the size prop to change the size of the avatar:
+      <Heading level={3} className="mb-2">
+        Sizes
+      </Heading>
+      <Text className="mb-2">
+        <Highlight
+          query={["size"]}
+          text="Use the size prop to change the size of the avatar."
+        />
       </Text>
-      <Card className="mb-6">
-        <div className="flex items-center gap-2">
-          <Avatar size="xs" src="https://i.pravatar.cc/300" />
-          <Avatar size="sm" src="https://i.pravatar.cc/300" />
-          <Avatar size="md" src="https://i.pravatar.cc/300" />
-          <Avatar size="lg" src="https://i.pravatar.cc/300" />
-          <Avatar size="xl" src="https://i.pravatar.cc/300" />
-          <Avatar size="2xl" src="https://i.pravatar.cc/300" />
-        </div>
-      </Card>
-      <CodeBlock
-        className="mb-6"
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[1].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex items-center gap-2">
+            <Avatar size="xs" src="https://i.pravatar.cc/300?img=1" />
+            <Avatar size="sm" src="https://i.pravatar.cc/300?img=2" />
+            <Avatar size="md" src="https://i.pravatar.cc/300?img=3" />
+            <Avatar size="lg" src="https://i.pravatar.cc/300?img=4" />
+            <Avatar size="xl" src="https://i.pravatar.cc/300?img=5" />
+            <Avatar size="2xl" src="https://i.pravatar.cc/300?img=6" />
+          </div>
+        }
+        code={`<div className="flex items-center gap-2">
+  <Avatar size="xs" src="https://i.pravatar.cc/300?img=1" />
+  <Avatar size="sm" src="https://i.pravatar.cc/300?img=2" />
+  <Avatar size="md" src="https://i.pravatar.cc/300?img=3" />
+  <Avatar size="lg" src="https://i.pravatar.cc/300?img=4" />
+  <Avatar size="xl" src="https://i.pravatar.cc/300?img=5" />
+  <Avatar size="2xl" src="https://i.pravatar.cc/300?img=6" />
+</div>`}
       />
-      <Heading level={3}>Initials</Heading>
-      <Text className="mb-6">
-        Use the initials prop to render an avatar with initials:
+      <Heading level={3} className="mt-10 mb-2">
+        With Initials
+      </Heading>
+      <Text className="mb-2">
+        <Highlight
+          query={["initials"]}
+          text="Use the initials prop to render an avatar with initials."
+        />
       </Text>
-      <Card className="mb-6">
-        <Avatar initials="ak" />
-      </Card>
-      <CodeBlock
-        className="mb-6"
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[2].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={<Avatar initials="ak" />}
+        code={`<Avatar initials="ak" />`}
       />
-      <Heading level={3}>Square avatars</Heading>
-      <Text className="mb-6">
-        Use the square prop to render a square avatar:
+      <Heading level={3} className="mt-10 mb-2">
+        Square Avatars
+      </Heading>
+      <Text className="mb-2">
+        <Highlight
+          query={["square"]}
+          text="Use the square prop to render a square avatar."
+        />
       </Text>
-      <Card className="mb-6">
-        <Avatar initials="ak" square />
-      </Card>
-      <CodeBlock
-        className="mb-6"
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[3].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={<Avatar initials="ak" square />}
+        code={`<Avatar initials="ak" square />`}
       />
-      <Heading level={3}>Group avatars</Heading>
-      <Text className="mb-6">
+      <Heading level={3} className="mt-10 mb-2">
+        Avatar Groups
+      </Heading>
+      <Text className="mb-2">
         Use utility classes to overlap a list of avatars and style them as a
-        group:
+        group.
       </Text>
-      <Card className="mb-6">
-        <div className="flex items-center -space-x-2">
-          <Avatar
-            src="https://i.pravatar.cc/300?img=1"
-            className="ring-2 ring-white dark:ring-[#191918]"
-          />
-          <Avatar
-            src="https://i.pravatar.cc/300?img=2"
-            className="ring-2 ring-white dark:ring-[#191918]"
-          />
-          <Avatar
-            src="https://i.pravatar.cc/300?img=3"
-            className="ring-2 ring-white dark:ring-[#191918]"
-          />
-        </div>
-      </Card>
-      <CodeBlock
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[4].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex items-center -space-x-2">
+            <Avatar
+              src="https://i.pravatar.cc/300?img=1"
+              className="ring-2 ring-white dark:ring-[#191918]"
+            />
+            <Avatar
+              src="https://i.pravatar.cc/300?img=2"
+              className="ring-2 ring-white dark:ring-[#191918]"
+            />
+            <Avatar
+              src="https://i.pravatar.cc/300?img=3"
+              className="ring-2 ring-white dark:ring-[#191918]"
+            />
+          </div>
+        }
+        code={`<div className="flex items-center -space-x-2">
+  <Avatar
+    src="https://i.pravatar.cc/300?img=1"
+    className="ring-2 ring-white dark:ring-[#191918]"
+  />
+  <Avatar
+    src="https://i.pravatar.cc/300?img=2"
+    className="ring-2 ring-white dark:ring-[#191918]"
+  />
+  <Avatar
+    src="https://i.pravatar.cc/300?img=3"
+    className="ring-2 ring-white dark:ring-[#191918]"
+  />
+</div>`}
+      />
+      <Heading level={3} className="mt-10 mb-2">
+        Persona
+      </Heading>
+      <Text className="mb-2">
+        <Highlight
+          query={["Avatar"]}
+          text="Here's an example of how to use the Avatar component to display a user persona."
+        />
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <Avatar size="md" src="https://i.pravatar.cc/300?img=1" />
+              <div className="flex flex-col">
+                <Heading level={6}>John Mason</Heading>
+                <Text>john.mason@example.com</Text>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Avatar size="md" src="https://i.pravatar.cc/300?img=2" />
+              <div className="flex flex-col">
+                <Heading level={6}>Melissa Jones</Heading>
+                <Text>melissa.jones@example.com</Text>
+              </div>
+            </div>
+          </div>
+        }
+        code={`<div className="flex flex-col gap-2">
+  <div className="flex items-center gap-2">
+    <Avatar size="md" src="https://i.pravatar.cc/300?img=1" />
+    <div className="flex flex-col">
+      <Heading level={6}>John Mason</Heading>
+      <Text>john.mason@example.com</Text>
+    </div>
+  </div>
+  <div className="flex items-center gap-2">
+    <Avatar size="md" src="https://i.pravatar.cc/300?img=2" />
+    <div className="flex flex-col">
+      <Heading level={6}>Melissa Jones</Heading>
+      <Text>melissa.jones@example.com</Text>
+    </div>
+  </div>
+</div>`}
       />
     </>
   );

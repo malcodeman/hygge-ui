@@ -24,8 +24,8 @@ export function Avatar(props: Props) {
     <ArkAvatar.Root
       {...rest}
       className={cn(
-        "flex items-center justify-center overflow-hidden border text-sm font-semibold uppercase",
-        "text-fg-default border-[#E9E8E6] bg-[#f9f9f8] dark:border-[#2a2a28] dark:bg-[#222221]",
+        "flex items-center justify-center overflow-hidden border text-sm/6 font-semibold uppercase",
+        "text-fg-default border-border-subtle bg-[#f9f9f8] dark:bg-[#222221]",
         {
           "size-6": size === "2xs",
           "size-8": size === "xs",
