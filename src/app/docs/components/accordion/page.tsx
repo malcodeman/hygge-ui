@@ -44,6 +44,7 @@ function AccordionPage() {
         description="Used to show and hide sections of related content on a page."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/accordion.tsx"
         className="mb-2"
+        verified
       />
       <PagePreviewCodeTabs
         preview={
