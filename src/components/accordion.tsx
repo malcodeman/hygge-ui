@@ -10,7 +10,7 @@ export function AccordionItem(props: ArkAccordion.ItemProps) {
   return (
     <ArkAccordion.Item
       {...props}
-      className="border-b border-[#E9E8E6] data-[disabled]:opacity-50 dark:border-[#2a2a28]"
+      className="border-border-subtle border-b data-[disabled]:opacity-50"
     />
   );
 }

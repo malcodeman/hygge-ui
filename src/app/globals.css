@@ -36,6 +36,7 @@
 @theme {
   --color-fg-default: light-dark(#21201c, #eeeeec);
   --color-fg-muted: light-dark(#63635e, #b5b3ad);
+  --color-border-subtle: light-dark(#e9e8e6, #2a2a28);
 }
 
 .shiki {
