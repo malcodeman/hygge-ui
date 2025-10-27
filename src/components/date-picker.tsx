@@ -19,7 +19,7 @@ export function DatePicker(props: Props) {
       {...rest}
     >
       {label ? (
-        <ArkDatePicker.Label className="text-fg text-sm/6 font-semibold">
+        <ArkDatePicker.Label className="text-fg-default text-sm/6 font-semibold">
           {label}
         </ArkDatePicker.Label>
       ) : null}

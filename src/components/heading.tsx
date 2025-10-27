@@ -12,7 +12,7 @@ export function Heading(props: Props) {
     <Element
       {...rest}
       className={cn(
-        "text-fg font-semibold",
+        "text-fg-default font-semibold",
         {
           "text-4xl": level === 1,
           "text-2xl": level === 2,

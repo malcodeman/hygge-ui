@@ -25,7 +25,7 @@ export function Avatar(props: Props) {
       {...rest}
       className={cn(
         "flex items-center justify-center overflow-hidden border text-sm font-semibold uppercase",
-        "text-fg border-[#E9E8E6] bg-[#f9f9f8] dark:border-[#2a2a28] dark:bg-[#222221]",
+        "text-fg-default border-[#E9E8E6] bg-[#f9f9f8] dark:border-[#2a2a28] dark:bg-[#222221]",
         {
           "size-6": size === "2xs",
           "size-8": size === "xs",

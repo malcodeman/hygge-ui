@@ -10,7 +10,12 @@ export function Text(props: React.ComponentPropsWithoutRef<"p">) {
 export function Strong(props: React.ComponentPropsWithoutRef<"strong">) {
   const { className, ...rest } = props;
 
-  return <strong {...rest} className={cn(className, "text-fg font-medium")} />;
+  return (
+    <strong
+      {...rest}
+      className={cn(className, "text-fg-default font-medium")}
+    />
+  );
 }
 
 export function TextLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
@@ -20,7 +25,7 @@ export function TextLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
     <Link
       {...rest}
       className={cn(
-        "text-fg-muted hover:text-fg text-sm/6 underline transition-colors",
+        "text-fg-muted hover:text-fg-default text-sm/6 underline transition-colors",
         className,
       )}
     />

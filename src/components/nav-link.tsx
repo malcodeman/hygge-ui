@@ -14,7 +14,7 @@ export function NavLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
       href={href}
       className={cn(
         "text-sm/6 transition-colors",
-        isActive ? "text-[#eb5e41]" : "text-fg-muted hover:text-fg",
+        isActive ? "text-[#eb5e41]" : "text-fg-muted hover:text-fg-default",
         className,
       )}
     />

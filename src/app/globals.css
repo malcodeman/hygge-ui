@@ -34,7 +34,7 @@
 }
 
 @theme {
-  --color-fg: light-dark(#21201c, #eeeeec);
+  --color-fg-default: light-dark(#21201c, #eeeeec);
   --color-fg-muted: light-dark(#63635e, #b5b3ad);
 }
 
