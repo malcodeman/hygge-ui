@@ -27,8 +27,8 @@ export async function CodeBlock(props: Props) {
   if (copyButton) {
     return (
       <ArkClipboard.Root className="relative" value={code}>
-        <ArkClipboard.Trigger className="absolute top-4 right-4" asChild>
-          <Button>
+        <ArkClipboard.Trigger className="absolute top-2 right-2" asChild>
+          <Button variant="ghost" size="xs">
             <ArkClipboard.Indicator copied={<LuCheck size={16} />}>
               <LuClipboardCopy size={16} />
             </ArkClipboard.Indicator>
