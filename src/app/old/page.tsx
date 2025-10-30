@@ -217,10 +217,6 @@ export default function Home() {
             <Button>Gray solid</Button>
             <Button variant="outline">Gray outline</Button>
             <Button variant="ghost">Gray ghost</Button>
-            <Button colorPalette="orange">Orange</Button>
-            <Button colorPalette="teal">Teal</Button>
-            <Button colorPalette="green">Green</Button>
-            <Button colorPalette="red">Red</Button>
             <Button loading loadingText="Loading...">
               Loading
             </Button>
@@ -486,7 +482,7 @@ export default function Home() {
                 <DialogCloseTrigger asChild>
                   <Button variant="outline">Cancel</Button>
                 </DialogCloseTrigger>
-                <Button colorPalette="orange">Save</Button>
+                <Button>Save</Button>
               </DialogFooter>
             </DialogContent>
           </DialogRoot>
