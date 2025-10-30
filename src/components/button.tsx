@@ -15,6 +15,8 @@ const buttonVariants = cva(
           "border-border-default text-fg-default not-disabled:hover:bg-[#21201c]/4 not-disabled:hover:dark:bg-[#eeeeec]/4",
         ghost:
           "text-fg-default border-transparent not-disabled:hover:bg-[#21201c]/8 not-disabled:hover:dark:bg-[#eeeeec]/8",
+        destructive:
+          "border-transparent bg-[#dc2626] text-white not-disabled:hover:bg-[#dc2626]/88 dark:bg-[#dc2626]",
       },
       size: {
         xs: "h-8 min-w-8",
@@ -35,7 +37,6 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonVariants> & {
     loading?: boolean;
     loadingText?: string;
-    size?: "xs" | "sm" | "md" | "lg" | "xl";
     spinnerPlacement?: "start" | "end";
   };
 

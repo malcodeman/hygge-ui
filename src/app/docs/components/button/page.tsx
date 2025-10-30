@@ -66,6 +66,7 @@ function ButtonPage() {
             <Button variant="subtle">Subtle</Button>
             <Button variant="outline">Outline</Button>
             <Button variant="ghost">Ghost</Button>
+            <Button variant="destructive">Destructive</Button>
           </div>
         }
         code={`<div className="flex gap-2">
