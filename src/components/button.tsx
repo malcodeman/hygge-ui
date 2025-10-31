@@ -10,9 +10,9 @@ const buttonVariants = cva(
         solid:
           "border-transparent bg-[#21201c] text-white not-disabled:hover:bg-[#21201c]/88 dark:bg-[#eeeeec] dark:text-[#21201c] not-disabled:dark:hover:bg-[#eeeeec]/88",
         subtle:
-          "text-fg-default border-transparent bg-[#21201c]/4 not-disabled:hover:bg-[#21201c]/8 dark:bg-[#eeeeec]/4 dark:not-disabled:hover:bg-[#eeeeec]/8",
+          "text-fg-default border-transparent bg-[#21201c]/8 not-disabled:hover:bg-[#21201c]/16 dark:bg-[#eeeeec]/8 dark:not-disabled:hover:bg-[#eeeeec]/16",
         outline:
-          "border-border-default text-fg-default not-disabled:hover:bg-[#21201c]/4 not-disabled:hover:dark:bg-[#eeeeec]/4",
+          "border-border-default text-fg-default not-disabled:hover:bg-[#21201c]/8 not-disabled:hover:dark:bg-[#eeeeec]/8",
         ghost:
           "text-fg-default border-transparent not-disabled:hover:bg-[#21201c]/8 not-disabled:hover:dark:bg-[#eeeeec]/8",
         destructive:
