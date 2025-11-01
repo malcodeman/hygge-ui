@@ -3,7 +3,9 @@ import { cn } from "./cn";
 import { AccordionItemTrigger } from "./accordion-item-trigger";
 
 export function AccordionRoot(props: ArkAccordion.RootProps) {
-  return <ArkAccordion.Root {...props} />;
+  const { className, ...rest } = props;
+
+  return <ArkAccordion.Root {...rest} className={cn("w-full", className)} />;
 }
 
 export function AccordionItem(props: ArkAccordion.ItemProps) {

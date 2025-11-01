@@ -1,4 +1,4 @@
-import { Card } from "@/components/card";
+import { Card, CardBody } from "@/components/card";
 import { CodeBlock } from "@/components/code-block";
 import {
   TabsContent,
@@ -23,7 +23,9 @@ export async function PagePreviewCodeTabs(props: Props) {
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
       <TabsContent value="preview">
-        <Card>{preview}</Card>
+        <Card>
+          <CardBody>{preview}</CardBody>
+        </Card>
       </TabsContent>
       <TabsContent value="code">
         <CodeBlock

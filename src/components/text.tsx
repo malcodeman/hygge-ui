@@ -4,7 +4,7 @@ import { cn } from "./cn";
 export function Text(props: React.ComponentPropsWithoutRef<"p">) {
   const { className, ...rest } = props;
 
-  return <p {...rest} className={cn(className, "text-fg-muted text-sm/6")} />;
+  return <p {...rest} className={cn("text-fg-muted text-sm/6", className)} />;
 }
 
 export function Strong(props: React.ComponentPropsWithoutRef<"strong">) {
@@ -13,7 +13,7 @@ export function Strong(props: React.ComponentPropsWithoutRef<"strong">) {
   return (
     <strong
       {...rest}
-      className={cn(className, "text-fg-default font-medium")}
+      className={cn("text-fg-default text-sm/6 font-medium", className)}
     />
   );
 }

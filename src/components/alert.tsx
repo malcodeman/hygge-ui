@@ -37,7 +37,7 @@ export function Alert(props: Props) {
     <div
       {...rest}
       className={cn(
-        "grid grid-cols-[auto_1fr] items-center gap-x-2 rounded-lg p-2 text-sm/6",
+        "grid w-full grid-cols-[auto_1fr] items-center gap-x-2 rounded-lg p-2 text-sm/6",
         {
           "bg-blue-subtle text-blue-fg": status === "info",
           "bg-orange-subtle text-orange-fg": status === "warning",

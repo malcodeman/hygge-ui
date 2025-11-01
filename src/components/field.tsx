@@ -52,10 +52,18 @@ type FieldProps = {
 } & ArkField.RootProps;
 
 export function Field(props: FieldProps) {
-  const { label, helperText, errorText, required, children, ...rest } = props;
+  const {
+    className,
+    label,
+    helperText,
+    errorText,
+    required,
+    children,
+    ...rest
+  } = props;
 
   return (
-    <FieldRoot {...rest}>
+    <FieldRoot {...rest} className={cn("w-full", className)}>
       {label ? (
         <FieldLabel className="flex items-center gap-1">
           {label}
