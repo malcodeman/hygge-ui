@@ -1,5 +1,5 @@
 import { LuComponent, LuDownload } from "react-icons/lu";
-import { Card } from "@/components/card";
+import { Card, CardBody } from "@/components/card";
 import { Heading } from "@/components/heading";
 import { Text } from "@/components/text";
 import Link from "next/link";
@@ -21,13 +21,17 @@ function IntroductionPage() {
       </Text>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <Card className="cursor-pointer transition-colors hover:border-[#eb5e41]">
-          <LuDownload size={24} className="mb-4 text-[#eb5e41]" />
-          <Heading level={3}>Download .zip file</Heading>
+          <CardBody>
+            <LuDownload size={24} className="mb-4 text-[#eb5e41]" />
+            <Heading level={3}>Download .zip file</Heading>
+          </CardBody>
         </Card>
         <Link href={NAVIGATION_GROUPS[2].pages[0].href}>
           <Card className="cursor-pointer transition-colors hover:border-[#eb5e41]">
-            <LuComponent size={24} className="mb-4 text-[#eb5e41]" />
-            <Heading level={3}>Show Components</Heading>
+            <CardBody>
+              <LuComponent size={24} className="mb-4 text-[#eb5e41]" />
+              <Heading level={3}>Show Components</Heading>
+            </CardBody>
           </Card>
         </Link>
       </div>
