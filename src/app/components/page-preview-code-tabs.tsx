@@ -11,13 +11,14 @@ import { CODE_BLOCKS } from "app/constants";
 type Props = {
   preview: React.ReactNode;
   code: string;
+  className?: string;
 };
 
 export async function PagePreviewCodeTabs(props: Props) {
-  const { preview, code } = props;
+  const { preview, code, className, ...rest } = props;
 
   return (
-    <TabsRoot defaultValue="preview">
+    <TabsRoot defaultValue="preview" className={className} {...rest}>
       <TabsList>
         <TabsTrigger value="preview">Preview</TabsTrigger>
         <TabsTrigger value="code">Code</TabsTrigger>

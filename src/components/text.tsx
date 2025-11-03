@@ -31,3 +31,18 @@ export function TextLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
     />
   );
 }
+
+export function Code({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<"code">) {
+  return (
+    <code
+      {...props}
+      className={cn(
+        className,
+        "border-border-subtle rounded-sm border px-1 text-sm/6",
+      )}
+    />
+  );
+}
