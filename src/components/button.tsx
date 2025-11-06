@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
 const buttonVariants = cva(
-  "inline-flex cursor-pointer items-center justify-center gap-1 rounded-sm border px-2 text-sm/6 font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
+  "inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm border px-2 text-sm/6 font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -59,13 +59,13 @@ export function Button({
     >
       {loading ? (
         <>
-          {spinnerPlacement === "start" && (
+          {spinnerPlacement === "start" ? (
             <LuLoaderCircle size={16} className="animate-spin" />
-          )}
+          ) : null}
           {loadingText ?? children}
-          {spinnerPlacement === "end" && (
+          {spinnerPlacement === "end" ? (
             <LuLoaderCircle size={16} className="animate-spin" />
-          )}
+          ) : null}
         </>
       ) : (
         children
