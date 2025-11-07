@@ -6,7 +6,7 @@ import { ToggleTheme } from "./toggle-theme";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-10 border-b border-b-[#e9e8e6] bg-white dark:border-b-[#2a2a28] dark:bg-[#191918]">
+    <header className="border-b-border-subtle sticky top-0 z-10 border-b bg-[#f9f9f8] dark:bg-[#0e0e0e]">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-8">
         <Link
           href={NAVIGATION_GROUPS[0].pages[0].href}
