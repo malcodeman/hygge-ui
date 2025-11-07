@@ -1,37 +1,38 @@
-import { Card } from "@/components/card";
 import { Clipboard } from "@/components/clipboard";
-import { CodeBlock } from "@/components/code-block";
+import { Heading } from "@/components/heading";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
-import { CODE_BLOCKS } from "app/constants";
-
-const CODE_EXAMPLES = [
-  {
-    code: `import { Clipboard } from "@/components/clipboard";
-
-function Example() {
-  return <Clipboard value="Copy" />;
-}
-`,
-  },
-];
+import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 function ClipboardPage() {
   return (
     <>
       <PageHeader
-        className="mb-6"
         title="Clipboard"
         description="Used to copy text to the clipboard."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/clipboard.tsx"
+        className="mb-2"
+        verified
       />
-      <Card className="mb-6">
-        <Clipboard value="Copy" />
-      </Card>
-      <CodeBlock
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[0].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={
+          <Clipboard label="Copy this link" value="https://www.hygge-ui.com" />
+        }
+        code={`<Clipboard value="https://www.hygge-ui.com" />`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
+        Examples
+      </Heading>
+      <Heading level={3} className="mb-2">
+        Timeout
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>timeout</Code> prop to change the duration of the copy
+        message.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<Clipboard value="https://www.hygge-ui.com" timeout={1000} />}
+        code={`<Clipboard value="https://www.hygge-ui.com" timeout={1000} />`}
       />
     </>
   );
