@@ -1,37 +1,60 @@
-import { Card } from "@/components/card";
 import { CheckboxCard } from "@/components/checkbox-card";
-import { CodeBlock } from "@/components/code-block";
+import { Heading } from "@/components/heading";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
-import { CODE_BLOCKS } from "app/constants";
-
-const CODE_EXAMPLES = [
-  {
-    code: `import { CheckboxCard } from "@/components/checkbox-card";
-
-function Example() {
-  return <CheckboxCard label="Next.js" />;
-}
-`,
-  },
-];
+import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 function CheckboxCardPage() {
   return (
     <>
       <PageHeader
-        className="mb-6"
         title="Checkbox Card"
         description="Used to select or deselect options displayed within cards."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/checkbox-card.tsx"
+        className="mb-2"
+        verified
       />
-      <Card className="mb-6">
-        <CheckboxCard label="Next.js" />
-      </Card>
-      <CodeBlock
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[0].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={<CheckboxCard label="Next.js" />}
+        code={`<CheckboxCard label="Next.js" />`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
+        Examples
+      </Heading>
+      <Heading level={3} className="mb-2">
+        Description
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>description</Code> prop to add a description to the
+        checkbox card.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<CheckboxCard label="Next.js" description="Best for apps" />}
+        code={`<CheckboxCard label="Next.js" description="Best for apps" />`}
+      />
+      <Heading level={3} className="mt-10 mb-2">
+        States
+      </Heading>
+      <Text className="mb-2">
+        Pass the <Code>disabled</Code> or <Code>invalid</Code> prop to the{" "}
+        <Code>Checkbox</Code> component to change the visual state of the
+        checkbox.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex w-full max-w-sm flex-col gap-2">
+            <CheckboxCard label="Disabled" disabled />
+            <CheckboxCard label="Disabled" defaultChecked disabled />
+            <CheckboxCard label="Readonly" readOnly />
+            <CheckboxCard label="Invalid" invalid />
+          </div>
+        }
+        code={`<div className="flex w-full max-w-sm flex-col gap-2">
+  <CheckboxCard label="Disabled" disabled />
+  <CheckboxCard label="Disabled" defaultChecked disabled />
+  <CheckboxCard label="Readonly" readOnly />
+  <CheckboxCard label="Invalid" invalid />
+</div>`}
       />
     </>
   );

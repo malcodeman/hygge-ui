@@ -34,15 +34,15 @@ function CheckboxPage() {
       <PagePreviewCodeTabs
         preview={
           <div className="flex flex-col gap-2">
-            <Checkbox size="sm" label="Checkbox" />
-            <Checkbox size="md" label="Checkbox" />
-            <Checkbox size="lg" label="Checkbox" />
+            <Checkbox size="sm" label="Checkbox sm" />
+            <Checkbox size="md" label="Checkbox md" />
+            <Checkbox size="lg" label="Checkbox lg" />
           </div>
         }
         code={`<div className="flex flex-col gap-2">
-  <Checkbox size="sm" label="Checkbox" />
-  <Checkbox size="md" label="Checkbox" />
-  <Checkbox size="lg" label="Checkbox" />
+  <Checkbox size="sm" label="Checkbox sm" />
+  <Checkbox size="md" label="Checkbox md" />
+  <Checkbox size="lg" label="Checkbox lg" />
 </div>`}
       />
       <Heading level={3} className="mt-10 mb-2">
