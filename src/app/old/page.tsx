@@ -491,10 +491,6 @@ export default function Home() {
           <Heading level={2}>Checkbox</Heading>
           <div className="flex flex-col gap-2">
             <Checkbox label="Gray" />
-            <Checkbox colorPalette="orange" label="Orange" />
-            <Checkbox colorPalette="teal" label="Teal" />
-            <Checkbox colorPalette="green" label="Green" />
-            <Checkbox colorPalette="red" label="Red" />
             <Checkbox label="Disabled" disabled />
           </div>
         </Card>
