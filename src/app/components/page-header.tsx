@@ -15,7 +15,7 @@ export function PageHeader(props: Props) {
   return (
     <div {...rest}>
       <div className="mb-2 flex items-center gap-2">
-        <Heading>{title}</Heading>
+        <Heading size="3xl">{title}</Heading>
         {verified ? (
           <LuShieldCheck
             className="text-[#116932] dark:text-[#86efac]"

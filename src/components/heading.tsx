@@ -1,28 +1,37 @@
+import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
-type Props = {
-  level?: 1 | 2 | 3 | 4 | 5 | 6;
-} & React.ComponentPropsWithoutRef<"h1" | "h2" | "h3" | "h4" | "h5" | "h6">;
+const headingVariants = cva("text-fg-default font-semibold", {
+  variants: {
+    size: {
+      sm: "text-sm",
+      base: "text-base",
+      lg: "text-lg",
+      xl: "text-xl",
+      "2xl": "text-2xl",
+      "3xl": "text-3xl",
+      "4xl": "text-4xl",
+      "5xl": "text-5xl",
+      "6xl": "text-6xl",
+    },
+  },
+  defaultVariants: {
+    size: "xl",
+  },
+});
+
+type Props = React.ComponentPropsWithoutRef<
+  "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+> &
+  VariantProps<typeof headingVariants> & {
+    level?: 1 | 2 | 3 | 4 | 5 | 6;
+  };
 
 export function Heading(props: Props) {
-  const { level = 1, className, ...rest } = props;
+  const { level = 1, size, className, ...rest } = props;
   const Element: `h${typeof level}` = `h${level}`;
 
   return (
-    <Element
-      {...rest}
-      className={cn(
-        "text-fg-default font-semibold",
-        {
-          "text-4xl": level === 1,
-          "text-2xl": level === 2,
-          "text-xl": level === 3,
-          "text-lg": level === 4,
-          "text-base": level === 5,
-          "text-sm": level === 6,
-        },
-        className,
-      )}
-    />
+    <Element {...rest} className={cn(headingVariants({ size }), className)} />
   );
 }
