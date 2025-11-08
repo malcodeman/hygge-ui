@@ -3,6 +3,7 @@ import { BundledLanguage, BundledTheme, codeToHtml } from "shiki";
 import { Clipboard as ArkClipboard } from "@ark-ui/react";
 import { LuCheck, LuClipboardCopy } from "react-icons/lu";
 import { Button } from "./button";
+import { cn } from "./cn";
 
 type Props = React.ComponentPropsWithoutRef<"div"> & {
   code: string;
@@ -17,6 +18,7 @@ export async function CodeBlock(props: Props) {
     language,
     theme = "dracula",
     copyButton = false,
+    className,
     ...rest
   } = props;
   const html = await codeToHtml(code, {
@@ -26,9 +28,12 @@ export async function CodeBlock(props: Props) {
 
   if (copyButton) {
     return (
-      <ArkClipboard.Root className="relative" value={code}>
+      <ArkClipboard.Root
+        className={cn("relative w-full", className)}
+        value={code}
+      >
         <ArkClipboard.Trigger className="absolute top-2 right-2" asChild>
-          <Button variant="ghost" size="xs">
+          <Button variant="ghost" size="xs" className="text-[#eeeeec]">
             <ArkClipboard.Indicator copied={<LuCheck size={16} />}>
               <LuClipboardCopy size={16} />
             </ArkClipboard.Indicator>
@@ -39,5 +44,11 @@ export async function CodeBlock(props: Props) {
     );
   }
 
-  return <div dangerouslySetInnerHTML={{ __html: html }} {...rest} />;
+  return (
+    <div
+      className={cn("w-full", className)}
+      dangerouslySetInnerHTML={{ __html: html }}
+      {...rest}
+    />
+  );
 }
