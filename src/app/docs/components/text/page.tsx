@@ -1,5 +1,4 @@
 import { Heading } from "@/components/heading";
-import { Highlight } from "@/components/highlight";
 import { Code, Strong, Text, TextLink } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
@@ -35,9 +34,8 @@ function TextPage() {
         Basic example
       </Heading>
       <Text className="mb-2">
-        Use the <Highlight query="Text" text="Text" /> component for any custom
-        paragraph text that should match the style of the text built in to your
-        other components.
+        Use the <Code>Text</Code> component for any custom paragraph text that
+        should match the style of the text built in to your other components.
       </Text>
       <PagePreviewCodeTabs
         className="mb-2"
@@ -52,15 +50,15 @@ function TextPage() {
 </Text>`}
       />
       <Text>
-        Paragraphs using <Highlight query="Text" text="Text" /> are responsive
-        and automatically adapt to dark mode.
+        Paragraphs using <Code>Text</Code> are responsive and automatically
+        adapt and automatically adapt to dark mode.
       </Text>
       <Heading level={3} size="lg" className="mt-10 mb-2">
         With link
       </Heading>
       <Text className="mb-2">
-        Use the <Highlight query="TextLink" text="TextLink" /> component for any
-        links within a <Highlight query="Text" text="Text" /> component.
+        Use the <Code>TextLink</Code> component for any links within a{" "}
+        <Code>Text</Code> component.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -79,9 +77,8 @@ function TextPage() {
         With strong
       </Heading>
       <Text className="mb-2">
-        Use the <Highlight query="Strong" text="Strong" /> component for any
-        text you want to emphasize within a{" "}
-        <Highlight query="Text" text="Text" /> component.
+        Use the <Code>Strong</Code> component for any text you want to emphasize
+        within a <Code>Text</Code> component.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -98,8 +95,8 @@ function TextPage() {
         With code
       </Heading>
       <Text className="mb-2">
-        Use the <Highlight query="Code" text="Code" /> component for any inline
-        code symbols within a <Highlight query="Text" text="Text" /> component.
+        Use the <Code>Code</Code> component for any inline code symbols within a{" "}
+        <Code>Text</Code> component.
       </Text>
       <PagePreviewCodeTabs
         preview={

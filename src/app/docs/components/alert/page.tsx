@@ -1,7 +1,6 @@
 import { Alert } from "@/components/alert";
 import { Heading } from "@/components/heading";
-import { Highlight } from "@/components/highlight";
-import { Text } from "@/components/text";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
@@ -26,10 +25,8 @@ function AlertPage() {
         Description
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["description"]}
-          text="Use the description prop to provide additional context to the alert."
-        />
+        Use the <Code>description</Code> prop to provide additional context to
+        the alert.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -51,10 +48,10 @@ function AlertPage() {
         Status
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["error", "success", "warning", "info"]}
-          text="Change the status of the alerts by passing the status prop. This affects the color scheme and icon used. Alert supports error, success, warning, and info statuses."
-        />
+        Change the status of the alerts by passing the <Code>status</Code> prop.
+        This affects the color scheme and icon used. Alert supports{" "}
+        <Code>error</Code>, <Code>success</Code>, <Code>warning</Code>, and{" "}
+        <Code>info</Code> statuses.
       </Text>
       <PagePreviewCodeTabs
         preview={

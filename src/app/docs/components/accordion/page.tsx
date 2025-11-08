@@ -6,8 +6,7 @@ import {
 } from "@/components/accordion";
 import { Avatar } from "@/components/avatar";
 import { Heading } from "@/components/heading";
-import { Highlight } from "@/components/highlight";
-import { Text } from "@/components/text";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
@@ -73,10 +72,8 @@ function AccordionPage() {
         Expand Multiple Items
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["multiple"]}
-          text="Use the multiple prop to allow multiple items to be expanded at once."
-        />
+        Use the <Code>multiple</Code> prop to allow multiple items to be
+        expanded at once.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -102,10 +99,8 @@ function AccordionPage() {
         Disabled Item
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["disabled", "AccordionItem"]}
-          text="Pass the disabled prop to any AccordionItem to prevent it from being expanded or collapsed."
-        />
+        Pass the <Code>disabled</Code> prop to any <Code>AccordionItem</Code> to
+        prevent it from being expanded or collapsed.
       </Text>
       <PagePreviewCodeTabs
         preview={

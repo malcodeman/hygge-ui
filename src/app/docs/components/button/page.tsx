@@ -1,7 +1,6 @@
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
-import { Highlight } from "@/components/highlight";
-import { Text } from "@/components/text";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 import { LuArrowRight, LuMail } from "react-icons/lu";
@@ -27,10 +26,7 @@ function ButtonPage() {
         Sizes
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["size"]}
-          text="Use the size prop to change the size of the button."
-        />
+        Use the <Code>size</Code> prop to change the size of the button.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -54,10 +50,8 @@ function ButtonPage() {
         Variants
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["variant"]}
-          text="Use the variant prop to change the visual style of the Button."
-        />
+        Use the <Code>variant</Code> prop to change the visual style of the
+        Button.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -106,10 +100,7 @@ function ButtonPage() {
         Disabled
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["disabled"]}
-          text="Use the disabled prop to disable the button."
-        />
+        Use the <Code>disabled</Code> prop to disable the button.
       </Text>
       <PagePreviewCodeTabs
         preview={<Button disabled>Button</Button>}
@@ -119,7 +110,7 @@ function ButtonPage() {
         Loading
       </Heading>
       <Text className="mb-2">
-        Pass the <code>loading</code> and <code>loadingText</code> props to show
+        Pass the <Code>loading</Code> and <Code>loadingText</Code> props to show
         a spinner and optional loading text.
       </Text>
       <PagePreviewCodeTabs

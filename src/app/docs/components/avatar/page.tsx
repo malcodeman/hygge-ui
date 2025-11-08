@@ -1,7 +1,6 @@
 import { Avatar } from "@/components/avatar";
 import { Heading } from "@/components/heading";
-import { Highlight } from "@/components/highlight";
-import { Text } from "@/components/text";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
@@ -36,10 +35,7 @@ function AvatarPage() {
         Sizes
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["size"]}
-          text="Use the size prop to change the size of the avatar."
-        />
+        Use the <Code>size</Code> prop to change the size of the avatar.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -65,10 +61,7 @@ function AvatarPage() {
         With Initials
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["initials"]}
-          text="Use the initials prop to render an avatar with initials."
-        />
+        Use the <Code>initials</Code> prop to render an avatar with initials.
       </Text>
       <PagePreviewCodeTabs
         preview={<Avatar initials="ak" />}
@@ -78,10 +71,7 @@ function AvatarPage() {
         Square Avatars
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["square"]}
-          text="Use the square prop to render a square avatar."
-        />
+        Use the <Code>square</Code> prop to render a square avatar.
       </Text>
       <PagePreviewCodeTabs
         preview={<Avatar initials="ak" square />}
@@ -130,10 +120,8 @@ function AvatarPage() {
         Persona
       </Heading>
       <Text className="mb-2">
-        <Highlight
-          query={["Avatar"]}
-          text="Here's an example of how to use the Avatar component to display a user persona."
-        />
+        Here's an example of how to use the <Code>Avatar</Code> component to
+        display a user persona.
       </Text>
       <PagePreviewCodeTabs
         preview={
