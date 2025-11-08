@@ -120,8 +120,8 @@ function AvatarPage() {
         Persona
       </Heading>
       <Text className="mb-2">
-        Here's an example of how to use the <Code>Avatar</Code> component to
-        display a user persona.
+        Here&apos;s an example of how to use the <Code>Avatar</Code> component
+        to display a user persona.
       </Text>
       <PagePreviewCodeTabs
         preview={

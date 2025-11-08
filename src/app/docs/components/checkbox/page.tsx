@@ -73,7 +73,7 @@ function CheckboxPage() {
         Label Position
       </Heading>
       <Text className="mb-2">
-        Here's an example of how to change the label position to the right.
+        Here&apos;s an example of how to change the label position to the right.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -88,7 +88,8 @@ function CheckboxPage() {
         Composition
       </Heading>
       <Text className="mb-2">
-        Here's an example of how to compose a checkbox with a field component.
+        Here&apos;s an example of how to compose a checkbox with a field
+        component.
       </Text>
       <PagePreviewCodeTabs
         preview={
