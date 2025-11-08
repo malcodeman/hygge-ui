@@ -59,7 +59,7 @@ function CardPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Within Form
       </Heading>
       <Text className="mb-2">
@@ -105,7 +105,7 @@ function CardPage() {
   </CardFooter>
 </Card>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With Image
       </Heading>
       <Text className="mb-2">Use the Card component to display an image.</Text>
@@ -143,7 +143,7 @@ function CardPage() {
   </CardFooter>
 </Card>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Horizontal
       </Heading>
       <Text className="mb-2">
@@ -184,7 +184,7 @@ function CardPage() {
   </div>
 </Card>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With Avatar
       </Heading>
       <Text className="mb-2">Use the Card component to display an avatar.</Text>

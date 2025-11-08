@@ -23,7 +23,7 @@ function ButtonPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Sizes
       </Heading>
       <Text className="mb-2">
@@ -50,7 +50,7 @@ function ButtonPage() {
   <Button size="xl">Extra Large</Button>
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Variants
       </Heading>
       <Text className="mb-2">
@@ -76,7 +76,7 @@ function ButtonPage() {
   <Button variant="ghost">Ghost</Button>
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Icon
       </Heading>
       <Text className="mb-2">Use icons within a button.</Text>
@@ -102,7 +102,7 @@ function ButtonPage() {
   </Button>
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Disabled
       </Heading>
       <Text className="mb-2">
@@ -115,7 +115,7 @@ function ButtonPage() {
         preview={<Button disabled>Button</Button>}
         code={`<Button disabled>Button</Button>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Loading
       </Heading>
       <Text className="mb-2">
@@ -138,7 +138,7 @@ function ButtonPage() {
   </Button>
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Spinner Placement
       </Heading>
       <Text className="mb-2">

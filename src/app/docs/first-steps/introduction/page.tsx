@@ -23,14 +23,18 @@ function IntroductionPage() {
         <Card className="cursor-pointer transition-colors hover:border-[#eb5e41]">
           <CardBody>
             <LuDownload size={24} className="mb-4 text-[#eb5e41]" />
-            <Heading level={3}>Download .zip file</Heading>
+            <Heading level={3} size="lg">
+              Download .zip file
+            </Heading>
           </CardBody>
         </Card>
         <Link href={NAVIGATION_GROUPS[2].pages[0].href}>
           <Card className="cursor-pointer transition-colors hover:border-[#eb5e41]">
             <CardBody>
               <LuComponent size={24} className="mb-4 text-[#eb5e41]" />
-              <Heading level={3}>Show Components</Heading>
+              <Heading level={3} size="lg">
+                Show Components
+              </Heading>
             </CardBody>
           </Card>
         </Link>

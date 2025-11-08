@@ -22,7 +22,7 @@ function AlertPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Description
       </Heading>
       <Text className="mb-2">
@@ -47,7 +47,7 @@ function AlertPage() {
   description="Your form has some errors. Please fix them and try again."
 />`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Status
       </Heading>
       <Text className="mb-2">

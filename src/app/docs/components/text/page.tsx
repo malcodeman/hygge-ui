@@ -31,7 +31,7 @@ function TextPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Basic example
       </Heading>
       <Text className="mb-2">
@@ -55,7 +55,7 @@ function TextPage() {
         Paragraphs using <Highlight query="Text" text="Text" /> are responsive
         and automatically adapt to dark mode.
       </Text>
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With link
       </Heading>
       <Text className="mb-2">
@@ -75,7 +75,7 @@ function TextPage() {
   Deleting your account is permanent, and your data will not be able to be recovered. If you still want to use this account in the future, learn about <TextLink href="#">pausing your subscription</TextLink> instead.
 </Text>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With strong
       </Heading>
       <Text className="mb-2">
@@ -94,7 +94,7 @@ function TextPage() {
   Deleting your account is permanent, and <Strong>your account data cannot be recovered</Strong>.
 </Text>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With code
       </Heading>
       <Text className="mb-2">

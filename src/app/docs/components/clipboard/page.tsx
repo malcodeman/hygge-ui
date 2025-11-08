@@ -23,7 +23,7 @@ function ClipboardPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Timeout
       </Heading>
       <Text className="mb-2">

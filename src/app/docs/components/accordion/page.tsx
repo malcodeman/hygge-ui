@@ -69,7 +69,7 @@ function AccordionPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Expand Multiple Items
       </Heading>
       <Text className="mb-2">
@@ -98,7 +98,7 @@ function AccordionPage() {
   ))}
 </AccordionRoot>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Disabled Item
       </Heading>
       <Text className="mb-2">
@@ -135,7 +135,7 @@ function AccordionPage() {
   ))}
 </AccordionRoot>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With Avatar
       </Heading>
       <Text className="mb-2">
@@ -175,7 +175,7 @@ function AccordionPage() {
   ))}
 </AccordionRoot>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With Subtext
       </Heading>
       <Text className="mb-2">

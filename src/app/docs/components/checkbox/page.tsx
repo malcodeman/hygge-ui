@@ -24,7 +24,7 @@ function CheckboxPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Sizes
       </Heading>
       <Text className="mb-2">
@@ -45,7 +45,7 @@ function CheckboxPage() {
   <Checkbox size="lg" label="Checkbox lg" />
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         States
       </Heading>
       <Text className="mb-2">
@@ -69,7 +69,7 @@ function CheckboxPage() {
   <Checkbox label="Invalid" invalid />
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Label Position
       </Heading>
       <Text className="mb-2">
@@ -84,7 +84,7 @@ function CheckboxPage() {
         }
         code={`<Checkbox label="Accept terms and conditions" labelPlacement="start" />`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Composition
       </Heading>
       <Text className="mb-2">

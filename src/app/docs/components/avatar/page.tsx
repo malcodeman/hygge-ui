@@ -32,7 +32,7 @@ function AvatarPage() {
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-      <Heading level={3} className="mb-2">
+      <Heading level={3} size="lg" className="mb-2">
         Sizes
       </Heading>
       <Text className="mb-2">
@@ -61,7 +61,7 @@ function AvatarPage() {
   <Avatar size="2xl" src="https://i.pravatar.cc/300?img=6" />
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         With Initials
       </Heading>
       <Text className="mb-2">
@@ -74,7 +74,7 @@ function AvatarPage() {
         preview={<Avatar initials="ak" />}
         code={`<Avatar initials="ak" />`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Square Avatars
       </Heading>
       <Text className="mb-2">
@@ -87,7 +87,7 @@ function AvatarPage() {
         preview={<Avatar initials="ak" square />}
         code={`<Avatar initials="ak" square />`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Avatar Groups
       </Heading>
       <Text className="mb-2">
@@ -126,7 +126,7 @@ function AvatarPage() {
   />
 </div>`}
       />
-      <Heading level={3} className="mt-10 mb-2">
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Persona
       </Heading>
       <Text className="mb-2">
