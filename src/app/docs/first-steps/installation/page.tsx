@@ -3,7 +3,7 @@ import { Heading } from "@/components/heading";
 function InstallationPage() {
   return (
     <>
-      <Heading>Installation</Heading>
+      <Heading size="2xl">Installation</Heading>
     </>
   );
 }

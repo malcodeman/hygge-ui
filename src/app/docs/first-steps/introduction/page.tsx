@@ -8,7 +8,7 @@ import { NAVIGATION_GROUPS } from "app/navigation-groups";
 function IntroductionPage() {
   return (
     <>
-      <Heading>Introduction to Hygge-UI</Heading>
+      <Heading size="2xl">Introduction to Hygge-UI</Heading>
       <Text className="mb-6">
         A React component library built on Ark UI, inspired by the Danish
         concept of hygge — creating cozy, comfortable, and delightful user

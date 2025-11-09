@@ -3,7 +3,7 @@ import { Heading } from "@/components/heading";
 function AnimationPage() {
   return (
     <>
-      <Heading>Animation</Heading>
+      <Heading size="2xl">Animation</Heading>
     </>
   );
 }

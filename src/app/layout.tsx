@@ -32,7 +32,7 @@ export default function RootLayout({
               <ul>
                 {NAVIGATION_GROUPS.map((link) => (
                   <div key={link.group} className="mb-6">
-                    <Heading level={4} className="mb-2">
+                    <Heading level={5} size="sm" className="mb-2">
                       {link.group}
                     </Heading>
                     {link.pages.map((content) => (
