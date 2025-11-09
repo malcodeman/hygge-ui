@@ -24,8 +24,8 @@ function DatePickerPage() {
         Dates Range
       </Heading>
       <Text className="mb-2">
-        Set <Code>selectionMode="range"</Code> to allow user to pick dates
-        range.
+        Set <Code>selectionMode=&quot;range&quot;</Code> to allow user to pick
+        dates range.
       </Text>
       <PagePreviewCodeTabs
         preview={<DatePicker label="Pick dates range" selectionMode="range" />}

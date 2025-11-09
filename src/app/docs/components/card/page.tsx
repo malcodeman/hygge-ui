@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Avatar } from "@/components/avatar";
 import { Button } from "@/components/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@/components/card";
