@@ -19,7 +19,7 @@ export function Clipboard(props: Props) {
       ) : null}
       <ArkClipboard.Control className="flex gap-2">
         <ArkClipboard.Input asChild>
-          <Input />
+          <Input variant="outline" />
         </ArkClipboard.Input>
         <ArkClipboard.Trigger asChild>
           <Button variant="outline">
