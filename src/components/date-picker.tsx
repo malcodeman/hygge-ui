@@ -25,11 +25,11 @@ export function DatePicker(props: Props) {
       ) : null}
       <ArkDatePicker.Control className="inline-flex items-center gap-2">
         <ArkDatePicker.Input index={0} asChild>
-          <Input className="w-auto" />
+          <Input className="w-auto" variant="outline" />
         </ArkDatePicker.Input>
         {selectionMode === "range" ? (
           <ArkDatePicker.Input index={1} asChild>
-            <Input className="w-auto" />
+            <Input className="w-auto" variant="outline" />
           </ArkDatePicker.Input>
         ) : null}
         <ArkDatePicker.Trigger asChild>

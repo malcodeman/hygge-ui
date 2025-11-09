@@ -1,21 +1,8 @@
-import { Card } from "@/components/card";
-import { CodeBlock } from "@/components/code-block";
 import { DatePicker } from "@/components/date-picker";
+import { Heading } from "@/components/heading";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
-import { CODE_BLOCKS } from "app/constants";
-
-const CODE_EXAMPLES = [
-  {
-    code: `import { DatePicker } from '@/components/date-picker'
-
-function Example() {
-  return (
-    <DatePicker />
-  )
-}
-`,
-  },
-];
+import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 function DatePickerPage() {
   return (
@@ -24,17 +11,35 @@ function DatePickerPage() {
         title="Date Picker"
         description="A component that allows users to select a date from a calendar."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/date-picker.tsx"
-        className="mb-6"
+        className="mb-2"
       />
-      <Card className="mb-6">
-        <DatePicker />
-      </Card>
-      <CodeBlock
-        className="mb-6"
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[0].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={<DatePicker label="Pick date" placeholder="Pick date" />}
+        code={`<DatePicker label="Pick date" placeholder="Pick date" />`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
+        Examples
+      </Heading>
+      <Heading level={3} size="lg" className="mb-2">
+        Dates Range
+      </Heading>
+      <Text className="mb-2">
+        Set <Code>selectionMode="range"</Code> to allow user to pick dates
+        range.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<DatePicker label="Pick dates range" selectionMode="range" />}
+        code={`<DatePicker label="Pick dates range" selectionMode="range" />`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
+        Disabled
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>disabled</Code> prop to disable the date picker.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<DatePicker disabled />}
+        code={`<DatePicker disabled />`}
       />
     </>
   );
