@@ -1,26 +1,44 @@
 import { Field } from "@ark-ui/react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
-type Variant = "subtle" | "outline";
-type Props = {
-  variant?: Variant;
-  className?: string | undefined;
-} & React.ComponentPropsWithRef<"input">;
+const inputVariants = cva(
+  "text-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus:outline-2 focus:-outline-offset-1 focus:outline-[#21201C] disabled:cursor-not-allowed disabled:opacity-50 dark:placeholder:text-[#eeeeec]/50 dark:focus:outline-[#eeeeec]",
+  {
+    variants: {
+      variant: {
+        subtle: "border-transparent bg-[#21201c]/8 dark:bg-[#eeeeec]/8",
+        outline: "border-border-default",
+      },
+      size: {
+        xs: "h-8 px-1 text-xs",
+        sm: "h-9 px-2 text-sm",
+        md: "h-10 px-2 text-sm",
+        lg: "h-11 px-3 text-base",
+        xl: "h-12 px-3 text-base",
+      },
+    },
+    defaultVariants: {
+      variant: "subtle",
+      size: "md",
+    },
+  },
+);
+
+type Props = Omit<React.ComponentPropsWithRef<"input">, "size"> &
+  VariantProps<typeof inputVariants> & {
+    className?: string;
+  };
 
 export function Input(props: Props) {
-  const { variant = "subtle", className, ...rest } = props;
+  const { variant, size, className, ...rest } = props;
 
   return (
     <Field.Input
       {...rest}
       className={cn(
-        "w-full rounded-sm border bg-transparent p-2 text-sm font-semibold focus:outline-2 focus:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
-        "text-[#21201C] placeholder:text-[#21201C]/50 data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454] dark:text-[#eeeeec] dark:placeholder:text-[#eeeeec]/50",
-        {
-          "border-transparent bg-[#f1f0ef] dark:bg-[#2a2a28]":
-            variant === "subtle",
-          "border-[#cfceca] dark:border-[#494844]": variant === "outline",
-        },
+        inputVariants({ variant, size }),
+        "data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454]",
         className,
       )}
     />
