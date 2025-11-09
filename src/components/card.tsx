@@ -30,7 +30,7 @@ export function CardBody(props: React.ComponentPropsWithoutRef<"div">) {
   const { className, children, ...rest } = props;
 
   return (
-    <div {...rest} className={cn("flex flex-col items-start p-4", className)}>
+    <div {...rest} className={cn("flex flex-col p-4", className)}>
       {children}
     </div>
   );

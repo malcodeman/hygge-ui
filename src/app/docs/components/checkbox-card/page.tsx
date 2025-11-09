@@ -42,14 +42,14 @@ function CheckboxCardPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <div className="flex w-full max-w-sm flex-col gap-2">
+          <div className="flex max-w-sm flex-col gap-2">
             <CheckboxCard label="Disabled" disabled />
             <CheckboxCard label="Disabled" defaultChecked disabled />
             <CheckboxCard label="Readonly" readOnly />
             <CheckboxCard label="Invalid" invalid />
           </div>
         }
-        code={`<div className="flex w-full max-w-sm flex-col gap-2">
+        code={`<div className="flex max-w-sm flex-col gap-2">
   <CheckboxCard label="Disabled" disabled />
   <CheckboxCard label="Disabled" defaultChecked disabled />
   <CheckboxCard label="Readonly" readOnly />

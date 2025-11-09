@@ -93,7 +93,7 @@ function CheckboxPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <div className="flex w-full max-w-xs flex-col items-start gap-2">
+          <div className="flex max-w-xs flex-col items-start gap-2">
             <Field label="Username">
               <Input placeholder="username" />
             </Field>
@@ -104,7 +104,7 @@ function CheckboxPage() {
             <Button>Submit</Button>
           </div>
         }
-        code={`<div className="flex w-full max-w-xs flex-col items-start gap-2">
+        code={`<div className="flex max-w-xs flex-col items-start gap-2">
   <Field label="Username">
     <Input placeholder="username" />
   </Field>

@@ -16,8 +16,14 @@ function ButtonPage() {
         verified
       />
       <PagePreviewCodeTabs
-        preview={<Button>Click me</Button>}
-        code={`<Button>Click me</Button>`}
+        preview={
+          <div>
+            <Button>Click me</Button>
+          </div>
+        }
+        code={`<div>
+  <Button>Click me</Button>
+</div>`}
       />
       <Heading level={2} className="mt-10 mb-2">
         Examples
@@ -51,7 +57,7 @@ function ButtonPage() {
       </Heading>
       <Text className="mb-2">
         Use the <Code>variant</Code> prop to change the visual style of the
-        Button.
+        button.
       </Text>
       <PagePreviewCodeTabs
         preview={
@@ -68,6 +74,7 @@ function ButtonPage() {
   <Button variant="subtle">Subtle</Button>
   <Button variant="outline">Outline</Button>
   <Button variant="ghost">Ghost</Button>
+  <Button variant="destructive">Destructive</Button>
 </div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
@@ -103,8 +110,14 @@ function ButtonPage() {
         Use the <Code>disabled</Code> prop to disable the button.
       </Text>
       <PagePreviewCodeTabs
-        preview={<Button disabled>Button</Button>}
-        code={`<Button disabled>Button</Button>`}
+        preview={
+          <div>
+            <Button disabled>Button</Button>
+          </div>
+        }
+        code={`<div>
+  <Button disabled>Button</Button>
+</div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Loading
@@ -133,7 +146,7 @@ function ButtonPage() {
         Spinner Placement
       </Heading>
       <Text className="mb-2">
-        Use the <code>spinnerPlacement</code> prop to change the spinner’s
+        Use the <Code>spinnerPlacement</Code> prop to change the spinner’s
         position.
       </Text>
       <PagePreviewCodeTabs

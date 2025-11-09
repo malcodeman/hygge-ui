@@ -110,7 +110,7 @@ function InputPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <div className="flex w-full gap-10">
+          <div className="flex gap-10">
             <Field required label="Email">
               <Input placeholder="me@example.com" />
             </Field>
@@ -119,7 +119,7 @@ function InputPage() {
             </Field>
           </div>
         }
-        code={`<div className="flex w-full gap-10">
+        code={`<div className="flex gap-10">
   <Field required label="Email">
     <Input placeholder="me@example.com" />
   </Field>
