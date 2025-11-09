@@ -1,40 +1,54 @@
-import { Card } from "@/components/card";
-import { CodeBlock } from "@/components/code-block";
+import { Heading } from "@/components/heading";
 import { PasswordInput } from "@/components/password-input";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
-import { CODE_BLOCKS } from "app/constants";
-
-const CODE_EXAMPLES = [
-  {
-    code: `import { PasswordInput } from "@/components/password-input";
-
-function Example() {
-  return (
-      <PasswordInput />
-  );
-}
-`,
-  },
-];
+import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 function PasswordInputPage() {
   return (
     <>
       <PageHeader
-        className="mb-6"
         title="Password Input"
         description="Used to collect passwords."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/password-input.tsx"
+        className="mb-2"
+        verified
       />
-      <Card className="mb-6">
-        <PasswordInput />
-      </Card>
-      <CodeBlock
-        theme={CODE_BLOCKS.THEME}
-        language={CODE_BLOCKS.LANGUAGE}
-        code={CODE_EXAMPLES[0].code}
-        copyButton={CODE_BLOCKS.COPY_BUTTON}
+      <PagePreviewCodeTabs
+        preview={<PasswordInput />}
+        code={`<PasswordInput />`}
       />
+      <Heading level={2} className="mt-10 mb-2">
+        Examples
+      </Heading>
+      <Heading level={3} size="lg" className="mb-2">
+        Sizes
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>size</Code> prop to change the size of the input.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex flex-col gap-2">
+            <PasswordInput size="xs" />
+            <PasswordInput size="sm" />
+            <PasswordInput size="md" />
+            <PasswordInput size="lg" />
+            <PasswordInput size="xl" />
+          </div>
+        }
+        code={`<div className="flex flex-col gap-2">
+  <PasswordInput size="xs" />
+  <PasswordInput size="sm" />
+  <PasswordInput size="md" />
+  <PasswordInput size="lg" />
+  <PasswordInput size="xl" />
+</div>`}
+      />
+      <Text>
+        The password input sizes are mapped to the <Code>Input</Code> component
+        sizes.
+      </Text>
     </>
   );
 }

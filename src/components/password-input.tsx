@@ -5,10 +5,11 @@ import { Button } from "./button";
 
 type Props = {
   label?: React.ReactNode;
+  size?: "sm" | "lg" | "xl" | "xs" | "md" | null | undefined;
 } & ArkPasswordInput.RootProps;
 
 export function PasswordInput(props: Props) {
-  const { label, ...rest } = props;
+  const { label, size, ...rest } = props;
 
   return (
     <ArkPasswordInput.Root {...rest}>
@@ -19,10 +20,11 @@ export function PasswordInput(props: Props) {
       ) : null}
       <ArkPasswordInput.Control className="relative">
         <ArkPasswordInput.Input asChild>
-          <Input />
+          <Input size={size} />
         </ArkPasswordInput.Input>
         <ArkPasswordInput.VisibilityTrigger asChild>
           <Button
+            size="xs"
             variant="ghost"
             className="absolute top-1/2 right-2 -translate-y-1/2"
           >
