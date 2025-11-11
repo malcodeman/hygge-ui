@@ -1,5 +1,3 @@
-import { LuCoffee, LuCommand } from "react-icons/lu";
-
 export const NAVIGATION_GROUPS = [
   {
     group: "First Steps",
@@ -7,12 +5,6 @@ export const NAVIGATION_GROUPS = [
       {
         href: "/docs/first-steps/introduction",
         label: "Introduction",
-        icon: <LuCoffee size={16} />,
-      },
-      {
-        href: "/docs/first-steps/installation",
-        label: "Installation",
-        icon: <LuCommand size={16} />,
       },
     ],
   },

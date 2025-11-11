@@ -41,7 +41,6 @@ export default function RootLayout({
                           href={content.href}
                           className="flex items-center gap-2"
                         >
-                          {"icon" in content ? content.icon : null}
                           {content.label}
                         </NavLink>
                       </li>
