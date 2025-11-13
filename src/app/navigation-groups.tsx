@@ -9,15 +9,6 @@ export const NAVIGATION_GROUPS = [
     ],
   },
   {
-    group: "Guides",
-    pages: [
-      {
-        href: "/docs/guides/animation",
-        label: "Animation",
-      },
-    ],
-  },
-  {
     group: "Components",
     pages: [
       {
@@ -79,6 +70,15 @@ export const NAVIGATION_GROUPS = [
       {
         href: "/docs/components/password-input",
         label: "Password Input",
+      },
+    ],
+  },
+  {
+    group: "Charts",
+    pages: [
+      {
+        href: "/docs/charts/area-chart",
+        label: "Area Chart",
       },
     ],
   },
