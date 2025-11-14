@@ -52,6 +52,10 @@ export const NAVIGATION_GROUPS = [
         label: "Text",
       },
       {
+        href: "/docs/components/textarea",
+        label: "Textarea",
+      },
+      {
         href: "/docs/components/date-picker",
         label: "Date Picker",
       },

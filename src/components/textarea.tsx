@@ -1,28 +1,40 @@
 import { Field } from "@ark-ui/react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
-type Variant = "subtle" | "outline";
-type Props = {
-  className?: string | undefined;
-  variant?: Variant;
-} & React.ComponentPropsWithRef<"textarea">;
+const textareaVariants = cva(
+  "text-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus:outline-2 focus:-outline-offset-1 focus:outline-[#21201C] disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454] dark:placeholder:text-[#eeeeec]/50 dark:focus:outline-[#eeeeec]",
+  {
+    variants: {
+      variant: {
+        subtle: "border-transparent bg-[#21201c]/8 dark:bg-[#eeeeec]/8",
+        outline: "border-border-default",
+      },
+      size: {
+        xs: "min-h-8 p-1 text-xs",
+        sm: "min-h-9 p-2 text-sm",
+        md: "min-h-10 p-2 text-sm",
+        lg: "min-h-11 p-3 text-base",
+        xl: "min-h-12 p-3 text-base",
+      },
+    },
+    defaultVariants: {
+      variant: "subtle",
+      size: "md",
+    },
+  },
+);
+
+type Props = React.ComponentPropsWithRef<"textarea"> &
+  VariantProps<typeof textareaVariants>;
 
 export function Textarea(props: Props) {
-  const { variant = "subtle", className, ...rest } = props;
+  const { variant, size, className, ...rest } = props;
 
   return (
     <Field.Textarea
       {...rest}
-      className={cn(
-        "min-h-8 rounded-sm border bg-transparent p-2 text-sm font-semibold focus:outline-2 focus:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
-        "text-[#21201C] placeholder:text-[#21201C]/50 focus:outline-[#21201C] data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454] dark:text-[#eeeeec] dark:placeholder:text-[#eeeeec]/50 dark:focus:outline-[#eeeeec]",
-        {
-          "border-transparent bg-[#f1f0ef] dark:bg-[#2a2a28]":
-            variant === "subtle",
-          "border-[#cfceca] dark:border-[#494844]": variant === "outline",
-        },
-        className,
-      )}
+      className={cn(textareaVariants({ variant, size }), className)}
     />
   );
 }

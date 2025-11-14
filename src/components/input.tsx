@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
 const inputVariants = cva(
-  "text-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus:outline-2 focus:-outline-offset-1 focus:outline-[#21201C] disabled:cursor-not-allowed disabled:opacity-50 dark:placeholder:text-[#eeeeec]/50 dark:focus:outline-[#eeeeec]",
+  "text-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus:outline-2 focus:-outline-offset-1 focus:outline-[#21201C] disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454] dark:placeholder:text-[#eeeeec]/50 dark:focus:outline-[#eeeeec]",
   {
     variants: {
       variant: {
@@ -26,9 +26,7 @@ const inputVariants = cva(
 );
 
 type Props = Omit<React.ComponentPropsWithRef<"input">, "size"> &
-  VariantProps<typeof inputVariants> & {
-    className?: string;
-  };
+  VariantProps<typeof inputVariants>;
 
 export function Input(props: Props) {
   const { variant, size, className, ...rest } = props;
@@ -36,11 +34,7 @@ export function Input(props: Props) {
   return (
     <Field.Input
       {...rest}
-      className={cn(
-        inputVariants({ variant, size }),
-        "data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454]",
-        className,
-      )}
+      className={cn(inputVariants({ variant, size }), className)}
     />
   );
 }
