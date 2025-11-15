@@ -1,3 +1,4 @@
+import { Field } from "@/components/field";
 import { Heading } from "@/components/heading";
 import { Code, Text } from "@/components/text";
 import { Textarea } from "@/components/textarea";
@@ -63,6 +64,97 @@ function TextareaPage() {
   <Textarea placeholder="size (lg)" size="lg" />
   <Textarea placeholder="size (xl)" size="xl" />
 </div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Helper Text
+      </Heading>
+      <Text className="mb-2">
+        Pair the textarea with the <Code>Field</Code> component to add helper
+        text.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex gap-10">
+            <Field required label="Comment" helperText="Max 500 characters.">
+              <Textarea placeholder="Start typing..." />
+            </Field>
+            <Field required label="Comment" helperText="Max 500 characters.">
+              <Textarea placeholder="Start typing..." variant="outline" />
+            </Field>
+          </div>
+        }
+        code={`<div className="flex gap-10">
+  <Field required label="Comment" helperText="Max 500 characters.">
+    <Textarea placeholder="Start typing..." />
+  </Field>
+  <Field required label="Comment" helperText="Max 500 characters.">
+    <Textarea placeholder="Start typing..." variant="outline" />
+  </Field>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Error Text
+      </Heading>
+      <Text className="mb-2">
+        Pair the textarea with the <Code>Field</Code> component to add error
+        text.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex gap-10">
+            <Field invalid label="Comment" helperText="Field is required.">
+              <Textarea placeholder="Start typing..." />
+            </Field>
+            <Field invalid label="Comment" helperText="Field is required.">
+              <Textarea placeholder="Start typing..." variant="outline" />
+            </Field>
+          </div>
+        }
+        code={`<div className="flex gap-10">
+  <Field invalid label="Comment" helperText="Field is required.">
+    <Textarea placeholder="Start typing..." />
+  </Field>
+  <Field invalid label="Comment" helperText="Field is required.">
+    <Textarea placeholder="Start typing..." variant="outline" />
+  </Field>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Field
+      </Heading>
+      <Text className="mb-2">
+        Compose the textarea with the <Code>Field</Code> component to add a
+        label, helper text, and error text.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex gap-10">
+            <Field required label="Email">
+              <Textarea placeholder="me@example.com" />
+            </Field>
+            <Field required label="Email">
+              <Textarea placeholder="me@example.com" variant="outline" />
+            </Field>
+          </div>
+        }
+        code={`<div className="flex gap-10">
+  <Field required label="Email">
+    <Input placeholder="me@example.com" />
+  </Field>
+  <Field required label="Email">
+    <Input placeholder="me@example.com" variant="outline" />
+  </Field>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Disabled
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>disabled</Code> prop to disable the textarea.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<Textarea disabled placeholder="disabled" />}
+        code={`<Textarea disabled placeholder="disabled" />`}
       />
     </>
   );

@@ -73,17 +73,31 @@ function InputPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <Field
-            required
-            label="Email"
-            helperText="We'll never share your email."
-          >
-            <Input placeholder="Enter your email" />
-          </Field>
+          <div className="flex gap-10">
+            <Field
+              required
+              label="Email"
+              helperText="We'll never share your email."
+            >
+              <Input placeholder="Enter your email" />
+            </Field>
+            <Field
+              required
+              label="Email"
+              helperText="We'll never share your email."
+            >
+              <Input placeholder="Enter your email" variant="outline" />
+            </Field>
+          </div>
         }
-        code={`<Field required label="Email" helperText="We'll never share your email.">
-  <Input placeholder="Enter your email" />
-</Field>`}
+        code={`<div className="flex gap-10">
+  <Field required label="Email" helperText="We'll never share your email.">
+    <Input placeholder="Enter your email" />
+  </Field>
+  <Field required label="Email" helperText="We'll never share your email.">
+    <Input placeholder="Enter your email" variant="outline" />
+  </Field>
+</div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Error Text
@@ -93,13 +107,23 @@ function InputPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <Field invalid label="Email" helperText="This field is required.">
-            <Input placeholder="Enter your email" />
-          </Field>
+          <div className="flex gap-10">
+            <Field invalid label="Email" helperText="This field is required.">
+              <Input placeholder="Enter your email" />
+            </Field>
+            <Field invalid label="Email" helperText="This field is required.">
+              <Input placeholder="Enter your email" variant="outline" />
+            </Field>
+          </div>
         }
-        code={`<Field invalid label="Email" helperText="This field is required.">
-  <Input placeholder="Enter your email" />
-</Field>`}
+        code={`<div className="flex gap-10">
+  <Field invalid label="Email" helperText="This field is required.">
+    <Input placeholder="Enter your email" />
+  </Field>
+  <Field invalid label="Email" helperText="This field is required.">
+    <Input placeholder="Enter your email" variant="outline" />
+  </Field>
+</div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Field
