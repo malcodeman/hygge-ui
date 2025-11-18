@@ -867,10 +867,10 @@ export default function Home() {
           <Heading level={2}>Rating</Heading>
           <div className="flex flex-col gap-2">
             <Rating label="Gray" />
-            <Rating label="Orange" colorPallete="orange" />
-            <Rating label="Teal" colorPallete="teal" />
-            <Rating label="Green" colorPallete="green" />
-            <Rating label="Red" colorPallete="red" />
+            <Rating label="Orange" colorPalette="orange" />
+            <Rating label="Teal" colorPalette="teal" />
+            <Rating label="Green" colorPalette="green" />
+            <Rating label="Red" colorPalette="red" />
           </div>
         </Card>
         <Card>

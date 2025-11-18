@@ -1,5 +1,6 @@
 import { Heading } from "@/components/heading";
 import { Rating } from "@/components/rating";
+import { Code, Text } from "@/components/text";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
@@ -22,6 +23,77 @@ function RatingPage() {
       <PagePreviewCodeTabs
         preview={<Rating count={5} defaultValue={3} />}
         code={`<Rating count={5} defaultValue={3} />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Sizes
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>size</Code> prop to change the size of the rating
+        component.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex flex-col gap-2">
+            <Rating size="xs" />
+            <Rating size="sm" />
+            <Rating size="md" />
+            <Rating size="lg" />
+            <Rating size="xl" />
+          </div>
+        }
+        code={`<div className="flex flex-col gap-2">
+  <Rating size="xs" />
+  <Rating size="sm" />
+  <Rating size="md" />
+  <Rating size="lg" />
+  <Rating size="xl" />
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        ReadOnly
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>readOnly</Code> prop to make the rating component
+        read-only.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<Rating readOnly count={5} defaultValue={3} />}
+        code={`<Rating readOnly count={5} defaultValue={3} />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Color
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>colorPalette</Code> prop to change the color of the
+        rating.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="grid grid-cols-[8ch_1fr] items-center gap-y-2">
+            <Text>gray</Text>
+            <Rating colorPalette="gray" count={5} defaultValue={3} />
+            <Text>orange</Text>
+            <Rating colorPalette="orange" count={5} defaultValue={3} />
+            <Text>teal</Text>
+            <Rating colorPalette="teal" count={5} defaultValue={3} />
+            <Text>green</Text>
+            <Rating colorPalette="green" count={5} defaultValue={3} />
+            <Text>red</Text>
+            <Rating colorPalette="red" count={5} defaultValue={3} />
+          </div>
+        }
+        code={`<div className="grid grid-cols-[8ch_1fr] items-center gap-y-2">
+  <Text>gray</Text>
+  <Rating colorPalette="gray" count={5} defaultValue={3} />
+  <Text>orange</Text>
+  <Rating colorPalette="orange" count={5} defaultValue={3} />
+  <Text>teal</Text>
+  <Rating colorPalette="teal" count={5} defaultValue={3} />
+  <Text>green</Text>
+  <Rating colorPalette="green" count={5} defaultValue={3} />
+  <Text>red</Text>
+  <Rating colorPalette="red" count={5} defaultValue={3} />
+</div>`}
       />
     </>
   );

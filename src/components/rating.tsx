@@ -3,16 +3,32 @@ import {
   RatingGroup as ArkRatingGroup,
   RatingGroupRootProps,
 } from "@ark-ui/react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 import { LuStar } from "react-icons/lu";
 
-type Props = {
+const ratingControlVariants = cva("flex gap-1", {
+  variants: {
+    size: {
+      xs: "text-xs",
+      sm: "text-sm",
+      md: "text-md",
+      lg: "text-lg",
+      xl: "text-xl",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+});
+
+type Props = VariantProps<typeof ratingControlVariants> & {
   label?: React.ReactNode;
-  colorPallete?: "gray" | "orange" | "teal" | "green" | "red";
+  colorPalette?: "gray" | "orange" | "teal" | "green" | "red";
 } & RatingGroupRootProps;
 
 export function Rating(props: Props) {
-  const { label, colorPallete = "gray", className, ...rest } = props;
+  const { label, size, colorPalette, className, ...rest } = props;
 
   return (
     <ArkRatingGroup.Root
@@ -20,38 +36,37 @@ export function Rating(props: Props) {
       {...rest}
     >
       {label ? (
-        <ArkRatingGroup.Label className="text-sm font-semibold text-[#21201c] dark:text-[#eeeeec]">
+        <ArkRatingGroup.Label className="text-fg-default text-sm font-semibold">
           {label}
         </ArkRatingGroup.Label>
       ) : null}
-      <ArkRatingGroup.Control className="flex gap-1">
+      <ArkRatingGroup.Control className={ratingControlVariants({ size })}>
         <ArkRatingGroup.Context>
           {({ items }) =>
             items.map((item) => (
               <ArkRatingGroup.Item
                 key={item}
                 index={item}
-                className="cursor-pointer focus:outline-2 focus:-outline-offset-1"
+                className="cursor-pointer focus:outline-2 focus:-outline-offset-1 data-[readonly]:cursor-default"
               >
                 <ArkRatingGroup.ItemContext>
                   {({ highlighted }) => (
                     <LuStar
-                      size={16}
                       className={cn(
                         "fill-[#e9e8e6] stroke-[#e9e8e6] dark:fill-[#2a2a28] dark:stroke-[#2a2a28]",
-                        colorPallete === "gray" && highlighted
+                        colorPalette === "gray" && highlighted
                           ? "fill-[#21201C] stroke-[#21201C] dark:fill-[#eeeeec] dark:stroke-[#eeeeec]"
                           : undefined,
-                        colorPallete === "orange" && highlighted
+                        colorPalette === "orange" && highlighted
                           ? "fill-[#eb5e41] stroke-[#eb5e41] dark:fill-[#eb5e41] dark:stroke-[#eb5e41]"
                           : undefined,
-                        colorPallete === "teal" && highlighted
+                        colorPalette === "teal" && highlighted
                           ? "fill-[#0d9488] stroke-[#0d9488] dark:fill-[#0d9488] dark:stroke-[#0d9488]"
                           : undefined,
-                        colorPallete === "green" && highlighted
+                        colorPalette === "green" && highlighted
                           ? "fill-[#38a169] stroke-[#38a169] dark:fill-[#38a169] dark:stroke-[#38a169]"
                           : undefined,
-                        colorPallete === "red" && highlighted
+                        colorPalette === "red" && highlighted
                           ? "fill-[#fd5454] stroke-[#fd5454] dark:fill-[#fd5454] dark:stroke-[#fd5454]"
                           : undefined,
                       )}
