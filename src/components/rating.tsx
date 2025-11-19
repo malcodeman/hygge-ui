@@ -28,7 +28,7 @@ type Props = VariantProps<typeof ratingControlVariants> & {
 } & RatingGroupRootProps;
 
 export function Rating(props: Props) {
-  const { label, size, colorPalette, className, ...rest } = props;
+  const { label, size, colorPalette = "gray", className, ...rest } = props;
 
   return (
     <ArkRatingGroup.Root
