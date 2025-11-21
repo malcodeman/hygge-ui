@@ -21,11 +21,28 @@ const ratingControlVariants = cva("flex gap-1", {
     size: "md",
   },
 });
+const ratingItemVariants = cva(
+  "cursor-pointer text-[#e9e8e6] focus:outline-2 focus:-outline-offset-1 data-[readonly]:cursor-default dark:text-[#2a2a28]",
+  {
+    variants: {
+      colorPalette: {
+        gray: `data-[highlighted]:text-[#21201C] dark:data-[highlighted]:text-[#eeeeec]`,
+        orange: `data-[highlighted]:text-[#eb5e41] dark:data-[highlighted]:text-[#eb5e41]`,
+        teal: `data-[highlighted]:text-[#0d9488] dark:data-[highlighted]:text-[#0d9488]`,
+        green: `data-[highlighted]:text-[#38a169] dark:data-[highlighted]:text-[#38a169]`,
+        red: `data-[highlighted]:text-[#fd5454] dark:data-[highlighted]:text-[#fd5454]`,
+      },
+    },
+    defaultVariants: {
+      colorPalette: "gray",
+    },
+  },
+);
 
-type Props = VariantProps<typeof ratingControlVariants> & {
-  label?: React.ReactNode;
-  colorPalette?: "gray" | "orange" | "teal" | "green" | "red";
-} & RatingGroupRootProps;
+type Props = VariantProps<typeof ratingControlVariants> &
+  VariantProps<typeof ratingItemVariants> & {
+    label?: React.ReactNode;
+  } & RatingGroupRootProps;
 
 export function Rating(props: Props) {
   const { label, size, colorPalette = "gray", className, ...rest } = props;
@@ -47,32 +64,9 @@ export function Rating(props: Props) {
               <ArkRatingGroup.Item
                 key={item}
                 index={item}
-                className="cursor-pointer focus:outline-2 focus:-outline-offset-1 data-[readonly]:cursor-default"
+                className={ratingItemVariants({ colorPalette })}
               >
-                <ArkRatingGroup.ItemContext>
-                  {({ highlighted }) => (
-                    <LuStar
-                      className={cn(
-                        "fill-[#e9e8e6] stroke-[#e9e8e6] dark:fill-[#2a2a28] dark:stroke-[#2a2a28]",
-                        colorPalette === "gray" && highlighted
-                          ? "fill-[#21201C] stroke-[#21201C] dark:fill-[#eeeeec] dark:stroke-[#eeeeec]"
-                          : undefined,
-                        colorPalette === "orange" && highlighted
-                          ? "fill-[#eb5e41] stroke-[#eb5e41] dark:fill-[#eb5e41] dark:stroke-[#eb5e41]"
-                          : undefined,
-                        colorPalette === "teal" && highlighted
-                          ? "fill-[#0d9488] stroke-[#0d9488] dark:fill-[#0d9488] dark:stroke-[#0d9488]"
-                          : undefined,
-                        colorPalette === "green" && highlighted
-                          ? "fill-[#38a169] stroke-[#38a169] dark:fill-[#38a169] dark:stroke-[#38a169]"
-                          : undefined,
-                        colorPalette === "red" && highlighted
-                          ? "fill-[#fd5454] stroke-[#fd5454] dark:fill-[#fd5454] dark:stroke-[#fd5454]"
-                          : undefined,
-                      )}
-                    />
-                  )}
-                </ArkRatingGroup.ItemContext>
+                <LuStar className="fill-current" />
               </ArkRatingGroup.Item>
             ))
           }
