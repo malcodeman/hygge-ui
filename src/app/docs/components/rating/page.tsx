@@ -13,6 +13,7 @@ function RatingPage() {
         description="Used to show reviews and ratings in a visual format."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/rating.tsx"
         className="mb-2"
+        verified
       />
       <PagePreviewCodeTabs preview={<Rating />} code={`<Rating />`} />
       <Heading level={2} className="mt-10 mb-2">
@@ -80,16 +81,6 @@ function RatingPage() {
       <PagePreviewCodeTabs
         preview={<Rating allowHalf count={5} defaultValue={3.5} />}
         code={`<Rating allowHalf count={5} defaultValue={3.5} />`}
-      />
-      <Heading level={3} size="lg" className="mt-10 mb-2">
-        Disabled
-      </Heading>
-      <Text className="mb-2">
-        Use the <Code>disabled</Code> prop to disable the rating.
-      </Text>
-      <PagePreviewCodeTabs
-        preview={<Rating disabled count={5} defaultValue={3} />}
-        code={`<Rating disabled count={5} defaultValue={3} />`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Color
