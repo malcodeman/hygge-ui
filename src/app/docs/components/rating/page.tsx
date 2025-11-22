@@ -1,3 +1,4 @@
+import { Avatar } from "@/components/avatar";
 import { Heading } from "@/components/heading";
 import { Rating } from "@/components/rating";
 import { Code, Text } from "@/components/text";
@@ -81,6 +82,16 @@ function RatingPage() {
         code={`<Rating allowHalf count={5} defaultValue={3.5} />`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
+        Disabled
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>disabled</Code> prop to disable the rating.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<Rating disabled count={5} defaultValue={3} />}
+        code={`<Rating disabled count={5} defaultValue={3} />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Color
       </Heading>
       <Text className="mb-2">
@@ -113,6 +124,49 @@ function RatingPage() {
   <Rating colorPalette="green" count={5} defaultValue={3} />
   <Text>red</Text>
   <Rating colorPalette="red" count={5} defaultValue={3} />
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Testimonial
+      </Heading>
+      <Text className="mb-2">
+        Use the rating component to show testimonials.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex max-w-sm flex-col gap-2">
+            <Rating count={5} defaultValue={5} readOnly colorPalette="orange" />
+            <Text className="text-fg-default">
+              Amer is a great software engineer. He is very professional and
+              knowledgeable.
+            </Text>
+            <div className="flex items-center gap-2">
+              <Avatar
+                src="https://randomuser.me/api/portraits/men/70.jpg"
+                size="md"
+              />
+              <div>
+                <Text className="text-fg-default">Matthew Jones</Text>
+                <Text>CTO, Company</Text>
+              </div>
+            </div>
+          </div>
+        }
+        code={`<div className="flex max-w-sm flex-col gap-2">
+  <Rating count={5} defaultValue={5} readOnly colorPalette="orange" />
+  <Text className="text-fg-default">
+    Amer is a great software engineer. He is very professional and knowledgeable.
+  </Text>
+  <div className="flex items-center gap-2">
+    <Avatar
+      src="https://randomuser.me/api/portraits/men/70.jpg"
+      size="md"
+    />
+    <div>
+      <Text className="text-fg-default">Matthew Jones</Text>
+      <Text>CTO, Company</Text>
+    </div>
+  </div>
 </div>`}
       />
     </>
