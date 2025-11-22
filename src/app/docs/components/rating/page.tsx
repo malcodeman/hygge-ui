@@ -61,6 +61,26 @@ function RatingPage() {
         code={`<Rating readOnly count={5} defaultValue={3} />`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
+        Label
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>label</Code> prop to add a label to the rating component.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<Rating label="Rating" count={5} defaultValue={3} />}
+        code={`<Rating label="Rating" count={5} defaultValue={3} />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Half Start
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>allowHalf</Code> prop to allow half-star ratings.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<Rating allowHalf count={5} defaultValue={3.5} />}
+        code={`<Rating allowHalf count={5} defaultValue={3.5} />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Color
       </Heading>
       <Text className="mb-2">

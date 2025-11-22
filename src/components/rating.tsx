@@ -5,7 +5,7 @@ import {
 } from "@ark-ui/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
-import { LuStar } from "react-icons/lu";
+import { LuStar, LuStarHalf } from "react-icons/lu";
 
 const ratingControlVariants = cva("flex gap-1", {
   variants: {
@@ -66,7 +66,15 @@ export function Rating(props: Props) {
                 index={item}
                 className={ratingItemVariants({ colorPalette })}
               >
-                <LuStar className="fill-current" />
+                <ArkRatingGroup.ItemContext>
+                  {({ half }) =>
+                    half ? (
+                      <LuStarHalf className="fill-current" />
+                    ) : (
+                      <LuStar className="fill-current" />
+                    )
+                  }
+                </ArkRatingGroup.ItemContext>
               </ArkRatingGroup.Item>
             ))
           }
