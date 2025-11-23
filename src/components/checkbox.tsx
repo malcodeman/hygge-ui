@@ -21,13 +21,9 @@ type Props = VariantProps<typeof checkboxVariants> & {
   labelPlacement?: "start" | "end";
 } & ArkCheckbox.RootProps;
 
-export function Checkbox({
-  size,
-  label,
-  labelPlacement = "end",
-  className,
-  ...rest
-}: Props) {
+export function Checkbox(props: Props) {
+  const { label, labelPlacement = "end", size, className, ...rest } = props;
+
   return (
     <ArkCheckbox.Root
       {...rest}
@@ -58,12 +54,12 @@ export function Checkbox({
           <LuCheck size={16} />
         </ArkCheckbox.Indicator>
       </ArkCheckbox.Control>
+      <ArkCheckbox.HiddenInput />
       {label && labelPlacement === "end" ? (
         <ArkCheckbox.Label className="text-fg-default text-sm/6 font-semibold">
           {label}
         </ArkCheckbox.Label>
       ) : null}
-      <ArkCheckbox.HiddenInput />
     </ArkCheckbox.Root>
   );
 }

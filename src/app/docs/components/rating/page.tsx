@@ -73,6 +73,16 @@ function RatingPage() {
         code={`<Rating label="Rating" count={5} defaultValue={3} />`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
+        Label Position
+      </Heading>
+      <Text className="mb-2">
+        Here&apos;s an example of how to change the label position to the right.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<Rating label="Rating" labelPlacement="end" />}
+        code={`<Rating label="Rating" labelPlacement="end" />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Half Start
       </Heading>
       <Text className="mb-2">

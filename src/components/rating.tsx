@@ -42,18 +42,26 @@ const ratingItemVariants = cva(
 type Props = VariantProps<typeof ratingControlVariants> &
   VariantProps<typeof ratingItemVariants> & {
     label?: React.ReactNode;
+    labelPlacement?: "start" | "end";
   } & RatingGroupRootProps;
 
 export function Rating(props: Props) {
-  const { label, size, colorPalette = "gray", className, ...rest } = props;
+  const {
+    label,
+    labelPlacement = "start",
+    size,
+    colorPalette,
+    className,
+    ...rest
+  } = props;
 
   return (
     <ArkRatingGroup.Root
-      className={cn("flex flex-col gap-1", className)}
       {...rest}
+      className={cn("inline-flex items-center gap-2", className)}
     >
-      {label ? (
-        <ArkRatingGroup.Label className="text-fg-default text-sm font-semibold">
+      {label && labelPlacement === "start" ? (
+        <ArkRatingGroup.Label className="text-fg-default text-sm/6 font-semibold">
           {label}
         </ArkRatingGroup.Label>
       ) : null}
@@ -79,8 +87,13 @@ export function Rating(props: Props) {
             ))
           }
         </ArkRatingGroup.Context>
-        <ArkRatingGroup.HiddenInput />
       </ArkRatingGroup.Control>
+      <ArkRatingGroup.HiddenInput />
+      {label && labelPlacement === "end" ? (
+        <ArkRatingGroup.Label className="text-fg-default text-sm/6 font-semibold">
+          {label}
+        </ArkRatingGroup.Label>
+      ) : null}
     </ArkRatingGroup.Root>
   );
 }
