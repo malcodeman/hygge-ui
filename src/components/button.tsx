@@ -45,7 +45,7 @@ export function Button({
   loadingText,
   variant,
   size,
-  spinnerPlacement,
+  spinnerPlacement = "start",
   className,
   children,
   disabled,
