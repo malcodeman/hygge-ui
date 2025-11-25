@@ -83,6 +83,10 @@ export const NAVIGATION_GROUPS = [
         href: "/docs/components/separator",
         label: "Separator",
       },
+      {
+        href: "/docs/components/switch",
+        label: "Switch",
+      },
     ],
   },
   {

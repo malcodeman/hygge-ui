@@ -73,7 +73,7 @@ function CheckboxPage() {
         Label Position
       </Heading>
       <Text className="mb-2">
-        Here&apos;s an example of how to change the label position to the right.
+        Here&apos;s an example of how to change the label position to the left.
       </Text>
       <PagePreviewCodeTabs
         preview={

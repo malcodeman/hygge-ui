@@ -1,40 +1,66 @@
 import { Switch as ArkSwitch } from "@ark-ui/react";
+import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
-type Props = {
-  colorPalette?: "gray" | "orange" | "teal" | "green" | "red";
+const switchControlVariants = cva(
+  "inline-flex w-10 items-center rounded-full bg-[#E9E8E6] p-0.5 transition-colors dark:bg-[#31312E]",
+  {
+    variants: {
+      colorPalette: {
+        gray: `data-[state=checked]:bg-[#21201C] dark:data-[state=checked]:bg-[#eeeeec]`,
+        orange: `data-[state=checked]:bg-[#eb5e41]`,
+        teal: `data-[state=checked]:bg-[#0d9488]`,
+        green: `data-[state=checked]:bg-[#38a169]`,
+        red: `data-[state=checked]:bg-[#fd5454]`,
+      },
+    },
+    defaultVariants: {
+      colorPalette: "gray",
+    },
+  },
+);
+
+type Props = VariantProps<typeof switchControlVariants> & {
   label?: React.ReactNode;
+  labelPlacement?: "start" | "end";
 } & ArkSwitch.RootProps;
 
 export function Switch(props: Props) {
-  const { colorPalette = "gray", label, className, ...rest } = props;
+  const {
+    label,
+    labelPlacement = "end",
+    colorPalette,
+    className,
+    ...rest
+  } = props;
 
   return (
     <ArkSwitch.Root
       {...rest}
-      className={cn("flex items-center gap-1", className)}
+      className={cn(
+        "inline-flex cursor-pointer items-center gap-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[readonly]:cursor-default",
+        className,
+      )}
     >
+      {label && labelPlacement === "start" ? (
+        <ArkSwitch.Label className="text-fg-default text-sm/6 font-semibold">
+          {label}
+        </ArkSwitch.Label>
+      ) : null}
       <ArkSwitch.Control
         className={cn(
-          "inline-flex w-10 cursor-pointer items-center rounded-full bg-[#E9E8E6] p-0.5 transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 dark:bg-[#31312E]",
-          {
-            "data-[state=checked]:bg-[#21201C] dark:data-[state=checked]:bg-[#eeeeec]":
-              colorPalette === "gray",
-            "data-[state=checked]:bg-[#eb5e41]": colorPalette === "orange",
-            "data-[state=checked]:bg-[#0d9488]": colorPalette === "teal",
-            "data-[state=checked]:bg-[#38a169]": colorPalette === "green",
-            "data-[state=checked]:bg-[#fd5454]": colorPalette === "red",
-          },
+          switchControlVariants({ colorPalette }),
+          "data-[invalid]:outline-2 data-[invalid]:outline-[#fd5454]",
         )}
       >
         <ArkSwitch.Thumb className="size-4 rounded-full bg-white shadow-2xs transition-transform data-[state=checked]:translate-x-5 dark:bg-[#191918]" />
       </ArkSwitch.Control>
-      {label ? (
-        <ArkSwitch.Label className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
+      <ArkSwitch.HiddenInput />
+      {label && labelPlacement === "end" ? (
+        <ArkSwitch.Label className="text-fg-default text-sm/6 font-semibold">
           {label}
         </ArkSwitch.Label>
       ) : null}
-      <ArkSwitch.HiddenInput />
     </ArkSwitch.Root>
   );
 }
