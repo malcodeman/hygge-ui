@@ -5,10 +5,11 @@ import { Input } from "./input";
 type Props = {
   label?: React.ReactNode;
   count?: number;
+  size?: "sm" | "lg" | "xl" | "xs" | "md" | null | undefined;
 } & ArkPinInput.RootProps;
 
 export function PinInput(props: Props) {
-  const { className, label, count = 4, ...rest } = props;
+  const { className, label, count = 4, size, ...rest } = props;
 
   return (
     <ArkPinInput.Root
@@ -23,7 +24,7 @@ export function PinInput(props: Props) {
       <ArkPinInput.Control className="flex gap-2">
         {Array.from({ length: count }).map((_, index) => (
           <ArkPinInput.Input key={index} index={index} asChild>
-            <Input />
+            <Input size={size} />
           </ArkPinInput.Input>
         ))}
       </ArkPinInput.Control>
