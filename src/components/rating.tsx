@@ -12,7 +12,7 @@ const ratingControlVariants = cva("flex gap-1", {
     size: {
       xs: "text-xs",
       sm: "text-sm",
-      md: "text-md",
+      md: "text-base",
       lg: "text-lg",
       xl: "text-xl",
     },

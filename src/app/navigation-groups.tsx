@@ -91,6 +91,10 @@ export const NAVIGATION_GROUPS = [
         href: "/docs/components/switch",
         label: "Switch",
       },
+      {
+        href: "/docs/components/tag",
+        label: "Tag",
+      },
     ],
   },
   {
