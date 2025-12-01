@@ -3,7 +3,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
 const switchControlVariants = cva(
-  "inline-flex w-10 items-center rounded-full bg-[#E9E8E6] p-0.5 transition-colors dark:bg-[#31312E]",
+  "inline-flex items-center rounded-full bg-[#E9E8E6] p-0.5 transition-colors dark:bg-[#31312E]",
   {
     variants: {
       colorPalette: {
@@ -13,9 +13,34 @@ const switchControlVariants = cva(
         green: `data-[state=checked]:bg-[#38a169]`,
         red: `data-[state=checked]:bg-[#fd5454]`,
       },
+      size: {
+        xs: "w-6",
+        sm: "w-8",
+        md: "w-10",
+        lg: "w-12",
+        xl: "w-14",
+      },
     },
     defaultVariants: {
       colorPalette: "gray",
+      size: "md",
+    },
+  },
+);
+const switchThumbVariants = cva(
+  "rounded-full bg-white shadow-2xs transition-transform dark:bg-[#191918]",
+  {
+    variants: {
+      size: {
+        xs: "size-3 data-[state=checked]:translate-x-2",
+        sm: "size-4 data-[state=checked]:translate-x-3",
+        md: "size-5 data-[state=checked]:translate-x-4",
+        lg: "size-6 data-[state=checked]:translate-x-5",
+        xl: "size-7 data-[state=checked]:translate-x-6",
+      },
+    },
+    defaultVariants: {
+      size: "md",
     },
   },
 );
@@ -29,6 +54,7 @@ export function Switch(props: Props) {
   const {
     label,
     labelPlacement = "end",
+    size,
     colorPalette,
     className,
     ...rest
@@ -49,11 +75,11 @@ export function Switch(props: Props) {
       ) : null}
       <ArkSwitch.Control
         className={cn(
-          switchControlVariants({ colorPalette }),
+          switchControlVariants({ colorPalette, size }),
           "data-[invalid]:outline-2 data-[invalid]:outline-[#fd5454]",
         )}
       >
-        <ArkSwitch.Thumb className="size-4 rounded-full bg-white shadow-2xs transition-transform data-[state=checked]:translate-x-5 dark:bg-[#191918]" />
+        <ArkSwitch.Thumb className={switchThumbVariants({ size })} />
       </ArkSwitch.Control>
       <ArkSwitch.HiddenInput />
       {label && labelPlacement === "end" ? (

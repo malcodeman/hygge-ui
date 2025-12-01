@@ -30,15 +30,19 @@ function SwitchPage() {
       <PagePreviewCodeTabs
         preview={
           <div className="flex flex-col gap-2">
-            <Switch label="Switch sm" />
-            <Switch label="Switch md" />
-            <Switch label="Switch lg" />
+            <Switch size="xs" label="Switch xs" />
+            <Switch size="sm" label="Switch sm" />
+            <Switch size="md" label="Switch md" />
+            <Switch size="lg" label="Switch lg" />
+            <Switch size="xl" label="Switch xl" />
           </div>
         }
         code={`<div className="flex flex-col gap-2">
+  <Switch size="xs" label="Switch xs" />
   <Switch size="sm" label="Switch sm" />
   <Switch size="md" label="Switch md" />
   <Switch size="lg" label="Switch lg" />
+  <Switch size="xl" label="Switch xl" />
 </div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
