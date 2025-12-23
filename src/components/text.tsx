@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 import { cn } from "./cn";
 
 export function Text(props: React.ComponentPropsWithoutRef<"p">) {

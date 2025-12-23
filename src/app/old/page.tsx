@@ -70,7 +70,6 @@ import {
   ComboboxContent,
   ComboboxItemGroup,
 } from "@/components/combobox";
-import Link from "next/link";
 import { QrCode, QrCodeDownloadTrigger } from "@/components/qr-code";
 import { CheckboxCard } from "@/components/checkbox-card";
 import {
@@ -376,19 +375,6 @@ export default function Home() {
               <TabsContent value="react">React Content</TabsContent>
               <TabsContent value="vue">Vue Content</TabsContent>
               <TabsContent value="solid">Solid Content</TabsContent>
-            </TabsRoot>
-            <TabsRoot>
-              <TabsList>
-                <TabsTrigger value="/react" asChild>
-                  <Link href="/react">React</Link>
-                </TabsTrigger>
-                <TabsTrigger value="/vue" asChild disabled>
-                  <Link href="/vue">Vue</Link>
-                </TabsTrigger>
-                <TabsTrigger value="/solid" asChild>
-                  <Link href="/solid">Solid</Link>
-                </TabsTrigger>
-              </TabsList>
             </TabsRoot>
           </div>
         </Card>

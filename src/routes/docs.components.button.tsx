@@ -1,0 +1,181 @@
+import { Button } from "@/components/button";
+import { Heading } from "@/components/heading";
+import { Code, Text } from "@/components/text";
+import { createFileRoute } from "@tanstack/react-router";
+import { PageHeader } from "app/components/page-header";
+import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
+import { LuArrowRight, LuMail } from "react-icons/lu";
+
+export const Route = createFileRoute("/docs/components/button")({
+  component: ButtonPage,
+});
+
+function ButtonPage() {
+  return (
+    <>
+      <PageHeader
+        title="Button"
+        description="Used to trigger an action or event."
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/button.tsx"
+        className="mb-2"
+        verified
+      />
+      <PagePreviewCodeTabs
+        preview={
+          <div>
+            <Button>Click me</Button>
+          </div>
+        }
+        code={`<div>
+  <Button>Click me</Button>
+</div>`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
+        Examples
+      </Heading>
+      <Heading level={3} size="lg" className="mb-2">
+        Sizes
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>size</Code> prop to change the size of the button.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex flex-wrap items-center gap-2">
+            <Button size="xs">Extra Small</Button>
+            <Button size="sm">Small</Button>
+            <Button size="md">Medium</Button>
+            <Button size="lg">Large</Button>
+            <Button size="xl">Extra Large</Button>
+          </div>
+        }
+        code={`<div className="flex flex-wrap items-center gap-2">
+  <Button size="xs">Extra Small</Button>
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+  <Button size="xl">Extra Large</Button>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Variants
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>variant</Code> prop to change the visual style of the
+        button.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex gap-2">
+            <Button variant="solid">Solid</Button>
+            <Button variant="subtle">Subtle</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="destructive">Destructive</Button>
+          </div>
+        }
+        code={`<div className="flex gap-2">
+  <Button variant="solid">Solid</Button>
+  <Button variant="subtle">Subtle</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="destructive">Destructive</Button>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Icon
+      </Heading>
+      <Text className="mb-2">Use icons within a button.</Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex gap-2">
+            <Button variant="solid">
+              <LuMail size={16} />
+              Email
+            </Button>
+            <Button variant="outline">
+              Call us <LuArrowRight size={16} />
+            </Button>
+          </div>
+        }
+        code={`<div className="flex gap-2">
+  <Button variant="solid">
+    <LuMail size={16} />
+    Email
+  </Button>
+  <Button variant="outline">
+    Call us <LuArrowRight size={16} />
+  </Button>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Disabled
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>disabled</Code> prop to disable the button.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div>
+            <Button disabled>Button</Button>
+          </div>
+        }
+        code={`<div>
+  <Button disabled>Button</Button>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Loading
+      </Heading>
+      <Text className="mb-2">
+        Pass the <Code>loading</Code> and <Code>loadingText</Code> props to show
+        a spinner and optional loading text.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex gap-2">
+            <Button loading>Click me</Button>
+            <Button loading loadingText="Saving...">
+              Click me
+            </Button>
+          </div>
+        }
+        code={`<div className="flex gap-2">
+  <Button loading>Click me</Button>
+  <Button loading loadingText="Saving...">
+    Click me
+  </Button>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Spinner Placement
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>spinnerPlacement</Code> prop to change the spinner’s
+        position.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex gap-2">
+            <Button loading loadingText="Loading" spinnerPlacement="start">
+              Submit
+            </Button>
+            <Button loading loadingText="Loading" spinnerPlacement="end">
+              Continue
+            </Button>
+          </div>
+        }
+        code={`<div className="flex gap-2">
+  <Button loading loadingText="Loading" spinnerPlacement="start">
+    Submit
+  </Button>
+  <Button loading loadingText="Loading" spinnerPlacement="end">
+    Continue
+  </Button>
+</div>`}
+      />
+    </>
+  );
+}
+
+export default ButtonPage;
