@@ -167,5 +167,3 @@ function AvatarPage() {
     </>
   );
 }
-
-export default AvatarPage;

@@ -123,5 +123,3 @@ function CheckboxPage() {
     </>
   );
 }
-
-export default CheckboxPage;

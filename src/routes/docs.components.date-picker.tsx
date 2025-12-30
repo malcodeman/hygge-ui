@@ -49,5 +49,3 @@ function DatePickerPage() {
     </>
   );
 }
-
-export default DatePickerPage;

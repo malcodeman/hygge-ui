@@ -129,5 +129,3 @@ function HeadingPage() {
     </>
   );
 }
-
-export default HeadingPage;

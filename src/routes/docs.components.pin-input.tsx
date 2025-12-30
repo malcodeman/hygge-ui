@@ -53,5 +53,3 @@ function PinInputPage() {
     </>
   );
 }
-
-export default PinInputPage;

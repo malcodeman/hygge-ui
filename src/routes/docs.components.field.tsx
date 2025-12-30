@@ -30,5 +30,3 @@ function FieldPage() {
     </>
   );
 }
-
-export default FieldPage;

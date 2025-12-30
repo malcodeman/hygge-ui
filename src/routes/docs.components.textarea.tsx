@@ -164,5 +164,3 @@ function TextareaPage() {
     </>
   );
 }
-
-export default TextareaPage;

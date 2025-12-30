@@ -168,5 +168,3 @@ function SeparatorPage() {
     </>
   );
 }
-
-export default SeparatorPage;

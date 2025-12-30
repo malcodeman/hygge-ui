@@ -57,5 +57,3 @@ function PasswordInputPage() {
     </>
   );
 }
-
-export default PasswordInputPage;

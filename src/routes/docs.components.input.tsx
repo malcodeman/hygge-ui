@@ -170,5 +170,3 @@ function InputPage() {
     </>
   );
 }
-
-export default InputPage;

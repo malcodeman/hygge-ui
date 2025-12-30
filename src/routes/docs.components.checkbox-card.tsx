@@ -64,5 +64,3 @@ function CheckboxCardPage() {
     </>
   );
 }
-
-export default CheckboxCardPage;

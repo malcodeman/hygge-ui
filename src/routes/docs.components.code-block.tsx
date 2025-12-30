@@ -65,5 +65,3 @@ function CodeBlockPage() {
     </>
   );
 }
-
-export default CodeBlockPage;

@@ -161,5 +161,3 @@ function HighlightPage() {
     </>
   );
 }
-
-export default HighlightPage;

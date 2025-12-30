@@ -109,5 +109,3 @@ function AlertPage() {
     </>
   );
 }
-
-export default AlertPage;

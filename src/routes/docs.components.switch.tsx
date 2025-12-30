@@ -123,5 +123,3 @@ function SwitchPage() {
     </>
   );
 }
-
-export default SwitchPage;
