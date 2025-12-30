@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/button";
 import { useIsMounted } from "app/hooks/use-is-mounted";
 import { useTheme } from "next-themes";

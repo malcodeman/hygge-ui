@@ -1,4 +1,3 @@
-"use server";
 import { BundledLanguage, BundledTheme, codeToHtml } from "shiki";
 import { Clipboard as ArkClipboard } from "@ark-ui/react";
 import { LuCheck, LuClipboardCopy } from "react-icons/lu";
