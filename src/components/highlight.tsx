@@ -1,4 +1,3 @@
-"use client";
 import { Highlight as ArkHighlight, HighlightProps } from "@ark-ui/react";
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "./cn";

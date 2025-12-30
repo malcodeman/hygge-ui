@@ -1,4 +1,3 @@
-"use client";
 import { LuMail } from "react-icons/lu";
 import { Avatar } from "@/components/avatar";
 import { Button } from "@/components/button";

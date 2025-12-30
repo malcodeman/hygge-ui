@@ -1,4 +1,3 @@
-"use client";
 import { DatePicker as ArkDatePicker } from "@ark-ui/react/date-picker";
 import { LuCalendar, LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { cn } from "./cn";
