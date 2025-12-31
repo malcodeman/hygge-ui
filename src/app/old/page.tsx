@@ -106,11 +106,7 @@ import {
   AccordionRoot,
 } from "@/components/accordion";
 import { PasswordInput } from "@/components/password-input";
-import {
-  RadioGroup,
-  RadioGroupItem,
-  RadioGroupLabel,
-} from "@/components/radio";
+import { RadioGroup, RadioGroupItem } from "@/components/radio";
 import { RadioCard, RadioCardGroup } from "@/components/radio-card";
 
 const initialFrameworks = [
@@ -483,7 +479,6 @@ export default function Home() {
           <Heading level={2}>Radio Group</Heading>
           <div className="flex flex-col gap-2">
             <RadioGroup>
-              <RadioGroupLabel>Gray</RadioGroupLabel>
               <div className="flex items-center gap-2">
                 <RadioGroupItem value="react">React</RadioGroupItem>
                 <RadioGroupItem value="vue">Vue</RadioGroupItem>
@@ -491,7 +486,6 @@ export default function Home() {
               </div>
             </RadioGroup>
             <RadioGroup colorPalette="orange">
-              <RadioGroupLabel>Orange</RadioGroupLabel>
               <div className="flex items-center gap-2">
                 <RadioGroupItem value="react">React</RadioGroupItem>
                 <RadioGroupItem value="vue">Vue</RadioGroupItem>
@@ -499,7 +493,6 @@ export default function Home() {
               </div>
             </RadioGroup>
             <RadioGroup colorPalette="teal">
-              <RadioGroupLabel>Teal</RadioGroupLabel>
               <div className="flex items-center gap-2">
                 <RadioGroupItem value="react">React</RadioGroupItem>
                 <RadioGroupItem value="vue">Vue</RadioGroupItem>
@@ -507,7 +500,6 @@ export default function Home() {
               </div>
             </RadioGroup>
             <RadioGroup colorPalette="green">
-              <RadioGroupLabel>Teal</RadioGroupLabel>
               <div className="flex items-center gap-2">
                 <RadioGroupItem value="react">React</RadioGroupItem>
                 <RadioGroupItem value="vue">Vue</RadioGroupItem>
@@ -515,7 +507,6 @@ export default function Home() {
               </div>
             </RadioGroup>
             <RadioGroup colorPalette="red">
-              <RadioGroupLabel>Green</RadioGroupLabel>
               <div className="flex items-center gap-2">
                 <RadioGroupItem value="react">React</RadioGroupItem>
                 <RadioGroupItem value="vue">Vue</RadioGroupItem>
@@ -523,7 +514,6 @@ export default function Home() {
               </div>
             </RadioGroup>
             <RadioGroup disabled>
-              <RadioGroupLabel>Teal</RadioGroupLabel>
               <div className="flex items-center gap-2">
                 <RadioGroupItem value="react">React</RadioGroupItem>
                 <RadioGroupItem value="vue">Vue</RadioGroupItem>

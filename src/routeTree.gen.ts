@@ -17,6 +17,7 @@ import { Route as DocsComponentsTagRouteImport } from './routes/docs.components.
 import { Route as DocsComponentsSwitchRouteImport } from './routes/docs.components.switch'
 import { Route as DocsComponentsSeparatorRouteImport } from './routes/docs.components.separator'
 import { Route as DocsComponentsRatingRouteImport } from './routes/docs.components.rating'
+import { Route as DocsComponentsRadioRouteImport } from './routes/docs.components.radio'
 import { Route as DocsComponentsPinInputRouteImport } from './routes/docs.components.pin-input'
 import { Route as DocsComponentsPasswordInputRouteImport } from './routes/docs.components.password-input'
 import { Route as DocsComponentsInputRouteImport } from './routes/docs.components.input'
@@ -74,6 +75,11 @@ const DocsComponentsSeparatorRoute = DocsComponentsSeparatorRouteImport.update({
 const DocsComponentsRatingRoute = DocsComponentsRatingRouteImport.update({
   id: '/docs/components/rating',
   path: '/docs/components/rating',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsRadioRoute = DocsComponentsRadioRouteImport.update({
+  id: '/docs/components/radio',
+  path: '/docs/components/radio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsPinInputRoute = DocsComponentsPinInputRouteImport.update({
@@ -191,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/input': typeof DocsComponentsInputRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
@@ -219,6 +226,7 @@ export interface FileRoutesByTo {
   '/docs/components/input': typeof DocsComponentsInputRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
@@ -248,6 +256,7 @@ export interface FileRoutesById {
   '/docs/components/input': typeof DocsComponentsInputRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
@@ -278,6 +287,7 @@ export interface FileRouteTypes {
     | '/docs/components/input'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
     | '/docs/components/switch'
@@ -306,6 +316,7 @@ export interface FileRouteTypes {
     | '/docs/components/input'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
     | '/docs/components/switch'
@@ -334,6 +345,7 @@ export interface FileRouteTypes {
     | '/docs/components/input'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
     | '/docs/components/switch'
@@ -363,6 +375,7 @@ export interface RootRouteChildren {
   DocsComponentsInputRoute: typeof DocsComponentsInputRoute
   DocsComponentsPasswordInputRoute: typeof DocsComponentsPasswordInputRoute
   DocsComponentsPinInputRoute: typeof DocsComponentsPinInputRoute
+  DocsComponentsRadioRoute: typeof DocsComponentsRadioRoute
   DocsComponentsRatingRoute: typeof DocsComponentsRatingRoute
   DocsComponentsSeparatorRoute: typeof DocsComponentsSeparatorRoute
   DocsComponentsSwitchRoute: typeof DocsComponentsSwitchRoute
@@ -428,6 +441,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/rating'
       fullPath: '/docs/components/rating'
       preLoaderRoute: typeof DocsComponentsRatingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/radio': {
+      id: '/docs/components/radio'
+      path: '/docs/components/radio'
+      fullPath: '/docs/components/radio'
+      preLoaderRoute: typeof DocsComponentsRadioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/pin-input': {
@@ -579,6 +599,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsInputRoute: DocsComponentsInputRoute,
   DocsComponentsPasswordInputRoute: DocsComponentsPasswordInputRoute,
   DocsComponentsPinInputRoute: DocsComponentsPinInputRoute,
+  DocsComponentsRadioRoute: DocsComponentsRadioRoute,
   DocsComponentsRatingRoute: DocsComponentsRatingRoute,
   DocsComponentsSeparatorRoute: DocsComponentsSeparatorRoute,
   DocsComponentsSwitchRoute: DocsComponentsSwitchRoute,

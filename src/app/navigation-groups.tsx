@@ -84,6 +84,10 @@ export const NAVIGATION_GROUPS = [
         label: "Pin Input",
       },
       {
+        href: "/docs/components/radio",
+        label: "Radio",
+      },
+      {
         href: "/docs/components/rating",
         label: "Rating",
       },
