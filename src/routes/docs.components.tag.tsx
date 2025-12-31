@@ -19,6 +19,7 @@ function TagPage() {
         description="Used for categorizing or labeling content."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/tag.tsx"
         className="mb-2"
+        verified
       />
       <PagePreviewCodeTabs
         preview={

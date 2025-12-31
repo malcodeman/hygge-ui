@@ -17,6 +17,7 @@ function SwitchPage() {
         description="Used to capture a binary state."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/switch.tsx"
         className="mb-2"
+        verified
       />
       <PagePreviewCodeTabs
         preview={<Switch label="Activate Hygge" />}
