@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DocsIndexRouteImport } from './routes/docs.index'
+import { Route as DocsComponentsTooltipRouteImport } from './routes/docs.components.tooltip'
 import { Route as DocsComponentsTextareaRouteImport } from './routes/docs.components.textarea'
 import { Route as DocsComponentsTextRouteImport } from './routes/docs.components.text'
 import { Route as DocsComponentsTagRouteImport } from './routes/docs.components.tag'
@@ -45,6 +46,11 @@ const IndexRoute = IndexRouteImport.update({
 const DocsIndexRoute = DocsIndexRouteImport.update({
   id: '/docs/',
   path: '/docs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsTooltipRoute = DocsComponentsTooltipRouteImport.update({
+  id: '/docs/components/tooltip',
+  path: '/docs/components/tooltip',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsTextareaRoute = DocsComponentsTextareaRouteImport.update({
@@ -204,6 +210,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/tag': typeof DocsComponentsTagRoute
   '/docs/components/text': typeof DocsComponentsTextRoute
   '/docs/components/textarea': typeof DocsComponentsTextareaRoute
+  '/docs/components/tooltip': typeof DocsComponentsTooltipRoute
   '/docs/first-steps/introduction': typeof DocsFirstStepsIntroductionIndexRoute
 }
 export interface FileRoutesByTo {
@@ -233,6 +240,7 @@ export interface FileRoutesByTo {
   '/docs/components/tag': typeof DocsComponentsTagRoute
   '/docs/components/text': typeof DocsComponentsTextRoute
   '/docs/components/textarea': typeof DocsComponentsTextareaRoute
+  '/docs/components/tooltip': typeof DocsComponentsTooltipRoute
   '/docs/first-steps/introduction': typeof DocsFirstStepsIntroductionIndexRoute
 }
 export interface FileRoutesById {
@@ -263,6 +271,7 @@ export interface FileRoutesById {
   '/docs/components/tag': typeof DocsComponentsTagRoute
   '/docs/components/text': typeof DocsComponentsTextRoute
   '/docs/components/textarea': typeof DocsComponentsTextareaRoute
+  '/docs/components/tooltip': typeof DocsComponentsTooltipRoute
   '/docs/first-steps/introduction/': typeof DocsFirstStepsIntroductionIndexRoute
 }
 export interface FileRouteTypes {
@@ -294,6 +303,7 @@ export interface FileRouteTypes {
     | '/docs/components/tag'
     | '/docs/components/text'
     | '/docs/components/textarea'
+    | '/docs/components/tooltip'
     | '/docs/first-steps/introduction'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -323,6 +333,7 @@ export interface FileRouteTypes {
     | '/docs/components/tag'
     | '/docs/components/text'
     | '/docs/components/textarea'
+    | '/docs/components/tooltip'
     | '/docs/first-steps/introduction'
   id:
     | '__root__'
@@ -352,6 +363,7 @@ export interface FileRouteTypes {
     | '/docs/components/tag'
     | '/docs/components/text'
     | '/docs/components/textarea'
+    | '/docs/components/tooltip'
     | '/docs/first-steps/introduction/'
   fileRoutesById: FileRoutesById
 }
@@ -382,6 +394,7 @@ export interface RootRouteChildren {
   DocsComponentsTagRoute: typeof DocsComponentsTagRoute
   DocsComponentsTextRoute: typeof DocsComponentsTextRoute
   DocsComponentsTextareaRoute: typeof DocsComponentsTextareaRoute
+  DocsComponentsTooltipRoute: typeof DocsComponentsTooltipRoute
   DocsFirstStepsIntroductionIndexRoute: typeof DocsFirstStepsIntroductionIndexRoute
 }
 
@@ -399,6 +412,13 @@ declare module '@tanstack/react-router' {
       path: '/docs'
       fullPath: '/docs'
       preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/tooltip': {
+      id: '/docs/components/tooltip'
+      path: '/docs/components/tooltip'
+      fullPath: '/docs/components/tooltip'
+      preLoaderRoute: typeof DocsComponentsTooltipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/textarea': {
@@ -606,6 +626,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsTagRoute: DocsComponentsTagRoute,
   DocsComponentsTextRoute: DocsComponentsTextRoute,
   DocsComponentsTextareaRoute: DocsComponentsTextareaRoute,
+  DocsComponentsTooltipRoute: DocsComponentsTooltipRoute,
   DocsFirstStepsIntroductionIndexRoute: DocsFirstStepsIntroductionIndexRoute,
 }
 export const routeTree = rootRouteImport
