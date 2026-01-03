@@ -21,6 +21,7 @@ import { Route as DocsComponentsRatingRouteImport } from './routes/docs.componen
 import { Route as DocsComponentsRadioRouteImport } from './routes/docs.components.radio'
 import { Route as DocsComponentsPinInputRouteImport } from './routes/docs.components.pin-input'
 import { Route as DocsComponentsPasswordInputRouteImport } from './routes/docs.components.password-input'
+import { Route as DocsComponentsMenuRouteImport } from './routes/docs.components.menu'
 import { Route as DocsComponentsInputRouteImport } from './routes/docs.components.input'
 import { Route as DocsComponentsHighlightRouteImport } from './routes/docs.components.highlight'
 import { Route as DocsComponentsHeadingRouteImport } from './routes/docs.components.heading'
@@ -99,6 +100,11 @@ const DocsComponentsPasswordInputRoute =
     path: '/docs/components/password-input',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DocsComponentsMenuRoute = DocsComponentsMenuRouteImport.update({
+  id: '/docs/components/menu',
+  path: '/docs/components/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsComponentsInputRoute = DocsComponentsInputRouteImport.update({
   id: '/docs/components/input',
   path: '/docs/components/input',
@@ -201,6 +207,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
   '/docs/components/input': typeof DocsComponentsInputRoute
+  '/docs/components/menu': typeof DocsComponentsMenuRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
@@ -231,6 +238,7 @@ export interface FileRoutesByTo {
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
   '/docs/components/input': typeof DocsComponentsInputRoute
+  '/docs/components/menu': typeof DocsComponentsMenuRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
@@ -262,6 +270,7 @@ export interface FileRoutesById {
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
   '/docs/components/input': typeof DocsComponentsInputRoute
+  '/docs/components/menu': typeof DocsComponentsMenuRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
@@ -294,6 +303,7 @@ export interface FileRouteTypes {
     | '/docs/components/heading'
     | '/docs/components/highlight'
     | '/docs/components/input'
+    | '/docs/components/menu'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/radio'
@@ -324,6 +334,7 @@ export interface FileRouteTypes {
     | '/docs/components/heading'
     | '/docs/components/highlight'
     | '/docs/components/input'
+    | '/docs/components/menu'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/radio'
@@ -354,6 +365,7 @@ export interface FileRouteTypes {
     | '/docs/components/heading'
     | '/docs/components/highlight'
     | '/docs/components/input'
+    | '/docs/components/menu'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/radio'
@@ -385,6 +397,7 @@ export interface RootRouteChildren {
   DocsComponentsHeadingRoute: typeof DocsComponentsHeadingRoute
   DocsComponentsHighlightRoute: typeof DocsComponentsHighlightRoute
   DocsComponentsInputRoute: typeof DocsComponentsInputRoute
+  DocsComponentsMenuRoute: typeof DocsComponentsMenuRoute
   DocsComponentsPasswordInputRoute: typeof DocsComponentsPasswordInputRoute
   DocsComponentsPinInputRoute: typeof DocsComponentsPinInputRoute
   DocsComponentsRadioRoute: typeof DocsComponentsRadioRoute
@@ -482,6 +495,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/password-input'
       fullPath: '/docs/components/password-input'
       preLoaderRoute: typeof DocsComponentsPasswordInputRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/menu': {
+      id: '/docs/components/menu'
+      path: '/docs/components/menu'
+      fullPath: '/docs/components/menu'
+      preLoaderRoute: typeof DocsComponentsMenuRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/input': {
@@ -617,6 +637,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsHeadingRoute: DocsComponentsHeadingRoute,
   DocsComponentsHighlightRoute: DocsComponentsHighlightRoute,
   DocsComponentsInputRoute: DocsComponentsInputRoute,
+  DocsComponentsMenuRoute: DocsComponentsMenuRoute,
   DocsComponentsPasswordInputRoute: DocsComponentsPasswordInputRoute,
   DocsComponentsPinInputRoute: DocsComponentsPinInputRoute,
   DocsComponentsRadioRoute: DocsComponentsRadioRoute,
