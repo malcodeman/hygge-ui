@@ -19,6 +19,7 @@ import { Route as DocsComponentsSwitchRouteImport } from './routes/docs.componen
 import { Route as DocsComponentsSeparatorRouteImport } from './routes/docs.components.separator'
 import { Route as DocsComponentsRatingRouteImport } from './routes/docs.components.rating'
 import { Route as DocsComponentsRadioRouteImport } from './routes/docs.components.radio'
+import { Route as DocsComponentsQrCodeRouteImport } from './routes/docs.components.qr-code'
 import { Route as DocsComponentsPinInputRouteImport } from './routes/docs.components.pin-input'
 import { Route as DocsComponentsPasswordInputRouteImport } from './routes/docs.components.password-input'
 import { Route as DocsComponentsMenuRouteImport } from './routes/docs.components.menu'
@@ -87,6 +88,11 @@ const DocsComponentsRatingRoute = DocsComponentsRatingRouteImport.update({
 const DocsComponentsRadioRoute = DocsComponentsRadioRouteImport.update({
   id: '/docs/components/radio',
   path: '/docs/components/radio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsQrCodeRoute = DocsComponentsQrCodeRouteImport.update({
+  id: '/docs/components/qr-code',
+  path: '/docs/components/qr-code',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsPinInputRoute = DocsComponentsPinInputRouteImport.update({
@@ -210,6 +216,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/menu': typeof DocsComponentsMenuRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
@@ -241,6 +248,7 @@ export interface FileRoutesByTo {
   '/docs/components/menu': typeof DocsComponentsMenuRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
@@ -273,6 +281,7 @@ export interface FileRoutesById {
   '/docs/components/menu': typeof DocsComponentsMenuRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
@@ -306,6 +315,7 @@ export interface FileRouteTypes {
     | '/docs/components/menu'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
@@ -337,6 +347,7 @@ export interface FileRouteTypes {
     | '/docs/components/menu'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
@@ -368,6 +379,7 @@ export interface FileRouteTypes {
     | '/docs/components/menu'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
@@ -400,6 +412,7 @@ export interface RootRouteChildren {
   DocsComponentsMenuRoute: typeof DocsComponentsMenuRoute
   DocsComponentsPasswordInputRoute: typeof DocsComponentsPasswordInputRoute
   DocsComponentsPinInputRoute: typeof DocsComponentsPinInputRoute
+  DocsComponentsQrCodeRoute: typeof DocsComponentsQrCodeRoute
   DocsComponentsRadioRoute: typeof DocsComponentsRadioRoute
   DocsComponentsRatingRoute: typeof DocsComponentsRatingRoute
   DocsComponentsSeparatorRoute: typeof DocsComponentsSeparatorRoute
@@ -481,6 +494,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/radio'
       fullPath: '/docs/components/radio'
       preLoaderRoute: typeof DocsComponentsRadioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/qr-code': {
+      id: '/docs/components/qr-code'
+      path: '/docs/components/qr-code'
+      fullPath: '/docs/components/qr-code'
+      preLoaderRoute: typeof DocsComponentsQrCodeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/pin-input': {
@@ -640,6 +660,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsMenuRoute: DocsComponentsMenuRoute,
   DocsComponentsPasswordInputRoute: DocsComponentsPasswordInputRoute,
   DocsComponentsPinInputRoute: DocsComponentsPinInputRoute,
+  DocsComponentsQrCodeRoute: DocsComponentsQrCodeRoute,
   DocsComponentsRadioRoute: DocsComponentsRadioRoute,
   DocsComponentsRatingRoute: DocsComponentsRatingRoute,
   DocsComponentsSeparatorRoute: DocsComponentsSeparatorRoute,
