@@ -56,6 +56,10 @@ export const NAVIGATION_GROUPS = [
         label: "Textarea",
       },
       {
+        href: "/docs/components/toast",
+        label: "Toast",
+      },
+      {
         href: "/docs/components/tooltip",
         label: "Tooltip",
       },

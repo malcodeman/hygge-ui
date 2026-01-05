@@ -54,18 +54,18 @@ export function Toaster() {
       {(toast) => (
         <ArkToast.Root
           key={toast.id}
-          className="z-[var(--z-index)] max-w-lg min-w-2xs translate-x-[var(--x)] translate-y-[var(--y)] scale-[var(--scale)] rounded-lg border border-[#E9E8E6] bg-white p-2 opacity-[var(--opacity)] shadow-2xs transition-transform dark:border-[#2a2a28] dark:bg-[#191918]"
+          className="border-border-subtle z-(--z-index) max-w-lg min-w-2xs translate-x-(--x) translate-y-(--y) scale-(--scale) rounded-lg border bg-white p-2 opacity-(--opacity) shadow-2xs transition-transform dark:bg-[#191918]"
         >
           <div className="flex items-start gap-2">
             <div>{renderIcon(toast.type)}</div>
             <div>
               {toast.title ? (
-                <ArkToast.Title className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
+                <ArkToast.Title className="text-fg-default text-sm font-semibold">
                   {toast.title}
                 </ArkToast.Title>
               ) : null}
               {toast.description ? (
-                <ArkToast.Description className="text-sm font-medium text-[#63635E] dark:text-[#b5b3ad]">
+                <ArkToast.Description className="text-fg-muted text-sm font-medium">
                   {toast.description}
                 </ArkToast.Description>
               ) : null}
@@ -76,7 +76,7 @@ export function Toaster() {
               ) : null}
             </div>
             <ArkToast.CloseTrigger asChild className="ml-auto cursor-pointer">
-              <Button variant="ghost">
+              <Button variant="ghost" size="xs">
                 <LuX size={16} />
               </Button>
             </ArkToast.CloseTrigger>
