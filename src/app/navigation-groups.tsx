@@ -116,6 +116,10 @@ export const NAVIGATION_GROUPS = [
         label: "Switch",
       },
       {
+        href: "/docs/components/tabs",
+        label: "Tabs",
+      },
+      {
         href: "/docs/components/tag",
         label: "Tag",
       },

@@ -17,7 +17,7 @@ export function TabsList(props: ArkTabs.ListProps) {
       )}
     >
       {children}
-      <ArkTabs.Indicator className="bottom-0 h-0.5 w-[var(--width)] bg-[#21201C] dark:bg-[#eeeeec]" />
+      <ArkTabs.Indicator className="bottom-0 h-0.5 w-(--width) bg-[#21201C] dark:bg-[#eeeeec]" />
     </ArkTabs.List>
   );
 }
@@ -29,8 +29,8 @@ export function TabsTrigger(props: ArkTabs.TriggerProps) {
     <ArkTabs.Trigger
       {...rest}
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-1 p-2 pt-0 text-sm font-semibold transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-        "text-[#63635E] data-[selected]:text-[#21201C] dark:text-[#b5b3ad] dark:data-[selected]:text-[#eeeeec]",
+        "inline-flex cursor-pointer items-center justify-center gap-2 p-2 pt-0 text-sm font-semibold transition-colors data-disabled:cursor-not-allowed data-disabled:opacity-50",
+        "text-fg-muted data-selected:text-[#21201C] dark:data-selected:text-[#eeeeec]",
         className,
       )}
     />
