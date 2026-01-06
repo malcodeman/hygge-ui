@@ -32,12 +32,12 @@ export const NAVIGATION_GROUPS = [
         label: "Card",
       },
       {
-        href: "/docs/components/checkbox",
-        label: "Checkbox",
-      },
-      {
         href: "/docs/components/checkbox-card",
         label: "Checkbox Card",
+      },
+      {
+        href: "/docs/components/checkbox",
+        label: "Checkbox",
       },
       {
         href: "/docs/components/clipboard",
@@ -46,22 +46,6 @@ export const NAVIGATION_GROUPS = [
       {
         href: "/docs/components/code-block",
         label: "Code Block",
-      },
-      {
-        href: "/docs/components/text",
-        label: "Text",
-      },
-      {
-        href: "/docs/components/textarea",
-        label: "Textarea",
-      },
-      {
-        href: "/docs/components/toast",
-        label: "Toast",
-      },
-      {
-        href: "/docs/components/tooltip",
-        label: "Tooltip",
       },
       {
         href: "/docs/components/date-picker",
@@ -122,6 +106,22 @@ export const NAVIGATION_GROUPS = [
       {
         href: "/docs/components/tag",
         label: "Tag",
+      },
+      {
+        href: "/docs/components/text",
+        label: "Text",
+      },
+      {
+        href: "/docs/components/textarea",
+        label: "Textarea",
+      },
+      {
+        href: "/docs/components/toast",
+        label: "Toast",
+      },
+      {
+        href: "/docs/components/tooltip",
+        label: "Tooltip",
       },
     ],
   },
