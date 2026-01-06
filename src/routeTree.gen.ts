@@ -18,6 +18,7 @@ import { Route as DocsComponentsTextRouteImport } from './routes/docs.components
 import { Route as DocsComponentsTagRouteImport } from './routes/docs.components.tag'
 import { Route as DocsComponentsTabsRouteImport } from './routes/docs.components.tabs'
 import { Route as DocsComponentsSwitchRouteImport } from './routes/docs.components.switch'
+import { Route as DocsComponentsStepsRouteImport } from './routes/docs.components.steps'
 import { Route as DocsComponentsSeparatorRouteImport } from './routes/docs.components.separator'
 import { Route as DocsComponentsRatingRouteImport } from './routes/docs.components.rating'
 import { Route as DocsComponentsRadioRouteImport } from './routes/docs.components.radio'
@@ -85,6 +86,11 @@ const DocsComponentsTabsRoute = DocsComponentsTabsRouteImport.update({
 const DocsComponentsSwitchRoute = DocsComponentsSwitchRouteImport.update({
   id: '/docs/components/switch',
   path: '/docs/components/switch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsStepsRoute = DocsComponentsStepsRouteImport.update({
+  id: '/docs/components/steps',
+  path: '/docs/components/steps',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsSeparatorRoute = DocsComponentsSeparatorRouteImport.update({
@@ -232,6 +238,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
+  '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
   '/docs/components/tabs': typeof DocsComponentsTabsRoute
   '/docs/components/tag': typeof DocsComponentsTagRoute
@@ -266,6 +273,7 @@ export interface FileRoutesByTo {
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
+  '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
   '/docs/components/tabs': typeof DocsComponentsTabsRoute
   '/docs/components/tag': typeof DocsComponentsTagRoute
@@ -301,6 +309,7 @@ export interface FileRoutesById {
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
+  '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
   '/docs/components/tabs': typeof DocsComponentsTabsRoute
   '/docs/components/tag': typeof DocsComponentsTagRoute
@@ -337,6 +346,7 @@ export interface FileRouteTypes {
     | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
+    | '/docs/components/steps'
     | '/docs/components/switch'
     | '/docs/components/tabs'
     | '/docs/components/tag'
@@ -371,6 +381,7 @@ export interface FileRouteTypes {
     | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
+    | '/docs/components/steps'
     | '/docs/components/switch'
     | '/docs/components/tabs'
     | '/docs/components/tag'
@@ -405,6 +416,7 @@ export interface FileRouteTypes {
     | '/docs/components/radio'
     | '/docs/components/rating'
     | '/docs/components/separator'
+    | '/docs/components/steps'
     | '/docs/components/switch'
     | '/docs/components/tabs'
     | '/docs/components/tag'
@@ -440,6 +452,7 @@ export interface RootRouteChildren {
   DocsComponentsRadioRoute: typeof DocsComponentsRadioRoute
   DocsComponentsRatingRoute: typeof DocsComponentsRatingRoute
   DocsComponentsSeparatorRoute: typeof DocsComponentsSeparatorRoute
+  DocsComponentsStepsRoute: typeof DocsComponentsStepsRoute
   DocsComponentsSwitchRoute: typeof DocsComponentsSwitchRoute
   DocsComponentsTabsRoute: typeof DocsComponentsTabsRoute
   DocsComponentsTagRoute: typeof DocsComponentsTagRoute
@@ -513,6 +526,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/switch'
       fullPath: '/docs/components/switch'
       preLoaderRoute: typeof DocsComponentsSwitchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/steps': {
+      id: '/docs/components/steps'
+      path: '/docs/components/steps'
+      fullPath: '/docs/components/steps'
+      preLoaderRoute: typeof DocsComponentsStepsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/separator': {
@@ -704,6 +724,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsRadioRoute: DocsComponentsRadioRoute,
   DocsComponentsRatingRoute: DocsComponentsRatingRoute,
   DocsComponentsSeparatorRoute: DocsComponentsSeparatorRoute,
+  DocsComponentsStepsRoute: DocsComponentsStepsRoute,
   DocsComponentsSwitchRoute: DocsComponentsSwitchRoute,
   DocsComponentsTabsRoute: DocsComponentsTabsRoute,
   DocsComponentsTagRoute: DocsComponentsTagRoute,

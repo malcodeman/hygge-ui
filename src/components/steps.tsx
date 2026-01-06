@@ -19,7 +19,7 @@ export function StepsList(props: ArkSteps.ListProps) {
     <ArkSteps.List
       {...rest}
       className={cn(
-        "flex w-full flex-grow-1 gap-2 [&>[data-part=item]:last-of-type]:flex-initial [&>[data-part=item]:last-of-type>[data-part=separator]]:hidden",
+        "flex w-full grow gap-2 [&>[data-part=item]:last-of-type]:flex-initial [&>[data-part=item]:last-of-type>[data-part=separator]]:hidden",
         className,
       )}
     />
@@ -33,15 +33,15 @@ export function StepsItem(props: ArkSteps.ItemProps) {
     <ArkSteps.Item
       {...rest}
       index={index}
-      className={cn("flex flex-grow-1 items-center gap-2", className)}
+      className={cn("flex grow items-center gap-2", className)}
     >
       <ArkSteps.Trigger className="flex items-center gap-2 focus:outline-2 focus:-outline-offset-1">
-        <ArkSteps.Indicator className="flex size-8 items-center justify-center rounded-full border border-[#E9E8E6] text-sm font-semibold text-[#63635E] transition-colors data-[current]:border-[#21201C] data-[current]:bg-[#21201C] data-[current]:text-white dark:border-[#2a2a28] dark:text-[#b5b3ad] dark:data-[current]:bg-[#eeeeec] dark:data-[current]:text-[#191918]">
+        <ArkSteps.Indicator className="border-border-subtle text-fg-muted flex size-8 items-center justify-center rounded-full border text-sm font-semibold transition-colors data-current:border-[#21201C] data-current:bg-[#21201C] data-current:text-white dark:data-current:bg-[#eeeeec] dark:data-current:text-[#191918]">
           {index + 1}
         </ArkSteps.Indicator>
-        <span className="text-sm text-[#63635E]">{title}</span>
+        <span className="text-fg-muted text-sm">{title}</span>
       </ArkSteps.Trigger>
-      <ArkSteps.Separator className="h-[1px] flex-grow-1 bg-[#cfceca] dark:bg-[#494844]" />
+      <ArkSteps.Separator className="h-px grow bg-[#cfceca] dark:bg-[#494844]" />
     </ArkSteps.Item>
   );
 }
