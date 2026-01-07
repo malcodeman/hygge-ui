@@ -1,30 +1,55 @@
 import { PinInput as ArkPinInput } from "@ark-ui/react";
+import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 import { Input } from "./input";
+
+const inputVariants = cva("text-center", {
+  variants: {
+    variant: {
+      subtle: "",
+      outline: "",
+    },
+    size: {
+      xs: "w-8",
+      sm: "w-9",
+      md: "w-10",
+      lg: "w-11",
+      xl: "w-12",
+    },
+  },
+  defaultVariants: {
+    variant: "subtle",
+    size: "md",
+  },
+});
 
 type Props = {
   label?: React.ReactNode;
   count?: number;
-  size?: "sm" | "lg" | "xl" | "xs" | "md" | null | undefined;
-} & ArkPinInput.RootProps;
+} & ArkPinInput.RootProps &
+  VariantProps<typeof inputVariants>;
 
 export function PinInput(props: Props) {
-  const { className, label, count = 4, size, ...rest } = props;
+  const { className, label, count = 4, size, variant, ...rest } = props;
 
   return (
     <ArkPinInput.Root
-      className={cn("flex flex-col gap-1", className)}
       {...rest}
+      className={cn("flex flex-col gap-1", className)}
     >
       {label ? (
-        <ArkPinInput.Label className="text-sm font-semibold text-[#21201c] dark:text-[#eeeeec]">
+        <ArkPinInput.Label className="text-fg-default text-sm/6 font-semibold">
           {label}
         </ArkPinInput.Label>
       ) : null}
-      <ArkPinInput.Control className="flex gap-2">
+      <ArkPinInput.Control className="isolate inline-flex gap-2">
         {Array.from({ length: count }).map((_, index) => (
           <ArkPinInput.Input key={index} index={index} asChild>
-            <Input size={size} />
+            <Input
+              size={size}
+              variant={variant}
+              className={cn(inputVariants({ size, variant }))}
+            />
           </ArkPinInput.Input>
         ))}
       </ArkPinInput.Control>
