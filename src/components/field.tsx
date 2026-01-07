@@ -15,10 +15,7 @@ export function FieldLabel(props: ArkField.LabelProps) {
   return (
     <ArkField.Label
       {...rest}
-      className={cn(
-        "text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]",
-        className,
-      )}
+      className={cn("text-fg-default text-sm font-semibold", className)}
     />
   );
 }
@@ -29,7 +26,7 @@ export function FieldHelperText(props: ArkField.HelperTextProps) {
   return (
     <ArkField.HelperText
       {...rest}
-      className={cn("text-sm text-[#63635E] dark:text-[#b5b3ad]", className)}
+      className={cn("text-fg-muted text-sm", className)}
     />
   );
 }
@@ -58,14 +55,23 @@ export function Field(props: FieldProps) {
     helperText,
     errorText,
     required,
+    disabled,
     children,
     ...rest
   } = props;
 
   return (
-    <FieldRoot {...rest} className={cn("w-full", className)}>
+    <FieldRoot
+      {...rest}
+      disabled={disabled}
+      className={cn("w-full", className)}
+    >
       {label ? (
-        <FieldLabel className="flex items-center gap-1">
+        <FieldLabel
+          className={cn("flex items-center gap-1", {
+            "opacity-50": disabled,
+          })}
+        >
           {label}
           {required ? <span className={cn("text-[#fd5454]")}>*</span> : null}
         </FieldLabel>
