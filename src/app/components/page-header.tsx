@@ -1,6 +1,6 @@
 import { Heading } from "@/components/heading";
-import { Text, TextLink } from "@/components/text";
-import { LuExternalLink, LuShieldCheck } from "react-icons/lu";
+import { ExternalLink, Text } from "@/components/text";
+import { LuShieldCheck } from "react-icons/lu";
 
 type Props = React.ComponentPropsWithoutRef<"div"> & {
   title: string;
@@ -24,14 +24,7 @@ export function PageHeader(props: Props) {
         ) : null}
       </div>
       <Text>{description}</Text>
-      <TextLink
-        href={githubLink}
-        target="_blank"
-        className="inline-flex items-center gap-2"
-      >
-        Source
-        <LuExternalLink size={16} />
-      </TextLink>
+      <ExternalLink href={githubLink}>Source</ExternalLink>
     </div>
   );
 }

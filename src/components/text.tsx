@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { LuExternalLink } from "react-icons/lu";
 import { cn } from "./cn";
 
 export function Text(props: React.ComponentPropsWithoutRef<"p">) {
@@ -29,6 +30,24 @@ export function TextLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
         className,
       )}
     />
+  );
+}
+
+export function ExternalLink(props: React.ComponentPropsWithoutRef<"a">) {
+  const { className, children, ...rest } = props;
+
+  return (
+    <a
+      {...rest}
+      className={cn(
+        "text-fg-muted hover:text-fg-default inline-flex items-center gap-2 text-sm/6 underline transition-colors",
+        className,
+      )}
+      target="_blank"
+    >
+      {children}
+      <LuExternalLink size={16} />
+    </a>
   );
 }
 
