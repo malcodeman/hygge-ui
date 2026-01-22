@@ -52,6 +52,10 @@ export const NAVIGATION_GROUPS = [
         label: "Date Picker",
       },
       {
+        href: "/docs/component/dialog",
+        label: "Dialog",
+      },
+      {
         href: "/docs/components/field",
         label: "Field",
       },
