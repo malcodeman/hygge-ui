@@ -25,7 +25,7 @@ function MenuPage() {
     <>
       <PageHeader
         title="Menu"
-        description="Used to create an accessible dropdown menu"
+        description="Used to create an accessible dropdown menu."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/menu.tsx"
         className="mb-2"
       />
