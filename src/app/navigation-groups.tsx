@@ -76,6 +76,10 @@ export const NAVIGATION_GROUPS = [
         label: "Menu",
       },
       {
+        href: "/docs/components/pagination",
+        label: "Pagination",
+      },
+      {
         href: "/docs/components/password-input",
         label: "Password Input",
       },

@@ -26,6 +26,7 @@ import { Route as DocsComponentsRadioRouteImport } from './routes/docs.component
 import { Route as DocsComponentsQrCodeRouteImport } from './routes/docs.components.qr-code'
 import { Route as DocsComponentsPinInputRouteImport } from './routes/docs.components.pin-input'
 import { Route as DocsComponentsPasswordInputRouteImport } from './routes/docs.components.password-input'
+import { Route as DocsComponentsPaginationRouteImport } from './routes/docs.components.pagination'
 import { Route as DocsComponentsMenuRouteImport } from './routes/docs.components.menu'
 import { Route as DocsComponentsInputRouteImport } from './routes/docs.components.input'
 import { Route as DocsComponentsHighlightRouteImport } from './routes/docs.components.highlight'
@@ -128,6 +129,12 @@ const DocsComponentsPasswordInputRoute =
   DocsComponentsPasswordInputRouteImport.update({
     id: '/docs/components/password-input',
     path: '/docs/components/password-input',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DocsComponentsPaginationRoute =
+  DocsComponentsPaginationRouteImport.update({
+    id: '/docs/components/pagination',
+    path: '/docs/components/pagination',
     getParentRoute: () => rootRouteImport,
   } as any)
 const DocsComponentsMenuRoute = DocsComponentsMenuRouteImport.update({
@@ -238,6 +245,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
   '/docs/components/input': typeof DocsComponentsInputRoute
   '/docs/components/menu': typeof DocsComponentsMenuRoute
+  '/docs/components/pagination': typeof DocsComponentsPaginationRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
@@ -274,6 +282,7 @@ export interface FileRoutesByTo {
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
   '/docs/components/input': typeof DocsComponentsInputRoute
   '/docs/components/menu': typeof DocsComponentsMenuRoute
+  '/docs/components/pagination': typeof DocsComponentsPaginationRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
@@ -311,6 +320,7 @@ export interface FileRoutesById {
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
   '/docs/components/input': typeof DocsComponentsInputRoute
   '/docs/components/menu': typeof DocsComponentsMenuRoute
+  '/docs/components/pagination': typeof DocsComponentsPaginationRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
@@ -349,6 +359,7 @@ export interface FileRouteTypes {
     | '/docs/components/highlight'
     | '/docs/components/input'
     | '/docs/components/menu'
+    | '/docs/components/pagination'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/qr-code'
@@ -385,6 +396,7 @@ export interface FileRouteTypes {
     | '/docs/components/highlight'
     | '/docs/components/input'
     | '/docs/components/menu'
+    | '/docs/components/pagination'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/qr-code'
@@ -421,6 +433,7 @@ export interface FileRouteTypes {
     | '/docs/components/highlight'
     | '/docs/components/input'
     | '/docs/components/menu'
+    | '/docs/components/pagination'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/qr-code'
@@ -458,6 +471,7 @@ export interface RootRouteChildren {
   DocsComponentsHighlightRoute: typeof DocsComponentsHighlightRoute
   DocsComponentsInputRoute: typeof DocsComponentsInputRoute
   DocsComponentsMenuRoute: typeof DocsComponentsMenuRoute
+  DocsComponentsPaginationRoute: typeof DocsComponentsPaginationRoute
   DocsComponentsPasswordInputRoute: typeof DocsComponentsPasswordInputRoute
   DocsComponentsPinInputRoute: typeof DocsComponentsPinInputRoute
   DocsComponentsQrCodeRoute: typeof DocsComponentsQrCodeRoute
@@ -595,6 +609,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/password-input'
       fullPath: '/docs/components/password-input'
       preLoaderRoute: typeof DocsComponentsPasswordInputRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/pagination': {
+      id: '/docs/components/pagination'
+      path: '/docs/components/pagination'
+      fullPath: '/docs/components/pagination'
+      preLoaderRoute: typeof DocsComponentsPaginationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/menu': {
@@ -738,6 +759,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsHighlightRoute: DocsComponentsHighlightRoute,
   DocsComponentsInputRoute: DocsComponentsInputRoute,
   DocsComponentsMenuRoute: DocsComponentsMenuRoute,
+  DocsComponentsPaginationRoute: DocsComponentsPaginationRoute,
   DocsComponentsPasswordInputRoute: DocsComponentsPasswordInputRoute,
   DocsComponentsPinInputRoute: DocsComponentsPinInputRoute,
   DocsComponentsQrCodeRoute: DocsComponentsQrCodeRoute,
