@@ -33,6 +33,7 @@ import { Route as DocsComponentsHighlightRouteImport } from './routes/docs.compo
 import { Route as DocsComponentsHeadingRouteImport } from './routes/docs.components.heading'
 import { Route as DocsComponentsFieldRouteImport } from './routes/docs.components.field'
 import { Route as DocsComponentsDatePickerRouteImport } from './routes/docs.components.date-picker'
+import { Route as DocsComponentsComboboxRouteImport } from './routes/docs.components.combobox'
 import { Route as DocsComponentsCodeBlockRouteImport } from './routes/docs.components.code-block'
 import { Route as DocsComponentsClipboardRouteImport } from './routes/docs.components.clipboard'
 import { Route as DocsComponentsCheckboxCardRouteImport } from './routes/docs.components.checkbox-card'
@@ -168,6 +169,11 @@ const DocsComponentsDatePickerRoute =
     path: '/docs/components/date-picker',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DocsComponentsComboboxRoute = DocsComponentsComboboxRouteImport.update({
+  id: '/docs/components/combobox',
+  path: '/docs/components/combobox',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsComponentsCodeBlockRoute = DocsComponentsCodeBlockRouteImport.update({
   id: '/docs/components/code-block',
   path: '/docs/components/code-block',
@@ -239,6 +245,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/checkbox-card': typeof DocsComponentsCheckboxCardRoute
   '/docs/components/clipboard': typeof DocsComponentsClipboardRoute
   '/docs/components/code-block': typeof DocsComponentsCodeBlockRoute
+  '/docs/components/combobox': typeof DocsComponentsComboboxRoute
   '/docs/components/date-picker': typeof DocsComponentsDatePickerRoute
   '/docs/components/field': typeof DocsComponentsFieldRoute
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
@@ -276,6 +283,7 @@ export interface FileRoutesByTo {
   '/docs/components/checkbox-card': typeof DocsComponentsCheckboxCardRoute
   '/docs/components/clipboard': typeof DocsComponentsClipboardRoute
   '/docs/components/code-block': typeof DocsComponentsCodeBlockRoute
+  '/docs/components/combobox': typeof DocsComponentsComboboxRoute
   '/docs/components/date-picker': typeof DocsComponentsDatePickerRoute
   '/docs/components/field': typeof DocsComponentsFieldRoute
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
@@ -314,6 +322,7 @@ export interface FileRoutesById {
   '/docs/components/checkbox-card': typeof DocsComponentsCheckboxCardRoute
   '/docs/components/clipboard': typeof DocsComponentsClipboardRoute
   '/docs/components/code-block': typeof DocsComponentsCodeBlockRoute
+  '/docs/components/combobox': typeof DocsComponentsComboboxRoute
   '/docs/components/date-picker': typeof DocsComponentsDatePickerRoute
   '/docs/components/field': typeof DocsComponentsFieldRoute
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
@@ -353,6 +362,7 @@ export interface FileRouteTypes {
     | '/docs/components/checkbox-card'
     | '/docs/components/clipboard'
     | '/docs/components/code-block'
+    | '/docs/components/combobox'
     | '/docs/components/date-picker'
     | '/docs/components/field'
     | '/docs/components/heading'
@@ -390,6 +400,7 @@ export interface FileRouteTypes {
     | '/docs/components/checkbox-card'
     | '/docs/components/clipboard'
     | '/docs/components/code-block'
+    | '/docs/components/combobox'
     | '/docs/components/date-picker'
     | '/docs/components/field'
     | '/docs/components/heading'
@@ -427,6 +438,7 @@ export interface FileRouteTypes {
     | '/docs/components/checkbox-card'
     | '/docs/components/clipboard'
     | '/docs/components/code-block'
+    | '/docs/components/combobox'
     | '/docs/components/date-picker'
     | '/docs/components/field'
     | '/docs/components/heading'
@@ -465,6 +477,7 @@ export interface RootRouteChildren {
   DocsComponentsCheckboxCardRoute: typeof DocsComponentsCheckboxCardRoute
   DocsComponentsClipboardRoute: typeof DocsComponentsClipboardRoute
   DocsComponentsCodeBlockRoute: typeof DocsComponentsCodeBlockRoute
+  DocsComponentsComboboxRoute: typeof DocsComponentsComboboxRoute
   DocsComponentsDatePickerRoute: typeof DocsComponentsDatePickerRoute
   DocsComponentsFieldRoute: typeof DocsComponentsFieldRoute
   DocsComponentsHeadingRoute: typeof DocsComponentsHeadingRoute
@@ -660,6 +673,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsComponentsDatePickerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/components/combobox': {
+      id: '/docs/components/combobox'
+      path: '/docs/components/combobox'
+      fullPath: '/docs/components/combobox'
+      preLoaderRoute: typeof DocsComponentsComboboxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/components/code-block': {
       id: '/docs/components/code-block'
       path: '/docs/components/code-block'
@@ -753,6 +773,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsCheckboxCardRoute: DocsComponentsCheckboxCardRoute,
   DocsComponentsClipboardRoute: DocsComponentsClipboardRoute,
   DocsComponentsCodeBlockRoute: DocsComponentsCodeBlockRoute,
+  DocsComponentsComboboxRoute: DocsComponentsComboboxRoute,
   DocsComponentsDatePickerRoute: DocsComponentsDatePickerRoute,
   DocsComponentsFieldRoute: DocsComponentsFieldRoute,
   DocsComponentsHeadingRoute: DocsComponentsHeadingRoute,

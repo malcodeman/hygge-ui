@@ -48,6 +48,10 @@ export const NAVIGATION_GROUPS = [
         label: "Code Block",
       },
       {
+        href: "/docs/components/combobox",
+        label: "Combobox",
+      },
+      {
         href: "/docs/components/date-picker",
         label: "Date Picker",
       },
