@@ -28,6 +28,16 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "icon",
+        href: "/favicon-light.ico",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        rel: "icon",
+        href: "/favicon-dark.ico",
+        media: "(prefers-color-scheme: dark)",
+      },
     ],
   }),
   component: RootLayout,
