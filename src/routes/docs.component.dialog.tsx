@@ -16,6 +16,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/component/dialog")({
   component: DialogPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Dialog | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function DialogPage() {

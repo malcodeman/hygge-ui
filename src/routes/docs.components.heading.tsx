@@ -9,6 +9,13 @@ import { LuArrowRight } from "react-icons/lu";
 
 export const Route = createFileRoute("/docs/components/heading")({
   component: HeadingPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Heading | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function HeadingPage() {

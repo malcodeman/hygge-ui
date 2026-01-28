@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/code-block")({
   component: CodeBlockPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Code Block | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function CodeBlockPage() {

@@ -13,6 +13,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/accordion")({
   component: AccordionPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Accordion | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function AccordionPage() {

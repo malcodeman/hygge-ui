@@ -9,6 +9,13 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/docs/components/tag")({
   component: TagPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Tag | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function TagPage() {

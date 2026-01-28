@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/separator")({
   component: SeparatorPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Separator | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function SeparatorPage() {

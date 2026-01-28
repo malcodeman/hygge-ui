@@ -8,6 +8,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/textarea")({
   component: TextareaPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Textarea | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function TextareaPage() {

@@ -10,6 +10,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/checkbox")({
   component: CheckboxPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Checkbox | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function CheckboxPage() {

@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/switch")({
   component: SwitchPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Switch | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function SwitchPage() {

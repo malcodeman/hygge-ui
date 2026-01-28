@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/avatar")({
   component: AvatarPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Avatar | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function AvatarPage() {

@@ -6,6 +6,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/text")({
   component: TextPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Text | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function TextPage() {

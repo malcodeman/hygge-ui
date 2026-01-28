@@ -8,6 +8,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/input")({
   component: InputPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Input | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function InputPage() {

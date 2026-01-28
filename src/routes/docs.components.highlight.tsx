@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/highlight")({
   component: HighlightPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Highlight | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function HighlightPage() {

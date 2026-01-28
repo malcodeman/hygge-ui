@@ -8,6 +8,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/rating")({
   component: RatingPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Rating | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function RatingPage() {

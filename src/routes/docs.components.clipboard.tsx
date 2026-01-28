@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/clipboard")({
   component: ClipboardPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Clipboard | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function ClipboardPage() {

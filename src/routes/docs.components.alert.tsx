@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/alert")({
   component: AlertPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Alert | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function AlertPage() {

@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/date-picker")({
   component: DatePickerPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Date Picker | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function DatePickerPage() {

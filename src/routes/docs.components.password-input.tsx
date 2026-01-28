@@ -7,6 +7,13 @@ import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
 export const Route = createFileRoute("/docs/components/password-input")({
   component: PasswordInputPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Password Input | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function PasswordInputPage() {

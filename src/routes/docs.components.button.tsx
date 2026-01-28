@@ -8,6 +8,13 @@ import { LuArrowRight, LuMail } from "react-icons/lu";
 
 export const Route = createFileRoute("/docs/components/button")({
   component: ButtonPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Button | Hygge UI",
+      },
+    ],
+  }),
 });
 
 function ButtonPage() {
