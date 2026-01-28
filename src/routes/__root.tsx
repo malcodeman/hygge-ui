@@ -30,13 +30,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "icon",
-        href: "/favicon-light.ico",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        rel: "icon",
-        href: "/favicon-dark.ico",
-        media: "(prefers-color-scheme: dark)",
+        href: "/favicon.ico",
       },
     ],
   }),
@@ -54,7 +48,7 @@ function RootLayout() {
         <ThemeProvider>
           <Header />
           <div className="mx-auto max-w-6xl px-8">
-            <aside className="fixed top-[65px] bottom-0 hidden w-2xs overflow-y-auto py-8 lg:block">
+            <aside className="fixed top-16.25 bottom-0 hidden w-2xs overflow-y-auto py-8 lg:block">
               <ul>
                 {NAVIGATION_GROUPS.map((link) => (
                   <div key={link.group} className="mb-6">
