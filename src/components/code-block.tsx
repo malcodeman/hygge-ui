@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BundledLanguage, BundledTheme, codeToHtml } from "shiki";
 import { Clipboard as ArkClipboard } from "@ark-ui/react";
 import { LuCheck, LuClipboardCopy } from "react-icons/lu";
@@ -11,7 +12,7 @@ type Props = React.ComponentPropsWithoutRef<"div"> & {
   copyButton?: boolean;
 };
 
-export async function CodeBlock(props: Props) {
+export function CodeBlock(props: Props) {
   const {
     code,
     language,
@@ -20,10 +21,14 @@ export async function CodeBlock(props: Props) {
     className,
     ...rest
   } = props;
-  const html = await codeToHtml(code, {
-    lang: language,
-    theme,
-  });
+  const [html, setHtml] = useState<string>("");
+
+  useEffect(() => {
+    codeToHtml(code, {
+      lang: language,
+      theme,
+    }).then(setHtml);
+  }, [code, language, theme]);
 
   if (copyButton) {
     return (

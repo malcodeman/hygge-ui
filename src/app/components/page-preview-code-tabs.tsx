@@ -14,7 +14,7 @@ type Props = {
   className?: string;
 };
 
-export async function PagePreviewCodeTabs(props: Props) {
+export function PagePreviewCodeTabs(props: Props) {
   const { preview, code, className, ...rest } = props;
 
   return (
