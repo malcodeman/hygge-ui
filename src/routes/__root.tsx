@@ -28,6 +28,10 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "icon",
+        href: "/favicon.ico",
+      },
     ],
   }),
   component: RootLayout,
@@ -44,7 +48,7 @@ function RootLayout() {
         <ThemeProvider>
           <Header />
           <div className="mx-auto max-w-6xl px-8">
-            <aside className="fixed top-[65px] bottom-0 hidden w-2xs overflow-y-auto py-8 lg:block">
+            <aside className="fixed top-16.25 bottom-0 hidden w-2xs overflow-y-auto py-8 lg:block">
               <ul>
                 {NAVIGATION_GROUPS.map((link) => (
                   <div key={link.group} className="mb-6">
