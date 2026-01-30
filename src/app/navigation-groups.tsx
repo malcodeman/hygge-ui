@@ -96,6 +96,10 @@ export const NAVIGATION_GROUPS = [
         label: "QR Code",
       },
       {
+        href: "/docs/components/radio-card",
+        label: "Radio Card",
+      },
+      {
         href: "/docs/components/radio",
         label: "Radio",
       },
