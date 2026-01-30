@@ -92,6 +92,10 @@ export const NAVIGATION_GROUPS = [
         label: "Pin Input",
       },
       {
+        href: "/docs/components/popover",
+        label: "Popover",
+      },
+      {
         href: "/docs/components/qr-code",
         label: "QR Code",
       },

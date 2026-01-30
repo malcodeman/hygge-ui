@@ -45,7 +45,7 @@ export function PopoverContent(props: PopoverContentProps) {
             asChild
             className={cn("absolute top-1 right-1 cursor-pointer", className)}
           >
-            <Button variant="ghost">
+            <Button variant="ghost" size="xs">
               <LuX size={16} />
             </Button>
           </ArkPopover.CloseTrigger>

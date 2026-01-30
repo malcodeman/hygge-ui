@@ -25,6 +25,7 @@ import { Route as DocsComponentsRatingRouteImport } from './routes/docs.componen
 import { Route as DocsComponentsRadioCardRouteImport } from './routes/docs.components.radio-card'
 import { Route as DocsComponentsRadioRouteImport } from './routes/docs.components.radio'
 import { Route as DocsComponentsQrCodeRouteImport } from './routes/docs.components.qr-code'
+import { Route as DocsComponentsPopoverRouteImport } from './routes/docs.components.popover'
 import { Route as DocsComponentsPinInputRouteImport } from './routes/docs.components.pin-input'
 import { Route as DocsComponentsPasswordInputRouteImport } from './routes/docs.components.password-input'
 import { Route as DocsComponentsPaginationRouteImport } from './routes/docs.components.pagination'
@@ -126,6 +127,11 @@ const DocsComponentsRadioRoute = DocsComponentsRadioRouteImport.update({
 const DocsComponentsQrCodeRoute = DocsComponentsQrCodeRouteImport.update({
   id: '/docs/components/qr-code',
   path: '/docs/components/qr-code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsPopoverRoute = DocsComponentsPopoverRouteImport.update({
+  id: '/docs/components/popover',
+  path: '/docs/components/popover',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsPinInputRoute = DocsComponentsPinInputRouteImport.update({
@@ -268,6 +274,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/pagination': typeof DocsComponentsPaginationRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/popover': typeof DocsComponentsPopoverRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/radio-card': typeof DocsComponentsRadioCardRoute
@@ -308,6 +315,7 @@ export interface FileRoutesByTo {
   '/docs/components/pagination': typeof DocsComponentsPaginationRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/popover': typeof DocsComponentsPopoverRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/radio-card': typeof DocsComponentsRadioCardRoute
@@ -349,6 +357,7 @@ export interface FileRoutesById {
   '/docs/components/pagination': typeof DocsComponentsPaginationRoute
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
+  '/docs/components/popover': typeof DocsComponentsPopoverRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/radio-card': typeof DocsComponentsRadioCardRoute
@@ -391,6 +400,7 @@ export interface FileRouteTypes {
     | '/docs/components/pagination'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/popover'
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/radio-card'
@@ -431,6 +441,7 @@ export interface FileRouteTypes {
     | '/docs/components/pagination'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/popover'
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/radio-card'
@@ -471,6 +482,7 @@ export interface FileRouteTypes {
     | '/docs/components/pagination'
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
+    | '/docs/components/popover'
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/radio-card'
@@ -512,6 +524,7 @@ export interface RootRouteChildren {
   DocsComponentsPaginationRoute: typeof DocsComponentsPaginationRoute
   DocsComponentsPasswordInputRoute: typeof DocsComponentsPasswordInputRoute
   DocsComponentsPinInputRoute: typeof DocsComponentsPinInputRoute
+  DocsComponentsPopoverRoute: typeof DocsComponentsPopoverRoute
   DocsComponentsQrCodeRoute: typeof DocsComponentsQrCodeRoute
   DocsComponentsRadioRoute: typeof DocsComponentsRadioRoute
   DocsComponentsRadioCardRoute: typeof DocsComponentsRadioCardRoute
@@ -641,6 +654,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/qr-code'
       fullPath: '/docs/components/qr-code'
       preLoaderRoute: typeof DocsComponentsQrCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/popover': {
+      id: '/docs/components/popover'
+      path: '/docs/components/popover'
+      fullPath: '/docs/components/popover'
+      preLoaderRoute: typeof DocsComponentsPopoverRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/pin-input': {
@@ -824,6 +844,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsPaginationRoute: DocsComponentsPaginationRoute,
   DocsComponentsPasswordInputRoute: DocsComponentsPasswordInputRoute,
   DocsComponentsPinInputRoute: DocsComponentsPinInputRoute,
+  DocsComponentsPopoverRoute: DocsComponentsPopoverRoute,
   DocsComponentsQrCodeRoute: DocsComponentsQrCodeRoute,
   DocsComponentsRadioRoute: DocsComponentsRadioRoute,
   DocsComponentsRadioCardRoute: DocsComponentsRadioCardRoute,
