@@ -21,6 +21,7 @@ import { Route as DocsComponentsTabsRouteImport } from './routes/docs.components
 import { Route as DocsComponentsSwitchRouteImport } from './routes/docs.components.switch'
 import { Route as DocsComponentsStepsRouteImport } from './routes/docs.components.steps'
 import { Route as DocsComponentsSeparatorRouteImport } from './routes/docs.components.separator'
+import { Route as DocsComponentsSelectRouteImport } from './routes/docs.components.select'
 import { Route as DocsComponentsRatingRouteImport } from './routes/docs.components.rating'
 import { Route as DocsComponentsRadioRouteImport } from './routes/docs.components.radio'
 import { Route as DocsComponentsQrCodeRouteImport } from './routes/docs.components.qr-code'
@@ -104,6 +105,11 @@ const DocsComponentsStepsRoute = DocsComponentsStepsRouteImport.update({
 const DocsComponentsSeparatorRoute = DocsComponentsSeparatorRouteImport.update({
   id: '/docs/components/separator',
   path: '/docs/components/separator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsSelectRoute = DocsComponentsSelectRouteImport.update({
+  id: '/docs/components/select',
+  path: '/docs/components/select',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsRatingRoute = DocsComponentsRatingRouteImport.update({
@@ -258,6 +264,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
+  '/docs/components/select': typeof DocsComponentsSelectRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
@@ -296,6 +303,7 @@ export interface FileRoutesByTo {
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
+  '/docs/components/select': typeof DocsComponentsSelectRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
@@ -335,6 +343,7 @@ export interface FileRoutesById {
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/rating': typeof DocsComponentsRatingRoute
+  '/docs/components/select': typeof DocsComponentsSelectRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
@@ -375,6 +384,7 @@ export interface FileRouteTypes {
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/rating'
+    | '/docs/components/select'
     | '/docs/components/separator'
     | '/docs/components/steps'
     | '/docs/components/switch'
@@ -413,6 +423,7 @@ export interface FileRouteTypes {
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/rating'
+    | '/docs/components/select'
     | '/docs/components/separator'
     | '/docs/components/steps'
     | '/docs/components/switch'
@@ -451,6 +462,7 @@ export interface FileRouteTypes {
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/rating'
+    | '/docs/components/select'
     | '/docs/components/separator'
     | '/docs/components/steps'
     | '/docs/components/switch'
@@ -490,6 +502,7 @@ export interface RootRouteChildren {
   DocsComponentsQrCodeRoute: typeof DocsComponentsQrCodeRoute
   DocsComponentsRadioRoute: typeof DocsComponentsRadioRoute
   DocsComponentsRatingRoute: typeof DocsComponentsRatingRoute
+  DocsComponentsSelectRoute: typeof DocsComponentsSelectRoute
   DocsComponentsSeparatorRoute: typeof DocsComponentsSeparatorRoute
   DocsComponentsStepsRoute: typeof DocsComponentsStepsRoute
   DocsComponentsSwitchRoute: typeof DocsComponentsSwitchRoute
@@ -587,6 +600,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/separator'
       fullPath: '/docs/components/separator'
       preLoaderRoute: typeof DocsComponentsSeparatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/select': {
+      id: '/docs/components/select'
+      path: '/docs/components/select'
+      fullPath: '/docs/components/select'
+      preLoaderRoute: typeof DocsComponentsSelectRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/rating': {
@@ -786,6 +806,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsQrCodeRoute: DocsComponentsQrCodeRoute,
   DocsComponentsRadioRoute: DocsComponentsRadioRoute,
   DocsComponentsRatingRoute: DocsComponentsRatingRoute,
+  DocsComponentsSelectRoute: DocsComponentsSelectRoute,
   DocsComponentsSeparatorRoute: DocsComponentsSeparatorRoute,
   DocsComponentsStepsRoute: DocsComponentsStepsRoute,
   DocsComponentsSwitchRoute: DocsComponentsSwitchRoute,

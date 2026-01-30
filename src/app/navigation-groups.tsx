@@ -104,6 +104,10 @@ export const NAVIGATION_GROUPS = [
         label: "Rating",
       },
       {
+        href: "/docs/components/select",
+        label: "Select",
+      },
+      {
         href: "/docs/components/separator",
         label: "Separator",
       },
