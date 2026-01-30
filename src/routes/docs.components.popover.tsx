@@ -81,13 +81,13 @@ function PopoverPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <PopoverRoot>
+          <PopoverRoot showArrow>
             <PopoverTrigger asChild>
               <Button variant="outline" size="sm">
                 Click me
               </Button>
             </PopoverTrigger>
-            <PopoverContent showArrow>
+            <PopoverContent>
               <PopoverTitle>Naruto Form</PopoverTitle>
               <PopoverDescription>
                 Naruto is a Japanese manga series written and illustrated by
@@ -96,13 +96,13 @@ function PopoverPage() {
             </PopoverContent>
           </PopoverRoot>
         }
-        code={`<PopoverRoot>
+        code={`<PopoverRoot showArrow>
   <PopoverTrigger asChild>
     <Button variant="outline" size="sm">
       Click me
     </Button>
   </PopoverTrigger>
-  <PopoverContent showArrow>
+  <PopoverContent>
     <PopoverTitle>Naruto Form</PopoverTitle>
     <PopoverDescription>
       Naruto is a Japanese manga series written and illustrated by

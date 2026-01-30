@@ -1,10 +1,25 @@
 import { Popover as ArkPopover } from "@ark-ui/react";
 import { LuX } from "react-icons/lu";
+import { createContext, useContext } from "react";
 import { cn } from "./cn";
 import { Button } from "./button";
 
-export function PopoverRoot(props: ArkPopover.RootProps) {
-  return <ArkPopover.Root {...props} />;
+const PopoverContext = createContext<{ showArrow: boolean }>({
+  showArrow: false,
+});
+
+type PopoverRootProps = {
+  showArrow?: boolean;
+} & ArkPopover.RootProps;
+
+export function PopoverRoot(props: PopoverRootProps) {
+  const { showArrow = false, ...rest } = props;
+
+  return (
+    <PopoverContext.Provider value={{ showArrow }}>
+      <ArkPopover.Root {...rest} />
+    </PopoverContext.Provider>
+  );
 }
 
 export function PopoverTrigger(props: ArkPopover.TriggerProps) {
@@ -12,18 +27,12 @@ export function PopoverTrigger(props: ArkPopover.TriggerProps) {
 }
 
 type PopoverContentProps = {
-  showArrow?: boolean;
   showCloseTrigger?: boolean;
 } & ArkPopover.ContentProps;
 
 export function PopoverContent(props: PopoverContentProps) {
-  const {
-    showArrow = false,
-    showCloseTrigger = false,
-    className,
-    children,
-    ...rest
-  } = props;
+  const { showCloseTrigger = false, className, children, ...rest } = props;
+  const { showArrow } = useContext(PopoverContext);
 
   return (
     <ArkPopover.Positioner>

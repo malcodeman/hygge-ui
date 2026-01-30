@@ -1,8 +1,23 @@
 import { Menu as ArkMenu } from "@ark-ui/react";
+import { createContext, useContext } from "react";
 import { cn } from "./cn";
 
-export function MenuRoot(props: ArkMenu.RootProps) {
-  return <ArkMenu.Root {...props} />;
+const MenuContext = createContext<{ showArrow: boolean }>({
+  showArrow: false,
+});
+
+type MenuRootProps = {
+  showArrow?: boolean;
+} & ArkMenu.RootProps;
+
+export function MenuRoot(props: MenuRootProps) {
+  const { showArrow = false, ...rest } = props;
+
+  return (
+    <MenuContext.Provider value={{ showArrow }}>
+      <ArkMenu.Root {...rest} />
+    </MenuContext.Provider>
+  );
 }
 
 export function MenuContextTrigger(props: ArkMenu.ContextTriggerProps) {
@@ -28,12 +43,9 @@ export function MenuTriggerItem(props: ArkMenu.TriggerItemProps) {
   );
 }
 
-type MenuContentProps = {
-  showArrow?: boolean;
-} & ArkMenu.ContentProps;
-
-export function MenuContent(props: MenuContentProps) {
-  const { showArrow, className, children, ...rest } = props;
+export function MenuContent(props: ArkMenu.ContentProps) {
+  const { className, children, ...rest } = props;
+  const { showArrow } = useContext(MenuContext);
 
   return (
     <ArkMenu.Positioner>

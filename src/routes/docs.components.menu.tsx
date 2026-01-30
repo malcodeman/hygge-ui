@@ -76,6 +76,44 @@ function MenuPage() {
         Examples
       </Heading>
       <Heading level={3} size="lg" className="mb-2">
+        Arrow
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>showArrow</Code> prop to show an arrow on the menu.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <MenuRoot showArrow>
+            <MenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                Open
+              </Button>
+            </MenuTrigger>
+            <MenuContent>
+              <MenuItem value="new-txt">New Text File</MenuItem>
+              <MenuItem value="new-file">New File...</MenuItem>
+              <MenuItem value="new-win">New Window</MenuItem>
+              <MenuItem value="open-file">Open File...</MenuItem>
+              <MenuItem value="export">Export</MenuItem>
+            </MenuContent>
+          </MenuRoot>
+        }
+        code={`<MenuRoot showArrow>
+  <MenuTrigger asChild>
+    <Button variant="outline" size="sm">
+      Open
+    </Button>
+  </MenuTrigger>
+  <MenuContent>
+    <MenuItem value="new-txt">New Text File</MenuItem>
+    <MenuItem value="new-file">New File...</MenuItem>
+    <MenuItem value="new-win">New Window</MenuItem>
+    <MenuItem value="open-file">Open File...</MenuItem>
+    <MenuItem value="export">Export</MenuItem>
+  </MenuContent>
+</MenuRoot>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Context Menu
       </Heading>
       <Text className="mb-2">

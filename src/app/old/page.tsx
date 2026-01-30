@@ -240,7 +240,7 @@ export default function Home() {
               <PopoverTrigger asChild>
                 <Button variant="outline">Click me with arrow</Button>
               </PopoverTrigger>
-              <PopoverContent showArrow>
+              <PopoverContent>
                 <PopoverTitle>Favorite Framework</PopoverTitle>
                 <PopoverDescription>
                   Tell us what is your favorite framework and why you love to
@@ -269,7 +269,7 @@ export default function Home() {
               <MenuTrigger asChild>
                 <Button variant="outline">Click me with arrow</Button>
               </MenuTrigger>
-              <MenuContent showArrow>
+              <MenuContent>
                 <MenuItem value="new-txt">New Text File</MenuItem>
                 <MenuItem value="new-file">New File...</MenuItem>
                 <MenuItem value="new-win">New Window</MenuItem>
