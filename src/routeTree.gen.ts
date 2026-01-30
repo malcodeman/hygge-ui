@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DocsIndexRouteImport } from './routes/docs.index'
-import { Route as DocsComponentDialogRouteImport } from './routes/docs.component.dialog'
 import { Route as DocsComponentsTooltipRouteImport } from './routes/docs.components.tooltip'
 import { Route as DocsComponentsToastRouteImport } from './routes/docs.components.toast'
 import { Route as DocsComponentsTextareaRouteImport } from './routes/docs.components.textarea'
@@ -33,6 +32,7 @@ import { Route as DocsComponentsInputRouteImport } from './routes/docs.component
 import { Route as DocsComponentsHighlightRouteImport } from './routes/docs.components.highlight'
 import { Route as DocsComponentsHeadingRouteImport } from './routes/docs.components.heading'
 import { Route as DocsComponentsFieldRouteImport } from './routes/docs.components.field'
+import { Route as DocsComponentsDialogRouteImport } from './routes/docs.components.dialog'
 import { Route as DocsComponentsDatePickerRouteImport } from './routes/docs.components.date-picker'
 import { Route as DocsComponentsComboboxRouteImport } from './routes/docs.components.combobox'
 import { Route as DocsComponentsCodeBlockRouteImport } from './routes/docs.components.code-block'
@@ -55,11 +55,6 @@ const IndexRoute = IndexRouteImport.update({
 const DocsIndexRoute = DocsIndexRouteImport.update({
   id: '/docs/',
   path: '/docs/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsComponentDialogRoute = DocsComponentDialogRouteImport.update({
-  id: '/docs/component/dialog',
-  path: '/docs/component/dialog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsTooltipRoute = DocsComponentsTooltipRouteImport.update({
@@ -169,6 +164,11 @@ const DocsComponentsFieldRoute = DocsComponentsFieldRouteImport.update({
   path: '/docs/components/field',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocsComponentsDialogRoute = DocsComponentsDialogRouteImport.update({
+  id: '/docs/components/dialog',
+  path: '/docs/components/dialog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsComponentsDatePickerRoute =
   DocsComponentsDatePickerRouteImport.update({
     id: '/docs/components/date-picker',
@@ -253,6 +253,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/code-block': typeof DocsComponentsCodeBlockRoute
   '/docs/components/combobox': typeof DocsComponentsComboboxRoute
   '/docs/components/date-picker': typeof DocsComponentsDatePickerRoute
+  '/docs/components/dialog': typeof DocsComponentsDialogRoute
   '/docs/components/field': typeof DocsComponentsFieldRoute
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
@@ -274,7 +275,6 @@ export interface FileRoutesByFullPath {
   '/docs/components/textarea': typeof DocsComponentsTextareaRoute
   '/docs/components/toast': typeof DocsComponentsToastRoute
   '/docs/components/tooltip': typeof DocsComponentsTooltipRoute
-  '/docs/component/dialog': typeof DocsComponentDialogRoute
   '/docs/first-steps/introduction/': typeof DocsFirstStepsIntroductionIndexRoute
 }
 export interface FileRoutesByTo {
@@ -292,6 +292,7 @@ export interface FileRoutesByTo {
   '/docs/components/code-block': typeof DocsComponentsCodeBlockRoute
   '/docs/components/combobox': typeof DocsComponentsComboboxRoute
   '/docs/components/date-picker': typeof DocsComponentsDatePickerRoute
+  '/docs/components/dialog': typeof DocsComponentsDialogRoute
   '/docs/components/field': typeof DocsComponentsFieldRoute
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
@@ -313,7 +314,6 @@ export interface FileRoutesByTo {
   '/docs/components/textarea': typeof DocsComponentsTextareaRoute
   '/docs/components/toast': typeof DocsComponentsToastRoute
   '/docs/components/tooltip': typeof DocsComponentsTooltipRoute
-  '/docs/component/dialog': typeof DocsComponentDialogRoute
   '/docs/first-steps/introduction': typeof DocsFirstStepsIntroductionIndexRoute
 }
 export interface FileRoutesById {
@@ -332,6 +332,7 @@ export interface FileRoutesById {
   '/docs/components/code-block': typeof DocsComponentsCodeBlockRoute
   '/docs/components/combobox': typeof DocsComponentsComboboxRoute
   '/docs/components/date-picker': typeof DocsComponentsDatePickerRoute
+  '/docs/components/dialog': typeof DocsComponentsDialogRoute
   '/docs/components/field': typeof DocsComponentsFieldRoute
   '/docs/components/heading': typeof DocsComponentsHeadingRoute
   '/docs/components/highlight': typeof DocsComponentsHighlightRoute
@@ -353,7 +354,6 @@ export interface FileRoutesById {
   '/docs/components/textarea': typeof DocsComponentsTextareaRoute
   '/docs/components/toast': typeof DocsComponentsToastRoute
   '/docs/components/tooltip': typeof DocsComponentsTooltipRoute
-  '/docs/component/dialog': typeof DocsComponentDialogRoute
   '/docs/first-steps/introduction/': typeof DocsFirstStepsIntroductionIndexRoute
 }
 export interface FileRouteTypes {
@@ -373,6 +373,7 @@ export interface FileRouteTypes {
     | '/docs/components/code-block'
     | '/docs/components/combobox'
     | '/docs/components/date-picker'
+    | '/docs/components/dialog'
     | '/docs/components/field'
     | '/docs/components/heading'
     | '/docs/components/highlight'
@@ -394,7 +395,6 @@ export interface FileRouteTypes {
     | '/docs/components/textarea'
     | '/docs/components/toast'
     | '/docs/components/tooltip'
-    | '/docs/component/dialog'
     | '/docs/first-steps/introduction/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -412,6 +412,7 @@ export interface FileRouteTypes {
     | '/docs/components/code-block'
     | '/docs/components/combobox'
     | '/docs/components/date-picker'
+    | '/docs/components/dialog'
     | '/docs/components/field'
     | '/docs/components/heading'
     | '/docs/components/highlight'
@@ -433,7 +434,6 @@ export interface FileRouteTypes {
     | '/docs/components/textarea'
     | '/docs/components/toast'
     | '/docs/components/tooltip'
-    | '/docs/component/dialog'
     | '/docs/first-steps/introduction'
   id:
     | '__root__'
@@ -451,6 +451,7 @@ export interface FileRouteTypes {
     | '/docs/components/code-block'
     | '/docs/components/combobox'
     | '/docs/components/date-picker'
+    | '/docs/components/dialog'
     | '/docs/components/field'
     | '/docs/components/heading'
     | '/docs/components/highlight'
@@ -472,7 +473,6 @@ export interface FileRouteTypes {
     | '/docs/components/textarea'
     | '/docs/components/toast'
     | '/docs/components/tooltip'
-    | '/docs/component/dialog'
     | '/docs/first-steps/introduction/'
   fileRoutesById: FileRoutesById
 }
@@ -491,6 +491,7 @@ export interface RootRouteChildren {
   DocsComponentsCodeBlockRoute: typeof DocsComponentsCodeBlockRoute
   DocsComponentsComboboxRoute: typeof DocsComponentsComboboxRoute
   DocsComponentsDatePickerRoute: typeof DocsComponentsDatePickerRoute
+  DocsComponentsDialogRoute: typeof DocsComponentsDialogRoute
   DocsComponentsFieldRoute: typeof DocsComponentsFieldRoute
   DocsComponentsHeadingRoute: typeof DocsComponentsHeadingRoute
   DocsComponentsHighlightRoute: typeof DocsComponentsHighlightRoute
@@ -512,7 +513,6 @@ export interface RootRouteChildren {
   DocsComponentsTextareaRoute: typeof DocsComponentsTextareaRoute
   DocsComponentsToastRoute: typeof DocsComponentsToastRoute
   DocsComponentsTooltipRoute: typeof DocsComponentsTooltipRoute
-  DocsComponentDialogRoute: typeof DocsComponentDialogRoute
   DocsFirstStepsIntroductionIndexRoute: typeof DocsFirstStepsIntroductionIndexRoute
 }
 
@@ -530,13 +530,6 @@ declare module '@tanstack/react-router' {
       path: '/docs'
       fullPath: '/docs/'
       preLoaderRoute: typeof DocsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/component/dialog': {
-      id: '/docs/component/dialog'
-      path: '/docs/component/dialog'
-      fullPath: '/docs/component/dialog'
-      preLoaderRoute: typeof DocsComponentDialogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/tooltip': {
@@ -686,6 +679,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsComponentsFieldRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/components/dialog': {
+      id: '/docs/components/dialog'
+      path: '/docs/components/dialog'
+      fullPath: '/docs/components/dialog'
+      preLoaderRoute: typeof DocsComponentsDialogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/components/date-picker': {
       id: '/docs/components/date-picker'
       path: '/docs/components/date-picker'
@@ -795,6 +795,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsCodeBlockRoute: DocsComponentsCodeBlockRoute,
   DocsComponentsComboboxRoute: DocsComponentsComboboxRoute,
   DocsComponentsDatePickerRoute: DocsComponentsDatePickerRoute,
+  DocsComponentsDialogRoute: DocsComponentsDialogRoute,
   DocsComponentsFieldRoute: DocsComponentsFieldRoute,
   DocsComponentsHeadingRoute: DocsComponentsHeadingRoute,
   DocsComponentsHighlightRoute: DocsComponentsHighlightRoute,
@@ -816,7 +817,6 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsTextareaRoute: DocsComponentsTextareaRoute,
   DocsComponentsToastRoute: DocsComponentsToastRoute,
   DocsComponentsTooltipRoute: DocsComponentsTooltipRoute,
-  DocsComponentDialogRoute: DocsComponentDialogRoute,
   DocsFirstStepsIntroductionIndexRoute: DocsFirstStepsIntroductionIndexRoute,
 }
 export const routeTree = rootRouteImport

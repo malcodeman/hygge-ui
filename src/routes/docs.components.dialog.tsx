@@ -14,7 +14,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 
-export const Route = createFileRoute("/docs/component/dialog")({
+export const Route = createFileRoute("/docs/components/dialog")({
   component: DialogPage,
   head: () => ({
     meta: [
