@@ -2,32 +2,6 @@
 
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
-[data-part="arrow"] {
-  --arrow-size: 8px;
-}
-
-[data-scope="tooltip"][data-part="arrow"] {
-  --arrow-background: #191918;
-}
-
-[data-theme="dark"] {
-  [data-scope="tooltip"][data-part="arrow"] {
-    --arrow-background: #fff;
-  }
-}
-
-[data-scope="popover"][data-part="arrow"],
-[data-scope="menu"][data-part="arrow"] {
-  --arrow-background: #fff;
-}
-
-[data-theme="dark"] {
-  [data-scope="popover"][data-part="arrow"],
-  [data-scope="menu"][data-part="arrow"] {
-    --arrow-background: #191918;
-  }
-}
-
 @theme {
   --color-fg-default: light-dark(#21201c, #eeeeec);
   --color-fg-muted: light-dark(#63635e, #b5b3ad);

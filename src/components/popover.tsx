@@ -44,7 +44,7 @@ export function PopoverContent(props: PopoverContentProps) {
         )}
       >
         {showArrow ? (
-          <ArkPopover.Arrow>
+          <ArkPopover.Arrow className="[--arrow-background:white] [--arrow-size:8px] dark:[--arrow-background:#191918]">
             <ArkPopover.ArrowTip className="border-border-subtle border-t border-l" />
           </ArkPopover.Arrow>
         ) : null}

@@ -57,7 +57,7 @@ export function MenuContent(props: ArkMenu.ContentProps) {
         )}
       >
         {showArrow ? (
-          <ArkMenu.Arrow>
+          <ArkMenu.Arrow className="[--arrow-background:white] [--arrow-size:8px] dark:[--arrow-background:#191918]">
             <ArkMenu.ArrowTip className="border-border-subtle border-t border-l" />
           </ArkMenu.Arrow>
         ) : null}
