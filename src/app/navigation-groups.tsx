@@ -96,6 +96,14 @@ export const NAVIGATION_GROUPS = [
         label: "Popover",
       },
       {
+        href: "/docs/components/progress-circle",
+        label: "Progress Circle",
+      },
+      {
+        href: "/docs/components/progress",
+        label: "Progress",
+      },
+      {
         href: "/docs/components/qr-code",
         label: "QR Code",
       },

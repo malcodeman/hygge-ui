@@ -25,6 +25,8 @@ import { Route as DocsComponentsRatingRouteImport } from './routes/docs.componen
 import { Route as DocsComponentsRadioCardRouteImport } from './routes/docs.components.radio-card'
 import { Route as DocsComponentsRadioRouteImport } from './routes/docs.components.radio'
 import { Route as DocsComponentsQrCodeRouteImport } from './routes/docs.components.qr-code'
+import { Route as DocsComponentsProgressCircleRouteImport } from './routes/docs.components.progress-circle'
+import { Route as DocsComponentsProgressRouteImport } from './routes/docs.components.progress'
 import { Route as DocsComponentsPopoverRouteImport } from './routes/docs.components.popover'
 import { Route as DocsComponentsPinInputRouteImport } from './routes/docs.components.pin-input'
 import { Route as DocsComponentsPasswordInputRouteImport } from './routes/docs.components.password-input'
@@ -127,6 +129,17 @@ const DocsComponentsRadioRoute = DocsComponentsRadioRouteImport.update({
 const DocsComponentsQrCodeRoute = DocsComponentsQrCodeRouteImport.update({
   id: '/docs/components/qr-code',
   path: '/docs/components/qr-code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsProgressCircleRoute =
+  DocsComponentsProgressCircleRouteImport.update({
+    id: '/docs/components/progress-circle',
+    path: '/docs/components/progress-circle',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DocsComponentsProgressRoute = DocsComponentsProgressRouteImport.update({
+  id: '/docs/components/progress',
+  path: '/docs/components/progress',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsPopoverRoute = DocsComponentsPopoverRouteImport.update({
@@ -275,6 +288,8 @@ export interface FileRoutesByFullPath {
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/popover': typeof DocsComponentsPopoverRoute
+  '/docs/components/progress': typeof DocsComponentsProgressRoute
+  '/docs/components/progress-circle': typeof DocsComponentsProgressCircleRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/radio-card': typeof DocsComponentsRadioCardRoute
@@ -316,6 +331,8 @@ export interface FileRoutesByTo {
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/popover': typeof DocsComponentsPopoverRoute
+  '/docs/components/progress': typeof DocsComponentsProgressRoute
+  '/docs/components/progress-circle': typeof DocsComponentsProgressCircleRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/radio-card': typeof DocsComponentsRadioCardRoute
@@ -358,6 +375,8 @@ export interface FileRoutesById {
   '/docs/components/password-input': typeof DocsComponentsPasswordInputRoute
   '/docs/components/pin-input': typeof DocsComponentsPinInputRoute
   '/docs/components/popover': typeof DocsComponentsPopoverRoute
+  '/docs/components/progress': typeof DocsComponentsProgressRoute
+  '/docs/components/progress-circle': typeof DocsComponentsProgressCircleRoute
   '/docs/components/qr-code': typeof DocsComponentsQrCodeRoute
   '/docs/components/radio': typeof DocsComponentsRadioRoute
   '/docs/components/radio-card': typeof DocsComponentsRadioCardRoute
@@ -401,6 +420,8 @@ export interface FileRouteTypes {
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/popover'
+    | '/docs/components/progress'
+    | '/docs/components/progress-circle'
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/radio-card'
@@ -442,6 +463,8 @@ export interface FileRouteTypes {
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/popover'
+    | '/docs/components/progress'
+    | '/docs/components/progress-circle'
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/radio-card'
@@ -483,6 +506,8 @@ export interface FileRouteTypes {
     | '/docs/components/password-input'
     | '/docs/components/pin-input'
     | '/docs/components/popover'
+    | '/docs/components/progress'
+    | '/docs/components/progress-circle'
     | '/docs/components/qr-code'
     | '/docs/components/radio'
     | '/docs/components/radio-card'
@@ -525,6 +550,8 @@ export interface RootRouteChildren {
   DocsComponentsPasswordInputRoute: typeof DocsComponentsPasswordInputRoute
   DocsComponentsPinInputRoute: typeof DocsComponentsPinInputRoute
   DocsComponentsPopoverRoute: typeof DocsComponentsPopoverRoute
+  DocsComponentsProgressRoute: typeof DocsComponentsProgressRoute
+  DocsComponentsProgressCircleRoute: typeof DocsComponentsProgressCircleRoute
   DocsComponentsQrCodeRoute: typeof DocsComponentsQrCodeRoute
   DocsComponentsRadioRoute: typeof DocsComponentsRadioRoute
   DocsComponentsRadioCardRoute: typeof DocsComponentsRadioCardRoute
@@ -654,6 +681,20 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/qr-code'
       fullPath: '/docs/components/qr-code'
       preLoaderRoute: typeof DocsComponentsQrCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/progress-circle': {
+      id: '/docs/components/progress-circle'
+      path: '/docs/components/progress-circle'
+      fullPath: '/docs/components/progress-circle'
+      preLoaderRoute: typeof DocsComponentsProgressCircleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/progress': {
+      id: '/docs/components/progress'
+      path: '/docs/components/progress'
+      fullPath: '/docs/components/progress'
+      preLoaderRoute: typeof DocsComponentsProgressRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/popover': {
@@ -845,6 +886,8 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsPasswordInputRoute: DocsComponentsPasswordInputRoute,
   DocsComponentsPinInputRoute: DocsComponentsPinInputRoute,
   DocsComponentsPopoverRoute: DocsComponentsPopoverRoute,
+  DocsComponentsProgressRoute: DocsComponentsProgressRoute,
+  DocsComponentsProgressCircleRoute: DocsComponentsProgressCircleRoute,
   DocsComponentsQrCodeRoute: DocsComponentsQrCodeRoute,
   DocsComponentsRadioRoute: DocsComponentsRadioRoute,
   DocsComponentsRadioCardRoute: DocsComponentsRadioCardRoute,
