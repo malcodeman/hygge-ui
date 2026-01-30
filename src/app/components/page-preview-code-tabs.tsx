@@ -25,7 +25,7 @@ export function PagePreviewCodeTabs(props: Props) {
       </TabsList>
       <TabsContent value="preview">
         <Card>
-          <CardBody>{preview}</CardBody>
+          <CardBody className="items-start">{preview}</CardBody>
         </Card>
       </TabsContent>
       <TabsContent value="code">

@@ -33,41 +33,37 @@ function PopoverPage() {
       />
       <PagePreviewCodeTabs
         preview={
-          <div>
-            <PopoverRoot>
-              <PopoverTrigger asChild>
-                <Button variant="outline" size="sm">
-                  Click me
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent showCloseTrigger>
-                <PopoverTitle>Naruto Form</PopoverTitle>
-                <PopoverDescription className="my-4">
-                  Naruto is a Japanese manga series written and illustrated by
-                  Masashi Kishimoto.
-                </PopoverDescription>
-                <Input placeholder="Your fav. character" size="sm" />
-              </PopoverContent>
-            </PopoverRoot>
-          </div>
+          <PopoverRoot>
+            <PopoverTrigger asChild>
+              <Button variant="outline" size="sm">
+                Click me
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent showCloseTrigger>
+              <PopoverTitle>Naruto Form</PopoverTitle>
+              <PopoverDescription className="my-4">
+                Naruto is a Japanese manga series written and illustrated by
+                Masashi Kishimoto.
+              </PopoverDescription>
+              <Input placeholder="Your fav. character" size="sm" />
+            </PopoverContent>
+          </PopoverRoot>
         }
-        code={`<div>
-  <PopoverRoot>
-    <PopoverTrigger asChild>
-      <Button variant="outline" size="sm">
-        Click me
-      </Button>
-    </PopoverTrigger>
-    <PopoverContent showCloseTrigger>
-      <PopoverTitle>Naruto Form</PopoverTitle>
-      <PopoverDescription className="my-4">
-        Naruto is a Japanese manga series written and illustrated by
-        Masashi Kishimoto.
-      </PopoverDescription>
-      <Input placeholder="Your fav. character" size="sm" />
-    </PopoverContent>
-  </PopoverRoot>
-</div>`}
+        code={`<PopoverRoot>
+  <PopoverTrigger asChild>
+    <Button variant="outline" size="sm">
+      Click me
+    </Button>
+  </PopoverTrigger>
+  <PopoverContent showCloseTrigger>
+    <PopoverTitle>Naruto Form</PopoverTitle>
+    <PopoverDescription className="my-4">
+      Naruto is a Japanese manga series written and illustrated by
+      Masashi Kishimoto.
+    </PopoverDescription>
+    <Input placeholder="Your fav. character" size="sm" />
+  </PopoverContent>
+</PopoverRoot>`}
       />
     </>
   );

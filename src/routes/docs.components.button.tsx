@@ -28,14 +28,8 @@ function ButtonPage() {
         verified
       />
       <PagePreviewCodeTabs
-        preview={
-          <div>
-            <Button>Click me</Button>
-          </div>
-        }
-        code={`<div>
-  <Button>Click me</Button>
-</div>`}
+        preview={<Button>Click me</Button>}
+        code={`<Button>Click me</Button>`}
       />
       <Heading level={2} className="mt-10 mb-2">
         Examples
@@ -122,14 +116,8 @@ function ButtonPage() {
         Use the <Code>disabled</Code> prop to disable the button.
       </Text>
       <PagePreviewCodeTabs
-        preview={
-          <div>
-            <Button disabled>Button</Button>
-          </div>
-        }
-        code={`<div>
-  <Button disabled>Button</Button>
-</div>`}
+        preview={<Button disabled>Button</Button>}
+        code={`<Button disabled>Button</Button>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Loading

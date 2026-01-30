@@ -26,35 +26,31 @@ function ToastPage() {
       />
       <PagePreviewCodeTabs
         preview={
-          <div>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() =>
-                toaster.create({
-                  description: "File saved successfully",
-                  type: "info",
-                })
-              }
-            >
-              Show Toast
-            </Button>
-          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() =>
+              toaster.create({
+                description: "File saved successfully",
+                type: "info",
+              })
+            }
+          >
+            Show Toast
+          </Button>
         }
-        code={`<div>
-  <Button
-    variant="outline"
-    size="sm"
-    onClick={() =>
-      toaster.create({
-        description: "File saved successfully",
-        type: "info",
-      })
-    }
-  >
-    Show Toast
-  </Button>
-</div>`}
+        code={`<Button
+  variant="outline"
+  size="sm"
+  onClick={() =>
+    toaster.create({
+      description: "File saved successfully",
+      type: "info",
+    })
+  }
+>
+  Show Toast
+</Button>`}
       />
     </>
   );

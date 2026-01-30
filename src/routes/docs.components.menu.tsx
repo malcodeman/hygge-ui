@@ -31,39 +31,35 @@ function MenuPage() {
       />
       <PagePreviewCodeTabs
         preview={
-          <div>
-            <MenuRoot positioning={{ placement: "bottom" }}>
-              <MenuTrigger asChild>
-                <Button variant="outline" size="sm">
-                  Open
-                </Button>
-              </MenuTrigger>
-              <MenuContent>
-                <MenuItem value="new-txt">New Text File</MenuItem>
-                <MenuItem value="new-file">New File...</MenuItem>
-                <MenuItem value="new-win">New Window</MenuItem>
-                <MenuItem value="open-file">Open File...</MenuItem>
-                <MenuItem value="export">Export</MenuItem>
-              </MenuContent>
-            </MenuRoot>
-          </div>
+          <MenuRoot positioning={{ placement: "bottom" }}>
+            <MenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                Open
+              </Button>
+            </MenuTrigger>
+            <MenuContent>
+              <MenuItem value="new-txt">New Text File</MenuItem>
+              <MenuItem value="new-file">New File...</MenuItem>
+              <MenuItem value="new-win">New Window</MenuItem>
+              <MenuItem value="open-file">Open File...</MenuItem>
+              <MenuItem value="export">Export</MenuItem>
+            </MenuContent>
+          </MenuRoot>
         }
-        code={`<div>
-  <MenuRoot positioning={{ placement: "bottom" }}>
-    <MenuTrigger asChild>
-      <Button variant="outline" size="sm">
-        Open
-      </Button>
-    </MenuTrigger>
-    <MenuContent>
-      <MenuItem value="new-txt">New Text File</MenuItem>
-      <MenuItem value="new-file">New File...</MenuItem>
-      <MenuItem value="new-win">New Window</MenuItem>
-      <MenuItem value="open-file">Open File...</MenuItem>
-      <MenuItem value="export">Export</MenuItem>
-    </MenuContent>
-  </MenuRoot>
-</div>`}
+        code={`<MenuRoot positioning={{ placement: "bottom" }}>
+  <MenuTrigger asChild>
+    <Button variant="outline" size="sm">
+      Open
+    </Button>
+  </MenuTrigger>
+  <MenuContent>
+    <MenuItem value="new-txt">New Text File</MenuItem>
+    <MenuItem value="new-file">New File...</MenuItem>
+    <MenuItem value="new-win">New Window</MenuItem>
+    <MenuItem value="open-file">Open File...</MenuItem>
+    <MenuItem value="export">Export</MenuItem>
+  </MenuContent>
+</MenuRoot>`}
       />
     </>
   );

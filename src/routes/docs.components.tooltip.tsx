@@ -26,21 +26,17 @@ function TooltipPage() {
       />
       <PagePreviewCodeTabs
         preview={
-          <div>
-            <Tooltip content="This is the tooltip content">
-              <Button variant="outline" size="sm">
-                Hover me
-              </Button>
-            </Tooltip>
-          </div>
+          <Tooltip content="This is the tooltip content">
+            <Button variant="outline" size="sm">
+              Hover me
+            </Button>
+          </Tooltip>
         }
-        code={`<div>
-  <Tooltip content="This is the tooltip content">
-    <Button variant="outline" size="sm">
-      Hover me
-    </Button>
-  </Tooltip>
-</div>`}
+        code={`<Tooltip content="This is the tooltip content">
+  <Button variant="outline" size="sm">
+    Hover me
+  </Button>
+</Tooltip>`}
       />
     </>
   );
