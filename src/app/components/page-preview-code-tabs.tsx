@@ -24,9 +24,9 @@ export function PagePreviewCodeTabs(props: Props) {
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
       <TabsContent value="preview">
-        <Card>
-          <CardBody className="items-start">{preview}</CardBody>
-        </Card>
+        <div className="border-border-subtle rounded-lg border p-4">
+          {preview}
+        </div>
       </TabsContent>
       <TabsContent value="code">
         <CodeBlock
