@@ -55,7 +55,7 @@ export function ComboboxContent(props: ArkCombobox.ContentProps) {
       <ArkCombobox.Content
         {...rest}
         className={cn(
-          "z-50 max-h-96 overflow-y-auto rounded-lg border border-[#E9E8E6] bg-white p-1.5 shadow-2xs dark:border-[#2a2a28] dark:bg-[#191918]",
+          "bg-bg-default border-border-subtle z-50 max-h-96 overflow-y-auto rounded-lg border p-1.5 shadow-2xs",
           className,
         )}
       />

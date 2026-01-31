@@ -28,7 +28,7 @@ const switchControlVariants = cva(
   },
 );
 const switchThumbVariants = cva(
-  "rounded-full bg-white shadow-2xs transition-transform dark:bg-[#191918]",
+  "bg-bg-default rounded-full shadow-2xs transition-transform",
   {
     variants: {
       size: {

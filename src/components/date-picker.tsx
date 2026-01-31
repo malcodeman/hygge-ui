@@ -38,7 +38,7 @@ export function DatePicker(props: Props) {
         </ArkDatePicker.Trigger>
       </ArkDatePicker.Control>
       <ArkDatePicker.Positioner>
-        <ArkDatePicker.Content className="z-50 rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs dark:border-[#2a2a28] dark:bg-[#191918]">
+        <ArkDatePicker.Content className="bg-bg-default border-border-subtle z-50 rounded-lg border p-2 shadow-2xs">
           <ArkDatePicker.View view="day" className="flex flex-col gap-2">
             <ArkDatePicker.Context>
               {(datePicker) => (

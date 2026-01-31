@@ -81,7 +81,7 @@ export function SelectContent(props: ArkSelect.ContentProps) {
       <ArkSelect.Content
         {...rest}
         className={cn(
-          "z-50 max-h-96 overflow-y-auto rounded-lg border border-[#E9E8E6] bg-white p-2 shadow-2xs dark:border-[#2a2a28] dark:bg-[#191918]",
+          "border-border-subtle bg-bg-default z-50 max-h-96 overflow-y-auto rounded-lg border p-2 shadow-2xs",
           className,
         )}
       />

@@ -54,7 +54,7 @@ export function Toaster() {
       {(toast) => (
         <ArkToast.Root
           key={toast.id}
-          className="border-border-subtle z-(--z-index) max-w-lg min-w-2xs translate-x-(--x) translate-y-(--y) scale-(--scale) rounded-lg border bg-white p-2 opacity-(--opacity) shadow-2xs transition-transform dark:bg-[#191918]"
+          className="border-border-subtle bg-bg-default z-(--z-index) max-w-lg min-w-2xs translate-x-(--x) translate-y-(--y) scale-(--scale) rounded-lg border p-2 opacity-(--opacity) shadow-2xs transition-transform"
         >
           <div className="flex items-start gap-2">
             <div>{renderIcon(toast.type)}</div>

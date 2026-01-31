@@ -52,7 +52,7 @@ export function MenuContent(props: ArkMenu.ContentProps) {
       <ArkMenu.Content
         {...rest}
         className={cn(
-          "border-border-subtle z-50 max-w-xs rounded-lg border bg-white p-1.5 shadow-2xs dark:bg-[#191918]",
+          "border-border-subtle bg-bg-default z-50 max-w-xs rounded-lg border p-1.5 shadow-2xs",
           className,
         )}
       >

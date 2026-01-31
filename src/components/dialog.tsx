@@ -33,7 +33,7 @@ export function DialogContent(props: DialogContentProps) {
         <ArkDialog.Content
           {...rest}
           className={cn(
-            "relative w-full max-w-lg rounded-lg bg-white shadow-[0_0_0_1px_#E9E8E6] dark:bg-[#191918] dark:shadow-[0_0_0_1px_#2a2a28]",
+            "bg-bg-default relative w-full max-w-lg rounded-lg shadow-[0_0_0_1px_#E9E8E6] dark:shadow-[0_0_0_1px_#2a2a28]",
             className,
           )}
         >

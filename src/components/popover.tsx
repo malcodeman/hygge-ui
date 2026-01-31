@@ -39,7 +39,7 @@ export function PopoverContent(props: PopoverContentProps) {
       <ArkPopover.Content
         {...rest}
         className={cn(
-          "border-border-subtle relative z-50 max-w-xs rounded-lg border bg-white p-2 shadow-2xs dark:bg-[#191918]",
+          "border-border-subtle bg-bg-default relative z-50 max-w-xs rounded-lg border p-2 shadow-2xs",
           className,
         )}
       >
