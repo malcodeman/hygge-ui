@@ -39,7 +39,7 @@ export function RadioCard(props: RadioCardProps) {
     <ArkRadioGroup.Item
       {...rest}
       className={cn(
-        "flex cursor-pointer justify-between gap-2 rounded-sm border border-[#E9E8E6] p-2 transition-colors data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 dark:border-[#2a2a28]",
+        "flex cursor-pointer justify-between gap-2 rounded-sm border border-[#E9E8E6] p-2 transition-colors data-disabled:cursor-not-allowed data-disabled:opacity-50 dark:border-[#2a2a28]",
         {
           "data-[state=checked]:border-[#21201C]": colorPalette === "gray",
           "data-[state=checked]:border-[#eb5e41]": colorPalette === "orange",
@@ -66,7 +66,7 @@ export function RadioCard(props: RadioCardProps) {
       ) : null}
       <ArkRadioGroup.ItemControl
         className={cn(
-          "size-5 flex-shrink-0 rounded-full border border-[#E9E8E6] transition-colors dark:border-[#2a2a28]",
+          "size-5 shrink-0 rounded-full border border-[#E9E8E6] transition-colors dark:border-[#2a2a28]",
           {
             "data-[state=checked]:border-[#21201C] data-[state=checked]:bg-[#21201C] dark:data-[state=checked]:border-[#eeeeec] dark:data-[state=checked]:bg-[#eeeeec]":
               colorPalette === "gray",

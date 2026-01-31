@@ -51,7 +51,7 @@ export function SelectTrigger(props: ArkSelect.TriggerProps) {
         {...rest}
         className={cn(
           "inline-flex w-full cursor-pointer items-center justify-between rounded-sm border p-2 text-sm font-semibold focus:outline-2 focus:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
-          "text-[#21201C] focus:outline-[#21201C] data-[invalid]:border-[#fd5454] data-[invalid]:focus:outline-[#fd5454] dark:text-[#eeeeec] dark:focus:outline-[#eeeeec]",
+          "text-[#21201C] focus:outline-[#21201C] data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:text-[#eeeeec] dark:focus:outline-[#eeeeec]",
           {
             "border-transparent bg-[#f1f0ef] dark:bg-[#2a2a28]":
               variant === "subtle",
@@ -97,7 +97,7 @@ export function SelectItem(props: ArkSelect.ItemProps) {
       {...rest}
       className={cn(
         "flex cursor-pointer items-center justify-between gap-1 rounded-sm p-2 text-sm font-medium transition-colors",
-        "text-[#63635E] hover:bg-[#f1f0ef] hover:text-[#21201C] data-[highlighted]:bg-[#f1f0ef] data-[highlighted]:text-[#21201C] dark:text-[#b5b3ad] dark:hover:bg-[#2a2a28] dark:hover:text-[#eeeeec] dark:data-[highlighted]:bg-[#2a2a28] dark:data-[highlighted]:text-[#eeeeec]",
+        "text-[#63635E] hover:bg-[#f1f0ef] hover:text-[#21201C] data-highlighted:bg-[#f1f0ef] data-highlighted:text-[#21201C] dark:text-[#b5b3ad] dark:hover:bg-[#2a2a28] dark:hover:text-[#eeeeec] dark:data-highlighted:bg-[#2a2a28] dark:data-highlighted:text-[#eeeeec]",
         className,
       )}
     >

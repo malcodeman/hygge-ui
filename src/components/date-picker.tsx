@@ -76,7 +76,7 @@ export function DatePicker(props: Props) {
                             <ArkDatePicker.TableCell key={id} value={day}>
                               <ArkDatePicker.TableCellTrigger
                                 asChild
-                                className="data-[in-range]:bg-[#f1f0ef] data-[outside-range]:hidden data-[selected]:border-transparent data-[selected]:bg-[#21201C] data-[selected]:text-white data-[selected]:hover:bg-[#21201C] data-[in-range]:dark:bg-[#292928] data-[selected]:dark:bg-[#eeeeec] data-[selected]:dark:text-[#191918] data-[selected]:dark:hover:bg-[#eeeeec]"
+                                className="data-in-range:bg-[#f1f0ef] data-outside-range:hidden data-selected:border-transparent data-selected:bg-[#21201C] data-selected:text-white data-selected:hover:bg-[#21201C] data-in-range:dark:bg-[#292928] data-selected:dark:bg-[#eeeeec] data-selected:dark:text-[#191918] data-selected:dark:hover:bg-[#eeeeec]"
                               >
                                 <Button variant="ghost" className="size-10">
                                   {day.day}

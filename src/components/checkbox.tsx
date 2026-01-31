@@ -28,7 +28,7 @@ export function Checkbox(props: Props) {
     <ArkCheckbox.Root
       {...rest}
       className={cn(
-        "inline-flex cursor-pointer items-center gap-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[readonly]:cursor-default",
+        "inline-flex cursor-pointer items-center gap-2 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-readonly:cursor-default",
         className,
       )}
     >
@@ -40,15 +40,15 @@ export function Checkbox(props: Props) {
       <ArkCheckbox.Control
         className={cn(
           checkboxVariants({ size }),
-          "border-border-subtle inline-flex flex-shrink-0 items-center justify-center rounded-sm border transition-colors",
+          "border-border-subtle inline-flex shrink-0 items-center justify-center rounded-sm border transition-colors",
           "data-[state=checked]:border-[#21201C] data-[state=checked]:bg-[#21201C] dark:data-[state=checked]:border-[#eeeeec] dark:data-[state=checked]:bg-[#eeeeec]",
-          "data-[invalid]:border-[#dc2626] data-[state=checked]:data-[invalid]:border-[#dc2626] data-[state=checked]:data-[invalid]:bg-[#dc2626]",
+          "data-invalid:border-[#dc2626] data-[state=checked]:data-invalid:border-[#dc2626] data-[state=checked]:data-invalid:bg-[#dc2626]",
         )}
       >
         <ArkCheckbox.Indicator
           className={cn(
             "text-white dark:text-[#21201C]",
-            "data-[invalid]:bg-[#dc2626] dark:data-[invalid]:text-white",
+            "data-invalid:bg-[#dc2626] dark:data-invalid:text-white",
           )}
         >
           <LuCheck size={16} />

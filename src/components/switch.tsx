@@ -64,7 +64,7 @@ export function Switch(props: Props) {
     <ArkSwitch.Root
       {...rest}
       className={cn(
-        "inline-flex cursor-pointer items-center gap-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[readonly]:cursor-default",
+        "inline-flex cursor-pointer items-center gap-2 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-readonly:cursor-default",
         className,
       )}
     >
@@ -76,7 +76,7 @@ export function Switch(props: Props) {
       <ArkSwitch.Control
         className={cn(
           switchControlVariants({ colorPalette, size }),
-          "data-[invalid]:outline-2 data-[invalid]:outline-[#fd5454]",
+          "data-invalid:outline-2 data-invalid:outline-[#fd5454]",
         )}
       >
         <ArkSwitch.Thumb className={switchThumbVariants({ size })} />

@@ -35,12 +35,12 @@ const separatorVariants = cva(undefined, {
   },
   compoundVariants: [
     { orientation: "horizontal", size: "xs", className: "border-t-[0.5px]" },
-    { orientation: "horizontal", size: "sm", className: "border-t-[1px]" },
-    { orientation: "horizontal", size: "md", className: "border-t-[2px]" },
+    { orientation: "horizontal", size: "sm", className: "border-t" },
+    { orientation: "horizontal", size: "md", className: "border-t-2" },
     { orientation: "horizontal", size: "lg", className: "border-t-[3px]" },
     { orientation: "vertical", size: "xs", className: "border-l-[0.5px]" },
-    { orientation: "vertical", size: "sm", className: "border-l-[1px]" },
-    { orientation: "vertical", size: "md", className: "border-l-[2px]" },
+    { orientation: "vertical", size: "sm", className: "border-l" },
+    { orientation: "vertical", size: "md", className: "border-l-2" },
     { orientation: "vertical", size: "lg", className: "border-l-[3px]" },
   ],
 });

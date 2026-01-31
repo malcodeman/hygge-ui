@@ -21,15 +21,15 @@ const ratingControlVariants = cva("flex gap-1", {
   },
 });
 const ratingItemVariants = cva(
-  "cursor-pointer text-[#e9e8e6] focus:outline-2 focus:-outline-offset-1 data-[readonly]:cursor-default dark:text-[#2a2a28]",
+  "cursor-pointer text-[#e9e8e6] focus:outline-2 focus:-outline-offset-1 data-readonly:cursor-default dark:text-[#2a2a28]",
   {
     variants: {
       colorPalette: {
-        gray: `data-[highlighted]:text-[#21201C] dark:data-[highlighted]:text-[#eeeeec]`,
-        orange: `data-[highlighted]:text-[#eb5e41] dark:data-[highlighted]:text-[#eb5e41]`,
-        teal: `data-[highlighted]:text-[#0d9488] dark:data-[highlighted]:text-[#0d9488]`,
-        green: `data-[highlighted]:text-[#38a169] dark:data-[highlighted]:text-[#38a169]`,
-        red: `data-[highlighted]:text-[#fd5454] dark:data-[highlighted]:text-[#fd5454]`,
+        gray: `data-highlighted:text-[#21201C] dark:data-highlighted:text-[#eeeeec]`,
+        orange: `data-highlighted:text-[#eb5e41] dark:data-highlighted:text-[#eb5e41]`,
+        teal: `data-highlighted:text-[#0d9488] dark:data-highlighted:text-[#0d9488]`,
+        green: `data-highlighted:text-[#38a169] dark:data-highlighted:text-[#38a169]`,
+        red: `data-highlighted:text-[#fd5454] dark:data-highlighted:text-[#fd5454]`,
       },
     },
     defaultVariants: {
