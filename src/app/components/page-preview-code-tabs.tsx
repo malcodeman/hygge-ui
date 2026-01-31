@@ -1,4 +1,3 @@
-import { Card, CardBody } from "@/components/card";
 import { CodeBlock } from "@/components/code-block";
 import {
   TabsContent,
