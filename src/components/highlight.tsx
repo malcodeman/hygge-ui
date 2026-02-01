@@ -5,7 +5,7 @@ import { cn } from "./cn";
 const highlightVariants = cva("rounded-sm p-1", {
   variants: {
     colorPalette: {
-      gray: "bg-[#EFEEEC] text-[#21201C] dark:bg-[#232322] dark:text-[#eeeeec]",
+      gray: "text-fg-default bg-[#EFEEEC] dark:bg-[#232322]",
       orange:
         "bg-[#ffedd5] text-[#92310a] dark:bg-[#3b1106] dark:text-[#fdba74]",
       teal: "bg-[#ccfbf1] text-[#0c5d56] dark:bg-[#032726] dark:text-[#5eead4]",

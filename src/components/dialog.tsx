@@ -60,10 +60,7 @@ export function DialogTitle(props: ArkDialog.TitleProps) {
   return (
     <ArkDialog.Title
       {...rest}
-      className={cn(
-        "text-2xl font-semibold text-[#21201C] dark:text-[#eeeeec]",
-        className,
-      )}
+      className={cn("text-fg-default text-2xl font-semibold", className)}
     />
   );
 }
@@ -74,10 +71,7 @@ export function DialogDescription(props: ArkDialog.DescriptionProps) {
   return (
     <ArkDialog.Description
       {...rest}
-      className={cn(
-        "text-sm font-semibold text-[#63635E] dark:text-[#b5b3ad]",
-        className,
-      )}
+      className={cn("text-fg-muted text-sm/6 font-semibold", className)}
     />
   );
 }
@@ -101,7 +95,7 @@ export function DialogFooter(props: React.ComponentPropsWithoutRef<"footer">) {
     <footer
       {...rest}
       className={cn(
-        "flex justify-between rounded-b-lg border-t border-t-[#E9E8E6] bg-[#f9f9f8] p-4 dark:border-t-[#2a2a28] dark:bg-[#222221]",
+        "border-t-border-subtle flex justify-between rounded-b-lg border-t bg-[#f9f9f8] p-4 dark:bg-[#222221]",
         className,
       )}
     />

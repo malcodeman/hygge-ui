@@ -22,10 +22,7 @@ export function ComboboxLabel(props: ArkCombobox.LabelProps) {
   return (
     <ArkCombobox.Label
       {...rest}
-      className={cn(
-        "text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]",
-        className,
-      )}
+      className={cn("text-fg-default text-sm/6 font-semibold", className)}
     />
   );
 }

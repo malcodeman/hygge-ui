@@ -13,7 +13,7 @@ export function Clipboard(props: Props) {
   return (
     <ArkClipboard.Root {...rest}>
       {label ? (
-        <ArkClipboard.Label className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
+        <ArkClipboard.Label className="text-fg-default text-sm/6 font-semibold">
           {label}
         </ArkClipboard.Label>
       ) : null}
