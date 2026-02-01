@@ -1,23 +1,37 @@
-import { Select as ArkSelect, CollectionItem } from "@ark-ui/react";
+import {
+  Select as ArkSelect,
+  CollectionItem,
+  useSelectContext,
+} from "@ark-ui/react";
 import { LuCheck, LuChevronDown } from "react-icons/lu";
 import { cn } from "./cn";
 import { createContext, useContext } from "react";
+import { cva } from "class-variance-authority";
 
 type Variant = "subtle" | "outline";
+type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
-const SelectContext = createContext<{ variant: Variant }>({
+const SelectContext = createContext<{ variant: Variant; size: Size }>({
   variant: "subtle",
+  size: "md",
 });
 
 type SelectRootProps = {
   variant?: Variant;
+  size?: Size;
 } & ArkSelect.RootProps<CollectionItem>;
 
 export function SelectRoot(props: SelectRootProps) {
-  const { variant = "subtle", className, positioning, ...rest } = props;
+  const {
+    variant = "subtle",
+    size = "md",
+    className,
+    positioning,
+    ...rest
+  } = props;
 
   return (
-    <SelectContext.Provider value={{ variant }}>
+    <SelectContext.Provider value={{ variant, size }}>
       <ArkSelect.Root
         {...rest}
         positioning={{ sameWidth: true, ...positioning }}
@@ -29,33 +43,54 @@ export function SelectRoot(props: SelectRootProps) {
 
 export function SelectLabel(props: ArkSelect.LabelProps) {
   const { className, ...rest } = props;
+  const { disabled } = useSelectContext();
 
   return (
     <ArkSelect.Label
       {...rest}
-      className={cn("text-fg-default text-sm/6 font-semibold", className)}
+      className={cn(
+        "text-fg-default text-sm/6 font-semibold",
+        {
+          "data-disabled:opacity-50": disabled,
+        },
+        className,
+      )}
     />
   );
 }
 
+const selectTriggerVariants = cva(
+  "text-fg-default inline-flex w-full cursor-pointer items-center justify-between rounded-sm border p-2 text-sm font-semibold focus:outline-2 focus:-outline-offset-1 focus:outline-[#21201C] disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:focus:outline-[#eeeeec]",
+  {
+    variants: {
+      variant: {
+        subtle: "border-transparent bg-[#f1f0ef] dark:bg-[#2a2a28]",
+        outline: "border-border-default",
+      },
+      size: {
+        xs: "h-8 px-1 text-xs",
+        sm: "h-9 px-2 text-sm",
+        md: "h-10 px-2 text-sm",
+        lg: "h-11 px-3 text-base",
+        xl: "h-12 px-3 text-base",
+      },
+    },
+    defaultVariants: {
+      variant: "subtle",
+      size: "md",
+    },
+  },
+);
+
 export function SelectTrigger(props: ArkSelect.TriggerProps) {
   const { className, children, ...rest } = props;
-  const { variant } = useContext(SelectContext);
+  const { variant, size } = useContext(SelectContext);
 
   return (
     <ArkSelect.Control>
       <ArkSelect.Trigger
         {...rest}
-        className={cn(
-          "inline-flex w-full cursor-pointer items-center justify-between rounded-sm border p-2 text-sm font-semibold focus:outline-2 focus:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
-          "text-[#21201C] focus:outline-[#21201C] data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:text-[#eeeeec] dark:focus:outline-[#eeeeec]",
-          {
-            "border-transparent bg-[#f1f0ef] dark:bg-[#2a2a28]":
-              variant === "subtle",
-            "border-[#cfceca] dark:border-[#494844]": variant === "outline",
-          },
-          className,
-        )}
+        className={cn(selectTriggerVariants({ variant, size }), className)}
       >
         {children}
         <ArkSelect.Indicator>
@@ -94,14 +129,39 @@ export function SelectItem(props: ArkSelect.ItemProps) {
       {...rest}
       className={cn(
         "flex cursor-pointer items-center justify-between gap-1 rounded-sm p-2 text-sm font-medium transition-colors",
-        "text-[#63635E] hover:bg-[#f1f0ef] hover:text-[#21201C] data-highlighted:bg-[#f1f0ef] data-highlighted:text-[#21201C] dark:text-[#b5b3ad] dark:hover:bg-[#2a2a28] dark:hover:text-[#eeeeec] dark:data-highlighted:bg-[#2a2a28] dark:data-highlighted:text-[#eeeeec]",
+        "text-fg-muted hover:bg-[#f1f0ef] hover:text-[#21201C] data-highlighted:bg-[#f1f0ef] data-highlighted:text-[#21201C] dark:hover:bg-[#2a2a28] dark:hover:text-[#eeeeec] dark:data-highlighted:bg-[#2a2a28] dark:data-highlighted:text-[#eeeeec]",
         className,
       )}
     >
-      <ArkSelect.ItemText>{children}</ArkSelect.ItemText>
+      {children}
       <ArkSelect.ItemIndicator>
         <LuCheck size={16} />
       </ArkSelect.ItemIndicator>
     </ArkSelect.Item>
+  );
+}
+export function SelectItemText(props: ArkSelect.ItemTextProps) {
+  return <ArkSelect.ItemText {...props} />;
+}
+
+export function SelectItemGroup(props: ArkSelect.ItemGroupProps) {
+  const { className, ...rest } = props;
+
+  return (
+    <ArkSelect.ItemGroup
+      {...rest}
+      className={cn("mb-1 last:mb-0", className)}
+    />
+  );
+}
+
+export function SelectItemGroupLabel(props: ArkSelect.ItemGroupLabelProps) {
+  const { className, ...rest } = props;
+
+  return (
+    <ArkSelect.ItemGroupLabel
+      {...rest}
+      className={cn("text-fg-default px-2 text-sm/6 font-semibold", className)}
+    />
   );
 }
