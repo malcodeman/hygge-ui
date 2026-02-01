@@ -29,7 +29,7 @@ export const Route = createFileRoute("/docs/components/select")({
   }),
 });
 
-const SelectValueMembers = () => {
+function SelectValueMembers() {
   const select = useSelectContext();
   const items = select.selectedItems as Array<{
     name: string;
@@ -45,7 +45,7 @@ const SelectValueMembers = () => {
       </div>
     </SelectValueText>
   );
-};
+}
 
 function SelectPage() {
   const frameworks = createListCollection({
@@ -650,7 +650,25 @@ function SelectPage() {
             </SelectContent>
           </SelectRoot>
         }
-        code={`<SelectRoot
+        code={`function SelectValueMembers() {
+  const select = useSelectContext();
+  const items = select.selectedItems as Array<{
+    name: string;
+    avatar: string;
+  }>;
+  const { name, avatar } = items[0];
+
+  return (
+    <SelectValueText placeholder="Select member">
+      <div className="flex items-center gap-1">
+        <Avatar src={avatar} alt={name} size="xs" square />
+        {name}
+      </div>
+    </SelectValueText>
+  );
+}
+
+<SelectRoot
   collection={members}
   defaultValue={["jessica_jones"]}
   className="max-w-xs"
