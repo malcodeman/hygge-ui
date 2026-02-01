@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />;
 import { ThemeProvider } from "next-themes";
-import { Toaster } from "@/components/toast";
-import { NavLink } from "@/components/nav-link";
-import { Heading } from "@/components/heading";
+import { Toaster } from "hygge-ui/toast";
+import { NavLink } from "hygge-ui/nav-link";
+import { Heading } from "hygge-ui/heading";
 import {
   Outlet,
   createRootRoute,

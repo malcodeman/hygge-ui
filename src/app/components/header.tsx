@@ -1,4 +1,4 @@
-import { Button } from "@/components/button";
+import { Button } from "hygge-ui/button";
 import { NAVIGATION_GROUPS } from "app/navigation-groups";
 import { Link } from "@tanstack/react-router";
 import { LuCoffee, LuGithub } from "react-icons/lu";

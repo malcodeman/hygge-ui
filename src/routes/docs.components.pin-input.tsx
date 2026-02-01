@@ -1,7 +1,7 @@
-import { Field } from "@/components/field";
-import { Heading } from "@/components/heading";
-import { PinInput } from "@/components/pin-input";
-import { Code, Text } from "@/components/text";
+import { Field } from "hygge-ui/field";
+import { Heading } from "hygge-ui/heading";
+import { PinInput } from "hygge-ui/pin-input";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

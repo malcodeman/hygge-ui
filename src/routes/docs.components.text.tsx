@@ -1,5 +1,5 @@
-import { Heading } from "@/components/heading";
-import { Code, Strong, Text, TextLink } from "@/components/text";
+import { Heading } from "hygge-ui/heading";
+import { Code, Strong, Text, TextLink } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

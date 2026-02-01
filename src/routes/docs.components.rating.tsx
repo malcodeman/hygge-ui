@@ -1,7 +1,7 @@
-import { Avatar } from "@/components/avatar";
-import { Heading } from "@/components/heading";
-import { Rating } from "@/components/rating";
-import { Code, Text } from "@/components/text";
+import { Avatar } from "hygge-ui/avatar";
+import { Heading } from "hygge-ui/heading";
+import { Rating } from "hygge-ui/rating";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

@@ -1,5 +1,5 @@
-import { Button } from "@/components/button";
-import { toaster } from "@/components/toast";
+import { Button } from "hygge-ui/button";
+import { toaster } from "hygge-ui/toast";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

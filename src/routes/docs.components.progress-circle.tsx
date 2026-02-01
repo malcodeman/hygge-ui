@@ -1,6 +1,6 @@
-import { Heading } from "@/components/heading";
-import { ProgressCircle } from "@/components/progress-circle";
-import { Code, Text } from "@/components/text";
+import { Heading } from "hygge-ui/heading";
+import { ProgressCircle } from "hygge-ui/progress-circle";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

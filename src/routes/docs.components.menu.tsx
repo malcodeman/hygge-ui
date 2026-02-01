@@ -1,6 +1,6 @@
-import { Avatar } from "@/components/avatar";
-import { Button } from "@/components/button";
-import { Heading } from "@/components/heading";
+import { Avatar } from "hygge-ui/avatar";
+import { Button } from "hygge-ui/button";
+import { Heading } from "hygge-ui/heading";
 import {
   MenuContent,
   MenuContextTrigger,
@@ -11,8 +11,8 @@ import {
   MenuSeparator,
   MenuTrigger,
   MenuTriggerItem,
-} from "@/components/menu";
-import { Code, Text } from "@/components/text";
+} from "hygge-ui/menu";
+import { Code, Text } from "hygge-ui/text";
 import { Portal } from "@ark-ui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";

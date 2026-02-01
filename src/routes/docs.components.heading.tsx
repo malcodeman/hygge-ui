@@ -1,7 +1,7 @@
-import { Button } from "@/components/button";
-import { Heading } from "@/components/heading";
-import { Highlight } from "@/components/highlight";
-import { Code, Text } from "@/components/text";
+import { Button } from "hygge-ui/button";
+import { Heading } from "hygge-ui/heading";
+import { Highlight } from "hygge-ui/highlight";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

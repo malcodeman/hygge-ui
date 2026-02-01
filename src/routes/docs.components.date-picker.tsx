@@ -1,6 +1,6 @@
-import { DatePicker } from "@/components/date-picker";
-import { Heading } from "@/components/heading";
-import { Code, Text } from "@/components/text";
+import { DatePicker } from "hygge-ui/date-picker";
+import { Heading } from "hygge-ui/heading";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

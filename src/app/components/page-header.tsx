@@ -1,5 +1,5 @@
-import { Heading } from "@/components/heading";
-import { ExternalLink, Text } from "@/components/text";
+import { Heading } from "hygge-ui/heading";
+import { ExternalLink, Text } from "hygge-ui/text";
 import { LuShieldCheck } from "react-icons/lu";
 
 type Props = React.ComponentPropsWithoutRef<"div"> & {

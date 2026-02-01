@@ -1,16 +1,16 @@
-import { Button } from "@/components/button";
-import { Field } from "@/components/field";
-import { Heading } from "@/components/heading";
-import { Input } from "@/components/input";
+import { Button } from "hygge-ui/button";
+import { Field } from "hygge-ui/field";
+import { Heading } from "hygge-ui/heading";
+import { Input } from "hygge-ui/input";
 import {
   PopoverContent,
   PopoverDescription,
   PopoverRoot,
   PopoverTitle,
   PopoverTrigger,
-} from "@/components/popover";
-import { Code, Text } from "@/components/text";
-import { Textarea } from "@/components/textarea";
+} from "hygge-ui/popover";
+import { Code, Text } from "hygge-ui/text";
+import { Textarea } from "hygge-ui/textarea";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heading } from "@/components/heading";
-import { ExternalLink, Text } from "@/components/text";
-import { CodeBlock } from "@/components/code-block";
+import { Heading } from "hygge-ui/heading";
+import { ExternalLink, Text } from "hygge-ui/text";
+import { CodeBlock } from "hygge-ui/code-block";
 
 export const Route = createFileRoute("/docs/first-steps/introduction/")({
   component: IntroductionPage,
@@ -40,7 +40,7 @@ function IntroductionPage() {
           Add components
           <Text>
             Copy the components you need from the{" "}
-            <ExternalLink href="https://github.com/malcodeman/hygge-ui/tree/main/src/components">
+            <ExternalLink href="https://github.com/malcodeman/hygge-ui/tree/main/src/hygge-ui">
               repository
             </ExternalLink>{" "}
             and add them to your project.

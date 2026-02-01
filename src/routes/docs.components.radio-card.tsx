@@ -1,4 +1,4 @@
-import { RadioCard, RadioCardGroup } from "@/components/radio-card";
+import { RadioCard, RadioCardGroup } from "hygge-ui/radio-card";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

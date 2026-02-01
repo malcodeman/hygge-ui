@@ -1,10 +1,5 @@
-import { CodeBlock } from "@/components/code-block";
-import {
-  TabsContent,
-  TabsList,
-  TabsRoot,
-  TabsTrigger,
-} from "@/components/tabs";
+import { CodeBlock } from "hygge-ui/code-block";
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "hygge-ui/tabs";
 import { CODE_BLOCKS } from "app/constants";
 
 type Props = {

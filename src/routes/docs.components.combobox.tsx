@@ -4,7 +4,7 @@ import {
   ComboboxItem,
   ComboboxLabel,
   ComboboxRoot,
-} from "@/components/combobox";
+} from "hygge-ui/combobox";
 import { useFilter, useListCollection } from "@ark-ui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";

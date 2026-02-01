@@ -1,10 +1,10 @@
-import { Avatar } from "@/components/avatar";
-import { Button } from "@/components/button";
-import { Card, CardBody, CardFooter, CardHeader } from "@/components/card";
-import { Field } from "@/components/field";
-import { Heading } from "@/components/heading";
-import { Input } from "@/components/input";
-import { Strong, Text } from "@/components/text";
+import { Avatar } from "hygge-ui/avatar";
+import { Button } from "hygge-ui/button";
+import { Card, CardBody, CardFooter, CardHeader } from "hygge-ui/card";
+import { Field } from "hygge-ui/field";
+import { Heading } from "hygge-ui/heading";
+import { Input } from "hygge-ui/input";
+import { Strong, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

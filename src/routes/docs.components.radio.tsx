@@ -1,6 +1,6 @@
-import { Heading } from "@/components/heading";
-import { RadioGroup, RadioGroupItem } from "@/components/radio";
-import { Code, Text } from "@/components/text";
+import { Heading } from "hygge-ui/heading";
+import { RadioGroup, RadioGroupItem } from "hygge-ui/radio";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

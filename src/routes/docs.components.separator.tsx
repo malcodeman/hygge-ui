@@ -1,6 +1,6 @@
-import { Heading } from "@/components/heading";
-import { Separator } from "@/components/separator";
-import { Code, Text } from "@/components/text";
+import { Heading } from "hygge-ui/heading";
+import { Separator } from "hygge-ui/separator";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

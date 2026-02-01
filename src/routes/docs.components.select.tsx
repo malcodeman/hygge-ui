@@ -5,7 +5,7 @@ import {
   SelectRoot,
   SelectTrigger,
   SelectValueText,
-} from "@/components/select";
+} from "hygge-ui/select";
 import { createListCollection } from "@ark-ui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";

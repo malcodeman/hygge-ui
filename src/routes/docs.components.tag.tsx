@@ -1,10 +1,10 @@
 import { LuCheck, LuX } from "react-icons/lu";
-import { Heading } from "@/components/heading";
-import { Tag } from "@/components/tag";
-import { Code, Text } from "@/components/text";
+import { Heading } from "hygge-ui/heading";
+import { Tag } from "hygge-ui/tag";
+import { Code, Text } from "hygge-ui/text";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
-import { Avatar } from "@/components/avatar";
+import { Avatar } from "hygge-ui/avatar";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/docs/components/tag")({

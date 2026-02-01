@@ -1,6 +1,6 @@
-import { Clipboard } from "@/components/clipboard";
-import { Heading } from "@/components/heading";
-import { Code, Text } from "@/components/text";
+import { Clipboard } from "hygge-ui/clipboard";
+import { Heading } from "hygge-ui/heading";
+import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

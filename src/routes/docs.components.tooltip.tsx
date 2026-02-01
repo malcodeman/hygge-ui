@@ -1,9 +1,9 @@
-import { Avatar } from "@/components/avatar";
-import { Button } from "@/components/button";
-import { Checkbox } from "@/components/checkbox";
-import { Heading } from "@/components/heading";
-import { Code, Text } from "@/components/text";
-import { Tooltip } from "@/components/tooltip";
+import { Avatar } from "hygge-ui/avatar";
+import { Button } from "hygge-ui/button";
+import { Checkbox } from "hygge-ui/checkbox";
+import { Heading } from "hygge-ui/heading";
+import { Code, Text } from "hygge-ui/text";
+import { Tooltip } from "hygge-ui/tooltip";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

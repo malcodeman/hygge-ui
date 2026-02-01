@@ -1,4 +1,4 @@
-import { Button } from "@/components/button";
+import { Button } from "hygge-ui/button";
 import {
   DialogBody,
   DialogCloseTrigger,
@@ -9,7 +9,7 @@ import {
   DialogRoot,
   DialogTitle,
   DialogTrigger,
-} from "@/components/dialog";
+} from "hygge-ui/dialog";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";

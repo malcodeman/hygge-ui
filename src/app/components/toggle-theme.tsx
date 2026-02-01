@@ -1,4 +1,4 @@
-import { Button } from "@/components/button";
+import { Button } from "hygge-ui/button";
 import { useIsMounted } from "app/hooks/use-is-mounted";
 import { useTheme } from "next-themes";
 import { LuMoon, LuSun } from "react-icons/lu";
