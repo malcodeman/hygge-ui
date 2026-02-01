@@ -52,21 +52,23 @@ function AvatarPage() {
       <PagePreviewCodeTabs
         preview={
           <div className="flex items-center gap-2">
-            <Avatar size="xs" src="https://i.pravatar.cc/300?img=1" />
-            <Avatar size="sm" src="https://i.pravatar.cc/300?img=2" />
-            <Avatar size="md" src="https://i.pravatar.cc/300?img=3" />
-            <Avatar size="lg" src="https://i.pravatar.cc/300?img=4" />
-            <Avatar size="xl" src="https://i.pravatar.cc/300?img=5" />
-            <Avatar size="2xl" src="https://i.pravatar.cc/300?img=6" />
+            <Avatar size="2xs" src="https://i.pravatar.cc/300?img=1" />
+            <Avatar size="xs" src="https://i.pravatar.cc/300?img=2" />
+            <Avatar size="sm" src="https://i.pravatar.cc/300?img=3" />
+            <Avatar size="md" src="https://i.pravatar.cc/300?img=4" />
+            <Avatar size="lg" src="https://i.pravatar.cc/300?img=5" />
+            <Avatar size="xl" src="https://i.pravatar.cc/300?img=6" />
+            <Avatar size="2xl" src="https://i.pravatar.cc/300?img=7" />
           </div>
         }
         code={`<div className="flex items-center gap-2">
-  <Avatar size="xs" src="https://i.pravatar.cc/300?img=1" />
-  <Avatar size="sm" src="https://i.pravatar.cc/300?img=2" />
-  <Avatar size="md" src="https://i.pravatar.cc/300?img=3" />
-  <Avatar size="lg" src="https://i.pravatar.cc/300?img=4" />
-  <Avatar size="xl" src="https://i.pravatar.cc/300?img=5" />
-  <Avatar size="2xl" src="https://i.pravatar.cc/300?img=6" />
+  <Avatar size="2xs" src="https://i.pravatar.cc/300?img=1" />
+  <Avatar size="xs" src="https://i.pravatar.cc/300?img=2" />
+  <Avatar size="sm" src="https://i.pravatar.cc/300?img=3" />
+  <Avatar size="md" src="https://i.pravatar.cc/300?img=4" />
+  <Avatar size="lg" src="https://i.pravatar.cc/300?img=5" />
+  <Avatar size="xl" src="https://i.pravatar.cc/300?img=6" />
+  <Avatar size="2xl" src="https://i.pravatar.cc/300?img=7" />
 </div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">

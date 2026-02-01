@@ -40,7 +40,7 @@ function SelectValueMembers() {
   return (
     <SelectValueText placeholder="Select member">
       <div className="flex items-center gap-1">
-        <Avatar src={avatar} alt={name} size="xs" square />
+        <Avatar src={avatar} alt={name} size="2xs" square />
         {name}
       </div>
     </SelectValueText>
@@ -643,7 +643,7 @@ function SelectPage() {
                   item={item.id}
                   className="justify-start"
                 >
-                  <Avatar src={item.avatar} alt={item.name} size="xs" square />
+                  <Avatar src={item.avatar} alt={item.name} size="2xs" square />
                   {item.name}
                 </SelectItem>
               ))}
@@ -661,7 +661,7 @@ function SelectPage() {
   return (
     <SelectValueText placeholder="Select member">
       <div className="flex items-center gap-1">
-        <Avatar src={avatar} alt={name} size="xs" square />
+        <Avatar src={avatar} alt={name} size="2xs" square />
         {name}
       </div>
     </SelectValueText>
@@ -684,7 +684,7 @@ function SelectPage() {
         item={item.id}
         className="justify-start"
       >
-        <Avatar src={item.avatar} alt={item.name} size="xs" square />
+        <Avatar src={item.avatar} alt={item.name} size="2xs" square />
         {item.name}
       </SelectItem>
     ))}
