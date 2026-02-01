@@ -16,12 +16,14 @@ const RadioCardContext = createContext<{
 });
 
 type RadioCardGroupProps = {
+  label?: React.ReactNode;
   colorPalette?: ColorPalette;
   size?: Size;
 } & ArkRadioGroup.RootProps;
 
 export function RadioCardGroup(props: RadioCardGroupProps) {
   const {
+    label,
     colorPalette = "gray",
     size = "md",
     className,
@@ -33,8 +35,13 @@ export function RadioCardGroup(props: RadioCardGroupProps) {
     <RadioCardContext.Provider value={{ colorPalette, size }}>
       <ArkRadioGroup.Root
         {...rest}
-        className={cn("flex flex-col gap-2", className)}
+        className={cn("flex flex-col gap-1", className)}
       >
+        {label ? (
+          <ArkRadioGroup.Label className="text-fg-default text-sm/6 font-semibold">
+            {label}
+          </ArkRadioGroup.Label>
+        ) : null}
         <div className="flex items-stretch gap-2">{children}</div>
       </ArkRadioGroup.Root>
     </RadioCardContext.Provider>

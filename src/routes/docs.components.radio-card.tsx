@@ -29,13 +29,13 @@ function RadioCardPage() {
       />
       <PagePreviewCodeTabs
         preview={
-          <RadioCardGroup>
+          <RadioCardGroup label="Select a framework">
             <RadioCard value="nextjs" label="Next.js" />
             <RadioCard value="vite" label="Vite" />
             <RadioCard value="astro" label="Astro" />
           </RadioCardGroup>
         }
-        code={`<RadioCardGroup>
+        code={`<RadioCardGroup label="Select a framework">
   <RadioCard value="nextjs" label="Next.js" />
   <RadioCard value="vite" label="Vite" />
   <RadioCard value="astro" label="Astro" />
@@ -53,7 +53,7 @@ function RadioCardPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <RadioCardGroup>
+          <RadioCardGroup label="Select a framework">
             <RadioCard
               value="nextjs"
               label="Nextjs"
@@ -67,7 +67,7 @@ function RadioCardPage() {
             />
           </RadioCardGroup>
         }
-        code={`<RadioCardGroup>
+        code={`<RadioCardGroup label="Select a framework">
   <RadioCard
     value="nextjs"
     label="Nextjs"
@@ -91,46 +91,46 @@ function RadioCardPage() {
       <PagePreviewCodeTabs
         preview={
           <div className="flex flex-col gap-2">
-            <RadioCardGroup size="xs" defaultValue="nextjs">
+            <RadioCardGroup size="xs" defaultValue="nextjs" label="size - xs">
               <RadioCard value="nextjs" label="Next.js" />
               <RadioCard value="vite" label="Vite" />
             </RadioCardGroup>
-            <RadioCardGroup size="sm" defaultValue="nextjs">
+            <RadioCardGroup size="sm" defaultValue="nextjs" label="size - sm">
               <RadioCard value="nextjs" label="Next.js" />
               <RadioCard value="vite" label="Vite" />
             </RadioCardGroup>
-            <RadioCardGroup size="md" defaultValue="nextjs">
+            <RadioCardGroup size="md" defaultValue="nextjs" label="size - md">
               <RadioCard value="nextjs" label="Next.js" />
               <RadioCard value="vite" label="Vite" />
             </RadioCardGroup>
-            <RadioCardGroup size="lg" defaultValue="nextjs">
+            <RadioCardGroup size="lg" defaultValue="nextjs" label="size - lg">
               <RadioCard value="nextjs" label="Next.js" />
               <RadioCard value="vite" label="Vite" />
             </RadioCardGroup>
-            <RadioCardGroup size="xl" defaultValue="nextjs">
+            <RadioCardGroup size="xl" defaultValue="nextjs" label="size - xl">
               <RadioCard value="nextjs" label="Next.js" />
               <RadioCard value="vite" label="Vite" />
             </RadioCardGroup>
           </div>
         }
         code={`<div className="flex flex-col gap-2">
-  <RadioCardGroup size="xs" defaultValue="nextjs">
+  <RadioCardGroup size="xs" defaultValue="nextjs" label="size - xs">
     <RadioCard value="nextjs" label="Next.js" />
     <RadioCard value="vite" label="Vite" />
   </RadioCardGroup>
-  <RadioCardGroup size="sm" defaultValue="nextjs">
+  <RadioCardGroup size="sm" defaultValue="nextjs" label="size - sm">
     <RadioCard value="nextjs" label="Next.js" />
     <RadioCard value="vite" label="Vite" />
   </RadioCardGroup>
-  <RadioCardGroup size="md" defaultValue="nextjs">
+  <RadioCardGroup size="md" defaultValue="nextjs" label="size - md">
     <RadioCard value="nextjs" label="Next.js" />
     <RadioCard value="vite" label="Vite" />
   </RadioCardGroup>
-  <RadioCardGroup size="lg" defaultValue="nextjs">
+  <RadioCardGroup size="lg" defaultValue="nextjs" label="size - lg">
     <RadioCard value="nextjs" label="Next.js" />
     <RadioCard value="vite" label="Vite" />
   </RadioCardGroup>
-  <RadioCardGroup size="xl" defaultValue="nextjs">
+  <RadioCardGroup size="xl" defaultValue="nextjs" label="size - xl">
     <RadioCard value="nextjs" label="Next.js" />
     <RadioCard value="vite" label="Vite" />
   </RadioCardGroup>
@@ -273,7 +273,7 @@ function RadioCardPage() {
       </Text>
       <PagePreviewCodeTabs
         preview={
-          <RadioCardGroup>
+          <RadioCardGroup label="Select a permission">
             <RadioCard
               icon={<LuArrowRight />}
               value="allow"
@@ -294,7 +294,7 @@ function RadioCardPage() {
             />
           </RadioCardGroup>
         }
-        code={`<RadioCardGroup>
+        code={`<RadioCardGroup label="Select a permission">
   <RadioCard
     icon={<LuArrowRight />}
     value="allow"
