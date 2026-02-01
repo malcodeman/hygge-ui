@@ -14,7 +14,7 @@ export function PasswordInput(props: Props) {
   return (
     <ArkPasswordInput.Root {...rest}>
       {label ? (
-        <ArkPasswordInput.Label className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
+        <ArkPasswordInput.Label className="text-fg-default text-sm/6 font-semibold">
           {label}
         </ArkPasswordInput.Label>
       ) : null}

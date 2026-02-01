@@ -53,14 +53,12 @@ export function RadioCard(props: RadioCardProps) {
       {hasContent ? (
         <div className="flex flex-col">
           {label ? (
-            <ArkRadioGroup.ItemText className="text-sm font-semibold text-[#21201C] dark:text-[#eeeeec]">
+            <ArkRadioGroup.ItemText className="text-fg-default text-sm/6 font-semibold">
               {label}
             </ArkRadioGroup.ItemText>
           ) : null}
           {description ? (
-            <p className="text-sm text-[#63635E] dark:text-[#b5b3ad]">
-              {description}
-            </p>
+            <p className="text-fg-muted text-sm/6">{description}</p>
           ) : null}
         </div>
       ) : null}
