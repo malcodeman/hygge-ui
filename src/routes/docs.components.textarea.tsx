@@ -62,19 +62,19 @@ function TextareaPage() {
       <PagePreviewCodeTabs
         preview={
           <div className="flex flex-col gap-2">
-            <Textarea placeholder="size (xs)" size="xs" />
-            <Textarea placeholder="size (sm)" size="sm" />
-            <Textarea placeholder="size (md)" size="md" />
-            <Textarea placeholder="size (lg)" size="lg" />
-            <Textarea placeholder="size (xl)" size="xl" />
+            <Textarea placeholder="size - xs" size="xs" />
+            <Textarea placeholder="size - sm" size="sm" />
+            <Textarea placeholder="size - md" size="md" />
+            <Textarea placeholder="size - lg" size="lg" />
+            <Textarea placeholder="size - xl" size="xl" />
           </div>
         }
         code={`<div className="flex flex-col gap-2">
-  <Textarea placeholder="size (xs)" size="xs" />
-  <Textarea placeholder="size (sm)" size="sm" />
-  <Textarea placeholder="size (md)" size="md" />
-  <Textarea placeholder="size (lg)" size="lg" />
-  <Textarea placeholder="size (xl)" size="xl" />
+  <Textarea placeholder="size - xs" size="xs" />
+  <Textarea placeholder="size - sm" size="sm" />
+  <Textarea placeholder="size - md" size="md" />
+  <Textarea placeholder="size - lg" size="lg" />
+  <Textarea placeholder="size - xl" size="xl" />
 </div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">

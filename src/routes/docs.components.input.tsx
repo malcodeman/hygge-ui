@@ -62,19 +62,19 @@ function InputPage() {
       <PagePreviewCodeTabs
         preview={
           <div className="flex flex-col gap-2">
-            <Input placeholder="size (xs)" size="xs" />
-            <Input placeholder="size (sm)" size="sm" />
-            <Input placeholder="size (md)" size="md" />
-            <Input placeholder="size (lg)" size="lg" />
-            <Input placeholder="size (xl)" size="xl" />
+            <Input placeholder="size - xs" size="xs" />
+            <Input placeholder="size - sm" size="sm" />
+            <Input placeholder="size - md" size="md" />
+            <Input placeholder="size - lg" size="lg" />
+            <Input placeholder="size - xl" size="xl" />
           </div>
         }
         code={`<div className="flex flex-col gap-2">
-  <Input placeholder="size (xs)" size="xs" />
-  <Input placeholder="size (sm)" size="sm" />
-  <Input placeholder="size (md)" size="md" />
-  <Input placeholder="size (lg)" size="lg" />
-  <Input placeholder="size (xl)" size="xl" />
+  <Input placeholder="size - xs" size="xs" />
+  <Input placeholder="size - sm" size="sm" />
+  <Input placeholder="size - md" size="md" />
+  <Input placeholder="size - lg" size="lg" />
+  <Input placeholder="size - xl" size="xl" />
 </div>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
