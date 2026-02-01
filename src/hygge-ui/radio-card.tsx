@@ -2,6 +2,7 @@ import { RadioGroup as ArkRadioGroup } from "@ark-ui/react";
 import { createContext, useContext } from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "./cn";
+import { radioControlVariants } from "./radio";
 
 type ColorPalette = "gray" | "orange" | "teal" | "green" | "red";
 type Size = "xs" | "sm" | "md" | "lg" | "xl";
@@ -65,33 +66,6 @@ const radioGroupItemVariants = cva(
     },
   },
 );
-const radioGroupItemControlVariants = cva(
-  "border-border-subtle shrink-0 rounded-full border transition-colors",
-  {
-    variants: {
-      color: {
-        gray: "data-[state=checked]:border-[#21201C] data-[state=checked]:bg-[#21201C] dark:data-[state=checked]:border-[#eeeeec] dark:data-[state=checked]:bg-[#eeeeec]",
-        orange:
-          "data-[state=checked]:border-[#eb5e41] data-[state=checked]:bg-[#eb5e41]",
-        teal: "data-[state=checked]:border-[#0d9488] data-[state=checked]:bg-[#0d9488]",
-        green:
-          "data-[state=checked]:border-[#38a169] data-[state=checked]:bg-[#38a169]",
-        red: "data-[state=checked]:border-[#fd5454] data-[state=checked]:bg-[#fd5454]",
-      },
-      size: {
-        xs: "size-3",
-        sm: "size-4",
-        md: "size-5",
-        lg: "size-6",
-        xl: "size-7",
-      },
-    },
-    defaultVariants: {
-      color: "gray",
-      size: "md",
-    },
-  },
-);
 
 type RadioCardProps = {
   label?: React.ReactNode;
@@ -127,9 +101,7 @@ export function RadioCard(props: RadioCardProps) {
         </div>
       ) : null}
       <ArkRadioGroup.ItemControl
-        className={cn(
-          radioGroupItemControlVariants({ color: colorPalette, size }),
-        )}
+        className={cn(radioControlVariants({ colorPalette, size }))}
       />
       <ArkRadioGroup.ItemHiddenInput />
     </ArkRadioGroup.Item>

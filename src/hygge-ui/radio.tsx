@@ -3,8 +3,8 @@ import { createContext, useContext } from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "./cn";
 
-const radioControlVariants = cva(
-  "border-border-subtle rounded-full border transition-colors data-[state=checked]:outline-4 data-[state=checked]:-outline-offset-[5px]",
+export const radioControlVariants = cva(
+  "border-border-subtle shrink-0 rounded-full border transition-colors data-[state=checked]:outline-4 data-[state=checked]:-outline-offset-[5px]",
   {
     variants: {
       colorPalette: {
