@@ -18,5 +18,5 @@ export function ToggleTheme() {
     );
   }
 
-  return <div className="size-[34px]" />;
+  return <div className="size-8.5" />;
 }
