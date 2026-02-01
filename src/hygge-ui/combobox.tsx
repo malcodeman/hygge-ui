@@ -61,20 +61,24 @@ export function ComboboxContent(props: ArkCombobox.ContentProps) {
 }
 
 export function ComboboxItemGroup(props: ArkCombobox.ItemGroupProps) {
-  const { className, title, children, ...rest } = props;
+  const { className, ...rest } = props;
 
   return (
     <ArkCombobox.ItemGroup
       {...rest}
-      className={cn("flex flex-col gap-1", className)}
-    >
-      {title ? (
-        <ArkCombobox.ItemGroupLabel className="px-2 py-1.5 text-sm font-semibold">
-          {title}
-        </ArkCombobox.ItemGroupLabel>
-      ) : null}
-      {children}
-    </ArkCombobox.ItemGroup>
+      className={cn("mb-1 last:mb-0", className)}
+    />
+  );
+}
+
+export function ComboboxItemGroupLabel(props: ArkCombobox.ItemGroupLabelProps) {
+  const { className, ...rest } = props;
+
+  return (
+    <ArkCombobox.ItemGroupLabel
+      {...rest}
+      className={cn("text-fg-default px-2 text-sm/6 font-semibold", className)}
+    />
   );
 }
 

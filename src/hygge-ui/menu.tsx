@@ -68,21 +68,7 @@ export function MenuContent(props: ArkMenu.ContentProps) {
 }
 
 export function MenuItemGroup(props: ArkMenu.ItemGroupProps) {
-  const { className, title, children, ...rest } = props;
-
-  return (
-    <ArkMenu.ItemGroup
-      {...rest}
-      className={cn("flex flex-col gap-1", className)}
-    >
-      {title ? (
-        <ArkMenu.ItemGroupLabel className="px-2 py-1.5 text-sm/6 font-semibold">
-          {title}
-        </ArkMenu.ItemGroupLabel>
-      ) : null}
-      {children}
-    </ArkMenu.ItemGroup>
-  );
+  return <ArkMenu.ItemGroup {...props} />;
 }
 
 export function MenuItemGroupLabel(props: ArkMenu.ItemGroupLabelProps) {
