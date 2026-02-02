@@ -1,20 +1,35 @@
 import { Pagination as ArkPagination } from "@ark-ui/react";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { createContext, useContext } from "react";
 import { cn } from "./cn";
 import { Button } from "./button";
 
-export function PaginationRoot(props: ArkPagination.RootProps) {
-  const { className, ...rest } = props;
+type Size = "xs" | "sm" | "md" | "lg" | "xl";
+
+const PaginationContext = createContext<{ size: Size }>({
+  size: "md",
+});
+
+type PaginationRootProps = {
+  size?: Size;
+} & ArkPagination.RootProps;
+
+export function PaginationRoot(props: PaginationRootProps) {
+  const { size = "md", className, ...rest } = props;
 
   return (
-    <ArkPagination.Root className={cn("flex gap-2", className)} {...rest} />
+    <PaginationContext.Provider value={{ size }}>
+      <ArkPagination.Root className={cn("flex gap-2", className)} {...rest} />
+    </PaginationContext.Provider>
   );
 }
 
 export function PaginationPrevTrigger(props: ArkPagination.PrevTriggerProps) {
+  const { size } = useContext(PaginationContext);
+
   return (
     <ArkPagination.PrevTrigger {...props} asChild>
-      <Button variant="ghost">
+      <Button size={size} variant="ghost">
         <LuChevronLeft size={16} />
       </Button>
     </ArkPagination.PrevTrigger>
@@ -22,6 +37,8 @@ export function PaginationPrevTrigger(props: ArkPagination.PrevTriggerProps) {
 }
 
 export function PaginationItems() {
+  const { size } = useContext(PaginationContext);
+
   return (
     <ArkPagination.Context>
       {(pagination) =>
@@ -29,6 +46,7 @@ export function PaginationItems() {
           page.type === "page" ? (
             <ArkPagination.Item key={index} {...page} asChild>
               <Button
+                size={size}
                 variant={pagination.page === page.value ? "solid" : "outline"}
               >
                 {page.value}
@@ -46,9 +64,11 @@ export function PaginationItems() {
 }
 
 export function PaginationNextTrigger(props: ArkPagination.NextTriggerProps) {
+  const { size } = useContext(PaginationContext);
+
   return (
     <ArkPagination.NextTrigger {...props} asChild>
-      <Button variant="ghost">
+      <Button size={size} variant="ghost">
         <LuChevronRight size={16} />
       </Button>
     </ArkPagination.NextTrigger>
