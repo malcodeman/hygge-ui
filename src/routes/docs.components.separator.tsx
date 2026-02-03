@@ -44,11 +44,9 @@ function SeparatorPage() {
   <Text>Third</Text>
 </div>`}
       />
-
       <Heading level={2} className="mt-10 mb-2">
         Examples
       </Heading>
-
       <Heading level={3} size="lg" className="mb-2">
         Variants
       </Heading>
@@ -70,7 +68,6 @@ function SeparatorPage() {
   <Separator variant="dotted" />
 </div>`}
       />
-
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Sizes
       </Heading>
@@ -93,7 +90,6 @@ function SeparatorPage() {
   <Separator size="lg" />
 </div>`}
       />
-
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Label
       </Heading>
@@ -114,7 +110,6 @@ function SeparatorPage() {
   <Separator label="Label (center)" labelPlacement="center" />
 </div>`}
       />
-
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Vertical
       </Heading>
@@ -136,7 +131,6 @@ function SeparatorPage() {
   <Text>Second</Text>
 </div>`}
       />
-
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Color
       </Heading>
