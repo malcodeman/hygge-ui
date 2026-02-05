@@ -43,6 +43,7 @@ import { Route as DocsComponentsCodeBlockRouteImport } from './routes/docs.compo
 import { Route as DocsComponentsClipboardRouteImport } from './routes/docs.components.clipboard'
 import { Route as DocsComponentsCheckboxCardRouteImport } from './routes/docs.components.checkbox-card'
 import { Route as DocsComponentsCheckboxRouteImport } from './routes/docs.components.checkbox'
+import { Route as DocsComponentsCarouselRouteImport } from './routes/docs.components.carousel'
 import { Route as DocsComponentsCardRouteImport } from './routes/docs.components.card'
 import { Route as DocsComponentsButtonRouteImport } from './routes/docs.components.button'
 import { Route as DocsComponentsAvatarRouteImport } from './routes/docs.components.avatar'
@@ -226,6 +227,11 @@ const DocsComponentsCheckboxRoute = DocsComponentsCheckboxRouteImport.update({
   path: '/docs/components/checkbox',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocsComponentsCarouselRoute = DocsComponentsCarouselRouteImport.update({
+  id: '/docs/components/carousel',
+  path: '/docs/components/carousel',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsComponentsCardRoute = DocsComponentsCardRouteImport.update({
   id: '/docs/components/card',
   path: '/docs/components/card',
@@ -272,6 +278,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/avatar': typeof DocsComponentsAvatarRoute
   '/docs/components/button': typeof DocsComponentsButtonRoute
   '/docs/components/card': typeof DocsComponentsCardRoute
+  '/docs/components/carousel': typeof DocsComponentsCarouselRoute
   '/docs/components/checkbox': typeof DocsComponentsCheckboxRoute
   '/docs/components/checkbox-card': typeof DocsComponentsCheckboxCardRoute
   '/docs/components/clipboard': typeof DocsComponentsClipboardRoute
@@ -315,6 +322,7 @@ export interface FileRoutesByTo {
   '/docs/components/avatar': typeof DocsComponentsAvatarRoute
   '/docs/components/button': typeof DocsComponentsButtonRoute
   '/docs/components/card': typeof DocsComponentsCardRoute
+  '/docs/components/carousel': typeof DocsComponentsCarouselRoute
   '/docs/components/checkbox': typeof DocsComponentsCheckboxRoute
   '/docs/components/checkbox-card': typeof DocsComponentsCheckboxCardRoute
   '/docs/components/clipboard': typeof DocsComponentsClipboardRoute
@@ -359,6 +367,7 @@ export interface FileRoutesById {
   '/docs/components/avatar': typeof DocsComponentsAvatarRoute
   '/docs/components/button': typeof DocsComponentsButtonRoute
   '/docs/components/card': typeof DocsComponentsCardRoute
+  '/docs/components/carousel': typeof DocsComponentsCarouselRoute
   '/docs/components/checkbox': typeof DocsComponentsCheckboxRoute
   '/docs/components/checkbox-card': typeof DocsComponentsCheckboxCardRoute
   '/docs/components/clipboard': typeof DocsComponentsClipboardRoute
@@ -404,6 +413,7 @@ export interface FileRouteTypes {
     | '/docs/components/avatar'
     | '/docs/components/button'
     | '/docs/components/card'
+    | '/docs/components/carousel'
     | '/docs/components/checkbox'
     | '/docs/components/checkbox-card'
     | '/docs/components/clipboard'
@@ -447,6 +457,7 @@ export interface FileRouteTypes {
     | '/docs/components/avatar'
     | '/docs/components/button'
     | '/docs/components/card'
+    | '/docs/components/carousel'
     | '/docs/components/checkbox'
     | '/docs/components/checkbox-card'
     | '/docs/components/clipboard'
@@ -490,6 +501,7 @@ export interface FileRouteTypes {
     | '/docs/components/avatar'
     | '/docs/components/button'
     | '/docs/components/card'
+    | '/docs/components/carousel'
     | '/docs/components/checkbox'
     | '/docs/components/checkbox-card'
     | '/docs/components/clipboard'
@@ -534,6 +546,7 @@ export interface RootRouteChildren {
   DocsComponentsAvatarRoute: typeof DocsComponentsAvatarRoute
   DocsComponentsButtonRoute: typeof DocsComponentsButtonRoute
   DocsComponentsCardRoute: typeof DocsComponentsCardRoute
+  DocsComponentsCarouselRoute: typeof DocsComponentsCarouselRoute
   DocsComponentsCheckboxRoute: typeof DocsComponentsCheckboxRoute
   DocsComponentsCheckboxCardRoute: typeof DocsComponentsCheckboxCardRoute
   DocsComponentsClipboardRoute: typeof DocsComponentsClipboardRoute
@@ -809,6 +822,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsComponentsCheckboxRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/components/carousel': {
+      id: '/docs/components/carousel'
+      path: '/docs/components/carousel'
+      fullPath: '/docs/components/carousel'
+      preLoaderRoute: typeof DocsComponentsCarouselRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/components/card': {
       id: '/docs/components/card'
       path: '/docs/components/card'
@@ -870,6 +890,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsAvatarRoute: DocsComponentsAvatarRoute,
   DocsComponentsButtonRoute: DocsComponentsButtonRoute,
   DocsComponentsCardRoute: DocsComponentsCardRoute,
+  DocsComponentsCarouselRoute: DocsComponentsCarouselRoute,
   DocsComponentsCheckboxRoute: DocsComponentsCheckboxRoute,
   DocsComponentsCheckboxCardRoute: DocsComponentsCheckboxCardRoute,
   DocsComponentsClipboardRoute: DocsComponentsClipboardRoute,

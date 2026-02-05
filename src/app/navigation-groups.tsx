@@ -32,6 +32,10 @@ export const NAVIGATION_GROUPS = [
         label: "Card",
       },
       {
+        href: "/docs/components/carousel",
+        label: "Carousel",
+      },
+      {
         href: "/docs/components/checkbox-card",
         label: "Checkbox Card",
       },
