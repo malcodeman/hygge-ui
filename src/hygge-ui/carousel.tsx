@@ -10,7 +10,7 @@ export function CarouselRoot(props: ArkCarousel.RootProps) {
     <ArkCarousel.Root
       {...rest}
       className={cn(
-        "relative flex w-full max-w-lg flex-col gap-2 data-[orientation=vertical]:flex-row",
+        "flex w-full max-w-lg flex-col gap-2 data-[orientation=vertical]:flex-row",
         className,
       )}
     />
