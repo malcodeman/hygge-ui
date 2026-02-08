@@ -1,36 +1,64 @@
 import { Tabs as ArkTabs } from "@ark-ui/react";
+import { createContext, useContext } from "react";
 import { cn } from "./cn";
 
-export function TabsRoot(props: ArkTabs.RootProps) {
-  return <ArkTabs.Root {...props} />;
+type Variant = "line" | "subtle" | "plain";
+
+const TabsContext = createContext<{ variant: Variant }>({
+  variant: "line",
+});
+
+type TabsRootProps = {
+  variant?: Variant;
+} & ArkTabs.RootProps;
+
+export function TabsRoot(props: TabsRootProps) {
+  const { variant = "line", ...rest } = props;
+
+  return (
+    <TabsContext.Provider value={{ variant }}>
+      <ArkTabs.Root {...rest} />
+    </TabsContext.Provider>
+  );
 }
 
 export function TabsList(props: ArkTabs.ListProps) {
   const { className, children, ...rest } = props;
+  const { variant } = useContext(TabsContext);
 
   return (
     <ArkTabs.List
       {...rest}
       className={cn(
-        "relative flex gap-4 shadow-[inset_0_-1px_0_#cfceca] dark:shadow-[inset_0_-1px_0_#494844]",
+        "relative flex gap-4",
+        {
+          "shadow-[inset_0_-1px_0_#cfceca] dark:shadow-[inset_0_-1px_0_#494844]":
+            variant === "line",
+        },
         className,
       )}
     >
       {children}
-      <ArkTabs.Indicator className="bottom-0 h-0.5 w-(--width) bg-[#21201C] dark:bg-[#eeeeec]" />
+      {variant === "line" ? (
+        <ArkTabs.Indicator className="bg-fg-default bottom-0 h-0.5 w-(--width)" />
+      ) : null}
     </ArkTabs.List>
   );
 }
 
 export function TabsTrigger(props: ArkTabs.TriggerProps) {
   const { className, ...rest } = props;
+  const { variant } = useContext(TabsContext);
 
   return (
     <ArkTabs.Trigger
       {...rest}
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-2 p-2 pt-0 text-sm font-semibold transition-colors data-disabled:cursor-not-allowed data-disabled:opacity-50",
-        "text-fg-muted data-selected:text-[#21201C] dark:data-selected:text-[#eeeeec]",
+        "data-selected:text-fg-default text-fg-muted flex cursor-pointer items-center gap-2 p-2 text-sm font-medium transition-colors data-disabled:cursor-not-allowed data-disabled:opacity-50",
+        {
+          "rounded-sm data-selected:bg-[#21201c]/8 dark:data-selected:bg-[#eeeeec]/8":
+            variant === "subtle",
+        },
         className,
       )}
     />
