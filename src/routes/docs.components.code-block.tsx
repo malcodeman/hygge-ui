@@ -24,6 +24,7 @@ function CodeBlockPage() {
         description="Used to display and highlight dynamic code blocks."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/code-block.tsx"
         className="mb-2"
+        verified
       />
       <PagePreviewCodeTabs
         preview={
@@ -45,6 +46,121 @@ function CodeBlockPage() {
         Examples
       </Heading>
       <Heading level={3} size="lg" className="mb-2">
+        Sizes
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>size</Code> prop to change the size of the code block
+        component.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex flex-col gap-2">
+            <div>
+              <Text>size - xs</Text>
+              <CodeBlock
+                size="xs"
+                code={`<div class="container">
+  <h1>Hello, world!</h1>
+</div>`}
+                language="html"
+              />
+            </div>
+            <div>
+              <Text>size - sm</Text>
+              <CodeBlock
+                size="sm"
+                code={`<div class="container">
+  <h1>Hello, world!</h1>
+</div>`}
+                language="html"
+              />
+            </div>
+            <div>
+              <Text>size - md</Text>
+              <CodeBlock
+                size="md"
+                code={`<div class="container">
+  <h1>Hello, world!</h1>
+</div>`}
+                language="html"
+              />
+            </div>
+            <div>
+              <Text>size - lg</Text>
+              <CodeBlock
+                size="lg"
+                code={`<div class="container">
+  <h1>Hello, world!</h1>
+</div>`}
+                language="html"
+              />
+            </div>
+            <div>
+              <Text>size - xl</Text>
+              <CodeBlock
+                size="xl"
+                code={`<div class="container">
+  <h1>Hello, world!</h1>
+</div>`}
+                language="html"
+              />
+            </div>
+          </div>
+        }
+        code={`<div className="flex flex-col gap-2">
+  <div>
+    <Text>size - xs</Text>
+    <CodeBlock
+      size="xs"
+      code={\`<div class="container">
+  <h1>Hello, world!</h1>
+</div>\`}
+      language="html"
+    />
+  </div>
+  <div>
+    <Text>size - sm</Text>
+    <CodeBlock
+      size="sm"
+      code={\`<div class="container">
+  <h1>Hello, world!</h1>
+</div>\`}
+      language="html"
+    />
+  </div>
+  <div>
+    <Text>size - md</Text>
+    <CodeBlock
+      size="md"
+      code={\`<div class="container">
+  <h1>Hello, world!</h1>
+</div>\`}
+      language="html"
+    />
+  </div>
+  <div>
+    <Text>size - lg</Text>
+    <CodeBlock
+      size="lg"
+      code={\`<div class="container">
+  <h1>Hello, world!</h1>
+</div>\`}
+      language="html"
+    />
+  </div>
+  <div>
+    <Text>size - xl</Text>
+    <CodeBlock
+      size="xl"
+      code={\`<div class="container">
+  <h1>Hello, world!</h1>
+</div>\`}
+      language="html"
+    />
+  </div>
+</div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Copy Button
       </Heading>
       <Text className="mb-2">
