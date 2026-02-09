@@ -49,7 +49,11 @@ export function DatePicker(props: Props) {
                         <LuChevronLeft size={16} />
                       </Button>
                     </ArkDatePicker.PrevTrigger>
-                    <ArkDatePicker.RangeText />
+                    <ArkDatePicker.ViewTrigger asChild>
+                      <Button variant="ghost">
+                        <ArkDatePicker.RangeText />
+                      </Button>
+                    </ArkDatePicker.ViewTrigger>
                     <ArkDatePicker.NextTrigger asChild>
                       <Button variant="ghost">
                         <LuChevronRight size={16} />
@@ -86,6 +90,96 @@ export function DatePicker(props: Props) {
                           ))}
                         </ArkDatePicker.TableRow>
                       ))}
+                    </ArkDatePicker.TableBody>
+                  </ArkDatePicker.Table>
+                </>
+              )}
+            </ArkDatePicker.Context>
+          </ArkDatePicker.View>
+          <ArkDatePicker.View view="month" className="flex flex-col gap-2">
+            <ArkDatePicker.Context>
+              {(datePicker) => (
+                <>
+                  <ArkDatePicker.ViewControl className="flex items-center justify-between">
+                    <ArkDatePicker.PrevTrigger asChild>
+                      <Button variant="ghost">
+                        <LuChevronLeft size={16} />
+                      </Button>
+                    </ArkDatePicker.PrevTrigger>
+                    <ArkDatePicker.ViewTrigger asChild>
+                      <Button variant="ghost">
+                        <ArkDatePicker.RangeText />
+                      </Button>
+                    </ArkDatePicker.ViewTrigger>
+                    <ArkDatePicker.NextTrigger asChild>
+                      <Button variant="ghost">
+                        <LuChevronRight size={16} />
+                      </Button>
+                    </ArkDatePicker.NextTrigger>
+                  </ArkDatePicker.ViewControl>
+                  <ArkDatePicker.Table className="border-separate border-spacing-1">
+                    <ArkDatePicker.TableBody>
+                      {datePicker
+                        .getMonthsGrid({ columns: 4, format: "short" })
+                        .map((months, id) => (
+                          <ArkDatePicker.TableRow key={id}>
+                            {months.map((month, id) => (
+                              <ArkDatePicker.TableCell
+                                key={id}
+                                value={month.value}
+                              >
+                                <ArkDatePicker.TableCellTrigger asChild>
+                                  <Button variant="ghost">{month.label}</Button>
+                                </ArkDatePicker.TableCellTrigger>
+                              </ArkDatePicker.TableCell>
+                            ))}
+                          </ArkDatePicker.TableRow>
+                        ))}
+                    </ArkDatePicker.TableBody>
+                  </ArkDatePicker.Table>
+                </>
+              )}
+            </ArkDatePicker.Context>
+          </ArkDatePicker.View>
+          <ArkDatePicker.View view="year" className="flex flex-col gap-2">
+            <ArkDatePicker.Context>
+              {(datePicker) => (
+                <>
+                  <ArkDatePicker.ViewControl className="flex items-center justify-between">
+                    <ArkDatePicker.PrevTrigger asChild>
+                      <Button variant="ghost">
+                        <LuChevronLeft size={16} />
+                      </Button>
+                    </ArkDatePicker.PrevTrigger>
+                    <ArkDatePicker.ViewTrigger asChild>
+                      <Button variant="ghost">
+                        <ArkDatePicker.RangeText />
+                      </Button>
+                    </ArkDatePicker.ViewTrigger>
+                    <ArkDatePicker.NextTrigger asChild>
+                      <Button variant="ghost">
+                        <LuChevronRight size={16} />
+                      </Button>
+                    </ArkDatePicker.NextTrigger>
+                  </ArkDatePicker.ViewControl>
+                  <ArkDatePicker.Table className="border-separate border-spacing-1">
+                    <ArkDatePicker.TableBody>
+                      {datePicker
+                        .getYearsGrid({ columns: 4 })
+                        .map((years, id) => (
+                          <ArkDatePicker.TableRow key={id}>
+                            {years.map((year, id) => (
+                              <ArkDatePicker.TableCell
+                                key={id}
+                                value={year.value}
+                              >
+                                <ArkDatePicker.TableCellTrigger asChild>
+                                  <Button variant="ghost">{year.label}</Button>
+                                </ArkDatePicker.TableCellTrigger>
+                              </ArkDatePicker.TableCell>
+                            ))}
+                          </ArkDatePicker.TableRow>
+                        ))}
                     </ArkDatePicker.TableBody>
                   </ArkDatePicker.Table>
                 </>
