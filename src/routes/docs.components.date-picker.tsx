@@ -4,6 +4,7 @@ import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
+import { parseDate } from "@ark-ui/react";
 
 export const Route = createFileRoute("/docs/components/date-picker")({
   component: DatePickerPage,
@@ -33,15 +34,37 @@ function DatePickerPage() {
         Examples
       </Heading>
       <Heading level={3} size="lg" className="mb-2">
-        Dates Range
+        Default Value
       </Heading>
       <Text className="mb-2">
-        Set <Code>selectionMode=&quot;range&quot;</Code> to allow user to pick
-        dates range.
+        Use the <Code>defaultValue</Code> prop with <Code>parseDate</Code> to
+        set the initial date value.
       </Text>
       <PagePreviewCodeTabs
-        preview={<DatePicker label="Pick dates range" selectionMode="range" />}
-        code={`<DatePicker label="Pick dates range" selectionMode="range" />`}
+        preview={<DatePicker defaultValue={[parseDate("2025-01-15")]} />}
+        code={`<DatePicker defaultValue={[parseDate("2025-01-15")]} />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Default View
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>defaultView</Code> prop to set which view (day, month, or
+        year) the calendar opens to initially.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<DatePicker defaultView="month" />}
+        code={`<DatePicker defaultView="month" />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Range
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>selectionMode=&quot;range&quot;</Code> prop to allow user
+        to pick dates range.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<DatePicker selectionMode="range" />}
+        code={`<DatePicker selectionMode="range" />`}
       />
       <Heading level={2} className="mt-10 mb-2">
         Disabled
