@@ -1,19 +1,44 @@
-import { DatePicker as ArkDatePicker } from "@ark-ui/react/date-picker";
-import { LuCalendar, LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import {
+  DatePicker as ArkDatePicker,
+  type DateValue,
+} from "@ark-ui/react/date-picker";
+import { LuCalendar, LuChevronLeft, LuChevronRight, LuX } from "react-icons/lu";
 import { cn } from "./cn";
 import { Button } from "./button";
 import { Input } from "./input";
+import { Tag } from "./tag";
+
+function formatDate(date: DateValue) {
+  const jsDate = date.toDate("UTC");
+
+  return jsDate.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+  });
+}
 
 type Props = {
   label?: React.ReactNode;
 } & ArkDatePicker.RootProps;
 
 export function DatePicker(props: Props) {
-  const { className, label, selectionMode, ...rest } = props;
+  const {
+    className,
+    label,
+    selectionMode,
+    placeholder,
+    disabled,
+    invalid,
+    ...rest
+  } = props;
 
   return (
     <ArkDatePicker.Root
       selectionMode={selectionMode}
+      placeholder={placeholder}
+      disabled={disabled}
+      invalid={invalid}
       className={cn("flex flex-col gap-1", className)}
       {...rest}
     >
@@ -23,14 +48,50 @@ export function DatePicker(props: Props) {
         </ArkDatePicker.Label>
       ) : null}
       <ArkDatePicker.Control className="inline-flex items-center gap-2">
-        <ArkDatePicker.Input index={0} asChild>
-          <Input className="w-auto" variant="outline" />
-        </ArkDatePicker.Input>
-        {selectionMode === "range" ? (
-          <ArkDatePicker.Input index={1} asChild>
-            <Input className="w-auto" variant="outline" />
-          </ArkDatePicker.Input>
-        ) : null}
+        {selectionMode === "multiple" ? (
+          <ArkDatePicker.Context>
+            {(datePicker) => (
+              <div
+                className={cn(
+                  "border-border-default flex h-10 w-full flex-wrap items-center gap-1 rounded-sm border px-2 text-sm text-[#21201C]/50 transition-colors dark:text-[#eeeeec]/50",
+                  {
+                    "cursor-not-allowed opacity-50": disabled,
+                    "border-[#fd5454]": invalid,
+                  },
+                )}
+              >
+                {datePicker.value.length === 0
+                  ? placeholder
+                  : datePicker.value.map((date, index) => (
+                      <Tag key={index} size="xs">
+                        {formatDate(date)}
+                        <button
+                          type="button"
+                          onClick={() =>
+                            datePicker.setValue(
+                              datePicker.value.filter((_, i) => i !== index),
+                            )
+                          }
+                        >
+                          <LuX />
+                        </button>
+                      </Tag>
+                    ))}
+              </div>
+            )}
+          </ArkDatePicker.Context>
+        ) : (
+          <>
+            <ArkDatePicker.Input index={0} asChild>
+              <Input className="w-auto" variant="outline" />
+            </ArkDatePicker.Input>
+            {selectionMode === "range" ? (
+              <ArkDatePicker.Input index={1} asChild>
+                <Input className="w-auto" variant="outline" />
+              </ArkDatePicker.Input>
+            ) : null}
+          </>
+        )}
         <ArkDatePicker.Trigger asChild>
           <Button variant="outline">
             <LuCalendar size={16} />

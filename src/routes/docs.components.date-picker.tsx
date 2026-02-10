@@ -67,6 +67,20 @@ function DatePickerPage() {
         code={`<DatePicker selectionMode="range" />`}
       />
       <Heading level={2} className="mt-10 mb-2">
+        Multiple
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>selectionMode="multiple"</Code> prop to allow selecting
+        multiple dates. This example also shows how to display selected dates as
+        removable tags.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <DatePicker selectionMode="multiple" placeholder="Select dates" />
+        }
+        code={`<DatePicker selectionMode="multiple" placeholder="Select dates" />`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
         Disabled
       </Heading>
       <Text className="mb-2">
