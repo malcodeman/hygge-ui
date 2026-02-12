@@ -92,6 +92,59 @@ function DatePickerPage() {
         code={`<DatePicker numOfMonths={2} />`}
       />
       <Heading level={2} className="mt-10 mb-2">
+        Presets
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>DatePickerPresetTrigger</Code> component to add
+        quick-select preset options like "Last 7 days" or "This month".
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <DatePicker
+            presets={[
+              {
+                value: "last7Days",
+                label: "Last 7 days",
+              },
+              {
+                value: "last30Days",
+                label: "Last 30 days",
+              },
+              {
+                value: "thisMonth",
+                label: "This month",
+              },
+              {
+                value: "lastMonth",
+                label: "Last month",
+              },
+            ]}
+            selectionMode="range"
+          />
+        }
+        code={`<DatePicker
+  presets={[
+    {
+      value: "last7Days",
+      label: "Last 7 days",
+    },
+    {
+      value: "last30Days",
+      label: "Last 30 days",
+    },
+    {
+      value: "thisMonth",
+      label: "This month",
+    },
+    {
+      value: "lastMonth",
+      label: "Last month",
+    },
+  ]}
+  selectionMode="range"
+/>`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
         Disabled
       </Heading>
       <Text className="mb-2">

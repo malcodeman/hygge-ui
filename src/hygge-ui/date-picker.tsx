@@ -20,12 +20,17 @@ function formatDate(date: DateValue) {
 
 type Props = {
   label?: React.ReactNode;
+  presets?: {
+    label: React.ReactNode;
+    value: ArkDatePicker.PresetTriggerProps["value"];
+  }[];
 } & ArkDatePicker.RootProps;
 
 export function DatePicker(props: Props) {
   const {
     className,
     label,
+    presets,
     selectionMode,
     placeholder,
     disabled,
@@ -49,7 +54,11 @@ export function DatePicker(props: Props) {
           {label}
         </ArkDatePicker.Label>
       ) : null}
-      <ArkDatePicker.Control className="inline-flex items-center gap-2">
+      <ArkDatePicker.Control
+        className={cn("inline-flex items-center gap-2", {
+          "mb-2": presets,
+        })}
+      >
         {selectionMode === "multiple" ? (
           <ArkDatePicker.Context>
             {(datePicker) => (
@@ -100,6 +109,21 @@ export function DatePicker(props: Props) {
           </Button>
         </ArkDatePicker.Trigger>
       </ArkDatePicker.Control>
+      {presets ? (
+        <div className="flex gap-2">
+          {presets.map((preset, index) => (
+            <ArkDatePicker.PresetTrigger
+              key={index}
+              value={preset.value}
+              asChild
+            >
+              <Button variant="subtle" size="sm">
+                {preset.label}
+              </Button>
+            </ArkDatePicker.PresetTrigger>
+          ))}
+        </div>
+      ) : null}
       <ArkDatePicker.Positioner>
         <ArkDatePicker.Content className="bg-bg-default border-border-subtle z-50 rounded-lg border p-2 shadow-2xs">
           <ArkDatePicker.View view="day" className="flex flex-col gap-2">
