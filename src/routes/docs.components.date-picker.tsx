@@ -81,6 +81,17 @@ function DatePickerPage() {
         code={`<DatePicker selectionMode="multiple" placeholder="Select dates" />`}
       />
       <Heading level={2} className="mt-10 mb-2">
+        Multiple Months
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>numOfMonths</Code> prop to to display multiple months side
+        by side.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={<DatePicker numOfMonths={2} />}
+        code={`<DatePicker numOfMonths={2} />`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
         Disabled
       </Heading>
       <Text className="mb-2">
