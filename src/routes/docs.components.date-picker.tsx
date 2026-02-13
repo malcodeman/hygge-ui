@@ -145,6 +145,26 @@ function DatePickerPage() {
 />`}
       />
       <Heading level={2} className="mt-10 mb-2">
+        Min and Max
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>min</Code> and <Code>max</Code> props with{" "}
+        <Code>parseDate</Code> to restrict the selectable date range. Dates
+        outside this range will be disabled.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <DatePicker
+            min={parseDate("2025-03-05")}
+            max={parseDate("2025-03-31")}
+          />
+        }
+        code={`<DatePicker
+  min={parseDate("2025-03-05")}
+  max={parseDate("2025-03-31")}
+/>`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
         Disabled
       </Heading>
       <Text className="mb-2">
