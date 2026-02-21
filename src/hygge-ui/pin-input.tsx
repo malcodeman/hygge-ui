@@ -1,5 +1,5 @@
 import { PinInput as ArkPinInput } from "@ark-ui/react";
-import { cva, VariantProps } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 import { Input } from "./input";
 

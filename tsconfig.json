@@ -17,7 +17,8 @@
     "baseUrl": "./src",
     "paths": {
       "@/components/*": ["components/*"]
-    }
+    },
+    "verbatimModuleSyntax": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

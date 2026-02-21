@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { BundledLanguage, BundledTheme, codeToHtml } from "shiki";
+import { type BundledLanguage, type BundledTheme, codeToHtml } from "shiki";
 import { Clipboard as ArkClipboard } from "@ark-ui/react";
 import { LuCheck, LuClipboardCopy } from "react-icons/lu";
-import { cva, VariantProps } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { Button } from "./button";
 import { cn } from "./cn";
 

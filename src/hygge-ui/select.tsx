@@ -1,7 +1,7 @@
 import {
   Select as ArkSelect,
-  CollectionItem,
   useSelectContext,
+  type CollectionItem,
 } from "@ark-ui/react";
 import { LuCheck, LuChevronDown } from "react-icons/lu";
 import { cn } from "./cn";

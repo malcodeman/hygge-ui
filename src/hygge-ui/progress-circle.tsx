@@ -1,5 +1,5 @@
 import { Progress as ArkProgress } from "@ark-ui/react";
-import { cva, VariantProps } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
 const progressCircleVariants = cva("[--thickness:4px]", {
