@@ -1,3 +1,4 @@
+import React, { createContext, useContext } from "react";
 import { LuLoaderCircle } from "react-icons/lu";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
@@ -32,8 +33,12 @@ const buttonVariants = cva(
     },
   },
 );
+const ButtonGroupContext = createContext<VariantProps<typeof buttonVariants>>({
+  variant: "solid",
+  size: "md",
+});
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> &
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonVariants> & {
     loading?: boolean;
     loadingText?: string;
@@ -43,14 +48,16 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> &
 export function Button({
   loading,
   loadingText,
-  variant,
-  size,
   spinnerPlacement = "start",
   className,
   children,
   disabled,
   ...rest
-}: Props) {
+}: ButtonProps) {
+  const groupContext = useContext(ButtonGroupContext);
+  const variant = rest.variant ?? groupContext.variant;
+  const size = rest.size ?? groupContext.size;
+
   return (
     <button
       {...rest}
@@ -71,5 +78,31 @@ export function Button({
         children
       )}
     </button>
+  );
+}
+
+type ButtonGroupProps = React.HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof buttonVariants> & {
+    attached?: boolean;
+  };
+
+export function ButtonGroup(props: ButtonGroupProps) {
+  const { attached, variant, size, className, ...rest } = props;
+
+  return (
+    <ButtonGroupContext.Provider value={{ variant, size }}>
+      <div
+        {...rest}
+        className={cn(
+          "isolate inline-flex items-center",
+          {
+            "gap-2": !attached,
+            "[&>*:first-child]:rounded-r-none [&>*:last-child]:rounded-l-none [&>*:not(:first-child)]:-ml-px [&>*:not(:first-child):not(:last-child)]:rounded-none":
+              attached,
+          },
+          className,
+        )}
+      />
+    </ButtonGroupContext.Provider>
   );
 }
