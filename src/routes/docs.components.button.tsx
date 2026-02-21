@@ -1,10 +1,10 @@
-import { Button } from "hygge-ui/button";
+import { Button, ButtonGroup } from "hygge-ui/button";
 import { Heading } from "hygge-ui/heading";
 import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
-import { LuArrowRight, LuMail } from "react-icons/lu";
+import { LuArrowRight, LuChevronDown, LuMail } from "react-icons/lu";
 
 export const Route = createFileRoute("/docs/components/button")({
   component: ButtonPage,
@@ -168,6 +168,46 @@ function ButtonPage() {
     Continue
   </Button>
 </div>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Group
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>ButtonGroup</Code> component to group buttons together.
+        This component allows you pass common recipe properties to inner
+        buttons.
+      </Text>
+      <PagePreviewCodeTabs
+        className="mb-2"
+        preview={
+          <ButtonGroup size="sm" variant="outline">
+            <Button>Save</Button>
+            <Button>Cancel</Button>
+          </ButtonGroup>
+        }
+        code={`<ButtonGroup size="sm" variant="outline">
+  <Button>Save</Button>
+  <Button>Cancel</Button>
+</ButtonGroup>`}
+      />
+      <Text className="mb-2">
+        To flush the buttons, pass the <Code>attached</Code> prop.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <ButtonGroup size="sm" variant="outline" attached>
+            <Button variant="outline">Button</Button>
+            <Button variant="outline">
+              <LuChevronDown size={16} />
+            </Button>
+          </ButtonGroup>
+        }
+        code={`<ButtonGroup size="sm" variant="outline" attached>
+  <Button variant="outline">Button</Button>
+  <Button variant="outline">
+    <LuChevronDown size={16} />
+  </Button>
+</ButtonGroup>`}
       />
     </>
   );
