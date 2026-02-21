@@ -1,5 +1,6 @@
 import {
   Select as ArkSelect,
+  Portal,
   useSelectContext,
   type CollectionItem,
 } from "@ark-ui/react";
@@ -109,15 +110,17 @@ export function SelectContent(props: ArkSelect.ContentProps) {
   const { className, ...rest } = props;
 
   return (
-    <ArkSelect.Positioner>
-      <ArkSelect.Content
-        {...rest}
-        className={cn(
-          "border-border-subtle bg-bg-default z-50 max-h-96 overflow-y-auto rounded-lg border p-2 shadow-2xs",
-          className,
-        )}
-      />
-    </ArkSelect.Positioner>
+    <Portal>
+      <ArkSelect.Positioner>
+        <ArkSelect.Content
+          {...rest}
+          className={cn(
+            "border-border-subtle bg-bg-default z-50 max-h-96 overflow-y-auto rounded-lg border p-2 shadow-2xs",
+            className,
+          )}
+        />
+      </ArkSelect.Positioner>
+    </Portal>
   );
 }
 

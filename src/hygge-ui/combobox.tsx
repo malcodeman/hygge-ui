@@ -1,5 +1,6 @@
 import {
   Combobox as ArkCombobox,
+  Portal,
   useComboboxContext,
   type CollectionItem,
 } from "@ark-ui/react";
@@ -83,15 +84,17 @@ export function ComboboxContent(props: ArkCombobox.ContentProps) {
   const { className, ...rest } = props;
 
   return (
-    <ArkCombobox.Positioner>
-      <ArkCombobox.Content
-        {...rest}
-        className={cn(
-          "border-border-subtle bg-bg-default z-50 max-h-96 overflow-y-auto rounded-lg border p-2 shadow-2xs",
-          className,
-        )}
-      />
-    </ArkCombobox.Positioner>
+    <Portal>
+      <ArkCombobox.Positioner>
+        <ArkCombobox.Content
+          {...rest}
+          className={cn(
+            "border-border-subtle bg-bg-default z-50 max-h-96 overflow-y-auto rounded-lg border p-2 shadow-2xs",
+            className,
+          )}
+        />
+      </ArkCombobox.Positioner>
+    </Portal>
   );
 }
 

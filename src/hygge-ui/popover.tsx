@@ -1,4 +1,4 @@
-import { Popover as ArkPopover } from "@ark-ui/react";
+import { Popover as ArkPopover, Portal } from "@ark-ui/react";
 import { LuX } from "react-icons/lu";
 import { createContext, useContext } from "react";
 import { cn } from "./cn";
@@ -35,32 +35,34 @@ export function PopoverContent(props: PopoverContentProps) {
   const { showArrow } = useContext(PopoverContext);
 
   return (
-    <ArkPopover.Positioner>
-      <ArkPopover.Content
-        {...rest}
-        className={cn(
-          "border-border-subtle bg-bg-default relative z-50 max-w-xs rounded-lg border p-2 shadow-2xs",
-          className,
-        )}
-      >
-        {showArrow ? (
-          <ArkPopover.Arrow className="[--arrow-background:white] [--arrow-size:8px] dark:[--arrow-background:#191918]">
-            <ArkPopover.ArrowTip className="border-border-subtle border-t border-l" />
-          </ArkPopover.Arrow>
-        ) : null}
-        {children}
-        {showCloseTrigger ? (
-          <ArkPopover.CloseTrigger
-            asChild
-            className={cn("absolute top-1 right-1 cursor-pointer", className)}
-          >
-            <Button variant="ghost" size="xs">
-              <LuX size={16} />
-            </Button>
-          </ArkPopover.CloseTrigger>
-        ) : null}
-      </ArkPopover.Content>
-    </ArkPopover.Positioner>
+    <Portal>
+      <ArkPopover.Positioner>
+        <ArkPopover.Content
+          {...rest}
+          className={cn(
+            "border-border-subtle bg-bg-default relative z-50 max-w-xs rounded-lg border p-2 shadow-2xs",
+            className,
+          )}
+        >
+          {showArrow ? (
+            <ArkPopover.Arrow className="[--arrow-background:white] [--arrow-size:8px] dark:[--arrow-background:#191918]">
+              <ArkPopover.ArrowTip className="border-border-subtle border-t border-l" />
+            </ArkPopover.Arrow>
+          ) : null}
+          {children}
+          {showCloseTrigger ? (
+            <ArkPopover.CloseTrigger
+              asChild
+              className={cn("absolute top-1 right-1 cursor-pointer", className)}
+            >
+              <Button variant="ghost" size="xs">
+                <LuX size={16} />
+              </Button>
+            </ArkPopover.CloseTrigger>
+          ) : null}
+        </ArkPopover.Content>
+      </ArkPopover.Positioner>
+    </Portal>
   );
 }
 

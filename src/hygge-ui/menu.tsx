@@ -1,4 +1,4 @@
-import { Menu as ArkMenu } from "@ark-ui/react";
+import { Menu as ArkMenu, Portal } from "@ark-ui/react";
 import { createContext, useContext } from "react";
 import { cn } from "./cn";
 
@@ -48,22 +48,24 @@ export function MenuContent(props: ArkMenu.ContentProps) {
   const { showArrow } = useContext(MenuContext);
 
   return (
-    <ArkMenu.Positioner>
-      <ArkMenu.Content
-        {...rest}
-        className={cn(
-          "border-border-subtle bg-bg-default z-50 max-w-xs rounded-lg border p-1.5 shadow-2xs",
-          className,
-        )}
-      >
-        {showArrow ? (
-          <ArkMenu.Arrow className="[--arrow-background:white] [--arrow-size:8px] dark:[--arrow-background:#191918]">
-            <ArkMenu.ArrowTip className="border-border-subtle border-t border-l" />
-          </ArkMenu.Arrow>
-        ) : null}
-        {children}
-      </ArkMenu.Content>
-    </ArkMenu.Positioner>
+    <Portal>
+      <ArkMenu.Positioner>
+        <ArkMenu.Content
+          {...rest}
+          className={cn(
+            "border-border-subtle bg-bg-default z-50 max-w-xs rounded-lg border p-1.5 shadow-2xs",
+            className,
+          )}
+        >
+          {showArrow ? (
+            <ArkMenu.Arrow className="[--arrow-background:white] [--arrow-size:8px] dark:[--arrow-background:#191918]">
+              <ArkMenu.ArrowTip className="border-border-subtle border-t border-l" />
+            </ArkMenu.Arrow>
+          ) : null}
+          {children}
+        </ArkMenu.Content>
+      </ArkMenu.Positioner>
+    </Portal>
   );
 }
 
