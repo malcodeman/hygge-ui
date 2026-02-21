@@ -127,7 +127,7 @@ export function DatePicker(props: Props) {
       ) : null}
       <Portal>
         <ArkDatePicker.Positioner>
-          <ArkDatePicker.Content className="bg-bg-default border-border-subtle z-50 rounded-lg border p-2 shadow-2xs">
+          <ArkDatePicker.Content className="bg-bg-default border-border-subtle z-50 rounded-lg border p-2 shadow-2xs outline-0">
             <ArkDatePicker.View view="day" className="flex flex-col gap-2">
               <ArkDatePicker.Context>
                 {(datePicker) => (

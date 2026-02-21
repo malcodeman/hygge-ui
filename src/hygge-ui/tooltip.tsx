@@ -14,7 +14,7 @@ export function Tooltip(props: Props) {
       {content ? (
         <Portal>
           <ArkTooltip.Positioner>
-            <ArkTooltip.Content className="z-50 max-w-xs rounded-lg bg-[#191918] p-2 text-xs font-semibold text-[#eeeeec] shadow-2xs dark:bg-white dark:text-[#21201C]">
+            <ArkTooltip.Content className="z-50 max-w-xs rounded-lg bg-[#191918] p-2 text-xs font-semibold text-[#eeeeec] shadow-2xs outline-0 dark:bg-white dark:text-[#21201C]">
               {showArrow ? (
                 <ArkTooltip.Arrow className="[--arrow-background:#191918] [--arrow-size:8px] dark:[--arrow-background:white]">
                   <ArkTooltip.ArrowTip />

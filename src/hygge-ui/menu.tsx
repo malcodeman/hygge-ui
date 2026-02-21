@@ -21,7 +21,17 @@ export function MenuRoot(props: MenuRootProps) {
 }
 
 export function MenuContextTrigger(props: ArkMenu.ContextTriggerProps) {
-  return <ArkMenu.ContextTrigger {...props} />;
+  const { className, ...rest } = props;
+
+  return (
+    <ArkMenu.ContextTrigger
+      {...rest}
+      className={cn(
+        "focus-visible:outline-fg-default focus-visible:outline-2 focus-visible:-outline-offset-1",
+        className,
+      )}
+    />
+  );
 }
 
 export function MenuTrigger(props: ArkMenu.TriggerProps) {
@@ -53,7 +63,7 @@ export function MenuContent(props: ArkMenu.ContentProps) {
         <ArkMenu.Content
           {...rest}
           className={cn(
-            "border-border-subtle bg-bg-default z-50 max-w-xs rounded-lg border p-1.5 shadow-2xs",
+            "border-border-subtle bg-bg-default z-50 max-w-xs rounded-lg border p-1.5 shadow-2xs outline-0",
             className,
           )}
         >

@@ -54,7 +54,7 @@ export function TabsTrigger(props: ArkTabs.TriggerProps) {
     <ArkTabs.Trigger
       {...rest}
       className={cn(
-        "data-selected:text-fg-default text-fg-muted flex cursor-pointer items-center gap-2 p-2 text-sm font-medium transition-colors data-disabled:cursor-not-allowed data-disabled:opacity-50",
+        "data-selected:text-fg-default focus-visible:outline-fg-default text-fg-muted flex cursor-pointer items-center gap-2 p-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:-outline-offset-1 data-disabled:cursor-not-allowed data-disabled:opacity-50",
         {
           "rounded-sm data-selected:bg-[#21201c]/8 dark:data-selected:bg-[#eeeeec]/8":
             variant === "subtle",
@@ -68,5 +68,13 @@ export function TabsTrigger(props: ArkTabs.TriggerProps) {
 export function TabsContent(props: ArkTabs.ContentProps) {
   const { className, ...rest } = props;
 
-  return <ArkTabs.Content {...rest} className={cn("pt-4", className)} />;
+  return (
+    <ArkTabs.Content
+      {...rest}
+      className={cn(
+        "focus-visible:outline-fg-default pt-4 focus-visible:outline-2 focus-visible:-outline-offset-1",
+        className,
+      )}
+    />
+  );
 }
