@@ -1,5 +1,5 @@
-import { Highlight as ArkHighlight, HighlightProps } from "@ark-ui/react";
-import { cva, VariantProps } from "class-variance-authority";
+import { Highlight as ArkHighlight, type HighlightProps } from "@ark-ui/react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
 
 const highlightVariants = cva("rounded-sm p-1", {

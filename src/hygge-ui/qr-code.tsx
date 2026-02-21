@@ -1,5 +1,5 @@
 import { QrCode as ArkQrCode } from "@ark-ui/react";
-import { cva, VariantProps } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { LuLoaderCircle } from "react-icons/lu";
 import { cn } from "./cn";
 

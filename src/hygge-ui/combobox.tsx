@@ -1,7 +1,7 @@
 import {
   Combobox as ArkCombobox,
-  CollectionItem,
   useComboboxContext,
+  type CollectionItem,
 } from "@ark-ui/react";
 import { LuCheck, LuChevronDown } from "react-icons/lu";
 import { cn } from "./cn";

@@ -1,6 +1,6 @@
 import {
   RatingGroup as ArkRatingGroup,
-  RatingGroupRootProps,
+  type RatingGroupRootProps,
 } from "@ark-ui/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./cn";
