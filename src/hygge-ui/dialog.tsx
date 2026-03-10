@@ -1,10 +1,47 @@
 import { Dialog as ArkDialog, Portal } from "@ark-ui/react";
+import { createContext, useContext } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { LuX } from "react-icons/lu";
 import { cn } from "./cn";
 import { Button } from "./button";
 
-export function DialogRoot(props: ArkDialog.RootProps) {
-  return <ArkDialog.Root {...props} />;
+const dialogContentVariants = cva(
+  "bg-bg-default relative w-full rounded-lg shadow-[0_0_0_1px_#E9E8E6] dark:shadow-[0_0_0_1px_#2a2a28]",
+  {
+    variants: {
+      size: {
+        xs: "max-w-sm",
+        sm: "max-w-md",
+        md: "max-w-md",
+        lg: "max-w-lg",
+        xl: "max-w-xl",
+        cover: "max-h-[calc(100dvh-2rem)] max-w-[calc(100vw-2rem)]",
+        full: "h-dvh w-screen max-w-screen rounded-none!",
+      },
+    },
+    defaultVariants: {
+      size: "md",
+    },
+  },
+);
+
+const DialogContext = createContext<VariantProps<typeof dialogContentVariants>>(
+  {
+    size: "md",
+  },
+);
+
+type DialogRootProps = VariantProps<typeof dialogContentVariants> &
+  ArkDialog.RootProps;
+
+export function DialogRoot(props: DialogRootProps) {
+  const { size, ...rest } = props;
+
+  return (
+    <DialogContext.Provider value={{ size }}>
+      <ArkDialog.Root {...rest} />
+    </DialogContext.Provider>
+  );
 }
 
 export function DialogTrigger(props: ArkDialog.TriggerProps) {
@@ -17,6 +54,7 @@ type DialogContentProps = {
 
 export function DialogContent(props: DialogContentProps) {
   const { showCloseTrigger = false, className, children, ...rest } = props;
+  const { size } = useContext(DialogContext);
 
   return (
     <Portal>
@@ -32,10 +70,7 @@ export function DialogContent(props: DialogContentProps) {
       >
         <ArkDialog.Content
           {...rest}
-          className={cn(
-            "bg-bg-default relative w-full max-w-lg rounded-lg shadow-[0_0_0_1px_#E9E8E6] dark:shadow-[0_0_0_1px_#2a2a28]",
-            className,
-          )}
+          className={cn(dialogContentVariants({ size }), className)}
         >
           {children}
           {showCloseTrigger ? (
@@ -43,7 +78,7 @@ export function DialogContent(props: DialogContentProps) {
               asChild
               className="absolute top-1 right-1 cursor-pointer"
             >
-              <Button variant="ghost">
+              <Button variant="ghost" size="xs">
                 <LuX size={16} />
               </Button>
             </ArkDialog.CloseTrigger>
@@ -71,7 +106,7 @@ export function DialogDescription(props: ArkDialog.DescriptionProps) {
   return (
     <ArkDialog.Description
       {...rest}
-      className={cn("text-fg-muted text-sm/6 font-semibold", className)}
+      className={cn("text-fg-muted text-sm/6", className)}
     />
   );
 }
