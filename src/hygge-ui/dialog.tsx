@@ -22,18 +22,18 @@ export function DialogContent(props: DialogContentProps) {
     <Portal>
       <ArkDialog.Backdrop
         className={cn(
-          "fixed top-0 left-0 z-50 h-dvh w-screen bg-white/80 blur-xs dark:bg-black/80",
+          "fixed top-0 left-0 z-[calc(50+var(--layer-index))] h-dvh w-screen bg-white/80 blur-xs dark:bg-black/80",
         )}
       />
       <ArkDialog.Positioner
         className={cn(
-          "fixed top-0 left-0 z-50 flex h-dvh w-screen items-center justify-center",
+          "fixed top-0 left-0 z-[calc(50+var(--layer-index))] flex h-dvh w-screen items-center justify-center",
         )}
       >
         <ArkDialog.Content
           {...rest}
           className={cn(
-            "bg-bg-default relative w-full max-w-lg rounded-lg shadow-[0_0_0_1px_#E9E8E6] dark:shadow-[0_0_0_1px_#2a2a28]",
+            "bg-bg-default relative z-[calc(50+var(--layer-index))] w-full max-w-lg rounded-lg shadow-[0_0_0_1px_#E9E8E6] dark:shadow-[0_0_0_1px_#2a2a28]",
             className,
           )}
         >
