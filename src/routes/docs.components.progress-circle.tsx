@@ -22,7 +22,7 @@ function ProgressCirclePage() {
       <PageHeader
         title="Progress Circle"
         description="Used to display a task's progress in a circular form."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/progress-circle.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/progress-circle.tsx"
         className="mb-2"
         verified
       />

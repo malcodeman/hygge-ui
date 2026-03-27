@@ -21,7 +21,7 @@ function ToastPage() {
       <PageHeader
         title="Toast"
         description="Used to display a temporary message to the user."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/toast.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/toast.tsx"
         className="mb-2"
       />
       <PagePreviewCodeTabs

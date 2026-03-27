@@ -22,7 +22,7 @@ function SeparatorPage() {
       <PageHeader
         title="Separator"
         description="Used to visually separate content"
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/separator.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/separator.tsx"
         className="mb-2"
         verified
       />

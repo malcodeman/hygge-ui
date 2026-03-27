@@ -18,7 +18,7 @@ function RadioPage() {
       <PageHeader
         title="Radio"
         description="Used to select one option from several options."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/radio.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/radio.tsx"
         className="mb-2"
         verified
       />

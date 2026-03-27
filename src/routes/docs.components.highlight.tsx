@@ -22,7 +22,7 @@ function HighlightPage() {
       <PageHeader
         title="Highlight"
         description="Used to highlight substrings of a text."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/highlight.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/highlight.tsx"
         className="mb-2"
         verified
       />

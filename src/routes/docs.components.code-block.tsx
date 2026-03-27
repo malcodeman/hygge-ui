@@ -22,7 +22,7 @@ function CodeBlockPage() {
       <PageHeader
         title="Code Block"
         description="Used to display and highlight dynamic code blocks."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/code-block.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/code-block.tsx"
         className="mb-2"
         verified
       />

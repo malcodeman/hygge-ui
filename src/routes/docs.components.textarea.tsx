@@ -23,7 +23,7 @@ function TextareaPage() {
       <PageHeader
         title="Textarea"
         description="Used to enter multiple lines of text."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/textarea.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/textarea.tsx"
         className="mb-2"
         verified
       />

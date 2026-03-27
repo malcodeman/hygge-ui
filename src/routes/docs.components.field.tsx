@@ -24,7 +24,7 @@ function FieldPage() {
       <PageHeader
         title="Field"
         description="Used to add labels, help text, and error messages to form fields."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/field.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/field.tsx"
         className="mb-2"
         verified
       />

@@ -22,7 +22,7 @@ function PasswordInputPage() {
       <PageHeader
         title="Password Input"
         description="Used to collect passwords."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/password-input.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/password-input.tsx"
         className="mb-2"
         verified
       />

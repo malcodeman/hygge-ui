@@ -23,7 +23,7 @@ function InputPage() {
       <PageHeader
         title="Input"
         description="Used to get user input in a text field."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/input.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/input.tsx"
         className="mb-2"
         verified
       />

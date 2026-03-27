@@ -23,7 +23,7 @@ function DatePickerPage() {
       <PageHeader
         title="Date Picker"
         description="A component that allows users to select a date from a calendar."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/date-picker.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/date-picker.tsx"
         className="mb-2"
       />
       <PagePreviewCodeTabs

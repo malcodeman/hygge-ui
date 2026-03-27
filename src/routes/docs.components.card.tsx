@@ -27,7 +27,7 @@ function CardPage() {
       <PageHeader
         title="Card"
         description="Used to display content related to a single subject."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/card.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/card.tsx"
         className="mb-2"
         verified
       />

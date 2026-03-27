@@ -23,7 +23,7 @@ function ButtonPage() {
       <PageHeader
         title="Button"
         description="Used to trigger an action or event."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/button.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/button.tsx"
         className="mb-2"
         verified
       />

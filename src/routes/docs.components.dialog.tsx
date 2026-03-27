@@ -31,7 +31,7 @@ function DialogPage() {
       <PageHeader
         title="Dialog"
         description="Used to display a dialog prompt."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/dialog.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/dialog.tsx"
         className="mb-2"
       />
       <PagePreviewCodeTabs

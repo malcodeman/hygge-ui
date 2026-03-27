@@ -24,7 +24,7 @@ function TagPage() {
       <PageHeader
         title="Tag"
         description="Used for categorizing or labeling content."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/tag.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/tag.tsx"
         className="mb-2"
         verified
       />

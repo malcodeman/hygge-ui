@@ -22,7 +22,7 @@ function AvatarPage() {
       <PageHeader
         title="Avatar"
         description="Used to represent user profile picture or initials."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/avatar.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/avatar.tsx"
         className="mb-2"
         verified
       />

@@ -25,7 +25,7 @@ function CheckboxPage() {
       <PageHeader
         title="Checkbox"
         description="Used in forms when a user needs to select multiple values from several options."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/checkbox.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/checkbox.tsx"
         className="mb-2"
         verified
       />

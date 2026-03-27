@@ -39,7 +39,7 @@ function TabsPage() {
       <PageHeader
         title="Tabs"
         description="Used to display content in a tabbed interface."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/tabs.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/tabs.tsx"
         className="mb-2"
         verified
       />

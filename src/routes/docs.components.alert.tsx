@@ -22,7 +22,7 @@ function AlertPage() {
       <PageHeader
         title="Alert"
         description="Used to communicate a state that affects a system, feature or page."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/alert.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/alert.tsx"
         className="mb-2"
         verified
       />

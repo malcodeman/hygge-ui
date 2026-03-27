@@ -23,7 +23,7 @@ function PinInputPage() {
       <PageHeader
         title="Pin Input"
         description="Used to capture a pin code or otp from the user."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/pin-input.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/pin-input.tsx"
         className="mb-2"
         verified
       />

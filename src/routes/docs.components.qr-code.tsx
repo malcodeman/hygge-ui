@@ -23,7 +23,7 @@ function QrCodePage() {
       <PageHeader
         title="QR Code"
         description="A component that generates a QR code based on the provided data."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/qr-code.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/qr-code.tsx"
         className="mb-2"
         verified
       />

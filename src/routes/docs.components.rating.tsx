@@ -23,7 +23,7 @@ function RatingPage() {
       <PageHeader
         title="Rating"
         description="Used to show reviews and ratings in a visual format."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/rating.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/rating.tsx"
         className="mb-2"
         verified
       />

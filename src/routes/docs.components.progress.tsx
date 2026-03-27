@@ -22,7 +22,7 @@ function ProgressPage() {
       <PageHeader
         title="Progress"
         description="Used to display the progress status for a task."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/progress.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/progress.tsx"
         className="mb-2"
         verified
       />

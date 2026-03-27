@@ -22,7 +22,7 @@ function SwitchPage() {
       <PageHeader
         title="Switch"
         description="Used to capture a binary state."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/switch.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/switch.tsx"
         className="mb-2"
         verified
       />

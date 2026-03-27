@@ -21,7 +21,7 @@ function TextPage() {
       <PageHeader
         title="Text"
         description="Used to render text and paragraphs within an interface."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/text.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/text.tsx"
         className="mb-2"
         verified
       />

@@ -22,7 +22,7 @@ function CheckboxCardPage() {
       <PageHeader
         title="Checkbox Card"
         description="Used to select or deselect options displayed within cards."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/checkbox-card.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/checkbox-card.tsx"
         className="mb-2"
         verified
       />

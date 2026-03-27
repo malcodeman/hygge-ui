@@ -32,7 +32,7 @@ function StepsPage() {
       <PageHeader
         title="Steps"
         description="Used to indicate progress through a multi-step process."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/steps.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/steps.tsx"
         className="mb-2"
         verified
       />

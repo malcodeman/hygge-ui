@@ -110,7 +110,7 @@ function SelectPage() {
       <PageHeader
         title="Select"
         description="Used to pick a value from predefined options."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/select.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/select.tsx"
         className="mb-2"
         verified
       />

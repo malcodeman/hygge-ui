@@ -27,7 +27,7 @@ function PaginationPage() {
       <PageHeader
         title="Pagination"
         description="Used to navigate through a series of pages."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/pagination.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/pagination.tsx"
         className="mb-2"
         verified
       />

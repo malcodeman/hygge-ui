@@ -22,7 +22,7 @@ function ClipboardPage() {
       <PageHeader
         title="Clipboard"
         description="Used to copy text to the clipboard."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/clipboard.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/clipboard.tsx"
         className="mb-2"
         verified
       />

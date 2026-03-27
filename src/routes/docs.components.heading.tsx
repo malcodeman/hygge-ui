@@ -24,7 +24,7 @@ function HeadingPage() {
       <PageHeader
         title="Heading"
         description="Used to render semantic HTML heading elements."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/heading.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/heading.tsx"
         className="mb-2"
         verified
       />

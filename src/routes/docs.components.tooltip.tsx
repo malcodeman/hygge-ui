@@ -29,7 +29,7 @@ function TooltipPage() {
       <PageHeader
         title="Tooltip"
         description="Used to display additional information when a user hovers over an element."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/tooltip.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/tooltip.tsx"
         className="mb-2"
         verified
       />

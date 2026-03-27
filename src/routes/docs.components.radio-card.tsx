@@ -23,7 +23,7 @@ function RadioCardPage() {
       <PageHeader
         title="Radio Card"
         description="Used to select an option from list."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/radio-card.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/radio-card.tsx"
         className="mb-2"
         verified
       />

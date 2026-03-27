@@ -100,7 +100,7 @@ function ComboboxPage() {
       <PageHeader
         title="Combobox"
         description="A versatile input component that combines a text input with a listbox, allowing users to filter a list of options and select single or multiple values."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/combobox.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/combobox.tsx"
         className="mb-2"
         verified
       />

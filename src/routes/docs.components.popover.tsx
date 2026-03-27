@@ -32,7 +32,7 @@ function PopoverPage() {
       <PageHeader
         title="Popover"
         description="Used to show detailed information inside a pop-up."
-        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/components/popover.tsx"
+        githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/popover.tsx"
         className="mb-2"
         verified
       />
