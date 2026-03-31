@@ -17,6 +17,7 @@ import { Route as DocsComponentsTextareaRouteImport } from './routes/docs.compon
 import { Route as DocsComponentsTextRouteImport } from './routes/docs.components.text'
 import { Route as DocsComponentsTagRouteImport } from './routes/docs.components.tag'
 import { Route as DocsComponentsTabsRouteImport } from './routes/docs.components.tabs'
+import { Route as DocsComponentsTableRouteImport } from './routes/docs.components.table'
 import { Route as DocsComponentsSwitchRouteImport } from './routes/docs.components.switch'
 import { Route as DocsComponentsStepsRouteImport } from './routes/docs.components.steps'
 import { Route as DocsComponentsSeparatorRouteImport } from './routes/docs.components.separator'
@@ -90,6 +91,11 @@ const DocsComponentsTagRoute = DocsComponentsTagRouteImport.update({
 const DocsComponentsTabsRoute = DocsComponentsTabsRouteImport.update({
   id: '/docs/components/tabs',
   path: '/docs/components/tabs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsTableRoute = DocsComponentsTableRouteImport.update({
+  id: '/docs/components/table',
+  path: '/docs/components/table',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsSwitchRoute = DocsComponentsSwitchRouteImport.update({
@@ -305,6 +311,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
+  '/docs/components/table': typeof DocsComponentsTableRoute
   '/docs/components/tabs': typeof DocsComponentsTabsRoute
   '/docs/components/tag': typeof DocsComponentsTagRoute
   '/docs/components/text': typeof DocsComponentsTextRoute
@@ -349,6 +356,7 @@ export interface FileRoutesByTo {
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
+  '/docs/components/table': typeof DocsComponentsTableRoute
   '/docs/components/tabs': typeof DocsComponentsTabsRoute
   '/docs/components/tag': typeof DocsComponentsTagRoute
   '/docs/components/text': typeof DocsComponentsTextRoute
@@ -394,6 +402,7 @@ export interface FileRoutesById {
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
+  '/docs/components/table': typeof DocsComponentsTableRoute
   '/docs/components/tabs': typeof DocsComponentsTabsRoute
   '/docs/components/tag': typeof DocsComponentsTagRoute
   '/docs/components/text': typeof DocsComponentsTextRoute
@@ -440,6 +449,7 @@ export interface FileRouteTypes {
     | '/docs/components/separator'
     | '/docs/components/steps'
     | '/docs/components/switch'
+    | '/docs/components/table'
     | '/docs/components/tabs'
     | '/docs/components/tag'
     | '/docs/components/text'
@@ -484,6 +494,7 @@ export interface FileRouteTypes {
     | '/docs/components/separator'
     | '/docs/components/steps'
     | '/docs/components/switch'
+    | '/docs/components/table'
     | '/docs/components/tabs'
     | '/docs/components/tag'
     | '/docs/components/text'
@@ -528,6 +539,7 @@ export interface FileRouteTypes {
     | '/docs/components/separator'
     | '/docs/components/steps'
     | '/docs/components/switch'
+    | '/docs/components/table'
     | '/docs/components/tabs'
     | '/docs/components/tag'
     | '/docs/components/text'
@@ -573,6 +585,7 @@ export interface RootRouteChildren {
   DocsComponentsSeparatorRoute: typeof DocsComponentsSeparatorRoute
   DocsComponentsStepsRoute: typeof DocsComponentsStepsRoute
   DocsComponentsSwitchRoute: typeof DocsComponentsSwitchRoute
+  DocsComponentsTableRoute: typeof DocsComponentsTableRoute
   DocsComponentsTabsRoute: typeof DocsComponentsTabsRoute
   DocsComponentsTagRoute: typeof DocsComponentsTagRoute
   DocsComponentsTextRoute: typeof DocsComponentsTextRoute
@@ -638,6 +651,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/tabs'
       fullPath: '/docs/components/tabs'
       preLoaderRoute: typeof DocsComponentsTabsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/table': {
+      id: '/docs/components/table'
+      path: '/docs/components/table'
+      fullPath: '/docs/components/table'
+      preLoaderRoute: typeof DocsComponentsTableRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/switch': {
@@ -917,6 +937,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsSeparatorRoute: DocsComponentsSeparatorRoute,
   DocsComponentsStepsRoute: DocsComponentsStepsRoute,
   DocsComponentsSwitchRoute: DocsComponentsSwitchRoute,
+  DocsComponentsTableRoute: DocsComponentsTableRoute,
   DocsComponentsTabsRoute: DocsComponentsTabsRoute,
   DocsComponentsTagRoute: DocsComponentsTagRoute,
   DocsComponentsTextRoute: DocsComponentsTextRoute,
