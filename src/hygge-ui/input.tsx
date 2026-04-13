@@ -67,7 +67,7 @@ export function InputGroup(props: InputGroupProps) {
         }
 
         return cloneElement(child, {
-          className: cn("pl-10", child.props.className),
+          className: cn("ps-10 pe-10", child.props.className),
         });
       })}
       {endElement ? (

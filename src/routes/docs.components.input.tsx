@@ -192,11 +192,11 @@ function InputPage() {
       <PagePreviewCodeTabs
         preview={
           <InputGroup startElement="https://">
-            <Input placeholder="yoursite.com" className="pl-[7ch]" />
+            <Input placeholder="yoursite.com" className="ps-[7ch]" />
           </InputGroup>
         }
         code={`<InputGroup startElement="https://">
-  <Input placeholder="yoursite.com" className="pl-[7ch]" />
+  <Input placeholder="yoursite.com" className="ps-[7ch]" />
 </InputGroup>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
@@ -210,6 +210,37 @@ function InputPage() {
         }
         code={`<InputGroup startElement="$" endElement="USD">
   <Input placeholder="0.00" />
+</InputGroup>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Select
+      </Heading>
+      <PagePreviewCodeTabs
+        preview={
+          <InputGroup
+            startElement="https://"
+            endElement={
+              <select defaultValue=".com">
+                <option value=".com">.com</option>
+                <option value=".org">.org</option>
+                <option value=".net">.net</option>
+              </select>
+            }
+          >
+            <Input placeholder="yoursite.com" className="ps-[7ch] pe-20" />
+          </InputGroup>
+        }
+        code={`<InputGroup
+  startElement="https://"
+  endElement={
+    <select defaultValue=".com">
+      <option value=".com">.com</option>
+      <option value=".org">.org</option>
+      <option value=".net">.net</option>
+    </select>
+  }
+>
+  <Input placeholder="yoursite.com" className="ps-[7ch] pe-20" />
 </InputGroup>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
