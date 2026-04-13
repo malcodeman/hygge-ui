@@ -1,10 +1,11 @@
 import { Field } from "hygge-ui/field";
 import { Heading } from "hygge-ui/heading";
-import { Input } from "hygge-ui/input";
+import { Input, InputGroup } from "hygge-ui/input";
 import { Code, Text } from "hygge-ui/text";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
+import { LuUser } from "react-icons/lu";
 
 export const Route = createFileRoute("/docs/components/input")({
   component: InputPage,
@@ -163,6 +164,53 @@ function InputPage() {
     <Input placeholder="me@example.com" variant="outline" />
   </Field>
 </div>`}
+      />
+      <Heading level={2} className="mt-10 mb-2">
+        Element
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>startElement</Code> and <Code>endElement</Code> on the
+        <Code>InputGroup</Code> component to add an element to the start and end
+        of the input.
+      </Text>
+      <Heading level={3} size="lg" className="mb-2">
+        Start Icon
+      </Heading>
+      <PagePreviewCodeTabs
+        preview={
+          <InputGroup startElement={<LuUser size={16} />}>
+            <Input placeholder="Username" />
+          </InputGroup>
+        }
+        code={`<InputGroup startElement={<LuUser size={16} />}>
+  <Input placeholder="Username" />
+</InputGroup>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Start Text
+      </Heading>
+      <PagePreviewCodeTabs
+        preview={
+          <InputGroup startElement="https://">
+            <Input placeholder="yoursite.com" className="pl-[7ch]" />
+          </InputGroup>
+        }
+        code={`<InputGroup startElement="https://">
+  <Input placeholder="yoursite.com" className="pl-[7ch]" />
+</InputGroup>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Start and End Text
+      </Heading>
+      <PagePreviewCodeTabs
+        preview={
+          <InputGroup startElement="$" endElement="USD">
+            <Input placeholder="0.00" />
+          </InputGroup>
+        }
+        code={`<InputGroup startElement="$" endElement="USD">
+  <Input placeholder="0.00" />
+</InputGroup>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Disabled

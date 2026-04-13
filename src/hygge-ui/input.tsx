@@ -1,5 +1,6 @@
 import { Field } from "@ark-ui/react";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Children, cloneElement, isValidElement } from "react";
 import { cn } from "./cn";
 
 const inputVariants = cva(
@@ -36,5 +37,44 @@ export function Input(props: Props) {
       {...rest}
       className={cn(inputVariants({ variant, size }), className)}
     />
+  );
+}
+
+type InputGroupProps = React.ComponentPropsWithRef<"div"> & {
+  startElement?: React.ReactNode;
+  endElement?: React.ReactNode;
+};
+
+export function InputGroup(props: InputGroupProps) {
+  const { className, startElement, children, endElement, ...rest } = props;
+
+  return (
+    <div
+      {...rest}
+      className={cn(
+        "relative isolate inline-flex w-full items-center",
+        className,
+      )}
+    >
+      {startElement ? (
+        <div className="absolute flex h-full items-center justify-center px-3 text-sm">
+          {startElement}
+        </div>
+      ) : null}
+      {Children.map(children, (child) => {
+        if (!isValidElement<{ className?: string }>(child)) {
+          return child;
+        }
+
+        return cloneElement(child, {
+          className: cn("pl-10", child.props.className),
+        });
+      })}
+      {endElement ? (
+        <div className="absolute end-0 flex h-full items-center justify-center px-3 text-sm">
+          {endElement}
+        </div>
+      ) : null}
+    </div>
   );
 }
