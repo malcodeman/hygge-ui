@@ -81,6 +81,11 @@ export function InputGroup(props: InputGroupProps) {
         className,
       )}
     >
+      {startElement ? (
+        <div className="absolute flex items-center justify-center px-3 text-sm">
+          {startElement}
+        </div>
+      ) : null}
       {startAddon ? (
         <div
           className={cn(
@@ -88,11 +93,6 @@ export function InputGroup(props: InputGroupProps) {
           )}
         >
           {startAddon}
-        </div>
-      ) : null}
-      {startElement ? (
-        <div className="absolute flex items-center justify-center px-3 text-sm">
-          {startElement}
         </div>
       ) : null}
       {Children.map(children, (child) => {
