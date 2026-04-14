@@ -4,7 +4,7 @@ import { Children, cloneElement, isValidElement } from "react";
 import { cn } from "./cn";
 
 const inputVariants = cva(
-  "text-fg-default focus-visible:outline-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus-visible:outline-2 focus-visible:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:placeholder:text-[#eeeeec]/50",
+  "text-fg-default focus-visible:outline-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus-visible:relative focus-visible:z-10 focus-visible:outline-2 focus-visible:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:placeholder:text-[#eeeeec]/50",
   {
     variants: {
       variant: {
@@ -40,13 +40,38 @@ export function Input(props: Props) {
   );
 }
 
-type InputGroupProps = React.ComponentPropsWithRef<"div"> & {
-  startElement?: React.ReactNode;
-  endElement?: React.ReactNode;
-};
+type InputGroupStartProps =
+  | {
+      startElement?: React.ReactNode;
+      startAddon?: never;
+    }
+  | {
+      startElement?: never;
+      startAddon?: React.ReactNode;
+    };
+type InputGroupEndProps =
+  | {
+      endElement?: React.ReactNode;
+      endAddon?: never;
+    }
+  | {
+      endElement?: never;
+      endAddon?: React.ReactNode;
+    };
+type InputGroupProps = React.ComponentPropsWithRef<"div"> &
+  InputGroupStartProps &
+  InputGroupEndProps;
 
 export function InputGroup(props: InputGroupProps) {
-  const { className, startElement, children, endElement, ...rest } = props;
+  const {
+    className,
+    startElement,
+    startAddon,
+    children,
+    endElement,
+    endAddon,
+    ...rest
+  } = props;
 
   return (
     <div
@@ -56,8 +81,17 @@ export function InputGroup(props: InputGroupProps) {
         className,
       )}
     >
+      {startAddon ? (
+        <div
+          className={cn(
+            "border-border-default flex items-center self-stretch rounded-s-sm rounded-e-none border bg-[#21201c]/8 px-3 text-sm dark:bg-[#eeeeec]/8",
+          )}
+        >
+          {startAddon}
+        </div>
+      ) : null}
       {startElement ? (
-        <div className="absolute flex h-full items-center justify-center px-3 text-sm">
+        <div className="absolute flex items-center justify-center px-3 text-sm">
           {startElement}
         </div>
       ) : null}
@@ -67,12 +101,29 @@ export function InputGroup(props: InputGroupProps) {
         }
 
         return cloneElement(child, {
-          className: cn("ps-10 pe-10", child.props.className),
+          className: cn(
+            {
+              "ps-10": startElement,
+              "pe-10": endElement,
+              "rounded-s-none border-s-0": startAddon,
+              "rounded-e-none border-e-0": endAddon,
+            },
+            child.props.className,
+          ),
         });
       })}
       {endElement ? (
-        <div className="absolute end-0 flex h-full items-center justify-center px-3 text-sm">
+        <div className="absolute end-0 flex items-center justify-center px-3 text-sm">
           {endElement}
+        </div>
+      ) : null}
+      {endAddon ? (
+        <div
+          className={cn(
+            "border-border-default flex items-center self-stretch rounded-s-none rounded-e-sm border bg-[#21201c]/8 px-3 text-sm dark:bg-[#eeeeec]/8",
+          )}
+        >
+          {endAddon}
         </div>
       ) : null}
     </div>
