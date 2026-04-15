@@ -243,6 +243,53 @@ function InputPage() {
   <Input placeholder="yoursite.com" className="ps-[7ch] pe-20" />
 </InputGroup>`}
       />
+      <Heading level={2} className="mt-10 mb-2">
+        Addon
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>startAddon</Code> and <Code>endAddon</Code> on the
+        <Code>InputGroup</Code> component to add an addon to the start and end
+        of the input.
+      </Text>
+      <Heading level={3} size="lg" className="mb-2">
+        Start Addon
+      </Heading>
+      <PagePreviewCodeTabs
+        preview={
+          <InputGroup startAddon="https://">
+            <Input placeholder="yoursite.com" />
+          </InputGroup>
+        }
+        code={`<InputGroup startAddon="https://">
+  <Input placeholder="yoursite.com" />
+</InputGroup>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        End Addon
+      </Heading>
+      <PagePreviewCodeTabs
+        preview={
+          <InputGroup endAddon=".com">
+            <Input placeholder="yoursite" />
+          </InputGroup>
+        }
+        code={`<InputGroup endAddon=".com">
+  <Input placeholder="yoursite" />
+</InputGroup>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Start and End Addon
+      </Heading>
+      <PagePreviewCodeTabs
+        preview={
+          <InputGroup startAddon="$" endAddon="USD">
+            <Input placeholder="0.00" variant="outline" />
+          </InputGroup>
+        }
+        code={`<InputGroup startAddon="$" endAddon="USD">
+  <Input placeholder="0.00" />
+</InputGroup>`}
+      />
       <Heading level={3} size="lg" className="mt-10 mb-2">
         Disabled
       </Heading>
