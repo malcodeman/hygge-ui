@@ -82,7 +82,7 @@ export function InputGroup(props: InputGroupProps) {
       )}
     >
       {startElement ? (
-        <div className="absolute flex items-center justify-center px-3 text-sm">
+        <div className="absolute flex h-full items-center justify-center px-3 text-sm">
           {startElement}
         </div>
       ) : null}
@@ -113,7 +113,7 @@ export function InputGroup(props: InputGroupProps) {
         });
       })}
       {endElement ? (
-        <div className="absolute end-0 flex items-center justify-center px-3 text-sm">
+        <div className="absolute end-0 flex h-full items-center justify-center px-3 text-sm">
           {endElement}
         </div>
       ) : null}
