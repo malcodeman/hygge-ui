@@ -7,7 +7,7 @@ type ToggleProps = ArkToggle.RootProps &
   Pick<VariantProps<typeof buttonVariants>, "size">;
 
 export function Toggle(props: ToggleProps) {
-  const { className, size, ...rest } = props;
+  const { size, className, ...rest } = props;
 
   return (
     <ArkToggle.Root
