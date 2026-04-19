@@ -37,7 +37,10 @@ export function TableColumnHeader(
   return (
     <th
       {...rest}
-      className={cn("border-border-subtle border-b p-2 text-start", className)}
+      className={cn(
+        "border-border-subtle border-b p-2 text-start font-medium",
+        className,
+      )}
     />
   );
 }
