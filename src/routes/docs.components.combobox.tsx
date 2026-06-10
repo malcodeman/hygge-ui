@@ -126,6 +126,7 @@ function ComboboxPage() {
   collection={collection}
   onInputValueChange={(e) => filter(e.inputValue)}
   className="max-w-xs"
+>
   <ComboboxLabel>Select framework</ComboboxLabel>
   <ComboboxInput placeholder="Type to search" />
   <ComboboxContent>
