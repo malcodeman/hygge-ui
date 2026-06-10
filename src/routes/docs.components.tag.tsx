@@ -39,7 +39,9 @@ function TagPage() {
         }
         code={`<div className="flex gap-2">
   <Tag>Plain Tag</Tag>
-  <Tag>Closable Tag</Tag>
+  <Tag>
+    Closable Tag <LuX />
+  </Tag>
 </div>`}
       />
       <Heading level={2} className="mt-10 mb-2">
