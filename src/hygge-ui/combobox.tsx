@@ -4,7 +4,7 @@ import {
   useComboboxContext,
   type CollectionItem,
 } from "@ark-ui/react";
-import { LuCheck, LuChevronDown } from "react-icons/lu";
+import { LuCheck, LuChevronDown, LuX } from "react-icons/lu";
 import { cn } from "./cn";
 import { Input } from "./input";
 import { createContext, useContext } from "react";
@@ -65,17 +65,18 @@ export function ComboboxInput(props: ArkCombobox.InputProps) {
   const { variant, size } = useContext(ComboboxContext);
 
   return (
-    <ArkCombobox.Control className="relative">
+    <ArkCombobox.Control className="relative flex items-center">
       <ArkCombobox.Input {...props} asChild>
-        <Input variant={variant} size={size} />
+        <Input variant={variant} size={size} className="pr-16" />
       </ArkCombobox.Input>
-      <ArkCombobox.Trigger
-        className={cn(
-          "absolute top-0 right-0 bottom-0 cursor-pointer p-2 disabled:cursor-not-allowed disabled:opacity-50",
-        )}
-      >
-        <LuChevronDown size={16} />
-      </ArkCombobox.Trigger>
+      <div className="absolute inset-e-0 flex gap-1 px-3">
+        <ArkCombobox.ClearTrigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
+          <LuX size={16} />
+        </ArkCombobox.ClearTrigger>
+        <ArkCombobox.Trigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
+          <LuChevronDown size={16} />
+        </ArkCombobox.Trigger>
+      </div>
     </ArkCombobox.Control>
   );
 }
