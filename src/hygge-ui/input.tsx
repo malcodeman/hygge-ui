@@ -4,7 +4,7 @@ import { Children, cloneElement, isValidElement } from "react";
 import { cn } from "./cn";
 
 const inputVariants = cva(
-  "text-fg-default focus-visible:outline-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus-visible:relative focus-visible:z-10 focus-visible:outline-2 focus-visible:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:placeholder:text-[#eeeeec]/50",
+  "text-fg-default focus-visible:outline-fg-default w-full rounded-sm border bg-transparent transition-colors placeholder:text-[#21201C]/50 focus-visible:relative focus-visible:outline-2 focus-visible:-outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:placeholder:text-[#eeeeec]/50",
   {
     variants: {
       variant: {
@@ -113,7 +113,7 @@ export function InputGroup(props: InputGroupProps) {
         });
       })}
       {endElement ? (
-        <div className="absolute end-0 flex h-full items-center justify-center px-3 text-sm">
+        <div className="absolute inset-e-0 flex h-full items-center justify-center px-3 text-sm">
           {endElement}
         </div>
       ) : null}

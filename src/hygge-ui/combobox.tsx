@@ -69,7 +69,7 @@ export function ComboboxInput(props: ArkCombobox.InputProps) {
       <ArkCombobox.Input {...props} asChild>
         <Input variant={variant} size={size} className="pr-16" />
       </ArkCombobox.Input>
-      <div className="absolute right-2 z-10 flex items-center gap-1">
+      <div className="absolute right-2 flex items-center gap-1">
         <ArkCombobox.ClearTrigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuX size={16} />
         </ArkCombobox.ClearTrigger>
