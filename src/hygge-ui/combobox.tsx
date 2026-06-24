@@ -70,10 +70,10 @@ export function ComboboxInput(props: ArkCombobox.InputProps) {
         <Input variant={variant} size={size} className="pr-16" />
       </ArkCombobox.Input>
       <div className="absolute right-2 z-10 flex items-center gap-1">
-        <ArkCombobox.ClearTrigger className="text-fg-muted hover:text-fg-default cursor-pointer transition-colors disabled:cursor-not-allowed disabled:opacity-50">
+        <ArkCombobox.ClearTrigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuX size={16} />
         </ArkCombobox.ClearTrigger>
-        <ArkCombobox.Trigger className="text-fg-muted hover:text-fg-default cursor-pointer transition-colors disabled:cursor-not-allowed disabled:opacity-50">
+        <ArkCombobox.Trigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuChevronDown size={16} />
         </ArkCombobox.Trigger>
       </div>
