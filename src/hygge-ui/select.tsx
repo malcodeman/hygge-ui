@@ -4,7 +4,7 @@ import {
   useSelectContext,
   type CollectionItem,
 } from "@ark-ui/react";
-import { LuCheck, LuChevronDown } from "react-icons/lu";
+import { LuCheck, LuChevronDown, LuX } from "react-icons/lu";
 import { cn } from "./cn";
 import { createContext, useContext } from "react";
 import { cva } from "class-variance-authority";
@@ -61,11 +61,11 @@ export function SelectLabel(props: ArkSelect.LabelProps) {
 }
 
 const selectTriggerVariants = cva(
-  "text-fg-default inline-flex w-full cursor-pointer items-center justify-between rounded-sm border p-2 text-sm font-semibold focus:outline-2 focus:-outline-offset-1 focus:outline-[#21201C] disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:focus:outline-[#eeeeec]",
+  "text-fg-default inline-flex w-full cursor-pointer items-center justify-between rounded-sm border p-2 text-sm focus:outline-2 focus:-outline-offset-1 focus:outline-[#21201C] disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-[#fd5454] data-invalid:focus:outline-[#fd5454] dark:focus:outline-[#eeeeec]",
   {
     variants: {
       variant: {
-        subtle: "border-transparent bg-[#f1f0ef] dark:bg-[#2a2a28]",
+        subtle: "border-transparent bg-[#ececea] dark:bg-[#222221]",
         outline: "border-border-default",
       },
       size: {
@@ -88,22 +88,40 @@ export function SelectTrigger(props: ArkSelect.TriggerProps) {
   const { variant, size } = useContext(SelectContext);
 
   return (
-    <ArkSelect.Control>
+    <ArkSelect.Control className="relative flex items-center gap-1">
       <ArkSelect.Trigger
         {...rest}
         className={cn(selectTriggerVariants({ variant, size }), className)}
       >
         {children}
+      </ArkSelect.Trigger>
+      <div className="absolute top-[50%] right-2 flex -translate-y-1/2 items-center gap-2">
+        <ArkSelect.ClearTrigger>
+          <LuX size={16} />
+        </ArkSelect.ClearTrigger>
         <ArkSelect.Indicator>
           <LuChevronDown size={16} />
         </ArkSelect.Indicator>
-      </ArkSelect.Trigger>
+      </div>
     </ArkSelect.Control>
   );
 }
 
 export function SelectValueText(props: ArkSelect.ValueTextProps) {
-  return <ArkSelect.ValueText {...props} />;
+  const { className, ...rest } = props;
+  const { value } = useSelectContext();
+
+  return (
+    <ArkSelect.ValueText
+      className={cn(
+        value.length === 0
+          ? "text-[#21201C]/50 dark:text-[#eeeeec]/50"
+          : "text-fg-default",
+        className,
+      )}
+      {...rest}
+    />
+  );
 }
 
 export function SelectContent(props: ArkSelect.ContentProps) {
