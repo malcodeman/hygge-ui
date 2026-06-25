@@ -88,20 +88,20 @@ export function SelectTrigger(props: ArkSelect.TriggerProps) {
   const { variant, size } = useContext(SelectContext);
 
   return (
-    <ArkSelect.Control className="relative flex items-center gap-1">
+    <ArkSelect.Control className="relative flex items-center">
       <ArkSelect.Trigger
         {...rest}
         className={cn(selectTriggerVariants({ variant, size }), className)}
       >
         {children}
       </ArkSelect.Trigger>
-      <div className="absolute top-[50%] right-2 flex -translate-y-1/2 items-center gap-2">
-        <ArkSelect.ClearTrigger>
+      <div className="absolute inset-e-0 flex gap-1 px-3">
+        <ArkSelect.ClearTrigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuX size={16} />
         </ArkSelect.ClearTrigger>
-        <ArkSelect.Indicator>
+        <ArkSelect.Trigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuChevronDown size={16} />
-        </ArkSelect.Indicator>
+        </ArkSelect.Trigger>
       </div>
     </ArkSelect.Control>
   );
