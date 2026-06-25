@@ -65,7 +65,7 @@ const selectTriggerVariants = cva(
   {
     variants: {
       variant: {
-        subtle: "border-transparent bg-[#ececea] dark:bg-[#222221]",
+        subtle: "border-transparent bg-[#21201c]/8 dark:bg-[#eeeeec]/8",
         outline: "border-border-default",
       },
       size: {
