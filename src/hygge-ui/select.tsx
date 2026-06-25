@@ -95,13 +95,13 @@ export function SelectTrigger(props: ArkSelect.TriggerProps) {
       >
         {children}
       </ArkSelect.Trigger>
-      <div className="absolute inset-e-0 flex gap-1 px-3">
-        <ArkSelect.ClearTrigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
+      <div className="pointer-events-none absolute inset-e-0 flex gap-1 px-3">
+        <ArkSelect.ClearTrigger className="pointer-events-auto cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuX size={16} />
         </ArkSelect.ClearTrigger>
-        <ArkSelect.Trigger className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
+        <ArkSelect.Indicator className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuChevronDown size={16} />
-        </ArkSelect.Trigger>
+        </ArkSelect.Indicator>
       </div>
     </ArkSelect.Control>
   );
