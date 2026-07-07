@@ -21,6 +21,7 @@ import { Route as DocsComponentsTabsRouteImport } from './routes/docs.components
 import { Route as DocsComponentsTableRouteImport } from './routes/docs.components.table'
 import { Route as DocsComponentsSwitchRouteImport } from './routes/docs.components.switch'
 import { Route as DocsComponentsStepsRouteImport } from './routes/docs.components.steps'
+import { Route as DocsComponentsSkeletonRouteImport } from './routes/docs.components.skeleton'
 import { Route as DocsComponentsSeparatorRouteImport } from './routes/docs.components.separator'
 import { Route as DocsComponentsSelectRouteImport } from './routes/docs.components.select'
 import { Route as DocsComponentsRatingRouteImport } from './routes/docs.components.rating'
@@ -112,6 +113,11 @@ const DocsComponentsSwitchRoute = DocsComponentsSwitchRouteImport.update({
 const DocsComponentsStepsRoute = DocsComponentsStepsRouteImport.update({
   id: '/docs/components/steps',
   path: '/docs/components/steps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsComponentsSkeletonRoute = DocsComponentsSkeletonRouteImport.update({
+  id: '/docs/components/skeleton',
+  path: '/docs/components/skeleton',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsComponentsSeparatorRoute = DocsComponentsSeparatorRouteImport.update({
@@ -315,6 +321,7 @@ export interface FileRoutesByFullPath {
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/select': typeof DocsComponentsSelectRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
+  '/docs/components/skeleton': typeof DocsComponentsSkeletonRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
   '/docs/components/table': typeof DocsComponentsTableRoute
@@ -361,6 +368,7 @@ export interface FileRoutesByTo {
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/select': typeof DocsComponentsSelectRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
+  '/docs/components/skeleton': typeof DocsComponentsSkeletonRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
   '/docs/components/table': typeof DocsComponentsTableRoute
@@ -408,6 +416,7 @@ export interface FileRoutesById {
   '/docs/components/rating': typeof DocsComponentsRatingRoute
   '/docs/components/select': typeof DocsComponentsSelectRoute
   '/docs/components/separator': typeof DocsComponentsSeparatorRoute
+  '/docs/components/skeleton': typeof DocsComponentsSkeletonRoute
   '/docs/components/steps': typeof DocsComponentsStepsRoute
   '/docs/components/switch': typeof DocsComponentsSwitchRoute
   '/docs/components/table': typeof DocsComponentsTableRoute
@@ -456,6 +465,7 @@ export interface FileRouteTypes {
     | '/docs/components/rating'
     | '/docs/components/select'
     | '/docs/components/separator'
+    | '/docs/components/skeleton'
     | '/docs/components/steps'
     | '/docs/components/switch'
     | '/docs/components/table'
@@ -502,6 +512,7 @@ export interface FileRouteTypes {
     | '/docs/components/rating'
     | '/docs/components/select'
     | '/docs/components/separator'
+    | '/docs/components/skeleton'
     | '/docs/components/steps'
     | '/docs/components/switch'
     | '/docs/components/table'
@@ -548,6 +559,7 @@ export interface FileRouteTypes {
     | '/docs/components/rating'
     | '/docs/components/select'
     | '/docs/components/separator'
+    | '/docs/components/skeleton'
     | '/docs/components/steps'
     | '/docs/components/switch'
     | '/docs/components/table'
@@ -595,6 +607,7 @@ export interface RootRouteChildren {
   DocsComponentsRatingRoute: typeof DocsComponentsRatingRoute
   DocsComponentsSelectRoute: typeof DocsComponentsSelectRoute
   DocsComponentsSeparatorRoute: typeof DocsComponentsSeparatorRoute
+  DocsComponentsSkeletonRoute: typeof DocsComponentsSkeletonRoute
   DocsComponentsStepsRoute: typeof DocsComponentsStepsRoute
   DocsComponentsSwitchRoute: typeof DocsComponentsSwitchRoute
   DocsComponentsTableRoute: typeof DocsComponentsTableRoute
@@ -692,6 +705,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/components/steps'
       fullPath: '/docs/components/steps'
       preLoaderRoute: typeof DocsComponentsStepsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/components/skeleton': {
+      id: '/docs/components/skeleton'
+      path: '/docs/components/skeleton'
+      fullPath: '/docs/components/skeleton'
+      preLoaderRoute: typeof DocsComponentsSkeletonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/components/separator': {
@@ -955,6 +975,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsComponentsRatingRoute: DocsComponentsRatingRoute,
   DocsComponentsSelectRoute: DocsComponentsSelectRoute,
   DocsComponentsSeparatorRoute: DocsComponentsSeparatorRoute,
+  DocsComponentsSkeletonRoute: DocsComponentsSkeletonRoute,
   DocsComponentsStepsRoute: DocsComponentsStepsRoute,
   DocsComponentsSwitchRoute: DocsComponentsSwitchRoute,
   DocsComponentsTableRoute: DocsComponentsTableRoute,
