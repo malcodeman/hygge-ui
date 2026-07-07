@@ -1,22 +1,29 @@
 import { cn } from "./cn";
 
-type Props = React.HTMLAttributes<HTMLDivElement>;
+type SkeletonProps = React.HTMLAttributes<HTMLDivElement> & {
+  loading?: boolean;
+};
 
-export function Skeleton(props: Props) {
-  const { className, ...rest } = props;
+export function Skeleton(props: SkeletonProps) {
+  const { className, loading, ...rest } = props;
 
   return (
     <div
       {...rest}
       className={cn(
-        "animate-pulse rounded-sm bg-[#21201c]/8 dark:bg-[#eeeeec]/8",
+        {
+          "animate-pulse rounded-sm bg-[#21201c]/8 *:invisible dark:bg-[#eeeeec]/8":
+            loading,
+        },
         className,
       )}
     />
   );
 }
 
-export function SkeletonCircle(props: Props) {
+type SkeletonCircleProps = React.HTMLAttributes<HTMLDivElement>;
+
+export function SkeletonCircle(props: SkeletonCircleProps) {
   const { className, ...rest } = props;
 
   return (

@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
+import { Button } from "hygge-ui/button";
 import { Heading } from "hygge-ui/heading";
 import { Skeleton, SkeletonCircle, SkeletonText } from "hygge-ui/skeleton";
 import { Code, Text } from "hygge-ui/text";
@@ -17,6 +19,8 @@ export const Route = createFileRoute("/docs/components/skeleton")({
 });
 
 function SkeletonPage() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <>
       <PageHeader
@@ -81,6 +85,33 @@ function SkeletonPage() {
       <PagePreviewCodeTabs
         preview={<SkeletonText className="gap-4" />}
         code={`<SkeletonText className="gap-4" />`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
+        Content Loading
+      </Heading>
+      <Text className="mb-2">
+        When <Code>loading</Code> is changed to false, the <Code>Skeleton</Code>{" "}
+        component will fade in.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex flex-col items-start gap-2">
+            <Skeleton loading={loading}>
+              <Text>Hygge UI is cool</Text>
+            </Skeleton>
+            <Button size="xs" onClick={() => setLoading((value) => !value)}>
+              Toggle
+            </Button>
+          </div>
+        }
+        code={`<div className="flex flex-col items-start gap-2">
+  <Skeleton loading={loading}>
+    <Text>Hygge UI is cool</Text>
+  </Skeleton>
+  <Button size="xs" onClick={() => setLoading((value) => !value)}>
+    Toggle
+  </Button>
+</div>`}
       />
     </>
   );
