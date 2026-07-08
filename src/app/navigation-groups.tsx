@@ -132,6 +132,10 @@ export const NAVIGATION_GROUPS = [
         label: "Separator",
       },
       {
+        href: "/docs/components/skeleton",
+        label: "Skeleton",
+      },
+      {
         href: "/docs/components/steps",
         label: "Steps",
       },
