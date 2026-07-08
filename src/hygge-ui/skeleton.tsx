@@ -1,20 +1,15 @@
 import { cn } from "./cn";
 
-type SkeletonProps = React.HTMLAttributes<HTMLDivElement> & {
-  loading?: boolean;
-};
+type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function Skeleton(props: SkeletonProps) {
-  const { className, loading, ...rest } = props;
+  const { className, ...rest } = props;
 
   return (
     <div
       {...rest}
       className={cn(
-        {
-          "animate-pulse rounded-sm bg-[#21201c]/8 *:invisible dark:bg-[#eeeeec]/8":
-            loading,
-        },
+        "animate-pulse rounded-sm bg-[#21201c]/8 *:invisible dark:bg-[#eeeeec]/8",
         className,
       )}
     />
