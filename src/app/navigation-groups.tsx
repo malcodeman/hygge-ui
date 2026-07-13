@@ -52,6 +52,10 @@ export const NAVIGATION_GROUPS = [
         label: "Code Block",
       },
       {
+        href: "/docs/components/collapsible",
+        label: "Collapsible",
+      },
+      {
         href: "/docs/components/combobox",
         label: "Combobox",
       },
