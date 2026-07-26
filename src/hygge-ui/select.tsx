@@ -12,27 +12,34 @@ import { cva } from "class-variance-authority";
 type Variant = "subtle" | "outline";
 type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
-const SelectContext = createContext<{ variant: Variant; size: Size }>({
+const SelectContext = createContext<{
+  variant: Variant;
+  size: Size;
+  clearable: boolean;
+}>({
   variant: "subtle",
   size: "md",
+  clearable: false,
 });
 
 type SelectRootProps = {
   variant?: Variant;
   size?: Size;
+  clearable?: boolean;
 } & ArkSelect.RootProps<CollectionItem>;
 
 export function SelectRoot(props: SelectRootProps) {
   const {
     variant = "subtle",
     size = "md",
+    clearable = false,
     className,
     positioning,
     ...rest
   } = props;
 
   return (
-    <SelectContext.Provider value={{ variant, size }}>
+    <SelectContext.Provider value={{ variant, size, clearable }}>
       <ArkSelect.Root
         {...rest}
         positioning={{ sameWidth: true, ...positioning }}
@@ -85,7 +92,7 @@ const selectTriggerVariants = cva(
 
 export function SelectTrigger(props: ArkSelect.TriggerProps) {
   const { className, children, ...rest } = props;
-  const { variant, size } = useContext(SelectContext);
+  const { variant, size, clearable } = useContext(SelectContext);
 
   return (
     <ArkSelect.Control className="relative flex items-center">
@@ -95,10 +102,12 @@ export function SelectTrigger(props: ArkSelect.TriggerProps) {
       >
         {children}
       </ArkSelect.Trigger>
-      <div className="pointer-events-none absolute inset-e-0 flex gap-1 px-3">
-        <ArkSelect.ClearTrigger className="pointer-events-auto cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
-          <LuX size={16} />
-        </ArkSelect.ClearTrigger>
+      <div className="pointer-events-none absolute inset-e-0 flex items-center gap-1 px-3">
+        {clearable ? (
+          <ArkSelect.ClearTrigger className="pointer-events-auto cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
+            <LuX size={16} />
+          </ArkSelect.ClearTrigger>
+        ) : null}
         <ArkSelect.Indicator className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
           <LuChevronDown size={16} />
         </ArkSelect.Indicator>

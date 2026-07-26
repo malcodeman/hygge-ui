@@ -573,6 +573,43 @@ function SelectPage() {
 </SelectRoot>`}
       />
       <Heading level={3} size="lg" className="mt-10 mb-2">
+        Clean Trigger
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>clearable</Code> prop to to show a clear button. Clicking
+        the clear button will clear the selected value.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <SelectRoot clearable collection={frameworks} className="max-w-xs">
+            <SelectLabel>Select framework</SelectLabel>
+            <SelectTrigger>
+              <SelectValueText placeholder="Select framework" />
+            </SelectTrigger>
+            <SelectContent>
+              {frameworks.items.map((item) => (
+                <SelectItem key={item.value} item={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </SelectRoot>
+        }
+        code={`<SelectRoot clearable collection={frameworks} className="max-w-xs">
+  <SelectLabel>Select framework</SelectLabel>
+  <SelectTrigger>
+    <SelectValueText placeholder="Select framework" />
+  </SelectTrigger>
+  <SelectContent>
+    {frameworks.items.map((item) => (
+      <SelectItem key={item.value} item={item.value}>
+        {item.label}
+      </SelectItem>
+    ))}
+  </SelectContent>
+</SelectRoot>`}
+      />
+      <Heading level={3} size="lg" className="mt-10 mb-2">
         Item Description
       </Heading>
       <Text className="mb-2">
