@@ -39,7 +39,7 @@ export function ToggleGroupItem(props: ToggleGroupItemProps) {
       {...rest}
       className={cn(
         buttonVariants({ variant: "outline", size }),
-        "hover:z-10 data-[state=on]:z-10 data-[state=on]:border-transparent data-[state=on]:bg-[#21201c] data-[state=on]:text-white data-[state=on]:not-disabled:hover:bg-[#21201c]/88",
+        "data-[state=on]:z-10 data-[state=on]:border-transparent data-[state=on]:bg-[#21201c] data-[state=on]:text-white data-[state=on]:not-disabled:hover:bg-[#21201c]/88",
         "data-[state=on]:dark:bg-[#eeeeec] data-[state=on]:dark:text-[#21201c] data-[state=on]:not-disabled:dark:hover:bg-[#eeeeec]/88",
         className,
       )}
