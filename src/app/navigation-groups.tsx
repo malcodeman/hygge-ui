@@ -172,6 +172,10 @@ export const NAVIGATION_GROUPS = [
         label: "Toast",
       },
       {
+        href: "/docs/components/toggle-group",
+        label: "Toggle Group",
+      },
+      {
         href: "/docs/components/toggle",
         label: "Toggle",
       },
