@@ -23,10 +23,17 @@ type BreadcrumbProps = React.ComponentPropsWithoutRef<"nav"> & {
   }[];
   separator?: React.ReactNode;
   size?: "sm" | "md" | "lg";
+  variant?: "underline" | "plain";
 };
 
 export function Breadcrumb(props: BreadcrumbProps) {
-  const { items, separator = "/", size = "md", ...rest } = props;
+  const {
+    items,
+    separator = "/",
+    size = "md",
+    variant = "plain",
+    ...rest
+  } = props;
 
   return (
     <nav {...rest}>
@@ -40,7 +47,13 @@ export function Breadcrumb(props: BreadcrumbProps) {
                 {last ? (
                   <span className="text-fg-default">{item.title}</span>
                 ) : item.url ? (
-                  <TextLink href={item.url}>{item.title}</TextLink>
+                  variant === "plain" ? (
+                    <TextLink href={item.url} className="no-underline">
+                      {item.title}
+                    </TextLink>
+                  ) : (
+                    <TextLink href={item.url}>{item.title}</TextLink>
+                  )
                 ) : (
                   <span>{item.title}</span>
                 )}

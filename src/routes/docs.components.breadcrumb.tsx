@@ -109,6 +109,51 @@ function BreadcrumbPage() {
   />
 </div>`}
       />
+      <Heading level={3} size="lg" className="mt-6 mb-2">
+        Variant
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>variant</Code> prop to change the appearance of the
+        breadcrumb component.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <div className="flex flex-col gap-2">
+            <Breadcrumb
+              items={[
+                { title: "Docs", url: "docs/components/breadcrumb#" },
+                { title: "Components", url: "docs/components/breadcrumb#" },
+                { title: "Props", url: "docs/components/breadcrumb#" },
+              ]}
+            />
+            <Breadcrumb
+              variant="underline"
+              items={[
+                { title: "Docs", url: "docs/components/breadcrumb#" },
+                { title: "Components", url: "docs/components/breadcrumb#" },
+                { title: "Props", url: "docs/components/breadcrumb#" },
+              ]}
+            />
+          </div>
+        }
+        code={`<div className="flex flex-col gap-2">
+  <Breadcrumb
+    items={[
+      { title: "Docs", url: "docs/components/breadcrumb#" },
+      { title: "Components", url: "docs/components/breadcrumb#" },
+      { title: "Props", url: "docs/components/breadcrumb#" },
+    ]}
+  />
+  <Breadcrumb
+    variant="underline"
+    items={[
+      { title: "Docs", url: "docs/components/breadcrumb#" },
+      { title: "Components", url: "docs/components/breadcrumb#" },
+      { title: "Props", url: "docs/components/breadcrumb#" },
+    ]}
+  />
+</div>`}
+      />
     </>
   );
 }
