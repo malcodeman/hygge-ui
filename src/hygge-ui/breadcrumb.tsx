@@ -15,6 +15,18 @@ const breadcrumbVariants = cva("flex items-center", {
     size: "md",
   },
 });
+const breadcrumbItemVariants = cva("inline-flex items-center", {
+  variants: {
+    size: {
+      sm: "gap-1",
+      md: "gap-1.5",
+      lg: "gap-2",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+});
 
 type BreadcrumbProps = React.ComponentPropsWithoutRef<"nav"> & {
   items: {
@@ -48,11 +60,22 @@ export function Breadcrumb(props: BreadcrumbProps) {
                   <span className="text-fg-default">{item.title}</span>
                 ) : item.url ? (
                   variant === "plain" ? (
-                    <TextLink href={item.url} className="no-underline">
+                    <TextLink
+                      href={item.url}
+                      className={cn(
+                        breadcrumbItemVariants({ size }),
+                        "no-underline",
+                      )}
+                    >
                       {item.title}
                     </TextLink>
                   ) : (
-                    <TextLink href={item.url}>{item.title}</TextLink>
+                    <TextLink
+                      href={item.url}
+                      className={cn(breadcrumbItemVariants({ size }))}
+                    >
+                      {item.title}
+                    </TextLink>
                   )
                 ) : (
                   <span>{item.title}</span>

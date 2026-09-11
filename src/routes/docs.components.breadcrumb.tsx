@@ -4,6 +4,7 @@ import { PageHeader } from "app/components/page-header";
 import { PagePreviewCodeTabs } from "app/components/page-preview-code-tabs";
 import { Heading } from "hygge-ui/heading";
 import { Code, Text } from "hygge-ui/text";
+import { LuHouse, LuShirt } from "react-icons/lu";
 
 export const Route = createFileRoute("/docs/components/breadcrumb")({
   component: BreadcrumbPage,
@@ -24,6 +25,7 @@ function BreadcrumbPage() {
         description="Used to display a page's location within a site's hierarchical structure."
         githubLink="https://github.com/malcodeman/hygge-ui/blob/main/src/hygge-ui/breadcrumb.tsx"
         className="mb-2"
+        verified
       />
       <PagePreviewCodeTabs
         preview={
@@ -153,6 +155,63 @@ function BreadcrumbPage() {
     ]}
   />
 </div>`}
+      />
+      <Heading level={3} size="lg" className="mt-6 mb-2">
+        Icon
+      </Heading>
+      <Text className="mb-2">
+        Use the <Code>title</Code> prop to render icons alongside the breadcrumb
+        label.
+      </Text>
+      <PagePreviewCodeTabs
+        preview={
+          <Breadcrumb
+            items={[
+              {
+                title: (
+                  <>
+                    <LuHouse />
+                    Home
+                  </>
+                ),
+                url: "docs/components/breadcrumb#",
+              },
+              {
+                title: (
+                  <>
+                    <LuShirt />
+                    Men Wear
+                  </>
+                ),
+                url: "docs/components/breadcrumb#",
+              },
+              { title: "Trousers" },
+            ]}
+          />
+        }
+        code={`<Breadcrumb
+  items={[
+    {
+      title: (
+        <>
+          <LuHouse />
+          Home
+        </>
+      ),
+      url: "docs/components/breadcrumb#",
+    },
+    {
+      title: (
+        <>
+          <LuShirt />
+          Men Wear
+        </>
+      ),
+      url: "docs/components/breadcrumb#",
+    },
+    { title: "Trousers" },
+  ]}
+/>`}
       />
     </>
   );
